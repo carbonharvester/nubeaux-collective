@@ -1376,7 +1376,6 @@ p {
 }
 
 /* Service sub-items in mobile menu */
-.mobile-menu a[href*="campaigns"]:not([href="campaigns.html"]),
 .mobile-menu a[href*="content-production"],
 .mobile-menu a[href*="brand-digital"] {
   font-family: var(--font-serif);
