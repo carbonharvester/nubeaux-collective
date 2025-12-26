@@ -249,7 +249,19 @@
       }
 
       .upcoming-grid {
-        grid-template-columns: 1fr !important;
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .upcoming-card-title {
+        font-size: 1.5rem;
+      }
+
+      .upcoming-card-cta {
+        grid-template-columns: 1fr 1fr;
       }
     }
 
@@ -380,6 +392,40 @@
 
       .creator-mini-name {
         font-size: 0.75rem;
+      }
+
+      .upcoming-card-content {
+        padding: var(--space-md);
+      }
+
+      .upcoming-card-title {
+        font-size: 1.375rem;
+      }
+
+      .upcoming-card-subtitle {
+        font-size: 0.8125rem;
+      }
+
+      .upcoming-card-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-xs);
+      }
+
+      .upcoming-stat-value {
+        font-size: 1rem;
+      }
+
+      .upcoming-stat-label {
+        font-size: 0.5rem;
+      }
+
+      .upcoming-card-cta {
+        grid-template-columns: 1fr;
+      }
+
+      .upcoming-card-cta a {
+        padding: var(--space-sm) var(--space-md);
+        font-size: 0.6875rem;
       }
     }
 
