@@ -20,7 +20,8 @@
     .service-hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      min-height: 100vh;
+      min-height: calc(100vh - var(--header-height));
+      margin-top: var(--header-height);
     }
 
     .service-hero-content {
