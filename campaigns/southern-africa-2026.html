@@ -381,19 +381,15 @@
       }
 
       .stats-band-inner {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
       }
 
       .stat-item {
+        border-right: none;
         border-bottom: 1px solid rgba(255,255,255,0.1);
       }
 
-      .stat-item:nth-child(2) {
-        border-right: none;
-      }
-
-      .stat-item:nth-child(3),
-      .stat-item:nth-child(4) {
+      .stat-item:last-child {
         border-bottom: none;
       }
 
@@ -410,7 +406,7 @@
       /* Mobile horizontal creator cards */
       .creators-grid {
         grid-template-columns: 1fr;
-        max-width: 100%;
+        max-width: 500px;
       }
 
       .creator-card {
