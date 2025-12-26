@@ -587,6 +587,53 @@ p {
   object-fit: cover;
 }
 
+/* Featured creator cards with overlay */
+.creator-card-featured {
+  position: relative;
+  filter: none;
+}
+
+.creator-card-featured img {
+  filter: none;
+}
+
+.creator-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-sm);
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+  color: white;
+}
+
+.creator-card-overlay h4 {
+  font-size: 1rem;
+  font-family: var(--font-serif);
+  margin-bottom: 0.125rem;
+}
+
+.creator-card-overlay p {
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+@media (min-width: 769px) {
+  .creator-card-overlay h4 {
+    font-size: 1.25rem;
+  }
+
+  .creator-card-overlay p {
+    font-size: 0.75rem;
+  }
+
+  .creator-card-overlay {
+    padding: var(--space-md);
+  }
+}
+
 /* ----- Insights Section ----- */
 .insights-section {
   background-color: var(--color-ecru);
@@ -680,7 +727,8 @@ p {
   margin-bottom: var(--space-md);
 }
 
-.footer-links a {
+.footer-links a,
+.footer-links span {
   display: block;
   font-size: 0.875rem;
   color: rgba(255,255,255,0.6);
@@ -762,7 +810,7 @@ p {
 .philosophy-content p {
   font-size: 1.0625rem;
   line-height: 1.8;
-  color: var(--color-charcoal);
+  color: var(--color-warm-grey);
   margin-bottom: var(--space-md);
 }
 
@@ -914,9 +962,7 @@ p {
   cursor: pointer;
 }
 
-.work-item:first-child {
-  grid-column: span 2;
-}
+/* All work items same size */
 
 .work-item-image {
   aspect-ratio: 16/10;
@@ -936,9 +982,7 @@ p {
   padding: 0.5rem 1rem;
 }
 
-.work-item:first-child .work-item-image {
-  aspect-ratio: 21/9;
-}
+/* Same aspect ratio for all */
 
 .work-item-image img {
   width: 100%;
@@ -1174,8 +1218,18 @@ p {
     grid-template-columns: 1fr;
   }
 
+  /* Always show overlay and content on mobile for work cards */
+  .work-card-overlay {
+    opacity: 1;
+  }
+
+  .work-card-content {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
   .creators-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .footer-grid {
@@ -1194,6 +1248,12 @@ p {
 
   .team-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Leadership names on one line */
+  .team-name {
+    font-size: 1.125rem;
+    white-space: nowrap;
   }
 
   .contact-content {
@@ -1220,6 +1280,8 @@ p {
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--transition-medium);
+  padding: var(--space-lg);
+  overflow-y: auto;
 }
 
 .mobile-menu.active {
@@ -1229,23 +1291,32 @@ p {
 
 .mobile-menu a {
   font-family: var(--font-serif);
-  font-size: 2.5rem;
-  margin: var(--space-sm) 0;
+  font-size: 2rem;
+  margin: var(--space-xs) 0;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity var(--transition-medium), transform var(--transition-medium);
 }
 
 .mobile-menu-label {
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
+  font-size: 0.625rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-warm-grey);
   margin-top: var(--space-md);
-  margin-bottom: 0;
+  margin-bottom: var(--space-xs);
   opacity: 0;
   transform: translateY(20px);
   transition: opacity var(--transition-medium), transform var(--transition-medium);
+}
+
+/* Service sub-items in mobile menu */
+.mobile-menu a[href*="campaigns"],
+.mobile-menu a[href*="content-production"],
+.mobile-menu a[href*="brand-digital"] {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  margin: var(--space-xs) 0;
 }
 
 .mobile-menu.active .mobile-menu-label {
@@ -1260,11 +1331,13 @@ p {
 
 .mobile-menu.active a:nth-child(1) { transition-delay: 0.1s; }
 .mobile-menu.active a:nth-child(2) { transition-delay: 0.15s; }
-.mobile-menu.active a:nth-child(3) { transition-delay: 0.2s; }
+.mobile-menu.active .mobile-menu-label { transition-delay: 0.2s; }
 .mobile-menu.active a:nth-child(4) { transition-delay: 0.25s; }
 .mobile-menu.active a:nth-child(5) { transition-delay: 0.3s; }
 .mobile-menu.active a:nth-child(6) { transition-delay: 0.35s; }
 .mobile-menu.active a:nth-child(7) { transition-delay: 0.4s; }
+.mobile-menu.active a:nth-child(8) { transition-delay: 0.45s; }
+.mobile-menu.active a:nth-child(9) { transition-delay: 0.5s; }
 
 /* ----- Scroll Reveal Animation ----- */
 .reveal {

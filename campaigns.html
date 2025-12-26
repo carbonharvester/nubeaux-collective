@@ -364,11 +364,23 @@
       font-size: 0.875rem;
       font-weight: 500;
       color: var(--color-charcoal);
+      white-space: nowrap;
     }
 
     .creator-mini-role {
       font-size: 0.75rem;
       color: var(--color-warm-grey);
+    }
+
+    @media (max-width: 480px) {
+      .creator-row {
+        flex-direction: column;
+        gap: var(--space-sm);
+      }
+
+      .creator-mini-name {
+        font-size: 0.75rem;
+      }
     }
 
     .upcoming-card-stats {
@@ -731,7 +743,7 @@
           <h4 class="footer-heading">Connect</h4>
           <div class="footer-links">
             <a href="mailto:hello@nubeauxcollective.com">hello@nubeauxcollective.com</a>
-            <a href="#">London</a>
+            <span>London</span>
           </div>
         </div>
       </div>
