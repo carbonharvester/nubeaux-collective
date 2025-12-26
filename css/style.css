@@ -1356,7 +1356,7 @@ p {
 
 .mobile-menu a {
   font-family: var(--font-serif);
-  font-size: 2rem;
+  font-size: 1.75rem;
   margin: var(--space-xs) 0;
   opacity: 0;
   transform: translateY(20px);
@@ -1377,17 +1377,11 @@ p {
 
 /* Service sub-items in mobile menu */
 .mobile-menu a[href*="content-production"],
-.mobile-menu a[href*="brand-digital"] {
-  font-family: var(--font-serif);
-  font-size: 1.5rem;
-  margin: var(--space-xs) 0;
-}
-
-/* Main campaigns link in services section */
+.mobile-menu a[href*="brand-digital"],
 .mobile-menu a[href="campaigns.html"],
 .mobile-menu a[href="../campaigns.html"] {
   font-family: var(--font-serif);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin: var(--space-xs) 0;
 }
 
