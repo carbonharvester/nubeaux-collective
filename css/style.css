@@ -208,6 +208,25 @@ p {
   width: 100%;
 }
 
+.nav a.nav-cta {
+  background-color: var(--color-charcoal);
+  color: var(--color-white) !important;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  padding: 1.25rem 1.75rem;
+  margin-left: var(--space-md);
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.nav a.nav-cta::after {
+  display: none !important;
+}
+
+.nav a.nav-cta:hover {
+  opacity: 0.9;
+}
+
 /* Nav Dropdown */
 .nav-dropdown {
   position: relative;
