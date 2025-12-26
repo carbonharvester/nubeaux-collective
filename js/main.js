@@ -110,7 +110,8 @@ function initWorkFilters() {
       const category = filter.dataset.filter;
 
       items.forEach(item => {
-        if (category === 'all' || item.dataset.category === category) {
+        const itemCategories = item.dataset.category || '';
+        if (category === 'all' || itemCategories.includes(category)) {
           item.style.display = '';
         } else {
           item.style.display = 'none';
