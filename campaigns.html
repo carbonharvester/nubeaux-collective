@@ -272,34 +272,13 @@
       .upcoming-card-cta {
         display: flex !important;
         flex-direction: column !important;
-        gap: 0 !important;
+        gap: var(--space-xs) !important;
       }
 
       .upcoming-card-cta a {
         padding: var(--space-md) !important;
         width: 100% !important;
         white-space: normal !important;
-      }
-
-      .upcoming-card-stats {
-        display: flex !important;
-        justify-content: space-between;
-        gap: var(--space-sm);
-        padding: var(--space-md) 0;
-      }
-
-      .upcoming-stat {
-        flex: 1;
-        text-align: center;
-        min-width: 0;
-      }
-
-      .upcoming-stat-value {
-        font-size: 1.125rem;
-      }
-
-      .upcoming-stat-label {
-        font-size: 0.5rem;
       }
     }
 
@@ -444,27 +423,10 @@
         font-size: 0.8125rem;
       }
 
-      .upcoming-card-stats {
-        display: flex !important;
-        justify-content: space-between;
-        gap: var(--space-xs);
-      }
-
-      .upcoming-stat {
-        flex: 1;
-      }
-
-      .upcoming-stat-value {
-        font-size: 1rem;
-      }
-
-      .upcoming-stat-label {
-        font-size: 0.5rem;
-      }
-
       .upcoming-card-cta {
         display: flex !important;
         flex-direction: column !important;
+        gap: var(--space-xs) !important;
       }
 
       .upcoming-card-cta a {
@@ -474,9 +436,6 @@
     }
 
     .upcoming-card-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-sm);
       margin-top: var(--space-md);
       padding-top: var(--space-md);
       border-top: 1px solid var(--color-ecru);
@@ -724,14 +683,6 @@
 
             <div class="upcoming-card-stats">
               <div class="upcoming-stat">
-                <p class="upcoming-stat-value">5</p>
-                <p class="upcoming-stat-label">Destinations</p>
-              </div>
-              <div class="upcoming-stat">
-                <p class="upcoming-stat-value">19</p>
-                <p class="upcoming-stat-label">Days</p>
-              </div>
-              <div class="upcoming-stat">
                 <p class="upcoming-stat-value">455K</p>
                 <p class="upcoming-stat-label">Reach</p>
               </div>
@@ -766,14 +717,6 @@
             </div>
 
             <div class="upcoming-card-stats">
-              <div class="upcoming-stat">
-                <p class="upcoming-stat-value">1</p>
-                <p class="upcoming-stat-label">Destination</p>
-              </div>
-              <div class="upcoming-stat">
-                <p class="upcoming-stat-value">6</p>
-                <p class="upcoming-stat-label">Days</p>
-              </div>
               <div class="upcoming-stat">
                 <p class="upcoming-stat-value">438K</p>
                 <p class="upcoming-stat-label">Reach</p>
