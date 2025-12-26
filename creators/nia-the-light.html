@@ -16,6 +16,22 @@
   <link rel="stylesheet" href="../css/style.css">
 
   <style>
+    /* Prevent horizontal scroll on mobile */
+    html, body {
+      overflow-x: hidden;
+      max-width: 100vw;
+      width: 100%;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    section, .container, .footer {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
     /* Full-bleed Hero */
     .creator-hero {
       position: relative;
@@ -119,6 +135,10 @@
       padding: var(--space-xl) var(--space-lg);
       text-align: center;
       border-right: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
     .stat-item:last-child {
@@ -130,6 +150,7 @@
       font-size: clamp(2rem, 4vw, 3rem);
       color: var(--color-white);
       line-height: 1.1;
+      min-width: 100%;
     }
 
     .stat-label {
@@ -138,6 +159,7 @@
       text-transform: uppercase;
       color: rgba(255,255,255,0.5);
       margin-top: var(--space-xs);
+      white-space: nowrap;
     }
 
     /* Editorial Intro */
@@ -530,6 +552,8 @@
 
       .stat-item {
         border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding: var(--space-lg) var(--space-md);
+        min-height: 100px;
       }
 
       .stat-item:nth-child(2) {
@@ -539,6 +563,14 @@
       .stat-item:nth-child(3),
       .stat-item:nth-child(4) {
         border-bottom: none;
+      }
+
+      .stat-value {
+        font-size: 1.75rem;
+      }
+
+      .stat-label {
+        font-size: 0.625rem;
       }
 
       .spec-grid {
@@ -930,6 +962,29 @@
           </div>
         </div>
       </div>
+
+      <div class="gallery-item reveal" data-video="../assets/media_kit_images/video_senegal_memories.mp4">
+        <img src="../assets/media_kit_images/video_senegal_memories.jpg" alt="Senegal Memories">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>89K views</span>
+            <span>21.3K likes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-video="../assets/media_kit_images/brazil_baby.mp4">
+        <img src="../assets/media_kit_images/brazil_baby.jpg" alt="Brazil">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>142K views</span>
+            <span>28.4K likes</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -1105,6 +1160,7 @@
           <div class="footer-links">
             <a href="../services/content-production.html">Content & Production</a>
             <a href="../campaigns.html">Influencer Campaigns</a>
+            <a href="../campaigns.html#upcoming">Upcoming Campaigns</a>
             <a href="../services/brand-digital.html">Brand & Digital</a>
             <a href="../join.html">Join the Collective</a>
           </div>

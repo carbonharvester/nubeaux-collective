@@ -139,18 +139,41 @@ def draw_specializations(c, specs, y_pos, width):
 
     return spec_y
 
-def draw_brands(c, brands, y_pos, width):
-    """Draw brand partners with elegant styling."""
+def draw_brands(c, brands, y_pos, width, brand_logos=None):
+    """Draw brand partners with elegant styling, using logos if available."""
     # Label
     c.setFillColor(WARM_GREY)
     c.setFont("Helvetica", 7)
     c.drawString(0.75*inch, y_pos, "TRUSTED BY")
 
-    # Brands in serif
-    c.setFillColor(CHARCOAL)
-    c.setFont("Times-Roman", 11)
-    brands_text = "   ·   ".join(brands)
-    c.drawString(0.75*inch, y_pos - 0.35*inch, brands_text)
+    if brand_logos:
+        # Draw brand logos
+        logo_x = 0.75*inch
+        logo_y = y_pos - 0.6*inch
+        logo_height = 0.4*inch
+        logo_spacing = 0.2*inch
+
+        for logo_path in brand_logos:
+            try:
+                from reportlab.lib.utils import ImageReader
+                img = ImageReader(logo_path)
+                img_width, img_height = img.getSize()
+                aspect = img_width / img_height
+                scaled_width = logo_height * aspect
+
+                c.drawImage(logo_path, logo_x, logo_y,
+                           width=scaled_width, height=logo_height,
+                           preserveAspectRatio=True, mask='auto')
+                logo_x += scaled_width + logo_spacing
+            except Exception as e:
+                # Fallback to text if image fails
+                pass
+    else:
+        # Fallback: Brands in serif (text only)
+        c.setFillColor(CHARCOAL)
+        c.setFont("Times-Roman", 11)
+        brands_text = "   ·   ".join(brands)
+        c.drawString(0.75*inch, y_pos - 0.35*inch, brands_text)
 
     return y_pos - 0.8*inch
 
@@ -208,9 +231,15 @@ def create_nia_media_kit():
     ]
     next_y = draw_specializations(c, specs, next_y - 0.3*inch, width)
 
-    # Brands
+    # Brands with logos
     brands = ["Four Seasons", "Park Hyatt", "Onguma", "Intrepid"]
-    draw_brands(c, brands, next_y - 0.3*inch, width)
+    brand_logos = [
+        "/Users/matthewbenjamin/Documents/nubeaux-collective/assets/brand_logos/four-seasons.png",
+        "/Users/matthewbenjamin/Documents/nubeaux-collective/assets/brand_logos/park-hyatt.png",
+        "/Users/matthewbenjamin/Documents/nubeaux-collective/assets/brand_logos/onguma.png",
+        "/Users/matthewbenjamin/Documents/nubeaux-collective/assets/brand_logos/intrepid.png"
+    ]
+    draw_brands(c, brands, next_y - 0.3*inch, width, brand_logos)
 
     # Contact
     draw_contact(c, width, 0)
@@ -251,9 +280,16 @@ def create_klein_media_kit():
     ]
     next_y = draw_specializations(c, specs, next_y - 0.3*inch, width)
 
-    # Brands
-    brands = ["Canon", "Instagram", "National Geographic", "Sony"]
-    draw_brands(c, brands, next_y - 0.3*inch, width)
+    # Brands with logos
+    brands = ["The Safari Collection", "Secret Safari", "Giraffe Manor", "Kenya Wildlife Service", "The Enasoit Collection"]
+    brand_logos = [
+        "/Users/matthewbenjamin/Documents/nubeaux-collective/assets/brand_logos/The-Safari-Collection-Sketch-Logo.png",
+        "/Users/matthewbenjamin/Documents/nubeaux-collective/assets/brand_logos/logo_secret-safari-gold-updated.png",
+        "/Users/matthewbenjamin/Documents/nubeaux-collective/assets/brand_logos/Giraffe-Manor-Logo-46px.png",
+        "/Users/matthewbenjamin/Documents/nubeaux-collective/assets/brand_logos/kenya-wildlife-service-logo.png",
+        "/Users/matthewbenjamin/Documents/nubeaux-collective/assets/brand_logos/the_enasoit_collection.png"
+    ]
+    draw_brands(c, brands, next_y - 0.3*inch, width, brand_logos)
 
     # Contact
     draw_contact(c, width, 0)

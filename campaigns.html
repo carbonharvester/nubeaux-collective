@@ -249,11 +249,15 @@
       }
 
       .upcoming-grid {
-        grid-template-columns: 1fr;
+        display: flex !important;
+        flex-direction: column !important;
         gap: var(--space-lg);
-        max-width: 500px;
-        margin-left: auto;
-        margin-right: auto;
+        max-width: 100%;
+        padding: 0 var(--space-md);
+      }
+
+      .upcoming-card {
+        width: 100%;
       }
 
       .upcoming-card-title {
@@ -647,7 +651,7 @@
   </section>
 
   <!-- Upcoming Campaigns -->
-  <section class="upcoming-section">
+  <section class="upcoming-section" id="upcoming">
     <div class="container">
       <h2 class="reveal" style="text-align: center;">Upcoming Campaigns</h2>
       <p class="reveal" style="text-align: center; color: var(--color-warm-grey); max-width: 600px; margin: var(--space-md) auto 0;">Live campaigns currently in production with our creator collective.</p>
@@ -781,6 +785,7 @@
           <div class="footer-links">
             <a href="services/content-production.html">Content & Production</a>
             <a href="campaigns.html">Influencer Campaigns</a>
+            <a href="campaigns.html#upcoming">Upcoming Campaigns</a>
             <a href="services/brand-digital.html">Brand & Digital</a>
             <a href="join.html">Join the Collective</a>
           </div>
