@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Klein Nettoh — Award-winning wildlife filmmaker and conservation photographer. Part of the NUBEAUX Collective.">
+
+  <title>Klein Nettoh — NUBEAUX Collective</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <style>
+    /* Full-bleed Hero */
+    .creator-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      overflow: hidden;
+    }
+
+    .creator-hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .creator-hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .creator-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 40%, transparent 70%);
+      z-index: 2;
+    }
+
+    .creator-hero-content {
+      position: relative;
+      z-index: 3;
+      padding: var(--space-2xl);
+      color: var(--color-white);
+      max-width: 800px;
+    }
+
+    .creator-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: var(--space-md);
+    }
+
+    .creator-name {
+      font-size: clamp(3rem, 8vw, 6rem);
+      line-height: 1;
+      margin-bottom: var(--space-md);
+      color: var(--color-white);
+    }
+
+    .creator-handle {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: var(--space-lg);
+    }
+
+    .creator-handle a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+      transition: all var(--transition-fast);
+    }
+
+    .creator-handle a:hover {
+      color: var(--color-white);
+      border-color: var(--color-white);
+    }
+
+    .creator-tags {
+      display: flex;
+      gap: var(--space-sm);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-lg);
+    }
+
+    .creator-tag {
+      font-size: 0.6875rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.5rem 1rem;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.8);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+    }
+
+    .btn-media-kit {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.875rem 1.5rem;
+      background-color: var(--color-white);
+      color: var(--color-charcoal);
+      text-decoration: none;
+      transition: all var(--transition-fast);
+    }
+
+    .btn-media-kit:hover {
+      background-color: var(--color-bone);
+    }
+
+    .btn-media-kit svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Stats Band */
+    .stats-band {
+      background-color: var(--color-charcoal);
+      color: var(--color-white);
+    }
+
+    .stats-band-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: var(--container-max);
+      margin: 0 auto;
+    }
+
+    .stat-item {
+      padding: var(--space-xl) var(--space-lg);
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .stat-item:last-child {
+      border-right: none;
+    }
+
+    .stat-value {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--color-white);
+      line-height: 1.1;
+    }
+
+    .stat-label {
+      font-size: 0.6875rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-top: var(--space-xs);
+    }
+
+    /* Editorial Intro */
+    .intro-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-bone);
+    }
+
+    .intro-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 var(--space-md);
+    }
+
+    .intro-text {
+      font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+      line-height: 1.7;
+      color: var(--color-charcoal);
+    }
+
+    .intro-text em {
+      font-family: var(--font-serif);
+      font-style: italic;
+    }
+
+    /* Content Gallery */
+    .gallery-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-bone);
+    }
+
+    .gallery-header {
+      text-align: center;
+      margin-bottom: var(--space-xl);
+      padding: 0 var(--space-md);
+    }
+
+    .gallery-header h2 {
+      margin-bottom: var(--space-sm);
+    }
+
+    .gallery-header p {
+      color: var(--color-warm-grey);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      background: var(--color-charcoal);
+      aspect-ratio: 1;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity var(--transition-medium);
+      display: flex;
+      align-items: flex-end;
+      padding: var(--space-md);
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-stats {
+      color: var(--color-white);
+      font-size: 0.8125rem;
+    }
+
+    .gallery-stats span {
+      margin-right: var(--space-md);
+    }
+
+    .play-icon {
+      position: absolute;
+      top: var(--space-md);
+      right: var(--space-md);
+      width: 32px;
+      height: 32px;
+      color: var(--color-white);
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+      opacity: 0.9;
+    }
+
+    /* Specializations - Minimal */
+    .spec-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-white);
+    }
+
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background-color: var(--color-ecru);
+      max-width: 1200px;
+      margin: var(--space-xl) auto 0;
+    }
+
+    .spec-item {
+      background-color: var(--color-white);
+      padding: var(--space-xl);
+      text-align: center;
+    }
+
+    .spec-item h3 {
+      font-size: 1.25rem;
+      margin-bottom: var(--space-sm);
+    }
+
+    .spec-item p {
+      font-size: 0.875rem;
+      color: var(--color-warm-grey);
+      line-height: 1.6;
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
+    /* Destinations */
+    .destinations-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-ecru);
+    }
+
+    .destinations-scroll {
+      display: flex;
+      gap: var(--space-md);
+      overflow-x: auto;
+      padding: var(--space-xl) var(--space-md);
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .destinations-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .destination-card {
+      flex: 0 0 280px;
+      scroll-snap-align: start;
+      position: relative;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+    }
+
+    .destination-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
+      transition: filter var(--transition-medium);
+    }
+
+    .destination-card:hover img {
+      filter: grayscale(0%);
+    }
+
+    .destination-card-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: var(--space-lg);
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+      color: var(--color-white);
+    }
+
+    .destination-card h4 {
+      font-size: 1.25rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .destination-card span {
+      font-size: 0.75rem;
+      opacity: 0.7;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* Metrics - Clean */
+    .metrics-section {
+      background-color: var(--color-charcoal);
+      color: var(--color-white);
+      padding: var(--space-2xl) 0;
+    }
+
+    .metrics-section h2 {
+      color: var(--color-white);
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-xl);
+      max-width: 1000px;
+      margin: var(--space-xl) auto 0;
+    }
+
+    .metrics-block h3 {
+      font-size: 0.6875rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: var(--space-md);
+      padding-bottom: var(--space-md);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .metric-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: var(--space-sm) 0;
+    }
+
+    .metric-label {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .metric-value {
+      font-family: var(--font-serif);
+      font-size: 1.75rem;
+      color: var(--color-white);
+    }
+
+    /* Campaigns */
+    .campaigns-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-bone);
+    }
+
+    .campaigns-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-lg);
+      max-width: 1200px;
+      margin: var(--space-xl) auto 0;
+      padding: 0 var(--space-md);
+    }
+
+    .campaign-card {
+      background-color: var(--color-white);
+      overflow: hidden;
+    }
+
+    .campaign-card-image {
+      aspect-ratio: 16/10;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .campaign-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+
+    .campaign-card:hover .campaign-card-image img {
+      transform: scale(1.03);
+    }
+
+    .campaign-badge {
+      position: absolute;
+      top: var(--space-md);
+      left: var(--space-md);
+      background-color: var(--color-charcoal);
+      color: var(--color-white);
+      font-size: 0.625rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.5rem 1rem;
+    }
+
+    .campaign-card-content {
+      padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      min-height: 200px;
+    }
+
+    .campaign-card-dates {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-warm-grey);
+      margin-bottom: var(--space-sm);
+    }
+
+    .campaign-card-title {
+      font-size: 1.5rem;
+      margin-bottom: var(--space-sm);
+    }
+
+    .campaign-card-desc {
+      font-size: 0.875rem;
+      color: var(--color-warm-grey);
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    .campaign-card-link {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-charcoal);
+      text-decoration: none;
+      margin-top: var(--space-md);
+      align-self: flex-start;
+      border-bottom: 1px solid var(--color-charcoal);
+      padding-bottom: 2px;
+      transition: all var(--transition-fast);
+    }
+
+    .campaign-card-link:hover {
+      color: var(--color-warm-grey);
+      border-color: var(--color-warm-grey);
+    }
+
+    /* CTA */
+    .cta-section {
+      padding: var(--space-2xl) 0;
+      text-align: center;
+      background-color: var(--color-white);
+    }
+
+    .cta-section p {
+      color: var(--color-warm-grey);
+      max-width: 500px;
+      margin: var(--space-md) auto var(--space-lg);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .creator-hero-content {
+        padding: var(--space-xl);
+      }
+
+      .stats-band-inner {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat-item {
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+
+      .stat-item:nth-child(2) {
+        border-right: none;
+      }
+
+      .stat-item:nth-child(3),
+      .stat-item:nth-child(4) {
+        border-bottom: none;
+      }
+
+      .spec-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .campaigns-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Hero Actions - Media Kit Button */
+    .hero-actions {
+      display: flex;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+      margin-top: var(--space-lg);
+    }
+
+    .btn-media-kit {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.875rem 1.5rem;
+      background-color: var(--color-white);
+      color: var(--color-charcoal);
+      text-decoration: none;
+      transition: all var(--transition-fast);
+    }
+
+    .btn-media-kit:hover {
+      background-color: var(--color-charcoal);
+      color: var(--color-white);
+    }
+
+    .btn-media-kit svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Brand Logos Section */
+    .brands-section {
+      padding: var(--space-xl) 0;
+      background-color: var(--color-white);
+      border-bottom: 1px solid var(--color-ecru);
+    }
+
+    .brands-header {
+      text-align: center;
+      margin-bottom: var(--space-lg);
+    }
+
+    .brands-header p {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-warm-grey);
+    }
+
+    .brands-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--space-xl);
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+
+    .brand-logo {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-charcoal);
+      opacity: 0.4;
+      transition: opacity var(--transition-fast);
+      text-decoration: none;
+    }
+
+    .brand-logo:hover {
+      opacity: 0.7;
+    }
+
+    .brand-logo-img {
+      height: 60px;
+      width: auto;
+      opacity: 0.6;
+      transition: opacity var(--transition-fast);
+    }
+
+    .brand-logo-img:hover {
+      opacity: 1;
+    }
+
+
+    /* Sticky CTA */
+    .sticky-cta {
+      position: fixed;
+      bottom: var(--space-lg);
+      right: var(--space-lg);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: var(--color-charcoal);
+      color: var(--color-white);
+      padding: 1rem 1.5rem;
+      text-decoration: none;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      transition: all var(--transition-fast);
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .sticky-cta.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .sticky-cta:hover {
+      background-color: var(--color-warm-grey);
+      transform: translateY(-2px);
+    }
+
+    .sticky-cta svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .sticky-cta {
+        right: var(--space-md);
+        bottom: var(--space-md);
+        padding: 0.875rem 1.25rem;
+      }
+    }
+
+    /* Video Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.95);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity var(--transition-medium), visibility var(--transition-medium);
+    }
+
+    .lightbox.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: var(--space-lg);
+      right: var(--space-lg);
+      width: 48px;
+      height: 48px;
+      background: none;
+      border: none;
+      color: var(--color-white);
+      cursor: pointer;
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-content {
+      max-width: 90vw;
+      max-height: 90vh;
+    }
+
+    .lightbox-content img {
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+
+    .lightbox-content video {
+      max-width: 90vw;
+      max-height: 80vh;
+      border-radius: 12px;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo"><img src="../assets/logo.svg" alt="Nubeaux"></a>
+      <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="../creators.html">Creators</a>
+        <div class="nav-dropdown">
+          <span>Services</span>
+          <div class="nav-dropdown-menu">
+            <a href="../campaigns.html">Campaigns</a>
+            <a href="../services/content-production.html">Content & Production</a>
+            <a href="../services/brand-digital.html">Brand & Digital</a>
+          </div>
+        </div>
+        <a href="../work.html">Work</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="../creators.html">Creators</a>
+    <span class="mobile-menu-label">Services</span>
+    <a href="../campaigns.html">Campaigns</a>
+    <a href="../services/content-production.html">Content & Production</a>
+    <a href="../services/brand-digital.html">Brand & Digital</a>
+    <a href="../work.html">Work</a>
+    <a href="../about.html">About</a>
+    <a href="../contact.html">Contact</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="creator-hero">
+    <div class="creator-hero-bg">
+      <img src="../assets/klein_images/klein_creator.jpg" alt="Klein Nettoh">
+    </div>
+    <div class="creator-hero-overlay"></div>
+    <div class="creator-hero-content">
+      <span class="creator-label">Creator</span>
+      <h1 class="creator-name">Klein Nettoh</h1>
+      <p class="creator-handle"><a href="https://instagram.com/klein_nettoh" target="_blank">@klein_nettoh</a></p>
+      <div class="creator-tags">
+        <span class="creator-tag">Wildlife Film</span>
+        <span class="creator-tag">Safari</span>
+        <span class="creator-tag">Conservation</span>
+        <span class="creator-tag">Cinematography</span>
+      </div>
+      <div class="hero-actions">
+        <a href="../assets/media_kits/klein-nettoh-media-kit.pdf" download class="btn-media-kit">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Media Kit
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Band -->
+  <div class="stats-band">
+    <div class="stats-band-inner">
+      <div class="stat-item">
+        <p class="stat-value">870K+</p>
+        <p class="stat-label">Travel Views</p>
+      </div>
+      <div class="stat-item">
+        <p class="stat-value">192K</p>
+        <p class="stat-label">Engagement</p>
+      </div>
+      <div class="stat-item">
+        <p class="stat-value">59</p>
+        <p class="stat-label">Lodge Features</p>
+      </div>
+      <div class="stat-item">
+        <p class="stat-value">228</p>
+        <p class="stat-label">Travel Posts</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Editorial Intro -->
+  <section class="intro-section">
+    <div class="intro-content reveal">
+      <p class="intro-text">
+        Award-winning wildlife filmmaker and conservation photographer based in Kenya. Klein captures Africa's wilderness through <em>cinematic storytelling</em>, specialising in luxury safari lodges and authentic travel experiences across East and Southern Africa. His work brings viewers closer to the continent's natural beauty while delivering <em>premium visual content</em> for hospitality partners.
+      </p>
+    </div>
+  </section>
+
+  <!-- Brand Partners -->
+  <section class="brands-section">
+    <div class="brands-header">
+      <p>Trusted by</p>
+    </div>
+    <div class="brands-grid">
+      <img src="../assets/brand_logos/The-Safari-Collection-Sketch-Logo.png" alt="The Safari Collection" class="brand-logo-img">
+      <img src="../assets/brand_logos/logo_secret-safari-gold-updated.png" alt="Secret Safari" class="brand-logo-img">
+      <img src="../assets/brand_logos/Giraffe-Manor-Logo-46px.png" alt="Giraffe Manor" class="brand-logo-img">
+      <img src="../assets/brand_logos/kenya-wildlife-service-logo.png" alt="Kenya Wildlife Service" class="brand-logo-img">
+      <img src="../assets/brand_logos/the_enasoit_collection.png" alt="The Enasoit Collection" class="brand-logo-img">
+    </div>
+  </section>
+
+  <!-- Content Gallery -->
+  <section class="gallery-section">
+    <div class="gallery-header reveal">
+      <h2>Featured Content</h2>
+      <p>Cinematic wildlife and safari content showcasing Africa's natural beauty.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item reveal" data-video="../assets/klein_images/oolorien_house.mp4">
+        <img src="../assets/klein_images/oolorien_house.jpg" alt="Oolorien House">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>527K views</span>
+            <span>7.6K likes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-video="../assets/klein_images/kenya_254.mp4">
+        <img src="../assets/klein_images/kenya_254.jpg" alt="Kenya +254">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>322K views</span>
+            <span>22.5K likes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-video="../assets/klein_images/dream_away.mp4">
+        <img src="../assets/klein_images/dream_away.jpg" alt="Dream Away Kenya">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>153K views</span>
+            <span>9K likes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-video="../assets/klein_images/sasaab.mp4">
+        <img src="../assets/klein_images/sasaab.jpg" alt="Sasaab Lodge">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>55K views</span>
+            <span>3.5K likes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-video="../assets/klein_images/turkana.mp4">
+        <img src="../assets/klein_images/turkana.jpg" alt="Lake Turkana">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>79K views</span>
+            <span>4.6K likes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-video="../assets/klein_images/maasai_mara.mp4">
+        <img src="../assets/klein_images/maasai_mara.jpg" alt="Maasai Mara">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>45K views</span>
+            <span>3.2K likes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specializations -->
+  <section class="spec-section">
+    <div class="container">
+      <h2 class="reveal" style="text-align: center;">Content Specialisation</h2>
+    </div>
+
+    <div class="spec-grid reveal">
+      <div class="spec-item">
+        <h3>Cinematic Film</h3>
+        <p>Professional wildlife filmmaking with cinematic composition and storytelling techniques.</p>
+      </div>
+      <div class="spec-item">
+        <h3>Conservation</h3>
+        <p>Powerful imagery communicating conservation stories and sustainable tourism narratives.</p>
+      </div>
+      <div class="spec-item">
+        <h3>Safari Lodges</h3>
+        <p>Specialised experience creating compelling content for luxury safari properties.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Destinations -->
+  <section class="destinations-section">
+    <div class="container">
+      <h2 class="reveal" style="text-align: center;">Portfolio</h2>
+      <p class="reveal" style="text-align: center; color: var(--color-warm-grey); margin-top: var(--space-sm); max-width: 100%;">Proven performance across Kenya's premier safari destinations.</p>
+    </div>
+
+    <div class="destinations-scroll">
+      <div class="destination-card reveal">
+        <img src="../assets/klein_images/maasai_mara.jpg" alt="Maasai Mara">
+      </div>
+      <div class="destination-card reveal">
+        <img src="../assets/klein_images/sasaab.jpg" alt="Samburu">
+      </div>
+      <div class="destination-card reveal">
+        <img src="../assets/klein_images/turkana.jpg" alt="Lake Turkana">
+      </div>
+      <div class="destination-card reveal">
+        <img src="../assets/klein_images/oolorien_champagne.jpg" alt="Oolorien">
+      </div>
+      <div class="destination-card reveal">
+        <img src="../assets/klein_images/zanzibar.jpg" alt="Zanzibar">
+      </div>
+      <div class="destination-card reveal">
+        <img src="../assets/klein_images/the_north.jpg" alt="The North">
+      </div>
+    </div>
+  </section>
+
+  <!-- Metrics -->
+  <section class="metrics-section">
+    <div class="container">
+      <h2 class="reveal" style="text-align: center;">Performance</h2>
+
+      <div class="metrics-grid">
+        <div class="metrics-block reveal">
+          <h3>Travel Content</h3>
+          <div class="metric-row">
+            <span class="metric-label">Travel Posts</span>
+            <span class="metric-value">228</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">Travel Video Views</span>
+            <span class="metric-value">870K+</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">Avg Views per Video</span>
+            <span class="metric-value">7,000</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">Avg Likes per Post</span>
+            <span class="metric-value">687</span>
+          </div>
+        </div>
+
+        <div class="metrics-block reveal">
+          <h3>Lodge Content</h3>
+          <div class="metric-row">
+            <span class="metric-label">Lodge-Focused Posts</span>
+            <span class="metric-value">59</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">Avg Views per Lodge Video</span>
+            <span class="metric-value">7,646</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">Total Video Views</span>
+            <span class="metric-value">999K</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">Total Engagement</span>
+            <span class="metric-value">192K</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming Campaigns -->
+  <section class="campaigns-section">
+    <div class="container">
+      <h2 class="reveal" style="text-align: center;">Upcoming Campaigns</h2>
+    </div>
+
+    <div class="campaigns-grid" style="max-width: 500px; margin: 0 auto;">
+      <div class="campaign-card reveal">
+        <div class="campaign-card-image">
+          <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&q=80" alt="Southern Africa">
+          <span class="campaign-badge">Now Booking</span>
+        </div>
+        <div class="campaign-card-content">
+          <p class="campaign-card-dates">Dec 31, 2025 — Jan 18, 2026</p>
+          <h3 class="campaign-card-title">Southern Africa</h3>
+          <p class="campaign-card-desc">Klein joins Nia The Light for Namibia, Johannesburg, and Botswana segments of this 19-day campaign, adding cinematic wildlife filmmaking.</p>
+          <a href="../campaigns/southern-africa-2026.html" class="campaign-card-link">View Campaign</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="reveal">Work with Klein</h2>
+      <p class="reveal">Interested in cinematic wildlife content for your property? Get in touch to discuss campaign opportunities.</p>
+      <a href="../contact.html" class="btn btn-dark reveal">Get in touch</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo"><img src="../assets/logo.svg" alt="Nubeaux"></a>
+          <p>Connecting Africa's luxury hospitality with creators and creatives of colour. Authentic representation. Commercial results.</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Navigation</h4>
+          <div class="footer-links">
+            <a href="../index.html">Home</a>
+            <a href="../about.html">About</a>
+            <a href="../work.html">Work</a>
+            <a href="../contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Services</h4>
+          <div class="footer-links">
+            <a href="../services/content-production.html">Content & Production</a>
+            <a href="../campaigns.html">Influencer Campaigns</a>
+            <a href="../campaigns.html#upcoming">Upcoming Campaigns</a>
+            <a href="../services/brand-digital.html">Brand & Digital</a>
+            <a href="../join.html">Join the Collective</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Connect</h4>
+          <div class="footer-links">
+            <a href="mailto:hello@nubeauxcollective.com">hello@nubeauxcollective.com</a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 NUBEAUX Collective. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+          
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="Featured content" style="display: none;">
+      <video id="lightbox-video" controls playsinline style="display: none;">
+        <source id="lightbox-video-src" src="" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <!-- Sticky CTA -->
+  <a href="../contact.html" class="sticky-cta" id="stickyCta">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    Get in Touch
+  </a>
+
+  <script src="../js/main.js"></script>
+  <script>
+    // Sticky CTA visibility
+    const stickyCta = document.getElementById('stickyCta');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > 500) {
+        stickyCta.classList.add('visible');
+      } else {
+        stickyCta.classList.remove('visible');
+      }
+      lastScroll = currentScroll;
+    });
+
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxVideo = document.getElementById('lightbox-video');
+    const lightboxVideoSrc = document.getElementById('lightbox-video-src');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    galleryItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const videoUrl = item.dataset.video;
+
+        if (videoUrl) {
+          // Show video player
+          lightboxVideoSrc.src = videoUrl;
+          lightboxVideo.load();
+          lightboxVideo.style.display = 'block';
+          lightboxImg.style.display = 'none';
+          lightboxVideo.play();
+        } else {
+          // Fallback to image
+          const img = item.querySelector('img');
+          lightboxImg.src = img.src;
+          lightboxImg.style.display = 'block';
+          lightboxVideo.style.display = 'none';
+        }
+
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+      // Stop and reset video when closing
+      lightboxVideo.pause();
+      lightboxVideo.currentTime = 0;
+    }
+
+    // Close on background click
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeLightbox();
+      }
+    });
+  </script>
+</body>
+</html>

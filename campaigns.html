@@ -265,7 +265,26 @@
       }
 
       .upcoming-card-cta {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
+      }
+
+      .upcoming-card-cta a {
+        padding: var(--space-md);
+      }
+
+      .upcoming-card-stats {
+        display: flex;
+        overflow-x: auto;
+        gap: var(--space-md);
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: var(--space-sm);
+      }
+
+      .upcoming-stat {
+        flex: 0 0 auto;
+        min-width: 80px;
+        scroll-snap-align: start;
       }
     }
 
@@ -692,7 +711,7 @@
                 <p class="upcoming-stat-label">Days</p>
               </div>
               <div class="upcoming-stat">
-                <p class="upcoming-stat-value">438K</p>
+                <p class="upcoming-stat-value">455K</p>
                 <p class="upcoming-stat-label">Reach</p>
               </div>
             </div>
