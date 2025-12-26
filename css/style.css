@@ -1356,11 +1356,12 @@ p {
 
 .mobile-menu a {
   font-family: var(--font-serif);
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   margin: var(--space-xs) 0;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity var(--transition-medium), transform var(--transition-medium);
+  white-space: nowrap;
 }
 
 .mobile-menu-label {
