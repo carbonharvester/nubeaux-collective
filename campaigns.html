@@ -264,27 +264,42 @@
         font-size: 1.5rem;
       }
 
+      .upcoming-card-dates {
+        white-space: nowrap;
+        font-size: 0.75rem;
+      }
+
       .upcoming-card-cta {
-        grid-template-columns: 1fr;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0 !important;
       }
 
       .upcoming-card-cta a {
-        padding: var(--space-md);
+        padding: var(--space-md) !important;
+        width: 100% !important;
+        white-space: normal !important;
       }
 
       .upcoming-card-stats {
-        display: flex;
-        overflow-x: auto;
-        gap: var(--space-md);
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: var(--space-sm);
+        display: flex !important;
+        justify-content: space-between;
+        gap: var(--space-sm);
+        padding: var(--space-md) 0;
       }
 
       .upcoming-stat {
-        flex: 0 0 auto;
-        min-width: 80px;
-        scroll-snap-align: start;
+        flex: 1;
+        text-align: center;
+        min-width: 0;
+      }
+
+      .upcoming-stat-value {
+        font-size: 1.125rem;
+      }
+
+      .upcoming-stat-label {
+        font-size: 0.5rem;
       }
     }
 
@@ -430,8 +445,13 @@
       }
 
       .upcoming-card-stats {
-        grid-template-columns: repeat(3, 1fr);
+        display: flex !important;
+        justify-content: space-between;
         gap: var(--space-xs);
+      }
+
+      .upcoming-stat {
+        flex: 1;
       }
 
       .upcoming-stat-value {
@@ -443,7 +463,8 @@
       }
 
       .upcoming-card-cta {
-        grid-template-columns: 1fr;
+        display: flex !important;
+        flex-direction: column !important;
       }
 
       .upcoming-card-cta a {
