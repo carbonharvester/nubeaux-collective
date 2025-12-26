@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Virginia Pettitt — Co-Founder & Head of Creative at NUBEAUX Collective. Entrepreneur and founder of The Curl Bar London.">
+
+  <title>Virginia Pettitt — NUBEAUX Collective</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <style>
+    /* Hero Section */
+    .team-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+    }
+
+    .team-hero-image {
+      position: relative;
+      background-color: var(--color-charcoal);
+      overflow: hidden;
+    }
+
+    .team-hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.9;
+    }
+
+    .team-hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: var(--space-2xl);
+      background-color: var(--color-bone);
+    }
+
+    .team-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-warm-grey);
+      margin-bottom: var(--space-md);
+    }
+
+    .team-name {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: var(--space-sm);
+    }
+
+    .team-aka {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.25rem;
+      color: var(--color-warm-grey);
+      margin-bottom: var(--space-md);
+    }
+
+    .team-role {
+      font-size: 1.125rem;
+      color: var(--color-warm-grey);
+      margin-bottom: var(--space-lg);
+    }
+
+    .team-intro {
+      font-size: 1.125rem;
+      line-height: 1.8;
+      color: var(--color-charcoal);
+      max-width: 500px;
+    }
+
+    .team-intro em {
+      font-family: var(--font-serif);
+      font-style: italic;
+    }
+
+    .team-social {
+      display: flex;
+      gap: var(--space-md);
+      margin-top: var(--space-xl);
+    }
+
+    .team-social a {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-charcoal);
+      text-decoration: none;
+      padding-bottom: 2px;
+      border-bottom: 1px solid var(--color-charcoal);
+      transition: all var(--transition-fast);
+    }
+
+    .team-social a:hover {
+      color: var(--color-warm-grey);
+      border-color: var(--color-warm-grey);
+    }
+
+    /* Stats Band */
+    .stats-band {
+      background-color: var(--color-charcoal);
+      color: var(--color-white);
+    }
+
+    .stats-band-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: var(--container-max);
+      margin: 0 auto;
+    }
+
+    .stat-item {
+      padding: var(--space-xl) var(--space-lg);
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .stat-item:last-child {
+      border-right: none;
+    }
+
+    .stat-value {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--color-white);
+      line-height: 1.1;
+    }
+
+    .stat-label {
+      font-size: 0.6875rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-top: var(--space-xs);
+    }
+
+    /* Bio Section */
+    .bio-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-white);
+    }
+
+    .bio-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+
+    .bio-content h2 {
+      margin-bottom: var(--space-lg);
+    }
+
+    .bio-text {
+      font-size: 1.0625rem;
+      line-height: 1.9;
+      color: var(--color-charcoal);
+    }
+
+    .bio-text p {
+      margin-bottom: var(--space-lg);
+    }
+
+    .bio-text em {
+      font-family: var(--font-serif);
+      font-style: italic;
+    }
+
+    /* Journey Section */
+    .journey-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-ecru);
+    }
+
+    .journey-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-xl);
+      max-width: 1000px;
+      margin: var(--space-xl) auto 0;
+      padding: 0 var(--space-md);
+    }
+
+    .journey-item {
+      background-color: var(--color-white);
+      padding: var(--space-lg);
+    }
+
+    .journey-year {
+      font-size: 0.6875rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-warm-grey);
+      margin-bottom: var(--space-sm);
+    }
+
+    .journey-title {
+      font-size: 1.25rem;
+      margin-bottom: var(--space-xs);
+    }
+
+    .journey-desc {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: var(--color-charcoal);
+    }
+
+    /* Ventures Section */
+    .ventures-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-white);
+    }
+
+    .ventures-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background-color: var(--color-ecru);
+      max-width: 1200px;
+      margin: var(--space-xl) auto 0;
+    }
+
+    .venture-card {
+      background-color: var(--color-white);
+      padding: var(--space-xl);
+      text-align: center;
+    }
+
+    .venture-logo {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: var(--space-md);
+    }
+
+    .venture-type {
+      font-size: 0.6875rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-warm-grey);
+      margin-bottom: var(--space-sm);
+    }
+
+    .venture-desc {
+      font-size: 0.875rem;
+      color: var(--color-warm-grey);
+      line-height: 1.6;
+    }
+
+    /* Philosophy Section */
+    .philosophy-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-charcoal);
+      color: var(--color-white);
+    }
+
+    .philosophy-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 var(--space-lg);
+    }
+
+    .philosophy-content h2 {
+      color: var(--color-white);
+      margin-bottom: var(--space-xl);
+      font-size: 0.875rem;
+      font-family: var(--font-sans);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+
+    .philosophy-quote {
+      position: relative;
+      font-family: var(--font-serif);
+      font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+      font-style: italic;
+      line-height: 1.8;
+      color: var(--color-white);
+    }
+
+    .philosophy-quote::before {
+      content: '"';
+      display: block;
+      font-size: 6rem;
+      line-height: 1;
+      opacity: 0.2;
+      margin-bottom: var(--space-md);
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: var(--space-2xl) 0;
+      text-align: center;
+      background-color: var(--color-bone);
+    }
+
+    .cta-section p {
+      color: var(--color-warm-grey);
+      max-width: 500px;
+      margin: var(--space-md) auto var(--space-lg);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .ventures-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .team-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .team-hero-image {
+        aspect-ratio: 4/3;
+      }
+
+      .team-hero-content {
+        padding: var(--space-xl);
+      }
+
+      .stats-band-inner {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat-item {
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+
+      .stat-item:nth-child(2) {
+        border-right: none;
+      }
+
+      .stat-item:nth-child(3),
+      .stat-item:nth-child(4) {
+        border-bottom: none;
+      }
+
+      .journey-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo"><img src="../assets/logo.svg" alt="Nubeaux"></a>
+      <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="../creators.html">Creators</a>
+        <div class="nav-dropdown">
+          <span>Services</span>
+          <div class="nav-dropdown-menu">
+            <a href="../campaigns.html">Campaigns</a>
+            <a href="../services/content-production.html">Content & Production</a>
+            <a href="../services/brand-digital.html">Brand & Digital</a>
+          </div>
+        </div>
+        <a href="../work.html">Work</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="../creators.html">Creators</a>
+    <span class="mobile-menu-label">Services</span>
+    <a href="../campaigns.html">Campaigns</a>
+    <a href="../services/content-production.html">Content & Production</a>
+    <a href="../services/brand-digital.html">Brand & Digital</a>
+    <a href="../work.html">Work</a>
+    <a href="../about.html">About</a>
+    <a href="../contact.html">Contact</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="team-hero">
+    <div class="team-hero-image">
+      <img src="../assets/media_kit_images/nia_creator.jpg" alt="Virginia Pettitt">
+    </div>
+    <div class="team-hero-content">
+      <span class="team-label">Co-Founder & Head of Creative</span>
+      <h1 class="team-name">Virginia Pettitt</h1>
+      <p class="team-intro">
+        From founding The Curl Bar London to building NUBEAUX, Virginia has dedicated her career to creating spaces where representation matters. Now she's using that experience to connect Africa's luxury properties with the creators and audiences <em>the industry has overlooked</em>.
+      </p>
+      <div class="team-social">
+        <a href="mailto:virginia@nubeauxcollective.com">Email</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bio Section -->
+  <section class="bio-section">
+    <div class="bio-content reveal">
+      <h2>Africa Was Born in Her</h2>
+      <div class="bio-text">
+        <p>
+          Virginia Pettitt wasn't born in Africa — but as she often says, <em>Africa was born in her</em>. Half Zimbabwean, she grew up with the continent woven into her identity, her family stories, and her sense of belonging.
+        </p>
+        <p>
+          That connection shaped everything that followed. From building businesses that celebrate Black beauty to creating content that showcases African luxury, Virginia has spent her career ensuring that people who look like her see themselves reflected in the spaces they deserve to occupy.
+        </p>
+        <p>
+          In 2020, she opened <em>The Curl Bar London</em> — a salon and safe space for natural hair in Crouch End. It proved she could build physical businesses rooted in community and cultural pride. But it was her travels across Africa that revealed the next opportunity.
+        </p>
+        <p>
+          Visiting luxury properties across the continent, Virginia noticed a pattern: world-class experiences being marketed with imagery that excluded the very audiences most eager to book them. The diaspora was searching for connection. The properties were failing to speak to them. NUBEAUX was born to bridge that gap — combining Virginia's understanding of both sides to create something the industry has been missing.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Journey Section -->
+  <section class="journey-section">
+    <div class="container">
+      <h2 class="reveal" style="text-align: center;">The Journey</h2>
+    </div>
+
+    <div class="journey-grid">
+      <div class="journey-item reveal">
+        <p class="journey-year">Heritage</p>
+        <h3 class="journey-title">Zimbabwean Roots</h3>
+        <p class="journey-desc">Half Zimbabwean, Virginia grew up with Africa woven into her identity. The continent's stories, culture, and sense of belonging shaped her worldview from the start.</p>
+      </div>
+
+      <div class="journey-item reveal">
+        <p class="journey-year">First Business</p>
+        <h3 class="journey-title">The Curl Bar London</h3>
+        <p class="journey-desc">Founded London's destination salon for natural hair in Crouch End. Created a safe space that proved she could build physical businesses rooted in community.</p>
+      </div>
+
+      <div class="journey-item reveal">
+        <p class="journey-year">Discovery</p>
+        <h3 class="journey-title">African Luxury Travel</h3>
+        <p class="journey-desc">Travelling across the continent revealed a gap: world-class properties marketing themselves without representing the audiences most eager to visit.</p>
+      </div>
+
+      <div class="journey-item reveal">
+        <p class="journey-year">The Mission</p>
+        <h3 class="journey-title">NUBEAUX Collective</h3>
+        <p class="journey-desc">Co-founded NUBEAUX to bridge the gap between Africa's luxury hospitality and the diaspora audiences being overlooked by traditional marketing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ventures Section -->
+  <section class="ventures-section">
+    <div class="container">
+      <h2 class="reveal" style="text-align: center;">Ventures</h2>
+    </div>
+
+    <div class="ventures-grid" style="grid-template-columns: repeat(2, 1fr); max-width: 800px; margin: 0 auto;">
+      <div class="venture-card reveal">
+        <p class="venture-type">Current</p>
+        <p class="venture-logo">NUBEAUX</p>
+        <p class="venture-desc">Co-Founder & Head of Creative. Connecting Africa's luxury hospitality with creators of colour.</p>
+      </div>
+
+      <div class="venture-card reveal">
+        <p class="venture-type">Founder</p>
+        <p class="venture-logo">The Curl Bar</p>
+        <p class="venture-desc">London's destination salon for natural hair. A safe space for curls in Crouch End.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy Section -->
+  <section class="philosophy-section">
+    <div class="philosophy-content reveal">
+      <h2>Philosophy</h2>
+      <p class="philosophy-quote">
+        I wasn't born in Africa, but Africa was born in me. That connection is why I understand what the diaspora is searching for — and why I know most luxury properties aren't speaking to them. NUBEAUX exists to change that.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="reveal">Let's Create Together</h2>
+      <p class="reveal">
+        Whether you're a property looking to reach new audiences or a creator ready for luxury hospitality work — let's talk.
+      </p>
+      <a href="../contact.html" class="btn btn-dark reveal">Get in touch</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo"><img src="../assets/logo.svg" alt="Nubeaux"></a>
+          <p>Connecting Africa's luxury hospitality with creators and creatives of colour. Authentic representation. Commercial results.</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Navigation</h4>
+          <div class="footer-links">
+            <a href="../index.html">Home</a>
+            <a href="../about.html">About</a>
+            <a href="../work.html">Work</a>
+            <a href="../contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Services</h4>
+          <div class="footer-links">
+            <a href="../services/content-production.html">Content & Production</a>
+            <a href="../campaigns.html">Influencer Campaigns</a>
+            <a href="../services/brand-digital.html">Brand & Digital</a>
+            <a href="../join.html">Join the Collective</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Connect</h4>
+          <div class="footer-links">
+            <a href="mailto:hello@nubeauxcollective.com">hello@nubeauxcollective.com</a>
+            <a href="#">London</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 NUBEAUX Collective. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">Vimeo</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

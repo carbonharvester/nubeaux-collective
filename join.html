@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join NUBEAUX Collective — Apply to become part of Africa's premier network of luxury travel creators of colour.">
+
+  <title>Join the Collective — NUBEAUX</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Hero */
+    .join-hero {
+      padding: calc(var(--space-2xl) + 80px) 0 var(--space-2xl);
+      background-color: var(--color-bone);
+      text-align: center;
+    }
+
+    .join-hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      margin-bottom: var(--space-md);
+    }
+
+    .join-intro {
+      font-size: 1.125rem;
+      color: var(--color-warm-grey);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* Benefits Section */
+    .benefits-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-white);
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-lg);
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+
+    .benefit-card {
+      text-align: center;
+      padding: var(--space-lg);
+    }
+
+    .benefit-icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto var(--space-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-charcoal);
+      border-radius: 50%;
+    }
+
+    .benefit-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--color-white);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .benefit-card h3 {
+      font-size: 1.125rem;
+      margin-bottom: var(--space-sm);
+    }
+
+    .benefit-card p {
+      font-size: 0.9375rem;
+      color: var(--color-warm-grey);
+      line-height: 1.6;
+    }
+
+    /* Application Form */
+    .application-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-ecru);
+    }
+
+    .application-container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+
+    .application-header {
+      text-align: center;
+      margin-bottom: var(--space-xl);
+    }
+
+    .application-header h2 {
+      margin-bottom: var(--space-sm);
+    }
+
+    .application-header p {
+      color: var(--color-warm-grey);
+    }
+
+    .application-form {
+      background-color: var(--color-white);
+      padding: var(--space-xl);
+    }
+
+    .form-section {
+      margin-bottom: var(--space-xl);
+      padding-bottom: var(--space-xl);
+      border-bottom: 1px solid var(--color-ecru);
+    }
+
+    .form-section:last-of-type {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .form-section-title {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-warm-grey);
+      margin-bottom: var(--space-lg);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-md);
+    }
+
+    .form-group {
+      margin-bottom: var(--space-md);
+    }
+
+    .form-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-bottom: var(--space-xs);
+      color: var(--color-charcoal);
+    }
+
+    .form-input,
+    .form-textarea,
+    .form-select {
+      width: 100%;
+      padding: var(--space-sm) var(--space-md);
+      border: 1px solid var(--color-ecru);
+      background-color: var(--color-white);
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      transition: border-color var(--transition-fast);
+    }
+
+    .form-input:focus,
+    .form-textarea:focus,
+    .form-select:focus {
+      outline: none;
+      border-color: var(--color-charcoal);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right var(--space-md) center;
+      padding-right: calc(var(--space-md) * 2 + 12px);
+    }
+
+    .form-hint {
+      font-size: 0.8125rem;
+      color: var(--color-warm-grey);
+      margin-top: var(--space-xs);
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+
+    .checkbox-item input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--color-charcoal);
+    }
+
+    .checkbox-item label {
+      font-size: 0.9375rem;
+      color: var(--color-charcoal);
+    }
+
+    .form-submit {
+      margin-top: var(--space-xl);
+      text-align: center;
+    }
+
+    .form-submit .btn {
+      min-width: 200px;
+    }
+
+    .form-note {
+      font-size: 0.8125rem;
+      color: var(--color-warm-grey);
+      margin-top: var(--space-md);
+      text-align: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .application-form {
+        padding: var(--space-lg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><img src="assets/logo.svg" alt="Nubeaux"></a>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="creators.html">Creators</a>
+        <div class="nav-dropdown">
+          <span>Services</span>
+          <div class="nav-dropdown-menu">
+            <a href="campaigns.html">Campaigns</a>
+            <a href="services/content-production.html">Content & Production</a>
+            <a href="services/brand-digital.html">Brand & Digital</a>
+          </div>
+        </div>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="creators.html">Creators</a>
+    <span class="mobile-menu-label">Services</span>
+    <a href="campaigns.html">Campaigns</a>
+    <a href="services/content-production.html">Content & Production</a>
+    <a href="services/brand-digital.html">Brand & Digital</a>
+    <a href="work.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="join-hero">
+    <div class="container">
+      <span class="page-hero-label">For Creators</span>
+      <h1>Join the Collective</h1>
+      <p class="join-intro">
+        We partner with exceptional creators of colour who are redefining luxury travel storytelling. If your work resonates with discerning audiences and you're ready for premium brand partnerships, we'd love to hear from you.
+      </p>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="benefits-section">
+    <div class="benefits-grid">
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3>Premium Partnerships</h3>
+        <p>Access to exclusive collaborations with Africa's finest luxury hotels, lodges, and safari properties.</p>
+      </div>
+
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M2 12h20"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+        </div>
+        <h3>Campaign Inclusion</h3>
+        <p>Opportunities to join curated multi-destination campaigns with full production support.</p>
+      </div>
+
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h3>Creative Community</h3>
+        <p>Join a network of like-minded creators pushing the boundaries of representation in luxury travel.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Form -->
+  <section class="application-section">
+    <div class="application-container">
+      <div class="application-header reveal">
+        <h2>Creator Application</h2>
+        <p>Tell us about yourself and your work.</p>
+      </div>
+
+      <form class="application-form reveal">
+        <!-- Personal Info -->
+        <div class="form-section">
+          <p class="form-section-title">Personal Information</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="firstName">First Name *</label>
+              <input type="text" id="firstName" name="firstName" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="lastName">Last Name *</label>
+              <input type="text" id="lastName" name="lastName" class="form-input" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">Email *</label>
+            <input type="email" id="email" name="email" class="form-input" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="location">Based In</label>
+              <input type="text" id="location" name="location" class="form-input" placeholder="City, Country">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="website">Website / Portfolio</label>
+              <input type="url" id="website" name="website" class="form-input" placeholder="https://...">
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Presence -->
+        <div class="form-section">
+          <p class="form-section-title">Social Presence</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="instagram">Instagram Handle *</label>
+              <input type="text" id="instagram" name="instagram" class="form-input" placeholder="@yourhandle" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="followers">Instagram Followers *</label>
+              <select id="followers" name="followers" class="form-select" required>
+                <option value="">Select range</option>
+                <option value="10k-50k">10K – 50K</option>
+                <option value="50k-100k">50K – 100K</option>
+                <option value="100k-250k">100K – 250K</option>
+                <option value="250k-500k">250K – 500K</option>
+                <option value="500k+">500K+</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="tiktok">TikTok Handle</label>
+              <input type="text" id="tiktok" name="tiktok" class="form-input" placeholder="@yourhandle">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="youtube">YouTube Channel</label>
+              <input type="text" id="youtube" name="youtube" class="form-input" placeholder="Channel name or URL">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="avgEngagement">Average Engagement Rate</label>
+            <select id="avgEngagement" name="avgEngagement" class="form-select">
+              <option value="">Select range</option>
+              <option value="1-2%">1% – 2%</option>
+              <option value="2-4%">2% – 4%</option>
+              <option value="4-6%">4% – 6%</option>
+              <option value="6%+">6%+</option>
+            </select>
+            <p class="form-hint">If you're unsure, leave this blank.</p>
+          </div>
+        </div>
+
+        <!-- Content Focus -->
+        <div class="form-section">
+          <p class="form-section-title">Content Focus</p>
+
+          <div class="form-group">
+            <label class="form-label">Primary Content Type *</label>
+            <div class="checkbox-group">
+              <div class="checkbox-item">
+                <input type="checkbox" id="type-photo" name="contentType" value="photography">
+                <label for="type-photo">Photography</label>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" id="type-video" name="contentType" value="video">
+                <label for="type-video">Video / Reels</label>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" id="type-writing" name="contentType" value="writing">
+                <label for="type-writing">Writing / Blog</label>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" id="type-vlog" name="contentType" value="vlog">
+                <label for="type-vlog">Vlogging</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Niche / Specialization</label>
+            <div class="checkbox-group">
+              <div class="checkbox-item">
+                <input type="checkbox" id="niche-luxury" name="niche" value="luxury">
+                <label for="niche-luxury">Luxury Hotels</label>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" id="niche-safari" name="niche" value="safari">
+                <label for="niche-safari">Safari & Wildlife</label>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" id="niche-beach" name="niche" value="beach">
+                <label for="niche-beach">Beach & Islands</label>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" id="niche-adventure" name="niche" value="adventure">
+                <label for="niche-adventure">Adventure</label>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" id="niche-culture" name="niche" value="culture">
+                <label for="niche-culture">Culture & Heritage</label>
+              </div>
+              <div class="checkbox-item">
+                <input type="checkbox" id="niche-wellness" name="niche" value="wellness">
+                <label for="niche-wellness">Wellness</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="destinations">Destinations You've Covered</label>
+            <textarea id="destinations" name="destinations" class="form-textarea" rows="3" placeholder="List countries or regions you've created content in..."></textarea>
+          </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="form-section">
+          <p class="form-section-title">Experience & Availability</p>
+
+          <div class="form-group">
+            <label class="form-label" for="brandWork">Previous Brand Partnerships</label>
+            <textarea id="brandWork" name="brandWork" class="form-textarea" rows="3" placeholder="List notable brands you've worked with..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="whyJoin">Why do you want to join NUBEAUX? *</label>
+            <textarea id="whyJoin" name="whyJoin" class="form-textarea" rows="4" placeholder="Tell us what excites you about our mission and what you'd bring to the collective..." required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="availability">Availability for 2026 Campaigns</label>
+            <select id="availability" name="availability" class="form-select">
+              <option value="">Select availability</option>
+              <option value="very-flexible">Very flexible</option>
+              <option value="some-flexibility">Some flexibility</option>
+              <option value="limited">Limited availability</option>
+              <option value="unsure">Not sure yet</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn btn-dark">Submit Application</button>
+          <p class="form-note">We review applications on a rolling basis and will be in touch within 2 weeks if there's a fit.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo"><img src="assets/logo.svg" alt="Nubeaux"></a>
+          <p>Connecting Africa's luxury hospitality with creators and creatives of colour. Authentic representation. Commercial results.</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Navigation</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="creators.html">Creators</a>
+            <a href="campaigns.html">Campaigns</a>
+            <a href="work.html">Work</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Services</h4>
+          <div class="footer-links">
+            <a href="services/content-production.html">Content & Production</a>
+            <a href="campaigns.html">Influencer Campaigns</a>
+            <a href="services/brand-digital.html">Brand & Digital</a>
+            <a href="join.html">Join the Collective</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Connect</h4>
+          <div class="footer-links">
+            <a href="mailto:hello@nubeauxcollective.com">hello@nubeauxcollective.com</a>
+            <a href="#">London</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 NUBEAUX Collective. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">Vimeo</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

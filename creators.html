@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meet the Creators — NUBEAUX Collective's network of exceptional travel creators of colour redefining luxury hospitality storytelling.">
+
+  <title>Creators — NUBEAUX Collective</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Hero */
+    .creators-hero {
+      padding: calc(var(--space-2xl) + 80px) 0 var(--space-2xl);
+      background-color: var(--color-bone);
+      text-align: center;
+    }
+
+    .creators-hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      margin-bottom: var(--space-md);
+    }
+
+    .creators-intro {
+      font-size: 1.125rem;
+      color: var(--color-warm-grey);
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* Stats Band */
+    .stats-band {
+      background-color: var(--color-charcoal);
+      color: var(--color-white);
+    }
+
+    .stats-band-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: var(--container-max);
+      margin: 0 auto;
+    }
+
+    .stat-item {
+      padding: var(--space-xl) var(--space-lg);
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .stat-item:last-child {
+      border-right: none;
+    }
+
+    .stat-value {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--color-white);
+      line-height: 1.1;
+    }
+
+    .stat-label {
+      font-size: 0.6875rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-top: var(--space-xs);
+    }
+
+    /* Featured Creators */
+    .featured-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-white);
+    }
+
+    .featured-header {
+      text-align: center;
+      margin-bottom: var(--space-xl);
+    }
+
+    .featured-header p {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-warm-grey);
+      margin-top: var(--space-sm);
+    }
+
+    .creators-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-lg);
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+
+    .creator-card {
+      position: relative;
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background-color: var(--color-bone);
+      overflow: hidden;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .creator-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+    }
+
+    .creator-card-image {
+      aspect-ratio: 4/5;
+      overflow: hidden;
+    }
+
+    .creator-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
+      transition: filter var(--transition-medium), transform var(--transition-slow);
+    }
+
+    .creator-card:hover .creator-card-image img {
+      filter: grayscale(0%);
+      transform: scale(1.03);
+    }
+
+    .creator-card-content {
+      padding: var(--space-lg);
+    }
+
+    .creator-card-name {
+      font-size: 1.5rem;
+      margin-bottom: var(--space-xs);
+    }
+
+    .creator-card-role {
+      font-size: 0.875rem;
+      color: var(--color-warm-grey);
+      margin-bottom: var(--space-md);
+    }
+
+    .creator-card-stats {
+      display: flex;
+      gap: var(--space-lg);
+    }
+
+    .creator-stat {
+      text-align: left;
+    }
+
+    .creator-stat-value {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--color-charcoal);
+    }
+
+    .creator-stat-label {
+      font-size: 0.6875rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-warm-grey);
+    }
+
+    .creator-card-link {
+      display: inline-block;
+      margin-top: var(--space-md);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-charcoal);
+      text-decoration: none;
+      padding-bottom: 2px;
+      border-bottom: 1px solid var(--color-charcoal);
+    }
+
+    /* What We Look For */
+    .criteria-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-ecru);
+    }
+
+    .criteria-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-lg);
+      max-width: 1000px;
+      margin: var(--space-xl) auto 0;
+      padding: 0 var(--space-md);
+    }
+
+    .criteria-item {
+      text-align: center;
+      padding: var(--space-lg);
+    }
+
+    .criteria-icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto var(--space-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-charcoal);
+      border-radius: 50%;
+    }
+
+    .criteria-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--color-white);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .criteria-item h3 {
+      font-size: 1.125rem;
+      margin-bottom: var(--space-sm);
+    }
+
+    .criteria-item p {
+      font-size: 0.9375rem;
+      color: var(--color-warm-grey);
+      line-height: 1.6;
+    }
+
+    /* Destinations */
+    .destinations-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-white);
+    }
+
+    .destinations-scroll {
+      display: flex;
+      gap: var(--space-md);
+      overflow-x: auto;
+      padding: var(--space-xl) var(--space-md);
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .destinations-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .destination-tag {
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      padding: var(--space-sm) var(--space-lg);
+      background-color: var(--color-bone);
+      font-size: 0.875rem;
+      color: var(--color-charcoal);
+      white-space: nowrap;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-charcoal);
+      color: var(--color-white);
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      color: var(--color-white);
+      margin-bottom: var(--space-md);
+    }
+
+    .cta-section p {
+      color: rgba(255,255,255,0.7);
+      max-width: 500px;
+      margin: 0 auto var(--space-lg);
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: var(--space-md);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 1px solid var(--color-white);
+      color: var(--color-white);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--color-white);
+      color: var(--color-charcoal);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .stats-band-inner {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat-item {
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+
+      .stat-item:nth-child(2) {
+        border-right: none;
+      }
+
+      .stat-item:nth-child(3),
+      .stat-item:nth-child(4) {
+        border-bottom: none;
+      }
+
+      .creators-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .criteria-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><img src="assets/logo.svg" alt="Nubeaux"></a>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="creators.html">Creators</a>
+        <div class="nav-dropdown">
+          <span>Services</span>
+          <div class="nav-dropdown-menu">
+            <a href="campaigns.html">Campaigns</a>
+            <a href="services/content-production.html">Content & Production</a>
+            <a href="services/brand-digital.html">Brand & Digital</a>
+          </div>
+        </div>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="creators.html">Creators</a>
+    <span class="mobile-menu-label">Services</span>
+    <a href="campaigns.html">Campaigns</a>
+    <a href="services/content-production.html">Content & Production</a>
+    <a href="services/brand-digital.html">Brand & Digital</a>
+    <a href="work.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="creators-hero">
+    <div class="container">
+      <span class="page-hero-label">The Collective</span>
+      <h1>Meet the Creators</h1>
+      <p class="creators-intro">
+        Our network of exceptional travel creators of colour are redefining luxury hospitality storytelling. Each brings authentic voice, proven reach, and cultural resonance that connects with audiences traditional marketing misses.
+      </p>
+    </div>
+  </section>
+
+  <!-- Featured Creators -->
+  <section class="featured-section">
+    <div class="featured-header">
+      <h2 class="reveal">The Collective</h2>
+      <p class="reveal">Founding Creators</p>
+    </div>
+
+    <div class="creators-grid">
+      <a href="creators/nia-the-light.html" class="creator-card reveal">
+        <div class="creator-card-image">
+          <img src="assets/media_kit_images/nia_creator.jpg" alt="Nia The Light">
+        </div>
+        <div class="creator-card-content">
+          <h3 class="creator-card-name">Nia The Light</h3>
+          <p class="creator-card-role">Content Creator & Influencer</p>
+          <span class="creator-card-link">View Profile</span>
+        </div>
+      </a>
+
+      <a href="creators/klein-nettoh.html" class="creator-card reveal">
+        <div class="creator-card-image">
+          <img src="assets/klein_images/klein-profile-pic.jpeg" alt="Klein Nettoh">
+        </div>
+        <div class="creator-card-content">
+          <h3 class="creator-card-name">Klein Nettoh</h3>
+          <p class="creator-card-role">Videographer & Photographer</p>
+          <span class="creator-card-link">View Profile</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- What We Look For -->
+  <section class="criteria-section">
+    <div class="container">
+      <h2 class="reveal" style="text-align: center;">What We Look For</h2>
+    </div>
+
+    <div class="criteria-grid">
+      <div class="criteria-item reveal">
+        <div class="criteria-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+            <path d="M2 17l10 5 10-5"/>
+            <path d="M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <h3>Authentic Voice</h3>
+        <p>Creators who bring genuine perspective and cultural connection to luxury travel storytelling.</p>
+      </div>
+
+      <div class="criteria-item reveal">
+        <div class="criteria-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+        </div>
+        <h3>Proven Consistency</h3>
+        <p>A track record of high-quality content production and reliable delivery for brand partners.</p>
+      </div>
+
+      <div class="criteria-item reveal">
+        <div class="criteria-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h3>Engaged Community</h3>
+        <p>Audiences that actively engage, trust recommendations, and convert to bookings.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="reveal">Work With Our Creators</h2>
+      <p class="reveal">
+        Looking to partner with creators who resonate with diverse, high-value audiences? Let's discuss your campaign.
+      </p>
+      <div class="cta-buttons reveal">
+        <a href="contact.html" class="btn">Get in touch</a>
+        <a href="join.html" class="btn btn-outline">Join as a Creator</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo"><img src="assets/logo.svg" alt="Nubeaux"></a>
+          <p>Connecting Africa's luxury hospitality with creators and creatives of colour. Authentic representation. Commercial results.</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Navigation</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="creators.html">Creators</a>
+            <a href="campaigns.html">Campaigns</a>
+            <a href="work.html">Work</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Services</h4>
+          <div class="footer-links">
+            <a href="services/content-production.html">Content & Production</a>
+            <a href="campaigns.html">Influencer Campaigns</a>
+            <a href="services/brand-digital.html">Brand & Digital</a>
+            <a href="join.html">Join the Collective</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Connect</h4>
+          <div class="footer-links">
+            <a href="mailto:hello@nubeauxcollective.com">hello@nubeauxcollective.com</a>
+            <a href="#">London</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 NUBEAUX Collective. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">Vimeo</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

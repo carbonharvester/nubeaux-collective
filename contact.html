@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact NUBEAUX Collective — Connect your property with Africa's finest creators of colour and creatives.">
+
+  <title>Contact — NUBEAUX Collective</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><img src="assets/logo.svg" alt="Nubeaux"></a>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="creators.html">Creators</a>
+        <div class="nav-dropdown">
+          <span>Services</span>
+          <div class="nav-dropdown-menu">
+            <a href="campaigns.html">Campaigns</a>
+            <a href="services/content-production.html">Content & Production</a>
+            <a href="services/brand-digital.html">Brand & Digital</a>
+          </div>
+        </div>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="creators.html">Creators</a>
+    <span class="mobile-menu-label">Services</span>
+    <a href="campaigns.html">Campaigns</a>
+    <a href="services/content-production.html">Content & Production</a>
+    <a href="services/brand-digital.html">Brand & Digital</a>
+    <a href="work.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Contact Hero -->
+  <section class="contact-hero">
+    <div class="contact-content">
+      <span class="page-hero-label">Contact</span>
+      <h1>Ready to reach new audiences?</h1>
+      <p class="contact-intro">
+        We help luxury properties connect with the travellers they're currently missing — through elevated content, strategic campaigns, and creators who resonate. Let's talk.
+      </p>
+
+      <form class="contact-form">
+        <div class="form-group">
+          <label class="form-label" for="name">Name</label>
+          <input type="text" id="name" name="name" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="email">Email</label>
+          <input type="email" id="email" name="email" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="property">Property / Company</label>
+          <input type="text" id="property" name="property" class="form-input">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="message">Tell us about your project</label>
+          <textarea id="message" name="message" class="form-textarea" rows="4" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-dark">Send message</button>
+
+        <div class="contact-options">
+          <a href="#" class="contact-option">
+            <span>Request pitch deck</span>
+          </a>
+          <a href="#" class="contact-option">
+            <span>Book a call</span>
+          </a>
+        </div>
+      </form>
+
+      <div class="contact-details">
+        <div class="contact-detail-item">
+          <p class="contact-detail-label">Email</p>
+          <p class="contact-detail-value"><a href="mailto:hello@nubeauxcollective.com">hello@nubeauxcollective.com</a></p>
+        </div>
+
+        <div class="contact-detail-item">
+          <p class="contact-detail-label">Offices</p>
+          <p class="contact-detail-value">London</p>
+        </div>
+
+        <div class="contact-detail-item">
+          <p class="contact-detail-label">Follow</p>
+          <p class="contact-detail-value">
+            <a href="#">Instagram</a> · <a href="#">LinkedIn</a> · <a href="#">Vimeo</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-image" style="background-image: url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1200&q=80');"></div>
+  </section>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

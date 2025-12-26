@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Influencer Campaigns — NUBEAUX Collective. Curated creators of colour delivering authentic reach for Africa's luxury properties.">
+
+  <title>Influencer Campaigns — NUBEAUX Collective</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .service-hero {
+      min-height: 70vh;
+      display: flex;
+      align-items: flex-end;
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-charcoal);
+      color: var(--color-white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1667987566780-3b31fa5485c8?w=1920&q=80') center/cover;
+      opacity: 0.3;
+    }
+
+    .service-hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .service-hero h1 {
+      color: var(--color-white);
+      max-width: 800px;
+    }
+
+    .service-hero-intro {
+      font-size: clamp(1rem, 1.5vw, 1.25rem);
+      color: rgba(255,255,255,0.7);
+      max-width: 600px;
+      margin-top: var(--space-md);
+    }
+
+    .process-section {
+      padding: var(--space-2xl) 0;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background-color: var(--color-warm-grey);
+      margin-top: var(--space-xl);
+    }
+
+    .process-step {
+      background-color: var(--color-bone);
+      padding: var(--space-xl) var(--space-lg);
+    }
+
+    .process-number {
+      font-size: 3rem;
+      font-family: var(--font-serif);
+      color: var(--color-warm-grey);
+      line-height: 1;
+      margin-bottom: var(--space-md);
+      opacity: 0.4;
+    }
+
+    .process-title {
+      font-size: 1.25rem;
+      margin-bottom: var(--space-sm);
+    }
+
+    .process-desc {
+      font-size: 0.875rem;
+      color: var(--color-warm-grey);
+      line-height: 1.7;
+    }
+
+    .offering-section {
+      background-color: var(--color-ecru);
+      padding: var(--space-2xl) 0;
+    }
+
+    .offering-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      margin-top: var(--space-xl);
+    }
+
+    .offering-item {
+      padding: var(--space-lg);
+      background-color: var(--color-bone);
+    }
+
+    .offering-item h3 {
+      font-size: 1.5rem;
+      margin-bottom: var(--space-sm);
+    }
+
+    .offering-item p {
+      color: var(--color-warm-grey);
+      line-height: 1.7;
+    }
+
+    .offering-item ul {
+      margin-top: var(--space-md);
+    }
+
+    .offering-item li {
+      font-size: 0.875rem;
+      color: var(--color-charcoal);
+      padding: var(--space-xs) 0;
+      border-bottom: 1px solid var(--color-ecru);
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-lg);
+      text-align: center;
+      padding: var(--space-xl) 0;
+    }
+
+    .stat-item h3 {
+      font-size: 3rem;
+      margin-bottom: var(--space-xs);
+    }
+
+    .stat-item p {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-warm-grey);
+    }
+
+    .creator-showcase {
+      background-color: var(--color-charcoal);
+      color: var(--color-white);
+      padding: var(--space-2xl) 0;
+    }
+
+    .creator-showcase h2 {
+      color: var(--color-white);
+      text-align: center;
+      margin-bottom: var(--space-sm);
+    }
+
+    .creator-showcase-intro {
+      text-align: center;
+      color: rgba(255,255,255,0.6);
+      max-width: 600px;
+      margin: 0 auto var(--space-xl);
+    }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-md);
+    }
+
+    .showcase-item {
+      position: relative;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+    }
+
+    .showcase-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
+      transition: filter var(--transition-medium), transform var(--transition-slow);
+    }
+
+    .showcase-item:hover img {
+      filter: grayscale(0%);
+      transform: scale(1.03);
+    }
+
+    .showcase-item-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: var(--space-md);
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity var(--transition-medium), transform var(--transition-medium);
+    }
+
+    .showcase-item:hover .showcase-item-content {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .showcase-item-name {
+      font-size: 1.125rem;
+      margin-bottom: var(--space-xs);
+    }
+
+    .showcase-item-type {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+
+    @media (max-width: 968px) {
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .offering-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .showcase-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stats-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-xl);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-row {
+        grid-template-columns: 1fr;
+      }
+
+      .upcoming-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    /* Upcoming Campaigns */
+    .upcoming-section {
+      background-color: var(--color-bone);
+      padding: var(--space-2xl) 0;
+    }
+
+    .upcoming-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      margin-top: var(--space-xl);
+      align-items: start;
+    }
+
+    .upcoming-card {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-ecru);
+      overflow: hidden;
+    }
+
+    .upcoming-card-image {
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .upcoming-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .upcoming-card-badge {
+      position: absolute;
+      top: var(--space-md);
+      left: var(--space-md);
+      background-color: var(--color-charcoal);
+      color: var(--color-white);
+      font-size: 0.625rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.5rem 1rem;
+    }
+
+    .upcoming-card-content {
+      padding: var(--space-lg);
+    }
+
+    .upcoming-card-dates {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-warm-grey);
+      margin-bottom: var(--space-sm);
+    }
+
+    .upcoming-card-title {
+      font-size: 1.75rem;
+      margin-bottom: var(--space-sm);
+    }
+
+    .upcoming-card-subtitle {
+      font-size: 0.875rem;
+      color: var(--color-warm-grey);
+      margin-bottom: var(--space-md);
+      line-height: 1.6;
+    }
+
+    .upcoming-card-creators {
+      border-top: 1px solid var(--color-ecru);
+      padding-top: var(--space-md);
+      margin-top: var(--space-md);
+    }
+
+    .upcoming-card-creators h4 {
+      font-family: var(--font-sans);
+      font-size: 0.625rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-warm-grey);
+      margin-bottom: var(--space-sm);
+    }
+
+    .creator-row {
+      display: flex;
+      gap: var(--space-lg);
+    }
+
+    .creator-mini {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .creator-mini-img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      filter: grayscale(100%);
+    }
+
+    .creator-mini-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .creator-mini-name {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-charcoal);
+    }
+
+    .creator-mini-role {
+      font-size: 0.75rem;
+      color: var(--color-warm-grey);
+    }
+
+    .upcoming-card-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-sm);
+      margin-top: var(--space-md);
+      padding-top: var(--space-md);
+      border-top: 1px solid var(--color-ecru);
+    }
+
+    .upcoming-stat {
+      text-align: center;
+    }
+
+    .upcoming-stat-value {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--color-charcoal);
+    }
+
+    .upcoming-stat-label {
+      font-size: 0.625rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-warm-grey);
+    }
+
+    .upcoming-card-cta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      margin-top: var(--space-md);
+      background-color: var(--color-ecru);
+    }
+
+    .upcoming-card-cta a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-md);
+      font-size: 0.625rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-charcoal);
+      text-decoration: none;
+      background-color: var(--color-bone);
+      transition: background-color var(--transition-fast), color var(--transition-fast);
+      text-align: center;
+    }
+
+    .upcoming-card-cta a:hover {
+      background-color: var(--color-charcoal);
+      color: var(--color-white);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><img src="assets/logo.svg" alt="Nubeaux"></a>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="creators.html">Creators</a>
+        <div class="nav-dropdown">
+          <span>Services</span>
+          <div class="nav-dropdown-menu">
+            <a href="campaigns.html">Campaigns</a>
+            <a href="services/content-production.html">Content & Production</a>
+            <a href="services/brand-digital.html">Brand & Digital</a>
+          </div>
+        </div>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="creators.html">Creators</a>
+    <span class="mobile-menu-label">Services</span>
+    <a href="campaigns.html">Campaigns</a>
+    <a href="services/content-production.html">Content & Production</a>
+    <a href="services/brand-digital.html">Brand & Digital</a>
+    <a href="work.html">Work</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Service Hero -->
+  <section class="service-hero">
+    <div class="container">
+      <span class="page-hero-label" style="color: rgba(255,255,255,0.5);">Services</span>
+      <h1>Influencer Campaigns</h1>
+      <p class="service-hero-intro">Curated creators of colour with authentic reach, cultural resonance, and audiences that convert. Not a roster — a collective.</p>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="process-section">
+    <div class="container">
+      <h2 class="reveal" style="text-align: center;">How we work</h2>
+      <p class="reveal" style="text-align: center; color: var(--color-warm-grey); max-width: 600px; margin: var(--space-md) auto 0;">From strategy to delivery, we handle every aspect of your creator campaign.</p>
+
+      <div class="process-grid">
+        <div class="process-step reveal">
+          <span class="process-number">01</span>
+          <h3 class="process-title">Strategy</h3>
+          <p class="process-desc">We define your target audience, campaign objectives, and success metrics. Every campaign starts with commercial intent.</p>
+        </div>
+        <div class="process-step reveal">
+          <span class="process-number">02</span>
+          <h3 class="process-title">Curation</h3>
+          <p class="process-desc">We match your property with creators whose audience, aesthetic, and values align with your brand positioning.</p>
+        </div>
+        <div class="process-step reveal">
+          <span class="process-number">03</span>
+          <h3 class="process-title">Production</h3>
+          <p class="process-desc">We manage the entire activation — briefing, travel logistics, content creation, and quality control.</p>
+        </div>
+        <div class="process-step reveal">
+          <span class="process-number">04</span>
+          <h3 class="process-title">Amplification</h3>
+          <p class="process-desc">Content goes live across channels. We track performance, optimise delivery, and report on commercial outcomes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offerings Section -->
+  <section class="offering-section">
+    <div class="container">
+      <h2 class="reveal" style="text-align: center;">What's included</h2>
+
+      <div class="offering-grid">
+        <div class="offering-item reveal">
+          <h3>Creator Selection</h3>
+          <p>Hand-picked creators of colour matched to your brand, audience, and objectives.</p>
+          <ul>
+            <li>Audience demographic analysis</li>
+            <li>Engagement rate verification</li>
+            <li>Brand alignment assessment</li>
+            <li>Content style review</li>
+          </ul>
+        </div>
+
+        <div class="offering-item reveal">
+          <h3>Campaign Design</h3>
+          <p>Full creative strategy from concept to execution.</p>
+          <ul>
+            <li>Content pillars and themes</li>
+            <li>Platform-specific formats</li>
+            <li>Posting schedules</li>
+            <li>Hashtag and caption strategy</li>
+          </ul>
+        </div>
+
+        <div class="offering-item reveal">
+          <h3>Content Licensing</h3>
+          <p>Flexible usage rights for your ongoing marketing needs.</p>
+          <ul>
+            <li>Social media rights</li>
+            <li>Website and digital use</li>
+            <li>Paid media licensing</li>
+            <li>Extended and exclusive options</li>
+          </ul>
+        </div>
+
+        <div class="offering-item reveal">
+          <h3>Performance Reporting</h3>
+          <p>Full transparency on results that matter.</p>
+          <ul>
+            <li>Reach and impressions</li>
+            <li>Engagement metrics</li>
+            <li>Click-through tracking</li>
+            <li>Booking attribution</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Creator Showcase -->
+  <section class="creator-showcase">
+    <div class="container">
+      <h2 class="reveal">Our Collective</h2>
+      <p class="creator-showcase-intro reveal">A curated network of photographers, filmmakers, travel creators, and lifestyle influencers of colour — each selected for their craft, audience, and cultural perspective.</p>
+
+      <div class="showcase-grid" style="grid-template-columns: repeat(2, 1fr); max-width: 600px; margin: 0 auto;">
+        <a href="creators/nia-the-light.html" class="showcase-item reveal" style="text-decoration: none;">
+          <img src="assets/media_kit_images/nia_creator.jpg" alt="Nia The Light">
+          <div class="showcase-item-content">
+            <h4 class="showcase-item-name">Nia The Light</h4>
+            <span class="showcase-item-type">Content Creator & Influencer</span>
+          </div>
+        </a>
+        <a href="creators/klein-nettoh.html" class="showcase-item reveal" style="text-decoration: none;">
+          <img src="assets/klein_images/klein-profile-pic.jpeg" alt="Klein Nettoh">
+          <div class="showcase-item-content">
+            <h4 class="showcase-item-name">Klein Nettoh</h4>
+            <span class="showcase-item-type">Videographer & Photographer</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming Campaigns -->
+  <section class="upcoming-section">
+    <div class="container">
+      <h2 class="reveal" style="text-align: center;">Upcoming Campaigns</h2>
+      <p class="reveal" style="text-align: center; color: var(--color-warm-grey); max-width: 600px; margin: var(--space-md) auto 0;">Live campaigns currently in production with our creator collective.</p>
+
+      <div class="upcoming-grid">
+        <!-- Southern Africa 2026 -->
+        <div class="upcoming-card reveal">
+          <div class="upcoming-card-image">
+            <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&q=80" alt="Southern Africa">
+            <span class="upcoming-card-badge">Now Booking</span>
+          </div>
+          <div class="upcoming-card-content">
+            <p class="upcoming-card-dates">Dec 31, 2025 — Jan 18, 2026</p>
+            <h3 class="upcoming-card-title">Southern Africa</h3>
+            <p class="upcoming-card-subtitle">A 19-day luxury content campaign across Cape Town, Namibia, Johannesburg, Mozambique, and Botswana.</p>
+
+            <div class="upcoming-card-creators">
+              <h4>Creators</h4>
+              <div class="creator-row">
+                <a href="creators/nia-the-light.html" class="creator-mini" style="text-decoration: none;">
+                  <img src="assets/media_kit_images/nia_creator.jpg" alt="Nia The Light" class="creator-mini-img">
+                  <span class="creator-mini-name">Nia The Light</span>
+                </a>
+                <a href="creators/klein-nettoh.html" class="creator-mini" style="text-decoration: none;">
+                  <img src="assets/klein_images/klein-profile-pic.jpeg" alt="Klein Nettoh" class="creator-mini-img">
+                  <span class="creator-mini-name">Klein Nettoh</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="upcoming-card-stats">
+              <div class="upcoming-stat">
+                <p class="upcoming-stat-value">5</p>
+                <p class="upcoming-stat-label">Destinations</p>
+              </div>
+              <div class="upcoming-stat">
+                <p class="upcoming-stat-value">19</p>
+                <p class="upcoming-stat-label">Days</p>
+              </div>
+              <div class="upcoming-stat">
+                <p class="upcoming-stat-value">438K</p>
+                <p class="upcoming-stat-label">Reach</p>
+              </div>
+            </div>
+
+            <div class="upcoming-card-cta">
+              <a href="campaigns/southern-africa-2026.html">View Campaign</a>
+              <a href="contact.html">Partner With Us</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Zanzibar 2026 -->
+        <div class="upcoming-card reveal">
+          <div class="upcoming-card-image">
+            <img src="https://www.luxresorts.com/media/eyllk2q0/lmz_beach-view.jpg" alt="Zanzibar">
+            <span class="upcoming-card-badge">Now Booking</span>
+          </div>
+          <div class="upcoming-card-content">
+            <p class="upcoming-card-dates">Feb 11 — Feb 16, 2026</p>
+            <h3 class="upcoming-card-title">Zanzibar</h3>
+            <p class="upcoming-card-subtitle">A 6-day luxury content partnership capturing ocean luxury, Swahili heritage, and island tranquility across select properties.</p>
+
+            <div class="upcoming-card-creators">
+              <h4>Creators</h4>
+              <div class="creator-row">
+                <a href="creators/nia-the-light.html" class="creator-mini" style="text-decoration: none;">
+                  <img src="assets/media_kit_images/nia_creator.jpg" alt="Nia The Light" class="creator-mini-img">
+                  <span class="creator-mini-name">Nia The Light</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="upcoming-card-stats">
+              <div class="upcoming-stat">
+                <p class="upcoming-stat-value">1</p>
+                <p class="upcoming-stat-label">Destination</p>
+              </div>
+              <div class="upcoming-stat">
+                <p class="upcoming-stat-value">6</p>
+                <p class="upcoming-stat-label">Days</p>
+              </div>
+              <div class="upcoming-stat">
+                <p class="upcoming-stat-value">438K</p>
+                <p class="upcoming-stat-label">Reach</p>
+              </div>
+            </div>
+
+            <div class="upcoming-card-cta">
+              <a href="campaigns/zanzibar-2026.html">View Campaign</a>
+              <a href="contact.html">Partner With Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-large" style="background-color: var(--color-charcoal); color: var(--color-white); text-align: center;">
+    <div class="container">
+      <h2 class="reveal" style="color: var(--color-white);">Ready to launch a campaign?</h2>
+      <p class="reveal" style="color: rgba(255,255,255,0.6); margin: var(--space-md) auto var(--space-lg); max-width: 500px;">
+        Tell us about your property and objectives. We'll recommend the right creators and approach.
+      </p>
+      <a href="contact.html" class="btn reveal">Get in touch</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo"><img src="assets/logo.svg" alt="Nubeaux"></a>
+          <p>Connecting Africa's luxury hospitality with creators and creatives of colour. Authentic representation. Commercial results.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Navigation</h4>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="work.html">Work</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Services</h4>
+          <div class="footer-links">
+            <a href="services/content-production.html">Content & Production</a>
+            <a href="campaigns.html">Influencer Campaigns</a>
+            <a href="services/brand-digital.html">Brand & Digital</a>
+            <a href="join.html">Join the Collective</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Connect</h4>
+          <div class="footer-links">
+            <a href="mailto:hello@nubeauxcollective.com">hello@nubeauxcollective.com</a>
+            <a href="#">London</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 NUBEAUX Collective. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">Vimeo</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
