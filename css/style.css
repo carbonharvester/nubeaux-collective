@@ -1330,6 +1330,14 @@ p {
     flex-wrap: wrap;
     gap: var(--space-md);
   }
+
+  /* Hero image scaling on mobile */
+  .hero-media img,
+  .hero-media video {
+    object-fit: contain;
+    object-position: center;
+    background-color: var(--color-charcoal);
+  }
 }
 
 /* ----- Mobile Menu ----- */
