@@ -655,6 +655,56 @@
         padding: 0.875rem 1.25rem;
       }
     }
+
+    /* Video Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.95);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity var(--transition-medium), visibility var(--transition-medium);
+    }
+
+    .lightbox.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: var(--space-lg);
+      right: var(--space-lg);
+      width: 48px;
+      height: 48px;
+      background: none;
+      border: none;
+      color: var(--color-white);
+      cursor: pointer;
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-content {
+      max-width: 90vw;
+      max-height: 90vh;
+    }
+
+    .lightbox-content img {
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+
+    .gallery-item {
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -876,59 +926,27 @@
     <div class="destinations-scroll">
       <div class="destination-card reveal">
         <img src="../assets/media_kit_images/dest_kenya.jpg" alt="Kenya">
-        <div class="destination-card-content">
-          <h4>Kenya</h4>
-          <span>Lamu Island</span>
-        </div>
       </div>
       <div class="destination-card reveal">
         <img src="../assets/media_kit_images/dest_zanzibar.jpg" alt="Zanzibar">
-        <div class="destination-card-content">
-          <h4>Zanzibar</h4>
-          <span>Tanzania</span>
-        </div>
       </div>
       <div class="destination-card reveal">
         <img src="../assets/media_kit_images/dest_senegal.jpg" alt="Senegal">
-        <div class="destination-card-content">
-          <h4>Senegal</h4>
-          <span>Heritage</span>
-        </div>
       </div>
       <div class="destination-card reveal">
         <img src="../assets/media_kit_images/dest_morocco.jpg" alt="Morocco">
-        <div class="destination-card-content">
-          <h4>Morocco</h4>
-          <span>Marrakech</span>
-        </div>
       </div>
       <div class="destination-card reveal">
         <img src="../assets/media_kit_images/dest_aruba.jpg" alt="Aruba">
-        <div class="destination-card-content">
-          <h4>Aruba</h4>
-          <span>Caribbean</span>
-        </div>
       </div>
       <div class="destination-card reveal">
         <img src="../assets/media_kit_images/dest_antigua_portrait.jpg" alt="Antigua">
-        <div class="destination-card-content">
-          <h4>Antigua</h4>
-          <span>Caribbean</span>
-        </div>
       </div>
       <div class="destination-card reveal">
         <img src="../assets/media_kit_images/dest_bali.jpg" alt="Bali">
-        <div class="destination-card-content">
-          <h4>Bali</h4>
-          <span>Wellness</span>
-        </div>
       </div>
       <div class="destination-card reveal">
         <img src="../assets/media_kit_images/dest_brazil.jpg" alt="Brazil">
-        <div class="destination-card-content">
-          <h4>Brazil</h4>
-          <span>Rio de Janeiro</span>
-        </div>
       </div>
     </div>
   </section>
@@ -1071,6 +1089,14 @@
     </div>
   </footer>
 
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="Featured content">
+    </div>
+  </div>
+
   <!-- Sticky CTA -->
   <a href="../contact.html" class="sticky-cta" id="stickyCta">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
@@ -1137,6 +1163,39 @@
 
     const statsBand = document.querySelector('.stats-band');
     if (statsBand) statsObserver.observe(statsBand);
+
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    galleryItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const img = item.querySelector('img');
+        lightboxImg.src = img.src;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Close on background click
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeLightbox();
+      }
+    });
   </script>
 </body>
 </html>
