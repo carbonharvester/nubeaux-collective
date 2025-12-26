@@ -122,6 +122,7 @@
     .creator-card-image {
       aspect-ratio: 4/5;
       overflow: hidden;
+      position: relative;
     }
 
     .creator-card-image img {
@@ -135,6 +136,29 @@
     .creator-card:hover .creator-card-image img {
       filter: grayscale(0%);
       transform: scale(1.03);
+    }
+
+    .creator-card-image .creator-card-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: var(--space-md);
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+      color: white;
+    }
+
+    .creator-card-image .creator-card-overlay h4 {
+      font-size: 1.25rem;
+      font-family: var(--font-serif);
+      margin-bottom: 0.125rem;
+    }
+
+    .creator-card-image .creator-card-overlay p {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.8;
     }
 
     .creator-card-content {
@@ -393,9 +417,13 @@
     </div>
 
     <div class="creators-grid">
-      <a href="creators/nia-the-light.html" class="creator-card reveal">
+      <a href="creators/nia-the-light.html" class="creator-card creator-card-featured reveal">
         <div class="creator-card-image">
           <img src="assets/media_kit_images/nia_creator.jpg" alt="Nia The Light">
+          <div class="creator-card-overlay">
+            <h4>Nia The Light</h4>
+            <p>Content Creator & Influencer</p>
+          </div>
         </div>
         <div class="creator-card-content">
           <h3 class="creator-card-name">Nia The Light</h3>
@@ -404,9 +432,13 @@
         </div>
       </a>
 
-      <a href="creators/klein-nettoh.html" class="creator-card reveal">
+      <a href="creators/klein-nettoh.html" class="creator-card creator-card-featured reveal">
         <div class="creator-card-image">
           <img src="assets/klein_images/klein-profile-pic.jpeg" alt="Klein Nettoh">
+          <div class="creator-card-overlay">
+            <h4>Klein Nettoh</h4>
+            <p>Videographer & Photographer</p>
+          </div>
         </div>
         <div class="creator-card-content">
           <h3 class="creator-card-name">Klein Nettoh</h3>
@@ -513,7 +545,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2024 NUBEAUX Collective. All rights reserved.</p>
+        <p>&copy; 2025 NUBEAUX Collective. All rights reserved.</p>
         <div class="footer-social">
           <a href="#">Instagram</a>
           <a href="#">LinkedIn</a>

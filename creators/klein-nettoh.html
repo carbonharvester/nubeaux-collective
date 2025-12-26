@@ -469,6 +469,9 @@
 
     .campaign-card-content {
       padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      min-height: 200px;
     }
 
     .campaign-card-dates {
@@ -488,7 +491,7 @@
       font-size: 0.875rem;
       color: var(--color-warm-grey);
       line-height: 1.6;
-      margin-bottom: var(--space-md);
+      flex-grow: 1;
     }
 
     .campaign-card-link {
@@ -497,6 +500,8 @@
       text-transform: uppercase;
       color: var(--color-charcoal);
       text-decoration: none;
+      margin-top: var(--space-md);
+      align-self: flex-start;
       border-bottom: 1px solid var(--color-charcoal);
       padding-bottom: 2px;
       transition: all var(--transition-fast);
@@ -1052,7 +1057,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2024 NUBEAUX Collective. All rights reserved.</p>
+        <p>&copy; 2025 NUBEAUX Collective. All rights reserved.</p>
         <div class="footer-social">
           <a href="#">Instagram</a>
           <a href="#">LinkedIn</a>

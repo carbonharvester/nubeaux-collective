@@ -412,7 +412,6 @@ p {
   grid-template-columns: repeat(4, 1fr);
   gap: 1px;
   background-color: var(--color-warm-grey);
-  margin: var(--space-xl) 0;
 }
 
 .service-card {
@@ -911,6 +910,15 @@ p {
   color: var(--color-warm-grey);
 }
 
+/* Leadership grid - 2 columns for founders on desktop */
+.leadership-grid {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 900px;
+  margin-top: var(--space-xl);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* ----- Work Page ----- */
 .work-hero {
   padding-top: calc(var(--header-height) + var(--space-xl));
@@ -1258,10 +1266,30 @@ p {
     grid-template-columns: 1fr;
   }
 
+  /* Leadership grid stays 2 columns on mobile but with better spacing */
+  .leadership-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+  }
+
+  .leadership-grid .team-member {
+    padding: 0;
+  }
+
+  .leadership-grid .team-image {
+    aspect-ratio: 3/4;
+    margin-bottom: var(--space-sm);
+  }
+
   /* Leadership names on one line */
-  .team-name {
-    font-size: 1.125rem;
+  .leadership-grid .team-name {
+    font-size: 0.9375rem;
     white-space: nowrap;
+  }
+
+  .leadership-grid .team-role {
+    font-size: 0.5625rem;
+    line-height: 1.4;
   }
 
   .contact-content {
