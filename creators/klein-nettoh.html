@@ -1089,50 +1089,6 @@
       lastScroll = currentScroll;
     });
 
-    // Animated Stats Counter
-    const animateStats = () => {
-      const stats = document.querySelectorAll('.stat-value');
-
-      stats.forEach(stat => {
-        const text = stat.textContent;
-        const hasK = text.includes('K');
-        const hasM = text.includes('M');
-        const hasPlus = text.includes('+');
-
-        let num = parseFloat(text.replace(/[K,M,+]/g, ''));
-        const duration = 2000;
-        const steps = 60;
-        const increment = num / steps;
-        let current = 0;
-
-        const timer = setInterval(() => {
-          current += increment;
-          if (current >= num) {
-            stat.textContent = text;
-            clearInterval(timer);
-          } else {
-            let display = current.toFixed(hasM || hasK ? 1 : 0);
-            if (hasK) display += 'K';
-            if (hasM) display += 'M';
-            if (hasPlus) display += '+';
-            stat.textContent = display;
-          }
-        }, duration / steps);
-      });
-    };
-
-    // Trigger animation when stats band is visible
-    const statsObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateStats();
-          statsObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-
-    const statsBand = document.querySelector('.stats-band');
-    if (statsBand) statsObserver.observe(statsBand);
   </script>
 </body>
 </html>
