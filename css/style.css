@@ -213,7 +213,7 @@ p {
   color: var(--color-white) !important;
   font-size: 0.8125rem;
   letter-spacing: 0.05em;
-  padding: 1.25rem 1.75rem;
+  padding: 1rem 1.5rem;
   margin-left: var(--space-md);
   border: 1px solid transparent;
   transition: all var(--transition-fast);
