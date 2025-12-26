@@ -605,6 +605,7 @@
       padding: var(--space-xl) 0;
       background-color: var(--color-white);
       border-bottom: 1px solid var(--color-ecru);
+      overflow: hidden;
     }
 
     .brands-header {
@@ -623,11 +624,24 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: var(--space-xl);
-      flex-wrap: wrap;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 var(--space-md);
+      gap: var(--space-2xl);
+      padding: 0 var(--space-xl);
+    }
+
+    @media (max-width: 768px) {
+      .brands-grid {
+        justify-content: flex-start;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        flex-wrap: nowrap;
+      }
+
+      .brands-grid::-webkit-scrollbar {
+        display: none;
+      }
     }
 
     .brand-logo {
@@ -647,13 +661,17 @@
     }
 
     .brand-logo-img {
-      height: 60px;
+      height: 40px;
       width: auto;
-      opacity: 0.6;
-      transition: opacity var(--transition-fast);
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      filter: grayscale(100%);
+      opacity: 0.7;
+      transition: all var(--transition-fast);
     }
 
     .brand-logo-img:hover {
+      filter: grayscale(0%);
       opacity: 1;
     }
 
@@ -1050,7 +1068,7 @@
       <h2 class="reveal" style="text-align: center;">Upcoming Campaigns</h2>
     </div>
 
-    <div class="campaigns-grid" style="max-width: 500px; margin: 0 auto;">
+    <div class="campaigns-grid" style="max-width: 600px; margin: 0 auto; grid-template-columns: 1fr;">
       <div class="campaign-card reveal">
         <div class="campaign-card-image">
           <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&q=80" alt="Southern Africa">
