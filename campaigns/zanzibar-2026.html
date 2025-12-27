@@ -455,25 +455,9 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      /* Mobile horizontal creator cards */
-      .creator-card {
-        display: flex;
-        align-items: center;
-        gap: var(--space-md);
-        padding: var(--space-md);
-        border: 1px solid var(--color-ecru);
-      }
-
-      .creator-card:hover {
-        transform: none;
-      }
-
+      /* Mobile creator cards - keep desktop style */
       .creator-card-image {
-        width: 70px;
-        height: 70px;
-        aspect-ratio: 1;
-        border-radius: 50%;
-        flex-shrink: 0;
+        aspect-ratio: 16/10;
       }
 
       .creator-card-image img {
@@ -481,18 +465,11 @@
       }
 
       .creator-card-info {
-        padding: 0;
-        flex: 1;
+        padding: var(--space-md);
       }
 
       .creator-card-info h3 {
-        font-size: 1.125rem;
-      }
-
-      .creator-card-arrow {
-        display: block;
-        width: 20px;
-        height: 20px;
+        font-size: 1.25rem;
       }
 
       .deliverables-section .deliverables-grid {
