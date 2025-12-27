@@ -14,6 +14,10 @@
   --color-bone: #faf8f5;
   --color-white: #ffffff;
 
+  /* African Luxury Accent Colors */
+  --color-terracotta: #c2703e;
+  --color-gold: #b8953f;
+
   /* Typography */
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -209,7 +213,7 @@ p {
 }
 
 .nav a.nav-cta {
-  background-color: var(--color-charcoal);
+  background-color: var(--color-terracotta);
   color: var(--color-white) !important;
   font-size: 0.8125rem;
   letter-spacing: 0.05em;
@@ -224,7 +228,9 @@ p {
 }
 
 .nav a.nav-cta:hover {
-  opacity: 0.9;
+  background-color: var(--color-terracotta);
+  border-color: var(--color-terracotta);
+  opacity: 0.7;
 }
 
 /* Nav Dropdown */
@@ -399,15 +405,16 @@ p {
 }
 
 .btn-dark {
-  background-color: var(--color-charcoal);
+  background-color: var(--color-terracotta);
   color: var(--color-white);
-  border-color: var(--color-charcoal);
+  border-color: var(--color-terracotta);
 }
 
 .btn-dark:hover {
-  background-color: var(--color-black);
-  border-color: var(--color-black);
+  background-color: var(--color-terracotta);
+  border-color: var(--color-terracotta);
   color: var(--color-white);
+  opacity: 0.7;
 }
 
 /* ----- Intro Block ----- */
@@ -427,6 +434,7 @@ p {
 .intro-text em {
   font-family: var(--font-serif);
   font-style: italic;
+  color: var(--color-terracotta);
 }
 
 /* ----- Service Pillars ----- */
@@ -451,7 +459,7 @@ p {
 .service-number {
   font-size: 0.75rem;
   letter-spacing: 0.2em;
-  color: var(--color-warm-grey);
+  color: var(--color-terracotta);
   margin-bottom: var(--space-md);
 }
 
@@ -556,7 +564,7 @@ p {
   font-size: 0.625rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.6);
+  color: var(--color-gold);
   margin-bottom: var(--space-xs);
 }
 
@@ -703,7 +711,7 @@ p {
   font-size: 0.625rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-warm-grey);
+  color: var(--color-terracotta);
   margin-bottom: var(--space-xs);
 }
 
@@ -813,7 +821,7 @@ p {
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-warm-grey);
+  color: var(--color-terracotta);
   margin-bottom: var(--space-md);
 }
 
@@ -879,7 +887,7 @@ p {
 .value-number {
   font-size: 0.625rem;
   letter-spacing: 0.2em;
-  color: rgba(255,255,255,0.3);
+  color: var(--color-gold);
   margin-bottom: var(--space-md);
 }
 
@@ -1044,7 +1052,7 @@ p {
   font-size: 0.625rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-warm-grey);
+  color: var(--color-terracotta);
   margin-bottom: var(--space-xs);
 }
 
@@ -1472,7 +1480,7 @@ p {
   font-size: 0.625rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-warm-grey);
+  color: var(--color-terracotta);
   margin-bottom: var(--space-md);
 }
 

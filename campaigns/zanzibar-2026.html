@@ -119,7 +119,7 @@
     .stat-value {
       font-family: var(--font-serif);
       font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--color-white);
+      color: var(--color-gold);
       line-height: 1.1;
     }
 
@@ -298,7 +298,7 @@
       font-size: 0.75rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--color-warm-grey);
+      color: var(--color-terracotta);
       margin-bottom: var(--space-sm);
     }
 
@@ -494,6 +494,45 @@
         width: 20px;
         height: 20px;
       }
+
+      .deliverables-section .deliverables-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    /* Deliverables Grid */
+    .deliverables-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background-color: var(--color-ecru);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .deliverable-card {
+      background-color: var(--color-white);
+      padding: var(--space-xl);
+      text-align: center;
+    }
+
+    .deliverable-label {
+      font-size: 0.625rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-terracotta);
+      margin-bottom: var(--space-sm);
+    }
+
+    .deliverable-title {
+      font-size: 1.25rem;
+      margin-bottom: var(--space-md);
+    }
+
+    .deliverable-desc {
+      font-size: 0.875rem;
+      color: var(--color-warm-grey);
+      line-height: 1.7;
     }
   </style>
 </head>
@@ -626,6 +665,34 @@
           </ul>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Deliverables Section -->
+  <section class="deliverables-section" style="padding: var(--space-2xl) 0; background-color: var(--color-white);">
+    <div class="container">
+      <h2 class="reveal" style="text-align: center; margin-bottom: var(--space-sm);">Partner Deliverables</h2>
+      <p class="reveal" style="text-align: center; color: var(--color-warm-grey); max-width: 700px; margin: 0 auto var(--space-xl);">For participating properties, each partnership typically includes the following. Bespoke deliverables can be agreed based on your specific requirements.</p>
+
+      <div class="deliverables-grid">
+        <div class="deliverable-card reveal">
+          <p class="deliverable-label">Content</p>
+          <h3 class="deliverable-title">Dedicated Reel</h3>
+          <p class="deliverable-desc">One in-feed Instagram Reel featuring your property, professionally edited with music and captions.</p>
+        </div>
+        <div class="deliverable-card reveal">
+          <p class="deliverable-label">Coverage</p>
+          <h3 class="deliverable-title">Story Series</h3>
+          <p class="deliverable-desc">Authentic story coverage throughout the stay, capturing arrival, experiences, dining, and atmosphere.</p>
+        </div>
+        <div class="deliverable-card reveal">
+          <p class="deliverable-label">Rights</p>
+          <h3 class="deliverable-title">Usage in Perpetuity</h3>
+          <p class="deliverable-desc">Full usage rights for agreed assets, allowing you to repurpose content across your own marketing channels.</p>
+        </div>
+      </div>
+
+      <p class="reveal" style="text-align: center; font-family: var(--font-serif); font-style: italic; color: var(--color-warm-grey); margin-top: var(--space-xl); max-width: 600px; margin-left: auto; margin-right: auto;">Additional deliverables such as static posts, extended video content, or photography packages can be arranged.</p>
     </div>
   </section>
 
