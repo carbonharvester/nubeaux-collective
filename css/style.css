@@ -404,13 +404,13 @@ p {
   color: var(--color-charcoal);
 }
 
-.btn-dark {
+.btn.btn-dark {
   background-color: var(--color-terracotta);
   color: var(--color-white);
   border-color: var(--color-terracotta);
 }
 
-.btn-dark:hover {
+.btn.btn-dark:hover {
   background-color: var(--color-terracotta);
   border-color: var(--color-terracotta);
   color: var(--color-white);
