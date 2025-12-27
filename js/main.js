@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initScrollReveal();
   initSmoothScroll();
+  initLightbox();
 });
 
 /* ----- Header Scroll Effect ----- */
@@ -161,4 +162,106 @@ if (document.querySelector('.work-filter')) {
 
 if (document.querySelector('.contact-form')) {
   initContactForm();
+}
+
+/* ----- Lightbox Gallery ----- */
+function initLightbox() {
+  // Select gallery images from portfolio and recent work sections
+  const galleryImages = document.querySelectorAll('.destination-card img, .gallery-item img');
+
+  if (!galleryImages.length) return;
+
+  // Create lightbox elements
+  const lightbox = document.createElement('div');
+  lightbox.className = 'lightbox';
+  lightbox.innerHTML = `
+    <div class="lightbox-overlay"></div>
+    <div class="lightbox-container">
+      <button class="lightbox-close" aria-label="Close">&times;</button>
+      <button class="lightbox-prev" aria-label="Previous">&#10094;</button>
+      <button class="lightbox-next" aria-label="Next">&#10095;</button>
+      <div class="lightbox-content">
+        <img src="" alt="Gallery image">
+      </div>
+      <div class="lightbox-counter"></div>
+    </div>
+  `;
+  document.body.appendChild(lightbox);
+
+  const overlay = lightbox.querySelector('.lightbox-overlay');
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+  const prevBtn = lightbox.querySelector('.lightbox-prev');
+  const nextBtn = lightbox.querySelector('.lightbox-next');
+  const lightboxImg = lightbox.querySelector('.lightbox-content img');
+  const counter = lightbox.querySelector('.lightbox-counter');
+
+  let currentImages = [];
+  let currentIndex = 0;
+
+  // Make images clickable
+  galleryImages.forEach((img, index) => {
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      // Get all images in the same gallery section
+      const parent = img.closest('.destinations-scroll, .gallery-grid');
+      if (parent) {
+        currentImages = Array.from(parent.querySelectorAll('img'));
+        currentIndex = currentImages.indexOf(img);
+      } else {
+        currentImages = [img];
+        currentIndex = 0;
+      }
+
+      openLightbox();
+    });
+  });
+
+  function openLightbox() {
+    updateLightboxImage();
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function updateLightboxImage() {
+    const img = currentImages[currentIndex];
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt || 'Gallery image';
+    counter.textContent = `${currentIndex + 1} / ${currentImages.length}`;
+
+    // Hide nav buttons if only one image
+    prevBtn.style.display = currentImages.length > 1 ? '' : 'none';
+    nextBtn.style.display = currentImages.length > 1 ? '' : 'none';
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % currentImages.length;
+    updateLightboxImage();
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+    updateLightboxImage();
+  }
+
+  // Event listeners
+  closeBtn.addEventListener('click', closeLightbox);
+  overlay.addEventListener('click', closeLightbox);
+  nextBtn.addEventListener('click', nextImage);
+  prevBtn.addEventListener('click', prevImage);
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('active')) return;
+
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') nextImage();
+    if (e.key === 'ArrowLeft') prevImage();
+  });
 }
