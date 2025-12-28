@@ -1,0 +1,9 @@
+# NUBEAUX Collective Instagram Automation
+# Install with: pip install -r requirements.txt
+
+# API Clients
+anthropic>=0.18.0      # Claude API for content analysis
+apify-client>=1.6.0    # Instagram scraping
+
+# Utilities (optional)
+python-dotenv>=1.0.0   # Environment variable management
