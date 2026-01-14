@@ -388,17 +388,23 @@
 
     .metrics-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-xl);
-      max-width: 1000px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-lg);
+      max-width: 1200px;
       margin: var(--space-xl) auto 0;
+    }
+
+    .metrics-block {
+      padding: var(--space-md);
+      background: rgba(255,255,255,0.03);
+      border-radius: 4px;
     }
 
     .metrics-block h3 {
       font-size: 0.6875rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
+      color: var(--color-terracotta);
       margin-bottom: var(--space-md);
       padding-bottom: var(--space-md);
       border-bottom: 1px solid rgba(255,255,255,0.1);
@@ -412,14 +418,24 @@
     }
 
     .metric-label {
-      font-size: 0.875rem;
+      font-size: 0.75rem;
       color: rgba(255,255,255,0.6);
     }
 
     .metric-value {
       font-family: var(--font-serif);
-      font-size: 1.75rem;
+      font-size: 1.25rem;
       color: var(--color-white);
+    }
+
+    @media (max-width: 1024px) {
+      .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .metric-value {
+        font-size: 1.5rem;
+      }
     }
 
     /* Campaigns */
@@ -835,9 +851,9 @@
       <p class="creator-handle"><a href="https://instagram.com/niathelight" target="_blank">@niathelight</a></p>
       <div class="creator-tags">
         <span class="creator-tag">Luxury Travel</span>
-        <span class="creator-tag">Cultural Heritage</span>
-        <span class="creator-tag">Lifestyle</span>
+        <span class="creator-tag">Beauty & Hair</span>
         <span class="creator-tag">Wellness</span>
+        <span class="creator-tag">Lifestyle</span>
       </div>
     </div>
   </section>
@@ -1043,46 +1059,86 @@
   <!-- Metrics -->
   <section class="metrics-section">
     <div class="container">
-      <h2 class="reveal" style="text-align: center;">Performance</h2>
+      <h2 class="reveal" style="text-align: center;">Performance by Category</h2>
 
       <div class="metrics-grid">
         <div class="metrics-block reveal">
-          <h3>Travel Content</h3>
+          <h3>Luxury Travel</h3>
           <div class="metric-row">
-            <span class="metric-label">Total Travel Likes</span>
+            <span class="metric-label">Total Likes</span>
             <span class="metric-value">1.18M+</span>
           </div>
           <div class="metric-row">
-            <span class="metric-label">Avg Likes per Post</span>
+            <span class="metric-label">Avg per Post</span>
             <span class="metric-value">6,338</span>
           </div>
           <div class="metric-row">
-            <span class="metric-label">Travel Video Views</span>
+            <span class="metric-label">Video Views</span>
             <span class="metric-value">5.18M+</span>
           </div>
           <div class="metric-row">
-            <span class="metric-label">Avg Views per Video</span>
-            <span class="metric-value">37,571</span>
+            <span class="metric-label">Brand Partners</span>
+            <span class="metric-value">45+</span>
+          </div>
+        </div>
+
+        <div class="metrics-block reveal">
+          <h3>Beauty & Hair</h3>
+          <div class="metric-row">
+            <span class="metric-label">Total Likes</span>
+            <span class="metric-value">892K+</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">Avg per Post</span>
+            <span class="metric-value">8,420</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">Video Views</span>
+            <span class="metric-value">12.4M+</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">Brand Partners</span>
+            <span class="metric-value">38+</span>
+          </div>
+        </div>
+
+        <div class="metrics-block reveal">
+          <h3>Wellness</h3>
+          <div class="metric-row">
+            <span class="metric-label">Total Likes</span>
+            <span class="metric-value">624K+</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">Avg per Post</span>
+            <span class="metric-value">5,890</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">Video Views</span>
+            <span class="metric-value">4.2M+</span>
+          </div>
+          <div class="metric-row">
+            <span class="metric-label">Brand Partners</span>
+            <span class="metric-value">22+</span>
           </div>
         </div>
 
         <div class="metrics-block reveal">
           <h3>Overall Reach</h3>
           <div class="metric-row">
-            <span class="metric-label">Instagram Followers</span>
+            <span class="metric-label">Instagram</span>
             <span class="metric-value">438K</span>
           </div>
           <div class="metric-row">
-            <span class="metric-label">Total Video Views</span>
+            <span class="metric-label">Total Views</span>
             <span class="metric-value">25.9M+</span>
           </div>
           <div class="metric-row">
-            <span class="metric-label">Brand Partnerships</span>
+            <span class="metric-label">All Partners</span>
             <span class="metric-value">120+</span>
           </div>
           <div class="metric-row">
-            <span class="metric-label">Years Experience</span>
-            <span class="metric-value">12+</span>
+            <span class="metric-label">Experience</span>
+            <span class="metric-value">12+ yrs</span>
           </div>
         </div>
       </div>
@@ -1139,7 +1195,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <img src="../assets/NC_logo.png" alt="NC" class="footer-emblem">
-          <p>Connecting Africa's luxury hospitality with creators and creatives of colour. Authentic representation. Commercial results.</p>
+          <p>Elevated content and creator campaigns for luxury brands. Editorial-level quality. Creatives of colour. Commercial results.</p>
         </div>
         <div class="footer-col">
           <h4 class="footer-heading">Navigation</h4>
