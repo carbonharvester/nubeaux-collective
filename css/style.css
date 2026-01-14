@@ -606,12 +606,11 @@ p {
   position: relative;
   aspect-ratio: 1;
   overflow: hidden;
-  filter: grayscale(100%);
-  transition: filter var(--transition-medium);
+  transition: transform var(--transition-medium);
 }
 
 .creator-card:hover {
-  filter: grayscale(0%);
+  transform: scale(1.03);
 }
 
 .creator-card img {
@@ -626,7 +625,7 @@ p {
 }
 
 .creator-card-featured:hover {
-  filter: grayscale(0%);
+  transform: scale(1.02);
 }
 
 .creator-card-overlay {
@@ -922,12 +921,11 @@ p {
   aspect-ratio: 1;
   overflow: hidden;
   margin-bottom: var(--space-md);
-  filter: grayscale(100%);
-  transition: filter var(--transition-medium);
+  transition: transform var(--transition-medium);
 }
 
 .team-member:hover .team-image {
-  filter: grayscale(0%);
+  transform: scale(1.03);
 }
 
 .team-image img {
@@ -1716,5 +1714,318 @@ a.insight-card:hover .insight-title {
     top: 15px;
     right: 20px;
     font-size: 2rem;
+  }
+}
+
+/* ============================================
+   VIBRANT VISUAL ENHANCEMENTS
+   ============================================ */
+
+/* ----- Gradient Accent Colors ----- */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-terracotta) 0%, var(--color-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ----- Animated Hero Text ----- */
+.hero-headline .word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: wordFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-headline .word:nth-child(1) { animation-delay: 0.1s; }
+.hero-headline .word:nth-child(2) { animation-delay: 0.2s; }
+.hero-headline .word:nth-child(3) { animation-delay: 0.3s; }
+.hero-headline .word:nth-child(4) { animation-delay: 0.4s; }
+.hero-headline .word:nth-child(5) { animation-delay: 0.5s; }
+.hero-headline .word:nth-child(6) { animation-delay: 0.6s; }
+.hero-headline .word:nth-child(7) { animation-delay: 0.7s; }
+.hero-headline .word:nth-child(8) { animation-delay: 0.8s; }
+
+@keyframes wordFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ----- Vibrant Image Hover Effects ----- */
+.work-card:hover .work-card-image {
+  transform: scale(1.08);
+}
+
+.work-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(194, 112, 62, 0.3) 0%, rgba(184, 149, 63, 0.3) 100%);
+  opacity: 0;
+  transition: opacity var(--transition-medium);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.work-card:hover::before {
+  opacity: 1;
+}
+
+/* Vibrant overlay on insight images */
+.insight-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.insight-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(194, 112, 62, 0.2) 0%, rgba(184, 149, 63, 0.2) 100%);
+  opacity: 0;
+  transition: opacity var(--transition-medium);
+}
+
+.insight-card:hover .insight-image::after {
+  opacity: 1;
+}
+
+/* ----- Floating Background Elements ----- */
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.3;
+  z-index: 0;
+  animation: float 20s ease-in-out infinite;
+}
+
+.hero::before {
+  width: 600px;
+  height: 600px;
+  background: var(--color-terracotta);
+  top: -200px;
+  right: -200px;
+  animation-delay: 0s;
+}
+
+.hero::after {
+  width: 500px;
+  height: 500px;
+  background: var(--color-gold);
+  bottom: -150px;
+  left: -150px;
+  animation-delay: -10s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+  50% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+  75% {
+    transform: translate(20px, 10px) scale(1.05);
+  }
+}
+
+/* ----- Enhanced Custom Cursor ----- */
+@media (hover: hover) and (pointer: fine) {
+  .custom-cursor {
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(135deg, var(--color-terracotta) 0%, var(--color-gold) 100%);
+    mix-blend-mode: normal;
+    box-shadow: 0 0 20px rgba(194, 112, 62, 0.5);
+  }
+
+  .custom-cursor.hover {
+    transform: scale(3);
+    background: var(--color-gold);
+  }
+}
+
+/* ----- Vibrant Button Gradients ----- */
+.btn.btn-dark {
+  background: linear-gradient(135deg, var(--color-terracotta) 0%, #d4834f 100%);
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn.btn-dark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-terracotta) 100%);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.btn.btn-dark:hover {
+  opacity: 1;
+}
+
+.btn.btn-dark:hover::before {
+  opacity: 1;
+}
+
+.btn.btn-dark span {
+  position: relative;
+  z-index: 1;
+}
+
+/* ----- Scroll Progress Indicator ----- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-terracotta) 0%, var(--color-gold) 100%);
+  z-index: 10001;
+  transition: width 0.1s ease-out;
+}
+
+/* ----- Section Accent Lines ----- */
+.section-header::before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-terracotta) 0%, var(--color-gold) 100%);
+  margin-bottom: var(--space-md);
+}
+
+.section-header.center::before {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ----- Vibrant Stats & Numbers ----- */
+.service-number,
+.value-number {
+  background: linear-gradient(135deg, var(--color-terracotta) 0%, var(--color-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 500;
+}
+
+/* ----- Enhanced Card Hover States ----- */
+.service-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-terracotta) 0%, var(--color-gold) 100%);
+  transform: scaleX(0);
+  transition: transform var(--transition-medium);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* ----- Insight Category Pills ----- */
+.insight-category {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: linear-gradient(135deg, rgba(194, 112, 62, 0.15) 0%, rgba(184, 149, 63, 0.15) 100%);
+  border-radius: 20px;
+  margin-bottom: var(--space-sm);
+}
+
+/* ----- Animated Underlines ----- */
+.nav a:not(.nav-cta)::after {
+  background: linear-gradient(90deg, var(--color-terracotta) 0%, var(--color-gold) 100%);
+}
+
+/* ----- Page Hero Gradient Overlay ----- */
+.page-hero {
+  position: relative;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(194, 112, 62, 0.05) 0%, rgba(184, 149, 63, 0.1) 100%);
+  pointer-events: none;
+}
+
+/* ----- Footer Gradient Accent ----- */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-terracotta) 0%, var(--color-gold) 50%, var(--color-terracotta) 100%);
+}
+
+.footer {
+  position: relative;
+}
+
+/* ----- Subtle Background Texture ----- */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.02;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ----- Parallax Effect on Scroll ----- */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-media img {
+    transition: transform 0.1s ease-out;
+  }
+}
+
+/* ----- Link Hover Glow ----- */
+.footer-links a:hover {
+  color: var(--color-gold);
+  text-shadow: 0 0 20px rgba(184, 149, 63, 0.3);
+}
+
+/* ----- Mobile Vibrant Enhancements ----- */
+@media (max-width: 768px) {
+  .hero::before,
+  .hero::after {
+    width: 300px;
+    height: 300px;
+  }
+
+  .hero::before {
+    top: -100px;
+    right: -100px;
+  }
+
+  .hero::after {
+    bottom: -100px;
+    left: -100px;
   }
 }

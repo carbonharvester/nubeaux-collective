@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initSmoothScroll();
   initLightbox();
+  initScrollProgress();
+  initAnimatedHeroText();
+  initCustomCursor();
 });
 
 /* ----- Header Scroll Effect ----- */
@@ -162,6 +165,89 @@ if (document.querySelector('.work-filter')) {
 
 if (document.querySelector('.contact-form')) {
   initContactForm();
+}
+
+/* ----- Scroll Progress Indicator ----- */
+function initScrollProgress() {
+  // Create progress bar
+  const progressBar = document.createElement('div');
+  progressBar.className = 'scroll-progress';
+  document.body.appendChild(progressBar);
+
+  window.addEventListener('scroll', () => {
+    const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrolled = (window.scrollY / windowHeight) * 100;
+    progressBar.style.width = scrolled + '%';
+  }, { passive: true });
+}
+
+/* ----- Animated Hero Text ----- */
+function initAnimatedHeroText() {
+  const headline = document.querySelector('.hero-headline');
+  if (!headline) return;
+
+  // Get the HTML content and handle line breaks
+  const html = headline.innerHTML;
+
+  // Split by <br> tags first
+  const lines = html.split(/<br\s*\/?>/i);
+
+  let wordIndex = 0;
+  const wrappedLines = lines.map(line => {
+    // Split each line into words
+    const words = line.trim().split(/\s+/);
+    const wrappedWords = words.map(word => {
+      if (word.trim()) {
+        wordIndex++;
+        return `<span class="word" style="animation-delay: ${wordIndex * 0.1}s">${word}</span>`;
+      }
+      return word;
+    });
+    return wrappedWords.join(' ');
+  });
+
+  // Rejoin with <br>
+  headline.innerHTML = wrappedLines.join('<br>');
+
+  // Remove the default animation from headline
+  headline.style.opacity = '1';
+  headline.style.transform = 'none';
+  headline.style.animation = 'none';
+}
+
+/* ----- Custom Cursor ----- */
+function initCustomCursor() {
+  // Only on devices with hover capability
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+  const cursor = document.createElement('div');
+  cursor.className = 'custom-cursor';
+  document.body.appendChild(cursor);
+
+  let mouseX = 0, mouseY = 0;
+  let cursorX = 0, cursorY = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  // Smooth cursor follow
+  function animateCursor() {
+    cursorX += (mouseX - cursorX) * 0.15;
+    cursorY += (mouseY - cursorY) * 0.15;
+    cursor.style.left = cursorX + 'px';
+    cursor.style.top = cursorY + 'px';
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+
+  // Hover effect on interactive elements
+  const hoverElements = document.querySelectorAll('a, button, .work-card, .insight-card, .creator-card');
+  hoverElements.forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+  });
 }
 
 /* ----- Lightbox Gallery ----- */
