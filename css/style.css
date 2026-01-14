@@ -1895,20 +1895,6 @@ a.insight-card:hover .insight-title {
   transition: width 0.1s ease-out;
 }
 
-/* ----- Section Accent Lines ----- */
-.section-header::before {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-terracotta) 0%, var(--color-gold) 100%);
-  margin-bottom: var(--space-md);
-}
-
-.section-header.center::before {
-  margin-left: auto;
-  margin-right: auto;
-}
 
 /* ----- Vibrant Stats & Numbers ----- */
 .service-number,
