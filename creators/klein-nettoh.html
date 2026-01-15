@@ -261,13 +261,24 @@
       opacity: 1;
     }
 
-    .gallery-stats {
+    .gallery-info {
       color: var(--color-white);
-      font-size: 0.8125rem;
     }
 
-    .gallery-stats span {
-      margin-right: var(--space-md);
+    .gallery-info .project-name {
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+
+    .gallery-info .work-type {
+      font-size: 0.6875rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      display: block;
     }
 
     .play-icon {
@@ -871,21 +882,21 @@ opacity: 1;
     </div>
   </section>
 
-  <!-- Content Gallery -->
+  <!-- Cinematography Gallery -->
   <section class="gallery-section">
     <div class="gallery-header reveal">
-      <h2>Featured Content</h2>
-      <p>Cinematic wildlife and safari content showcasing Africa's natural beauty.</p>
+      <h2>Cinematography</h2>
+      <p>Cinematic wildlife and hospitality films showcasing Africa's natural beauty.</p>
     </div>
 
     <div class="gallery-grid">
-      <div class="gallery-item reveal" data-video="../assets/klein_images/oolorien_house.mp4">
-        <img src="../assets/klein_images/oolorien_house.jpg" alt="Oolorien House">
+      <div class="gallery-item reveal" data-video="../assets/klein_images/sasaab.mp4">
+        <img src="../assets/klein_images/sasaab.jpg" alt="Sasaab Lodge">
         <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         <div class="gallery-overlay">
-          <div class="gallery-stats">
-            <span>527K views</span>
-            <span>7.6K likes</span>
+          <div class="gallery-info">
+            <span class="project-name">Sasaab Lodge</span>
+            <span class="work-type">Property Film</span>
           </div>
         </div>
       </div>
@@ -894,31 +905,31 @@ opacity: 1;
         <img src="../assets/klein_images/kenya_254.jpg" alt="Kenya +254">
         <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         <div class="gallery-overlay">
-          <div class="gallery-stats">
-            <span>322K views</span>
-            <span>22.5K likes</span>
+          <div class="gallery-info">
+            <span class="project-name">Kenya +254</span>
+            <span class="work-type">Destination Film</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-video="../assets/klein_images/oolorien_house.mp4">
+        <img src="../assets/klein_images/oolorien_house.jpg" alt="Oolorien Camp">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-info">
+            <span class="project-name">Oolorien Camp</span>
+            <span class="work-type">Property Film</span>
           </div>
         </div>
       </div>
 
       <div class="gallery-item reveal" data-video="../assets/klein_images/dream_away.mp4">
-        <img src="../assets/klein_images/dream_away.jpg" alt="Dream Away Kenya">
+        <img src="../assets/klein_images/dream_away.jpg" alt="Dream Away">
         <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         <div class="gallery-overlay">
-          <div class="gallery-stats">
-            <span>153K views</span>
-            <span>9K likes</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="gallery-item reveal" data-video="../assets/klein_images/sasaab.mp4">
-        <img src="../assets/klein_images/sasaab.jpg" alt="Sasaab Lodge">
-        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        <div class="gallery-overlay">
-          <div class="gallery-stats">
-            <span>55K views</span>
-            <span>3.5K likes</span>
+          <div class="gallery-info">
+            <span class="project-name">Dream Away</span>
+            <span class="work-type">Destination Film</span>
           </div>
         </div>
       </div>
@@ -927,20 +938,20 @@ opacity: 1;
         <img src="../assets/klein_images/turkana.jpg" alt="Lake Turkana">
         <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         <div class="gallery-overlay">
-          <div class="gallery-stats">
-            <span>79K views</span>
-            <span>4.6K likes</span>
+          <div class="gallery-info">
+            <span class="project-name">Lake Turkana</span>
+            <span class="work-type">Documentary</span>
           </div>
         </div>
       </div>
 
       <div class="gallery-item reveal" data-video="../assets/klein_images/karibuni.mp4">
-        <img src="../assets/klein_images/maasai_mara.jpg" alt="Karibuni Kenya">
+        <img src="../assets/klein_images/karibuni.jpg" alt="Karibuni Kenya">
         <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         <div class="gallery-overlay">
-          <div class="gallery-stats">
-            <span>45K views</span>
-            <span>3.2K likes</span>
+          <div class="gallery-info">
+            <span class="project-name">Karibuni Kenya</span>
+            <span class="work-type">Destination Film</span>
           </div>
         </div>
       </div>
@@ -969,100 +980,102 @@ opacity: 1;
     </div>
   </section>
 
-  <!-- Destinations -->
-  <section class="destinations-section">
-    <div class="container">
-      <h2 class="reveal" style="text-align: center;">Portfolio</h2>
-      <p class="reveal" style="text-align: center; color: var(--color-warm-grey); margin-top: var(--space-sm); max-width: 100%;">Proven performance across Kenya's premier safari destinations.</p>
+  <!-- Photography Portfolio -->
+  <section class="gallery-section" style="background-color: var(--color-white);">
+    <div class="gallery-header reveal">
+      <h2>Photography</h2>
+      <p>Luxury hospitality and safari photography across East Africa.</p>
     </div>
 
-    <div class="destinations-scroll">
-      <div class="destination-card reveal">
-        <img src="../assets/klein_images/portfolio/Hemingways WTM klein-8.jpg" alt="Hemingways">
+    <div class="gallery-grid">
+      <div class="gallery-item reveal">
+        <img src="../assets/klein_images/portfolio/Hemingways WTM klein-8.jpg" alt="Hemingways Watamu" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-info">
+            <span class="project-name">Hemingways Watamu</span>
+            <span class="work-type">Hotel Photography</span>
+          </div>
+        </div>
       </div>
-      <div class="destination-card reveal">
-        <img src="../assets/klein_images/portfolio/HemingwaysRooms-Klein-6.jpg" alt="Hemingways Rooms">
+
+      <div class="gallery-item reveal">
+        <img src="../assets/klein_images/portfolio/Ol seki klein-303.jpg" alt="Ol Seki Mara" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-info">
+            <span class="project-name">Ol Seki Hemingways</span>
+            <span class="work-type">Safari Lodge</span>
+          </div>
+        </div>
       </div>
-      <div class="destination-card reveal">
-        <img src="../assets/klein_images/portfolio/HemingwaysRooms-Klein-12.jpg" alt="Hemingways Rooms">
+
+      <div class="gallery-item reveal">
+        <img src="../assets/klein_images/portfolio/TSC-Solioklein-165.jpg" alt="Solio Lodge" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-info">
+            <span class="project-name">Solio Lodge</span>
+            <span class="work-type">The Safari Collection</span>
+          </div>
+        </div>
       </div>
-      <div class="destination-card reveal">
-        <img src="../assets/klein_images/portfolio/HemingwaysRooms-Klein-13.jpg" alt="Hemingways Rooms">
+
+      <div class="gallery-item reveal">
+        <img src="../assets/klein_images/portfolio/Kapeskenya2025_klein-44.jpg" alt="Kapes Kenya" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-info">
+            <span class="project-name">Kapes Kenya</span>
+            <span class="work-type">Brand Campaign</span>
+          </div>
+        </div>
       </div>
-      <div class="destination-card reveal">
-        <img src="../assets/klein_images/portfolio/HemingwaysRooms-Klein-14.jpg" alt="Hemingways Rooms">
+
+      <div class="gallery-item reveal">
+        <img src="../assets/klein_images/portfolio/HemingwaysRooms-Klein-14.jpg" alt="Hemingways Nairobi" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-info">
+            <span class="project-name">Hemingways Nairobi</span>
+            <span class="work-type">Hotel Interiors</span>
+          </div>
+        </div>
       </div>
-      <div class="destination-card reveal">
-        <img src="../assets/klein_images/portfolio/HemingwaysRooms-Klein-21.jpg" alt="Hemingways Rooms">
+
+      <div class="gallery-item reveal">
+        <img src="../assets/klein_images/portfolio/Ol seki klein-322.jpg" alt="Ol Seki Wildlife" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-info">
+            <span class="project-name">Maasai Mara</span>
+            <span class="work-type">Wildlife</span>
+          </div>
+        </div>
       </div>
-      <div class="destination-card reveal">
-        <img src="../assets/klein_images/portfolio/Kapeskenya2025_klein-29.jpg" alt="Kapes Kenya">
+
+      <div class="gallery-item reveal">
+        <img src="../assets/klein_images/portfolio/TSC SALAS klein-5.jpg" alt="Sala's Camp" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-info">
+            <span class="project-name">Sala's Camp</span>
+            <span class="work-type">The Safari Collection</span>
+          </div>
+        </div>
       </div>
-      <div class="destination-card reveal">
-        <img src="../assets/klein_images/portfolio/Kapeskenya2025_klein-37.jpg" alt="Kapes Kenya">
+
+      <div class="gallery-item reveal">
+        <img src="../assets/klein_images/portfolio/Watamu H klein-78.jpg" alt="Watamu" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-info">
+            <span class="project-name">Hemingways Watamu</span>
+            <span class="work-type">Coastal Resort</span>
+          </div>
+        </div>
       </div>
-      <div class="destination-card reveal">
-        <img src="../assets/klein_images/portfolio/Kapeskenya2025_klein-44.jpg" alt="Kapes Kenya">
-      </div>
-      <div class="destination-card reveal">
-        <img src="../assets/klein_images/portfolio/Kapeskenya2025_klein-50.jpg" alt="Kapes Kenya">
-      </div>
-      <div class="destination-card reveal">
-        <img src="../assets/klein_images/portfolio/Ol seki klein-15.jpg" alt="Ol Seki">
-      </div>
-      <div class="destination-card reveal">
-        <img src="../assets/klein_images/portfolio/Ol seki klein-148.jpg" alt="Ol Seki">
-      </div>
-      <div class="destination-card reveal">
-        <img src="../assets/klein_images/portfolio/Ol seki klein-164.jpg" alt="Ol Seki">
-      </div>
-      <div class="destination-card reveal">
-        <img src="../assets/klein_images/portfolio/Ol seki klein-303.jpg" alt="Ol Seki">
-      </div>
-      <div class="destination-card reveal">
-        <img src="../assets/klein_images/portfolio/Ol seki klein-304.jpg" alt="Ol Seki">
-      </div>
-      <div class="destination-card reveal">
-        <img src="../assets/klein_images/portfolio/Ol seki klein-305.jpg" alt="Ol Seki">
-      </div>
-      <div class="destination-card reveal">
-        <img src="../assets/klein_images/portfolio/Ol seki klein-317.jpg" alt="Ol Seki">
-      </div>
-      <div class="destination-card reveal">
-        <img src="../assets/klein_images/portfolio/Ol seki klein-318.jpg" alt="Ol Seki">
-      </div>
-      <div class="destination-card reveal">
-        <img src="../assets/klein_images/portfolio/Ol seki klein-322.jpg" alt="Ol Seki">
-      </div>
-      <div class="destination-card reveal">
-        <img src="../assets/klein_images/portfolio/Ol seki klein-327.jpg" alt="Ol Seki">
-      </div>
-      <div class="destination-card reveal">
-        <img src="../assets/klein_images/portfolio/SPA-Klein -55.jpg" alt="Spa">
-      </div>
-      <div class="destination-card reveal">
-        <img src="../assets/klein_images/portfolio/TSC SALAS klein-2.jpg" alt="TSC Salas">
-      </div>
-      <div class="destination-card reveal">
-        <img src="../assets/klein_images/portfolio/TSC SALAS klein-5.jpg" alt="TSC Salas">
-      </div>
-      <div class="destination-card reveal">
-        <img src="../assets/klein_images/portfolio/TSC-Solioklein-23.jpg" alt="Solio Lodge">
-      </div>
-      <div class="destination-card reveal">
-        <img src="../assets/klein_images/portfolio/TSC-Solioklein-24.jpg" alt="Solio Lodge">
-      </div>
-      <div class="destination-card reveal">
-        <img src="../assets/klein_images/portfolio/TSC-Solioklein-84.jpg" alt="Solio Lodge">
-      </div>
-      <div class="destination-card reveal">
-        <img src="../assets/klein_images/portfolio/TSC-Solioklein-165.jpg" alt="Solio Lodge">
-      </div>
-      <div class="destination-card reveal">
-        <img src="../assets/klein_images/portfolio/Watamu H klein-78.jpg" alt="Watamu">
-      </div>
-      <div class="destination-card reveal">
-        <img src="../assets/klein_images/portfolio/Watamu H klein-271.jpg" alt="Watamu">
+
+      <div class="gallery-item reveal">
+        <img src="../assets/klein_images/portfolio/TSC-Solioklein-84.jpg" alt="Solio Wildlife" loading="lazy">
+        <div class="gallery-overlay">
+          <div class="gallery-info">
+            <span class="project-name">Solio Lodge</span>
+            <span class="work-type">Wildlife</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>

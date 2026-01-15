@@ -259,11 +259,31 @@
 
     .gallery-stats {
       color: var(--color-white);
-      font-size: 0.8125rem;
+      font-size: 0.75rem;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
     }
 
     .gallery-stats span {
-      margin-right: var(--space-md);
+      background: rgba(0,0,0,0.5);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      backdrop-filter: blur(4px);
+      white-space: nowrap;
+    }
+
+    .gallery-stats .eng {
+      background: rgba(194, 112, 62, 0.85);
+    }
+
+    .gallery-stats .brand-tag {
+      background-color: var(--color-terracotta);
+      padding: 0.2rem 0.5rem;
+      border-radius: 3px;
+      font-size: 0.6875rem;
+      letter-spacing: 0.05em;
+      font-weight: 500;
     }
 
     .play-icon,
@@ -933,20 +953,20 @@ transition: filter var(--transition-medium);
   <div class="stats-band">
     <div class="stats-band-inner">
       <div class="stat-item">
-        <p class="stat-value">438K</p>
-        <p class="stat-label">Followers</p>
+        <p class="stat-value">17.9%</p>
+        <p class="stat-label">Engagement Rate</p>
       </div>
       <div class="stat-item">
-        <p class="stat-value">25.9M+</p>
+        <p class="stat-value">27M+</p>
         <p class="stat-label">Video Views</p>
       </div>
       <div class="stat-item">
-        <p class="stat-value">120+</p>
-        <p class="stat-label">Brand Partners</p>
+        <p class="stat-value">38</p>
+        <p class="stat-label">Viral Videos</p>
       </div>
       <div class="stat-item">
-        <p class="stat-value">12+</p>
-        <p class="stat-label">Years Experience</p>
+        <p class="stat-value">93+</p>
+        <p class="stat-label">Brand Partners</p>
       </div>
     </div>
   </div>
@@ -955,236 +975,425 @@ transition: filter var(--transition-medium);
   <section class="intro-section">
     <div class="intro-content reveal">
       <p class="intro-text">
-        Luxury travel and lifestyle content creator specialising in <em>authentic storytelling</em> that captures transformative travel experiences. With over a decade of experience and partnerships with 120+ brands, Nia's work focuses on cultural connection, luxury hospitality, and the emotional resonance of travel — creating content that inspires wanderlust while delivering <em>measurable results</em> for brand partners.
+        Luxury travel and lifestyle content creator with a <em>17.9% engagement rate</em> — 4x the industry average. With 27M+ video views, 38 viral videos, and 93+ brand partnerships, Nia delivers content that doesn't just get seen — it gets <em>acted on</em>.
       </p>
     </div>
   </section>
 
-  <!-- Content Gallery - Beauty -->
+  <!-- Content Gallery - Travel (Top 10 from 2023+) -->
   <section class="gallery-section">
     <div class="gallery-header reveal">
-      <h2>Top Beauty & Hair Content</h2>
-      <p>Highest performing beauty content by views.</p>
+      <h2>Top Travel Content</h2>
+      <p>Highest performing travel content from 2023-2025.</p>
     </div>
 
     <div class="gallery-grid gallery-grid-5">
-      <div class="gallery-item reveal" data-video="../assets/nia_content/beauty/curly_hair_transformation.mp4">
-        <img src="../assets/nia_content/beauty/curly_hair_transformation.jpg" alt="Curly Hair Transformation">
+      <!-- 1. Lamu Daydream - 1.1M views, 9.1% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/travel/2023_plus/lamu_daydream.mp4">
+        <img src="../assets/nia_content/travel/2023_plus/lamu_daydream.jpg" alt="Lamu Daydream" loading="lazy">
         <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         <div class="gallery-overlay">
           <div class="gallery-stats">
-            <span>10M views</span>
-            <span>556K likes</span>
+            <span>1.1M views</span>
+            <span>47K likes</span>
+            <span class="eng">9.1% eng</span>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item reveal" data-video="../assets/nia_content/beauty/good_hair_day.mp4">
-        <img src="../assets/nia_content/beauty/good_hair_day.jpg" alt="Good Hair Day">
+      <!-- 2. Born in Africa - 918K views, 14.5% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/travel/2023_plus/born_in_africa.mp4">
+        <img src="../assets/nia_content/travel/2023_plus/born_in_africa.jpg" alt="Born in Africa" loading="lazy">
         <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         <div class="gallery-overlay">
           <div class="gallery-stats">
-            <span>557K views</span>
-            <span>105K likes</span>
+            <span>918K views</span>
+            <span>46K likes</span>
+            <span class="eng">14.5% eng</span>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item reveal" data-video="../assets/nia_content/beauty/wash_routine_double_cleanse.mp4">
-        <img src="../assets/nia_content/beauty/wash_routine_double_cleanse.jpg" alt="Wash Day Routine">
+      <!-- 3. Ola Portugal - 275K views, 11.3% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/travel/2023_plus/ola_portugal.mp4">
+        <img src="../assets/nia_content/travel/2023_plus/ola_portugal.jpg" alt="Ola from Portugal" loading="lazy">
         <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         <div class="gallery-overlay">
           <div class="gallery-stats">
-            <span>501K views</span>
-            <span>4.5K likes</span>
+            <span>275K views</span>
+            <span>16K likes</span>
+            <span class="eng">11.3% eng</span>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item reveal" data-video="../assets/nia_content/beauty/volume_definition.mp4">
-        <img src="../assets/nia_content/beauty/volume_definition.jpg" alt="Volume & Definition">
+      <!-- 4. Island Girl Life - 201K views, 18.7% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/travel/2023_plus/island_girl_life.mp4">
+        <img src="../assets/nia_content/travel/2023_plus/island_girl_life.jpg" alt="Island Girl Life" loading="lazy">
         <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         <div class="gallery-overlay">
           <div class="gallery-stats">
-            <span>341K views</span>
-            <span>43K likes</span>
+            <span>201K views</span>
+            <span>19K likes</span>
+            <span class="eng">18.7% eng</span>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item reveal" data-video="../assets/nia_content/beauty/current_curl_routine.mp4">
-        <img src="../assets/nia_content/beauty/current_curl_routine.jpg" alt="Current Curl Routine">
+      <!-- 5. Grandad Nigeria - 167K views, 19.4% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/travel/2023_plus/grandad_nigeria.mp4">
+        <img src="../assets/nia_content/travel/2023_plus/grandad_nigeria.jpg" alt="Nigeria - Grandad's Home" loading="lazy">
         <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         <div class="gallery-overlay">
           <div class="gallery-stats">
-            <span>325K views</span>
-            <span>39K likes</span>
+            <span>167K views</span>
+            <span>7.3K likes</span>
+            <span class="eng">19.4% eng</span>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item reveal" data-carousel="../assets/nia_content/beauty/carousels/hair_journey_3years" data-count="10">
-        <img src="../assets/nia_content/beauty/carousels/hair_journey_3years/1.jpg" alt="3 Year Hair Journey">
+      <!-- 6. Memories Senegal - 112K views, 27.9% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/travel/2023_plus/memories_senegal.mp4">
+        <img src="../assets/nia_content/travel/2023_plus/memories_senegal.jpg" alt="Memories from Senegal" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>112K views</span>
+            <span>12K likes</span>
+            <span class="eng">27.9% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Zanzibar Market - 85K views, 15.2% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/travel/2023_plus/zanzibar_market.mp4">
+        <img src="../assets/nia_content/travel/2023_plus/zanzibar_market.jpg" alt="Zanzibar Market" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>85K views</span>
+            <span>7.1K likes</span>
+            <span class="eng">15.2% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Zanzibar Pole Pole - 77K views, 17.2% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/travel/2023_plus/zanzibar_pole_pole.mp4">
+        <img src="../assets/nia_content/travel/2023_plus/zanzibar_pole_pole.jpg" alt="Zanzibar Pole Pole" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>77K views</span>
+            <span>6.5K likes</span>
+            <span class="eng">17.2% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. Kenya Check-in - 65K views, 22.8% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/travel/2023_plus/kenya_checkin.mp4">
+        <img src="../assets/nia_content/travel/2023_plus/kenya_checkin.jpg" alt="Checked in to Kenya" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>65K views</span>
+            <span>5.5K likes</span>
+            <span class="eng">22.8% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. Saint Louis Senegal - 12K likes carousel -->
+      <div class="gallery-item reveal" data-carousel="../assets/nia_content/travel/2023_plus/carousels/saint_louis" data-count="6">
+        <img src="../assets/nia_content/travel/2023_plus/carousels/saint_louis/1.jpg" alt="Saint Louis, Senegal" loading="lazy">
         <svg class="carousel-icon" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
         <div class="gallery-overlay">
           <div class="gallery-stats">
-            <span>10 images</span>
-            <span>36K likes</span>
+            <span>12K likes</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Content Gallery - Travel -->
+  <!-- Content Gallery - Beauty (Top 10 from 2023+) -->
   <section class="gallery-section" style="background-color: var(--color-white);">
     <div class="gallery-header reveal">
-      <h2>Top Travel Content</h2>
-      <p>Highest performing travel content by views.</p>
+      <h2>Top Beauty & Hair Content</h2>
+      <p>Highest performing beauty content from 2023-2025.</p>
     </div>
 
     <div class="gallery-grid gallery-grid-5">
-      <div class="gallery-item reveal" data-video="../assets/nia_content/travel/lamu_daydream.mp4">
-        <img src="../assets/nia_content/travel/lamu_daydream.jpg" alt="Lamu, Kenya">
+      <!-- 1. Curly Girls Before - 14.1M views, 5.6% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/beauty/2023_plus/curly_girls_before.mp4">
+        <img src="../assets/nia_content/beauty/2023_plus/curly_girls_before.jpg" alt="Curly Girls Before" loading="lazy">
         <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         <div class="gallery-overlay">
           <div class="gallery-stats">
-            <span>522K views</span>
-            <span>47K likes</span>
+            <span>14.1M views</span>
+            <span>556K likes</span>
+            <span class="eng">5.6% eng</span>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item reveal" data-video="../assets/nia_content/travel/island_girl_life.mp4">
-        <img src="../assets/nia_content/travel/island_girl_life.jpg" alt="Island Life">
+      <!-- 2. Good Hair Day - 1.8M views, 19.0% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/beauty/2023_plus/good_hair_day.mp4">
+        <img src="../assets/nia_content/beauty/2023_plus/good_hair_day.jpg" alt="Good Hair Day" loading="lazy">
         <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         <div class="gallery-overlay">
           <div class="gallery-stats">
-            <span>99K views</span>
+            <span>1.8M views</span>
+            <span>105K likes</span>
+            <span class="eng">19.0% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. L'Oreal Wash AD - 1.8M views, 2.0% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/beauty/2023_plus/loreal_wash_ad.mp4">
+        <img src="../assets/nia_content/beauty/2023_plus/loreal_wash_ad.jpg" alt="L'Oreal Elvive" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>1.8M views</span>
+            <span>5.9K likes</span>
+            <span class="eng">2.0% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Current Curl Routine - 709K views, 12.0% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/beauty/2023_plus/current_curl_routine.mp4">
+        <img src="../assets/nia_content/beauty/2023_plus/current_curl_routine.jpg" alt="Current Curl Routine" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>709K views</span>
+            <span>39K likes</span>
+            <span class="eng">12.0% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Volume & Definition - 538K views, 12.7% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/beauty/2023_plus/volume_definition.mp4">
+        <img src="../assets/nia_content/beauty/2023_plus/volume_definition.jpg" alt="Volume & Definition Tutorial" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>538K views</span>
+            <span>43K likes</span>
+            <span class="eng">12.7% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Hi Beauties Filming - 441K views, 16.5% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/beauty/2023_plus/hi_beauties_filming.mp4">
+        <img src="../assets/nia_content/beauty/2023_plus/hi_beauties_filming.jpg" alt="Hi Beauties" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>441K views</span>
+            <span>34K likes</span>
+            <span class="eng">16.5% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Bellissima Autumn AD - 367K views, 15.7% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/beauty/2023_plus/bellissima_autumn_ad.mp4">
+        <img src="../assets/nia_content/beauty/2023_plus/bellissima_autumn_ad.jpg" alt="Bellissima Autumn" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>367K views</span>
+            <span>22K likes</span>
+            <span class="eng">15.7% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Rahua Autumn AD - 351K views, 5.7% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/beauty/2023_plus/rahua_autumn_ad.mp4">
+        <img src="../assets/nia_content/beauty/2023_plus/rahua_autumn_ad.jpg" alt="Rahua Autumn Style" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>351K views</span>
+            <span>8.8K likes</span>
+            <span class="eng">5.7% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. Ten Years Content - 220K views, 17.7% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/beauty/2023_plus/ten_years_content.mp4">
+        <img src="../assets/nia_content/beauty/2023_plus/ten_years_content.jpg" alt="10 Years of Content" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>220K views</span>
+            <span>23K likes</span>
+            <span class="eng">17.7% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. Curl Tips - 195K views, 20.6% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/beauty/2023_plus/curl_tips.mp4">
+        <img src="../assets/nia_content/beauty/2023_plus/curl_tips.jpg" alt="Curl Tips" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>195K views</span>
+            <span>23K likes</span>
+            <span class="eng">20.6% eng</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Gallery - Lifestyle (Top 10 from 2023+) -->
+  <section class="gallery-section">
+    <div class="gallery-header reveal">
+      <h2>Top Lifestyle Content</h2>
+      <p>Highest performing lifestyle content from 2023-2025.</p>
+    </div>
+
+    <div class="gallery-grid gallery-grid-5">
+      <!-- 1. Happy Sunday - 708K views, 11.7% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/happy_sunday.mp4">
+        <img src="../assets/nia_content/lifestyle/2023_plus/happy_sunday.jpg" alt="Happy Sunday" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>708K views</span>
+            <span>45K likes</span>
+            <span class="eng">11.7% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Hello Monday - 644K views, 18.8% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/hello_monday.mp4">
+        <img src="../assets/nia_content/lifestyle/2023_plus/hello_monday.jpg" alt="Hello Monday" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>644K views</span>
+            <span>56K likes</span>
+            <span class="eng">18.8% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Jamaica Vibes Apartment - 537K views, 12.4% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/jamaica_vibes.mp4">
+        <img src="../assets/nia_content/lifestyle/2023_plus/jamaica_vibes.jpg" alt="Jamaica Vibes Apartment" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>537K views</span>
+            <span>41K likes</span>
+            <span class="eng">12.4% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Valentine's Day - 410K views, 12.2% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/valentines_day.mp4">
+        <img src="../assets/nia_content/lifestyle/2023_plus/valentines_day.jpg" alt="Valentine's Day with Nia" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>410K views</span>
+            <span>32K likes</span>
+            <span class="eng">12.2% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. True Reflection - 389K views, 12.6% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/true_reflection.mp4">
+        <img src="../assets/nia_content/lifestyle/2023_plus/true_reflection.jpg" alt="True Reflection" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>389K views</span>
+            <span>34K likes</span>
+            <span class="eng">12.6% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Hello May - 319K views, 13.1% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/hello_may.mp4">
+        <img src="../assets/nia_content/lifestyle/2023_plus/hello_may.jpg" alt="Hello May" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>319K views</span>
+            <span>26K likes</span>
+            <span class="eng">13.1% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. 90s R&B Playlist - 262K views, 21.0% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/rnb_playlist.mp4">
+        <img src="../assets/nia_content/lifestyle/2023_plus/rnb_playlist.jpg" alt="90s R&B Playlist" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>262K views</span>
+            <span>27K likes</span>
+            <span class="eng">21.0% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Thank You 2023 - 158K views, 17.0% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/thank_you_2023.mp4">
+        <img src="../assets/nia_content/lifestyle/2023_plus/thank_you_2023.jpg" alt="Thank You 2023" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>158K views</span>
+            <span>10K likes</span>
+            <span class="eng">17.0% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. #2 Style Moment - 113K views, 14.0% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/hashtag_two.mp4">
+        <img src="../assets/nia_content/lifestyle/2023_plus/hashtag_two.jpg" alt="Style Moment" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>113K views</span>
+            <span>8.9K likes</span>
+            <span class="eng">14.0% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. After Hibernation - 18K likes carousel -->
+      <div class="gallery-item reveal" data-carousel="../assets/nia_content/lifestyle/2023_plus/carousels/after_hibernation" data-count="5">
+        <img src="../assets/nia_content/lifestyle/2023_plus/carousels/after_hibernation/1.jpg" alt="After Hibernation" loading="lazy">
+        <svg class="carousel-icon" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
             <span>18K likes</span>
           </div>
         </div>
       </div>
 
-      <div class="gallery-item reveal" data-video="../assets/nia_content/travel/memories_of_world.mp4">
-        <img src="../assets/nia_content/travel/memories_of_world.jpg" alt="Memories of the World">
-        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        <div class="gallery-overlay">
-          <div class="gallery-stats">
-            <span>75K views</span>
-            <span>13K likes</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="gallery-item reveal" data-video="../assets/nia_content/travel/lion_queen_senegal.mp4">
-        <img src="../assets/nia_content/travel/lion_queen_senegal.jpg" alt="Lion Queen - Senegal">
-        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        <div class="gallery-overlay">
-          <div class="gallery-stats">
-            <span>74K views</span>
-            <span>13K likes</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="gallery-item reveal" data-video="../assets/nia_content/travel/next_trip_africa.mp4">
-        <img src="../assets/nia_content/travel/next_trip_africa.jpg" alt="Next Trip - Africa">
-        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        <div class="gallery-overlay">
-          <div class="gallery-stats">
-            <span>51K views</span>
-            <span>3.8K likes</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="gallery-item reveal" data-carousel="../assets/nia_content/travel/carousels/kenya_workshop" data-count="10">
-        <img src="../assets/nia_content/travel/carousels/kenya_workshop/1.jpg" alt="Kenya Self Love Workshop">
-        <svg class="carousel-icon" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-        <div class="gallery-overlay">
-          <div class="gallery-stats">
-            <span>10 images</span>
-            <span>22K likes</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Content Gallery - Lifestyle -->
-  <section class="gallery-section">
-    <div class="gallery-header reveal">
-      <h2>Top Lifestyle Content</h2>
-      <p>Highest performing lifestyle content by views.</p>
-    </div>
-
-    <div class="gallery-grid gallery-grid-5">
-      <div class="gallery-item reveal" data-video="../assets/nia_content/wellness/happy_sunday.mp4">
-        <img src="../assets/nia_content/wellness/happy_sunday.jpg" alt="Happy Sunday">
-        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        <div class="gallery-overlay">
-          <div class="gallery-stats">
-            <span>387K views</span>
-            <span>45K likes</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="gallery-item reveal" data-video="../assets/nia_content/wellness/true_reflection.mp4">
-        <img src="../assets/nia_content/wellness/true_reflection.jpg" alt="True Reflection">
-        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        <div class="gallery-overlay">
-          <div class="gallery-stats">
-            <span>270K views</span>
-            <span>34K likes</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="gallery-item reveal" data-video="../assets/nia_content/wellness/hello_may.mp4">
-        <img src="../assets/nia_content/wellness/hello_may.jpg" alt="Hello May">
-        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        <div class="gallery-overlay">
-          <div class="gallery-stats">
-            <span>199K views</span>
-            <span>26K likes</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="gallery-item reveal" data-video="../assets/nia_content/wellness/90s_rnb_vibes.mp4">
-        <img src="../assets/nia_content/wellness/90s_rnb_vibes.jpg" alt="90s R&B Vibes">
-        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        <div class="gallery-overlay">
-          <div class="gallery-stats">
-            <span>128K views</span>
-            <span>27K likes</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="gallery-item reveal" data-video="../assets/nia_content/wellness/hello_2020.mp4">
-        <img src="../assets/nia_content/wellness/hello_2020.jpg" alt="Hello 2020">
-        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        <div class="gallery-overlay">
-          <div class="gallery-stats">
-            <span>101K views</span>
-            <span>26K likes</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="gallery-item reveal" data-carousel="../assets/nia_content/lifestyle/carousels/graduation" data-count="6">
-        <img src="../assets/nia_content/lifestyle/carousels/graduation/1.jpg" alt="Graduation Day">
-        <svg class="carousel-icon" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-        <div class="gallery-overlay">
-          <div class="gallery-stats">
-            <span>6 images</span>
-            <span>45K likes</span>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
