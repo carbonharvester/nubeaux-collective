@@ -220,6 +220,10 @@
       margin: 0 auto;
     }
 
+    .gallery-grid-5 {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
     .gallery-item {
       position: relative;
       overflow: hidden;
@@ -546,6 +550,16 @@ transition: filter var(--transition-medium);
     /* Responsive */
     @media (max-width: 1024px) {
       .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-grid-5 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .gallery-grid-5 {
         grid-template-columns: repeat(2, 1fr);
       }
     }
@@ -886,15 +900,14 @@ transition: filter var(--transition-medium);
     </div>
   </section>
 
-  <!-- Content Gallery -->
+  <!-- Content Gallery - Beauty -->
   <section class="gallery-section">
     <div class="gallery-header reveal">
-      <h2>Featured Content</h2>
-      <p>Top performing content across travel, beauty, and wellness.</p>
+      <h2>Top Beauty & Hair Content</h2>
+      <p>Highest performing beauty content by views.</p>
     </div>
 
-    <div class="gallery-grid">
-      <!-- #1 Beauty: Curly Hair Transformation - 10M views -->
+    <div class="gallery-grid gallery-grid-5">
       <div class="gallery-item reveal" data-video="../assets/nia_content/beauty/curly_hair_transformation.mp4">
         <img src="../assets/nia_content/beauty/curly_hair_transformation.jpg" alt="Curly Hair Transformation">
         <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
@@ -906,7 +919,6 @@ transition: filter var(--transition-medium);
         </div>
       </div>
 
-      <!-- #2 Beauty: Good Hair Day - 557K views -->
       <div class="gallery-item reveal" data-video="../assets/nia_content/beauty/good_hair_day.mp4">
         <img src="../assets/nia_content/beauty/good_hair_day.jpg" alt="Good Hair Day">
         <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
@@ -918,19 +930,6 @@ transition: filter var(--transition-medium);
         </div>
       </div>
 
-      <!-- #3 Wellness: Lamu Daydream - 522K views -->
-      <div class="gallery-item reveal" data-video="../assets/nia_content/wellness/lamu_peaceful.mp4">
-        <img src="../assets/nia_content/wellness/lamu_peaceful.jpg" alt="Lamu Daydream">
-        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        <div class="gallery-overlay">
-          <div class="gallery-stats">
-            <span>522K views</span>
-            <span>47K likes</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- #4 Beauty: Wash Day Double Cleanse - 501K views -->
       <div class="gallery-item reveal" data-video="../assets/nia_content/beauty/wash_routine_double_cleanse.mp4">
         <img src="../assets/nia_content/beauty/wash_routine_double_cleanse.jpg" alt="Wash Day Routine">
         <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
@@ -942,31 +941,6 @@ transition: filter var(--transition-medium);
         </div>
       </div>
 
-      <!-- #5 Lifestyle: Happy Sunday - 387K views -->
-      <div class="gallery-item reveal" data-video="../assets/nia_content/wellness/happy_sunday.mp4">
-        <img src="../assets/nia_content/wellness/happy_sunday.jpg" alt="Happy Sunday">
-        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        <div class="gallery-overlay">
-          <div class="gallery-stats">
-            <span>387K views</span>
-            <span>45K likes</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- #6 Wellness: Playlist Self-Care - 360K views -->
-      <div class="gallery-item reveal" data-video="../assets/nia_content/wellness/playlist_selfcare.mp4">
-        <img src="../assets/nia_content/wellness/playlist_selfcare.jpg" alt="Self-Care Playlist">
-        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        <div class="gallery-overlay">
-          <div class="gallery-stats">
-            <span>360K views</span>
-            <span>46K likes</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- #7 Beauty: Volume & Definition - 341K views -->
       <div class="gallery-item reveal" data-video="../assets/nia_content/beauty/volume_definition.mp4">
         <img src="../assets/nia_content/beauty/volume_definition.jpg" alt="Volume & Definition">
         <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
@@ -978,19 +952,6 @@ transition: filter var(--transition-medium);
         </div>
       </div>
 
-      <!-- #8 Lifestyle: Apartment Vibes - 335K views -->
-      <div class="gallery-item reveal" data-video="../assets/nia_content/wellness/apartment_vibes.mp4">
-        <img src="../assets/nia_content/wellness/apartment_vibes.jpg" alt="Apartment Vibes">
-        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        <div class="gallery-overlay">
-          <div class="gallery-stats">
-            <span>335K views</span>
-            <span>41K likes</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- #9 Beauty: Current Curl Routine - 325K views -->
       <div class="gallery-item reveal" data-video="../assets/nia_content/beauty/current_curl_routine.mp4">
         <img src="../assets/nia_content/beauty/current_curl_routine.jpg" alt="Current Curl Routine">
         <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
@@ -1001,7 +962,136 @@ transition: filter var(--transition-medium);
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
+  <!-- Content Gallery - Travel -->
+  <section class="gallery-section" style="background-color: var(--color-white);">
+    <div class="gallery-header reveal">
+      <h2>Top Travel Content</h2>
+      <p>Highest performing travel content by views.</p>
+    </div>
+
+    <div class="gallery-grid gallery-grid-5">
+      <div class="gallery-item reveal" data-video="../assets/nia_content/travel/lamu_daydream.mp4">
+        <img src="../assets/nia_content/travel/lamu_daydream.jpg" alt="Lamu Daydream">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>522K views</span>
+            <span>47K likes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-video="../assets/nia_content/travel/apartment_jamaica_bali.mp4">
+        <img src="../assets/nia_content/travel/apartment_jamaica_bali.jpg" alt="Jamaica & Bali Vibes">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>335K views</span>
+            <span>41K likes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-video="../assets/nia_content/travel/born_within_me.mp4">
+        <img src="../assets/nia_content/travel/born_within_me.jpg" alt="Born Within Me - Africa">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>316K views</span>
+            <span>45K likes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-video="../assets/nia_content/travel/music_healer_jamaica.mp4">
+        <img src="../assets/nia_content/travel/music_healer_jamaica.jpg" alt="Music Healer - Jamaica">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>152K views</span>
+            <span>24K likes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-video="../assets/nia_content/travel/thank_you_travel.mp4">
+        <img src="../assets/nia_content/travel/thank_you_travel.jpg" alt="Thank You - Travel">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>118K views</span>
+            <span>17K likes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Gallery - Wellness -->
+  <section class="gallery-section">
+    <div class="gallery-header reveal">
+      <h2>Top Wellness & Lifestyle Content</h2>
+      <p>Highest performing wellness content by views.</p>
+    </div>
+
+    <div class="gallery-grid gallery-grid-5">
+      <div class="gallery-item reveal" data-video="../assets/nia_content/wellness/happy_sunday.mp4">
+        <img src="../assets/nia_content/wellness/happy_sunday.jpg" alt="Happy Sunday">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>387K views</span>
+            <span>45K likes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-video="../assets/nia_content/wellness/true_reflection.mp4">
+        <img src="../assets/nia_content/wellness/true_reflection.jpg" alt="True Reflection">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>270K views</span>
+            <span>34K likes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-video="../assets/nia_content/wellness/hello_may.mp4">
+        <img src="../assets/nia_content/wellness/hello_may.jpg" alt="Hello May">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>199K views</span>
+            <span>26K likes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-video="../assets/nia_content/wellness/90s_rnb_vibes.mp4">
+        <img src="../assets/nia_content/wellness/90s_rnb_vibes.jpg" alt="90s R&B Vibes">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>128K views</span>
+            <span>27K likes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-video="../assets/nia_content/wellness/hello_2020.mp4">
+        <img src="../assets/nia_content/wellness/hello_2020.jpg" alt="Hello 2020">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>101K views</span>
+            <span>26K likes</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
