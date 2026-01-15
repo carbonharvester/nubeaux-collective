@@ -65,8 +65,10 @@
   <section class="hero">
     <div class="hero-media">
       <picture>
+        <source media="(max-width: 768px)" srcset="assets/HemingwaysRooms-Klein-13_mobile_hero.webp" type="image/webp">
         <source media="(max-width: 768px)" srcset="assets/HemingwaysRooms-Klein-13_mobile_hero.jpg">
-        <img src="assets/hero_Ol_seki_klein-300.jpg" alt="Editorial luxury content">
+        <source srcset="assets/hero_Ol_seki_klein-300.webp" type="image/webp">
+        <img src="assets/hero_Ol_seki_klein-300.jpg" alt="Editorial luxury content" loading="eager" fetchpriority="high">
       </picture>
     </div>
     <div class="hero-content">
@@ -161,14 +163,14 @@
 
       <div class="creators-grid reveal" style="grid-template-columns: repeat(2, 1fr); max-width: 800px; margin: 0 auto var(--space-lg);">
         <a href="creators/nia-the-light.html" class="creator-card creator-card-featured">
-          <img src="assets/media_kit_images/nia_creator.jpg" alt="Nia The Light">
+          <img src="assets/media_kit_images/nia_creator.jpg" alt="Nia The Light" loading="lazy">
           <div class="creator-card-overlay">
             <h4>Nia The Light</h4>
             <p>Content Creator & Influencer</p>
           </div>
         </a>
         <a href="creators/klein-nettoh.html" class="creator-card creator-card-featured">
-          <img src="assets/klein_images/klein-profile-pic.jpeg" alt="Klein Nettoh">
+          <img src="assets/klein_images/klein-profile-pic.jpeg" alt="Klein Nettoh" loading="lazy">
           <div class="creator-card-overlay">
             <h4>Klein Nettoh</h4>
             <p>Videographer & Photographer</p>
@@ -191,7 +193,7 @@
       <div class="insights-grid">
         <a href="insights/representation-gap.html" class="insight-card reveal">
           <div class="insight-image">
-            <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=600&q=80" alt="Article">
+            <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=600&q=80" alt="Article" loading="lazy">
           </div>
           <span class="insight-category">Market Insight</span>
           <h3 class="insight-title">The Representation Gap in Luxury Marketing</h3>
@@ -200,7 +202,7 @@
 
         <a href="insights/creative-talent.html" class="insight-card reveal">
           <div class="insight-image">
-            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=600&q=80" alt="Article">
+            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=600&q=80" alt="Article" loading="lazy">
           </div>
           <span class="insight-category">Creators</span>
           <h3 class="insight-title">Beyond Reach: The Case for Quality</h3>
@@ -209,7 +211,7 @@
 
         <a href="insights/heritage-travel.html" class="insight-card reveal">
           <div class="insight-image">
-            <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&q=80" alt="Article">
+            <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&q=80" alt="Article" loading="lazy">
           </div>
           <span class="insight-category">Strategy</span>
           <h3 class="insight-title">Diversifying Your Brand Assets</h3>
@@ -224,7 +226,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="assets/NC_logo.png" alt="NC" class="footer-emblem">
+          <img src="assets/NC_logo.png" alt="NC" class="footer-emblem" loading="lazy">
           <p>Elevated content and creator campaigns for luxury brands. Editorial-level quality. Creatives of colour. Commercial results.</p>
         </div>
 
