@@ -266,7 +266,8 @@
       margin-right: var(--space-md);
     }
 
-    .play-icon {
+    .play-icon,
+    .carousel-icon {
       position: absolute;
       top: var(--space-md);
       right: var(--space-md);
@@ -806,6 +807,65 @@ transition: filter var(--transition-medium);
       background: #000;
     }
 
+    /* Carousel Navigation */
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      background: rgba(255,255,255,0.9);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--color-charcoal);
+      transition: background var(--transition-fast);
+    }
+
+    .lightbox-nav:hover {
+      background: var(--color-white);
+    }
+
+    .lightbox-nav.prev {
+      left: var(--space-lg);
+    }
+
+    .lightbox-nav.next {
+      right: var(--space-lg);
+    }
+
+    .lightbox-counter {
+      position: absolute;
+      bottom: var(--space-lg);
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--color-white);
+      font-size: 0.875rem;
+      background: rgba(0,0,0,0.5);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .lightbox-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+      }
+
+      .lightbox-nav.prev {
+        left: var(--space-sm);
+      }
+
+      .lightbox-nav.next {
+        right: var(--space-sm);
+      }
+    }
+
     .gallery-item {
       cursor: pointer;
     }
@@ -962,6 +1022,17 @@ transition: filter var(--transition-medium);
           </div>
         </div>
       </div>
+
+      <div class="gallery-item reveal" data-carousel="../assets/nia_content/beauty/carousels/hair_journey_3years" data-count="10">
+        <img src="../assets/nia_content/beauty/carousels/hair_journey_3years/1.jpg" alt="3 Year Hair Journey">
+        <svg class="carousel-icon" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>10 images</span>
+            <span>36K likes</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1027,14 +1098,25 @@ transition: filter var(--transition-medium);
           </div>
         </div>
       </div>
+
+      <div class="gallery-item reveal" data-carousel="../assets/nia_content/travel/carousels/kenya_workshop" data-count="10">
+        <img src="../assets/nia_content/travel/carousels/kenya_workshop/1.jpg" alt="Kenya Self Love Workshop">
+        <svg class="carousel-icon" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>10 images</span>
+            <span>22K likes</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Content Gallery - Wellness -->
+  <!-- Content Gallery - Lifestyle -->
   <section class="gallery-section">
     <div class="gallery-header reveal">
-      <h2>Top Wellness & Lifestyle Content</h2>
-      <p>Highest performing wellness content by views.</p>
+      <h2>Top Lifestyle Content</h2>
+      <p>Highest performing lifestyle content by views.</p>
     </div>
 
     <div class="gallery-grid gallery-grid-5">
@@ -1089,6 +1171,17 @@ transition: filter var(--transition-medium);
           <div class="gallery-stats">
             <span>101K views</span>
             <span>26K likes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item reveal" data-carousel="../assets/nia_content/lifestyle/carousels/graduation" data-count="6">
+        <img src="../assets/nia_content/lifestyle/carousels/graduation/1.jpg" alt="Graduation Day">
+        <svg class="carousel-icon" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>6 images</span>
+            <span>45K likes</span>
           </div>
         </div>
       </div>
@@ -1334,12 +1427,15 @@ transition: filter var(--transition-medium);
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox">
     <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <button class="lightbox-nav prev" id="lightbox-prev" onclick="navigateCarousel(-1)">&#8249;</button>
+    <button class="lightbox-nav next" id="lightbox-next" onclick="navigateCarousel(1)">&#8250;</button>
     <div class="lightbox-content">
       <img id="lightbox-img" src="" alt="Featured content" style="display: none;">
       <video id="lightbox-video" controls playsinline style="display: none;">
         <source id="lightbox-video-src" src="" type="video/mp4">
       </video>
     </div>
+    <div class="lightbox-counter" id="lightbox-counter" style="display: none;"></div>
   </div>
 
   <!-- Sticky CTA -->
@@ -1370,14 +1466,39 @@ transition: filter var(--transition-medium);
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxVideo = document.getElementById('lightbox-video');
     const lightboxVideoSrc = document.getElementById('lightbox-video-src');
+    const lightboxPrev = document.getElementById('lightbox-prev');
+    const lightboxNext = document.getElementById('lightbox-next');
+    const lightboxCounter = document.getElementById('lightbox-counter');
     const galleryItems = document.querySelectorAll('.gallery-item');
+
+    // Carousel state
+    let currentCarousel = null;
+    let currentIndex = 0;
+    let carouselCount = 0;
 
     galleryItems.forEach(item => {
       item.addEventListener('click', () => {
         const videoUrl = item.dataset.video;
         const imageUrl = item.dataset.image;
+        const carouselPath = item.dataset.carousel;
+        const count = parseInt(item.dataset.count) || 0;
 
-        if (videoUrl) {
+        // Hide navigation by default
+        lightboxPrev.style.display = 'none';
+        lightboxNext.style.display = 'none';
+        lightboxCounter.style.display = 'none';
+        currentCarousel = null;
+
+        if (carouselPath) {
+          // Show carousel
+          currentCarousel = carouselPath;
+          carouselCount = count;
+          currentIndex = 1;
+          showCarouselImage();
+          lightboxPrev.style.display = 'flex';
+          lightboxNext.style.display = 'flex';
+          lightboxCounter.style.display = 'block';
+        } else if (videoUrl) {
           // Show video player
           lightboxVideoSrc.src = videoUrl;
           lightboxVideo.load();
@@ -1402,12 +1523,29 @@ transition: filter var(--transition-medium);
       });
     });
 
+    function showCarouselImage() {
+      if (!currentCarousel) return;
+      lightboxImg.src = `${currentCarousel}/${currentIndex}.jpg`;
+      lightboxImg.style.display = 'block';
+      lightboxVideo.style.display = 'none';
+      lightboxCounter.textContent = `${currentIndex} / ${carouselCount}`;
+    }
+
+    function navigateCarousel(direction) {
+      if (!currentCarousel) return;
+      currentIndex += direction;
+      if (currentIndex < 1) currentIndex = carouselCount;
+      if (currentIndex > carouselCount) currentIndex = 1;
+      showCarouselImage();
+    }
+
     function closeLightbox() {
       lightbox.classList.remove('active');
       document.body.style.overflow = '';
       // Stop and reset video when closing
       lightboxVideo.pause();
       lightboxVideo.currentTime = 0;
+      currentCarousel = null;
     }
 
     // Close on background click
@@ -1417,10 +1555,14 @@ transition: filter var(--transition-medium);
       }
     });
 
-    // Close on escape key
+    // Keyboard navigation
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         closeLightbox();
+      } else if (e.key === 'ArrowLeft' && currentCarousel) {
+        navigateCarousel(-1);
+      } else if (e.key === 'ArrowRight' && currentCarousel) {
+        navigateCarousel(1);
       }
     });
 
