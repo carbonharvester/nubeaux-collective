@@ -139,31 +139,9 @@ transition: filter var(--transition-medium), transform var(--transition-slow);
 transform: scale(1.03);
     }
 
-    .creator-card-image .creator-card-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: var(--space-md);
-      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
-      color: white;
-    }
-
-    .creator-card-image .creator-card-overlay h4 {
-      font-size: 1.25rem;
-      font-family: var(--font-serif);
-      margin-bottom: 0.125rem;
-    }
-
-    .creator-card-image .creator-card-overlay p {
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      opacity: 0.8;
-    }
-
-    .creator-card-content {
-      padding: var(--space-lg);
+    .creator-card-info {
+      padding: var(--space-md) 0;
+      text-align: center;
     }
 
     .creator-card-name {
@@ -174,41 +152,6 @@ transform: scale(1.03);
     .creator-card-role {
       font-size: 0.875rem;
       color: var(--color-warm-grey);
-      margin-bottom: var(--space-md);
-    }
-
-    .creator-card-stats {
-      display: flex;
-      gap: var(--space-lg);
-    }
-
-    .creator-stat {
-      text-align: left;
-    }
-
-    .creator-stat-value {
-      font-family: var(--font-serif);
-      font-size: 1.25rem;
-      color: var(--color-terracotta);
-    }
-
-    .creator-stat-label {
-      font-size: 0.6875rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--color-warm-grey);
-    }
-
-    .creator-card-link {
-      display: inline-block;
-      margin-top: var(--space-md);
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--color-charcoal);
-      text-decoration: none;
-      padding-bottom: 2px;
-      border-bottom: 1px solid var(--color-charcoal);
     }
 
     /* What We Look For */
@@ -422,30 +365,20 @@ transform: scale(1.03);
       <a href="creators/nia-the-light.html" class="creator-card creator-card-featured reveal">
         <div class="creator-card-image">
           <img src="assets/media_kit_images/nia_creator.jpg" alt="Nia The Light" loading="lazy">
-          <div class="creator-card-overlay">
-            <h4>Nia The Light</h4>
-            <p>Content Creator & Influencer</p>
-          </div>
         </div>
-        <div class="creator-card-content">
+        <div class="creator-card-info">
           <h3 class="creator-card-name">Nia The Light</h3>
           <p class="creator-card-role">Content Creator & Influencer</p>
-          <span class="creator-card-link">View Profile</span>
         </div>
       </a>
 
       <a href="creators/klein-nettoh.html" class="creator-card creator-card-featured reveal">
         <div class="creator-card-image">
           <img src="assets/klein_images/klein-profile-pic.jpeg" alt="Klein Nettoh" loading="lazy">
-          <div class="creator-card-overlay">
-            <h4>Klein Nettoh</h4>
-            <p>Videographer & Photographer</p>
-          </div>
         </div>
-        <div class="creator-card-content">
+        <div class="creator-card-info">
           <h3 class="creator-card-name">Klein Nettoh</h3>
           <p class="creator-card-role">Videographer & Photographer</p>
-          <span class="creator-card-link">View Profile</span>
         </div>
       </a>
     </div>
