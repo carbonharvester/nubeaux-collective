@@ -437,6 +437,83 @@ p {
   color: var(--color-terracotta);
 }
 
+/* ----- Engagement Stats ----- */
+.engagement-stats {
+  display: flex;
+  gap: var(--space-xl);
+  justify-content: center;
+  margin: var(--space-lg) 0;
+}
+
+.stat-highlight {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 400;
+  color: var(--color-charcoal);
+  line-height: 1;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-charcoal);
+  margin-top: var(--space-xs);
+}
+
+.stat-context {
+  display: block;
+  font-size: 0.8125rem;
+  color: var(--color-warm-grey);
+  margin-top: var(--space-xs);
+}
+
+.proof-points {
+  max-width: 600px;
+  margin: var(--space-lg) auto 0;
+  text-align: left;
+}
+
+.proof-points h4 {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin-bottom: var(--space-sm);
+  text-align: center;
+}
+
+.proof-points ul {
+  list-style: none;
+  padding: 0;
+}
+
+.proof-points li {
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-warm-grey);
+  font-size: 0.9375rem;
+}
+
+.proof-points li:last-child {
+  border-bottom: none;
+}
+
+.proof-points strong {
+  color: var(--color-terracotta);
+}
+
+@media (max-width: 600px) {
+  .engagement-stats {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+}
+
 /* ----- Service Pillars ----- */
 .services-grid {
   display: grid;
