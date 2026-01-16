@@ -212,6 +212,45 @@
       margin: 0 auto;
     }
 
+    .sector-metrics {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-xl);
+      margin-top: var(--space-lg);
+      flex-wrap: wrap;
+    }
+
+    .sector-metrics .metric {
+      text-align: center;
+    }
+
+    .sector-metrics .metric-value {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 400;
+      color: var(--color-charcoal);
+      line-height: 1;
+    }
+
+    .sector-metrics .metric-label {
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-warm-grey);
+      margin-top: var(--space-xs);
+    }
+
+    @media (max-width: 600px) {
+      .sector-metrics {
+        gap: var(--space-md) var(--space-lg);
+      }
+      .sector-metrics .metric-value {
+        font-size: 1.5rem;
+      }
+    }
+
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -984,7 +1023,7 @@ transition: filter var(--transition-medium);
           <span class="stat-context">3x industry average</span>
         </div>
         <div class="stat-highlight">
-          <span class="stat-number">34.7%</span>
+          <span class="stat-number">10.5%</span>
           <span class="stat-label">Weighted Average</span>
           <span class="stat-context">Total engagements ÷ total views</span>
         </div>
@@ -997,6 +1036,20 @@ transition: filter var(--transition-medium);
     <div class="gallery-header reveal">
       <h2>Top Travel Content</h2>
       <p>Highest performing travel content from 2023-2025.</p>
+      <div class="sector-metrics">
+        <div class="metric">
+          <span class="metric-value">15.6%</span>
+          <span class="metric-label">Median Engagement</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value">10.7M+</span>
+          <span class="metric-label">Views</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value">648K+</span>
+          <span class="metric-label">Likes</span>
+        </div>
+      </div>
     </div>
 
     <div class="gallery-grid gallery-grid-5">
@@ -1135,6 +1188,20 @@ transition: filter var(--transition-medium);
     <div class="gallery-header reveal">
       <h2>Top Beauty & Hair Content</h2>
       <p>Highest performing beauty content from 2023-2025.</p>
+      <div class="sector-metrics">
+        <div class="metric">
+          <span class="metric-value">11.3%</span>
+          <span class="metric-label">Median Engagement</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value">36.5M+</span>
+          <span class="metric-label">Views</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value">1.4M+</span>
+          <span class="metric-label">Likes</span>
+        </div>
+      </div>
     </div>
 
     <div class="gallery-grid gallery-grid-5">
@@ -1275,6 +1342,20 @@ transition: filter var(--transition-medium);
     <div class="gallery-header reveal">
       <h2>Top Lifestyle Content</h2>
       <p>Highest performing lifestyle content from 2023-2025.</p>
+      <div class="sector-metrics">
+        <div class="metric">
+          <span class="metric-value">14.1%</span>
+          <span class="metric-label">Median Engagement</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value">4.3M+</span>
+          <span class="metric-label">Views</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value">324K+</span>
+          <span class="metric-label">Likes</span>
+        </div>
+      </div>
     </div>
 
     <div class="gallery-grid gallery-grid-5">
@@ -1461,95 +1542,6 @@ transition: filter var(--transition-medium);
       </div>
       <div class="destination-card reveal">
         <img src="../assets/media_kit_images/dest_brazil.jpg" alt="Brazil">
-      </div>
-    </div>
-  </section>
-
-  <!-- Metrics -->
-  <section class="metrics-section">
-    <div class="container">
-      <h2 class="reveal" style="text-align: center;">Performance by Category</h2>
-
-      <div class="metrics-grid">
-        <div class="metrics-block reveal">
-          <h3>Travel</h3>
-          <div class="metric-row">
-            <span class="metric-label">Total Likes</span>
-            <span class="metric-value">2.6M+</span>
-          </div>
-          <div class="metric-row">
-            <span class="metric-label">Avg per Post</span>
-            <span class="metric-value">8,653</span>
-          </div>
-          <div class="metric-row">
-            <span class="metric-label">Video Views</span>
-            <span class="metric-value">5.5M+</span>
-          </div>
-          <div class="metric-row">
-            <span class="metric-label">Posts</span>
-            <span class="metric-value">306</span>
-          </div>
-        </div>
-
-        <div class="metrics-block reveal">
-          <h3>Beauty & Hair</h3>
-          <div class="metric-row">
-            <span class="metric-label">Total Likes</span>
-            <span class="metric-value">2.9M+</span>
-          </div>
-          <div class="metric-row">
-            <span class="metric-label">Avg per Post</span>
-            <span class="metric-value">12,991</span>
-          </div>
-          <div class="metric-row">
-            <span class="metric-label">Video Views</span>
-            <span class="metric-value">17.4M+</span>
-          </div>
-          <div class="metric-row">
-            <span class="metric-label">Posts</span>
-            <span class="metric-value">226</span>
-          </div>
-        </div>
-
-        <div class="metrics-block reveal">
-          <h3>Lifestyle</h3>
-          <div class="metric-row">
-            <span class="metric-label">Total Likes</span>
-            <span class="metric-value">847K+</span>
-          </div>
-          <div class="metric-row">
-            <span class="metric-label">Avg per Post</span>
-            <span class="metric-value">12,277</span>
-          </div>
-          <div class="metric-row">
-            <span class="metric-label">Video Views</span>
-            <span class="metric-value">1.2M+</span>
-          </div>
-          <div class="metric-row">
-            <span class="metric-label">Posts</span>
-            <span class="metric-value">69</span>
-          </div>
-        </div>
-
-        <div class="metrics-block reveal">
-          <h3>Overall</h3>
-          <div class="metric-row">
-            <span class="metric-label">Total Likes</span>
-            <span class="metric-value">9.3M+</span>
-          </div>
-          <div class="metric-row">
-            <span class="metric-label">Video Views</span>
-            <span class="metric-value">27.1M+</span>
-          </div>
-          <div class="metric-row">
-            <span class="metric-label">Comments</span>
-            <span class="metric-value">100K+</span>
-          </div>
-          <div class="metric-row">
-            <span class="metric-label">Posts</span>
-            <span class="metric-value">882</span>
-          </div>
-        </div>
       </div>
     </div>
   </section>
