@@ -192,8 +192,12 @@
 
     /* Content Gallery */
     .gallery-section {
-      padding: var(--space-xl) 0 var(--space-2xl);
+      padding: var(--space-xl) 0 var(--space-lg);
       background-color: var(--color-bone);
+    }
+
+    .gallery-section:last-of-type {
+      padding-bottom: 0;
     }
 
     .gallery-header {
@@ -244,7 +248,8 @@
 
     @media (max-width: 600px) {
       .sector-metrics {
-        gap: var(--space-md) var(--space-lg);
+        flex-direction: column;
+        gap: var(--space-md);
       }
       .sector-metrics .metric-value {
         font-size: 1.5rem;
@@ -1022,11 +1027,6 @@ transition: filter var(--transition-medium);
           <span class="stat-label">Median Engagement Rate</span>
           <span class="stat-context">3x industry average</span>
         </div>
-        <div class="stat-highlight">
-          <span class="stat-number">10.5%</span>
-          <span class="stat-label">Weighted Average</span>
-          <span class="stat-context">Total engagements ÷ total views</span>
-        </div>
       </div>
     </div>
   </section>
@@ -1490,7 +1490,7 @@ transition: filter var(--transition-medium);
   </section>
 
   <!-- Specializations -->
-  <section class="spec-section">
+  <section class="spec-section" style="margin-top: 0;">
     <div class="container">
       <h2 class="reveal" style="text-align: center;">Content Specialisation</h2>
     </div>
