@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Luxury Living — Editorial-grade content for design-led home brands. Creating a sanctuary that's bold, considered, and unapologetically luxurious.">
+
+  <title>Luxury Living — NUBEAUX Collective</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <style>
+    /* Prevent horizontal scroll on mobile */
+    html, body {
+      overflow-x: hidden;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Full-bleed Hero */
+    .campaign-hero {
+      position: relative;
+      min-height: calc(100vh - var(--header-height));
+      margin-top: var(--header-height);
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      overflow: hidden;
+    }
+
+    .campaign-hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .campaign-hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .campaign-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 40%, transparent 70%);
+      z-index: 2;
+    }
+
+    .campaign-hero-content {
+      position: relative;
+      z-index: 3;
+      padding: var(--space-2xl);
+      color: var(--color-white);
+      max-width: 900px;
+    }
+
+    .campaign-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: var(--space-md);
+    }
+
+    .campaign-title {
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      line-height: 1;
+      margin-bottom: var(--space-md);
+      color: var(--color-white);
+    }
+
+    .campaign-dates {
+      font-size: 1.125rem;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: var(--space-lg);
+      white-space: nowrap;
+    }
+
+    .campaign-intro {
+      font-size: 1.125rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 700px;
+      line-height: 1.7;
+    }
+
+    /* Stats Band */
+    .stats-band {
+      background-color: var(--color-charcoal);
+      color: var(--color-white);
+    }
+
+    .stats-band-inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      max-width: var(--container-max);
+      margin: 0 auto;
+    }
+
+    .stat-item {
+      padding: var(--space-xl) var(--space-lg);
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .stat-item:last-child {
+      border-right: none;
+    }
+
+    .stat-value {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--color-white);
+      line-height: 1.1;
+    }
+
+    .stat-label {
+      font-size: 0.6875rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-top: var(--space-xs);
+    }
+
+    /* Mood Board */
+    .mood-board {
+      background-color: var(--color-charcoal);
+      padding: var(--space-md);
+    }
+
+    .mood-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 280px 280px;
+      gap: var(--space-sm);
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .mood-item {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .mood-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.95);
+      transition: transform var(--transition-slow), filter var(--transition-medium);
+    }
+
+    .mood-item:hover img {
+      transform: scale(1.03);
+      filter: brightness(1);
+    }
+
+    .mood-item.mood-large {
+      grid-row: span 2;
+    }
+
+    @media (max-width: 768px) {
+      .mood-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 200px 200px 200px;
+      }
+
+      .mood-item.mood-large {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+
+      .mood-item:nth-child(4),
+      .mood-item:nth-child(5) {
+        grid-column: span 1;
+      }
+    }
+
+    /* The Opportunity Section */
+    .opportunity-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-bone);
+      width: 100%;
+    }
+
+    .opportunity-content {
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 var(--space-md);
+    }
+
+    .opportunity-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-terracotta);
+      margin-bottom: var(--space-md);
+      text-align: center;
+    }
+
+    .opportunity-headline {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      line-height: 1.6;
+      color: var(--color-charcoal);
+      text-align: center;
+      margin-bottom: var(--space-xl);
+    }
+
+    .opportunity-headline em {
+      font-family: var(--font-serif);
+      font-style: italic;
+    }
+
+    .opportunity-body {
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      color: var(--color-warm-grey);
+      text-align: center;
+    }
+
+    .opportunity-body p {
+      margin-bottom: var(--space-md);
+      max-width: none;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .opportunity-body strong {
+      color: var(--color-charcoal);
+    }
+
+    .opportunity-callout {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.25rem;
+      color: var(--color-charcoal);
+      text-align: center;
+      padding: var(--space-xl) 0;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      margin: var(--space-xl) 0;
+    }
+
+    /* Creative Positioning */
+    .positioning-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-white);
+    }
+
+    .positioning-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto var(--space-xl);
+      padding: 0 var(--space-md);
+    }
+
+    .positioning-header h2 {
+      margin-bottom: var(--space-sm);
+    }
+
+    .positioning-theme {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.5rem;
+      color: var(--color-terracotta);
+      margin-bottom: var(--space-md);
+    }
+
+    .positioning-header p {
+      color: var(--color-warm-grey);
+      line-height: 1.7;
+    }
+
+    .tone-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-md);
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+
+    .tone-item {
+      padding: var(--space-lg);
+      text-align: center;
+      border: 1px solid var(--color-bone);
+    }
+
+    .tone-item h3 {
+      font-size: 1.125rem;
+      color: var(--color-charcoal);
+      margin-bottom: var(--space-xs);
+    }
+
+    .tone-item p {
+      font-size: 0.875rem;
+      color: var(--color-warm-grey);
+      max-width: none;
+    }
+
+    .positioning-tagline {
+      text-align: center;
+      padding: var(--space-xl) var(--space-md);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .positioning-tagline p {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.25rem;
+      color: var(--color-charcoal);
+      line-height: 1.6;
+    }
+
+    /* Creators Section */
+    .creators-section {
+      background-color: var(--color-ecru);
+      padding: var(--space-2xl) 0;
+    }
+
+    .creators-section h2 {
+      text-align: center;
+      margin-bottom: var(--space-xl);
+    }
+
+    .creators-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-lg);
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+
+    .creator-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background-color: var(--color-white);
+      overflow: hidden;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .creator-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    }
+
+    .creator-card-image {
+      aspect-ratio: 16/10;
+      overflow: hidden;
+    }
+
+    .creator-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: filter var(--transition-medium), transform var(--transition-slow);
+    }
+
+    .creator-card:hover .creator-card-image img {
+      transform: scale(1.03);
+    }
+
+    .creator-card-info {
+      padding: var(--space-lg);
+    }
+
+    .creator-card-info h3 {
+      font-size: 1.5rem;
+      color: var(--color-charcoal);
+      margin-bottom: var(--space-xs);
+    }
+
+    .creator-card-role {
+      font-size: 0.875rem;
+      color: var(--color-warm-grey);
+      margin-bottom: var(--space-sm);
+    }
+
+    /* Deliverables */
+    .deliverables-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-bone);
+    }
+
+    .deliverables-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto var(--space-xl);
+      padding: 0 var(--space-md);
+    }
+
+    .deliverables-header h2 {
+      margin-bottom: var(--space-sm);
+    }
+
+    .deliverables-header p {
+      color: var(--color-warm-grey);
+      line-height: 1.7;
+    }
+
+    .deliverables-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-md);
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+
+    .deliverable-card {
+      background-color: var(--color-white);
+      padding: var(--space-xl) var(--space-lg);
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .deliverable-card h3 {
+      font-size: 1.125rem;
+      margin-bottom: var(--space-sm);
+    }
+
+    .deliverable-card p {
+      font-size: 0.9375rem;
+      color: var(--color-warm-grey);
+      line-height: 1.7;
+      max-width: none;
+    }
+
+    .deliverables-note {
+      text-align: center;
+      padding: var(--space-xl) var(--space-md) 0;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .deliverables-note p {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--color-warm-grey);
+    }
+
+    /* Why This Works */
+    .why-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-charcoal);
+      color: var(--color-white);
+    }
+
+    .why-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto var(--space-xl);
+      padding: 0 var(--space-md);
+    }
+
+    .why-header h2 {
+      color: var(--color-white);
+      margin-bottom: var(--space-sm);
+    }
+
+    .why-header p {
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-md);
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+
+    .why-item {
+      padding: var(--space-lg);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .why-item h3 {
+      font-size: 1.125rem;
+      color: var(--color-white);
+      margin-bottom: var(--space-sm);
+    }
+
+    .why-item p {
+      font-size: 0.9375rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+      max-width: none;
+    }
+
+    .why-callout {
+      text-align: center;
+      padding: var(--space-xl) var(--space-md) 0;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .why-callout p {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.375rem;
+      color: var(--color-white);
+    }
+
+    /* Brand Categories */
+    .categories-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-white);
+    }
+
+    .categories-header {
+      text-align: center;
+      margin-bottom: var(--space-xl);
+      padding: 0 var(--space-md);
+    }
+
+    .categories-header h2 {
+      margin-bottom: var(--space-sm);
+    }
+
+    .categories-header p {
+      color: var(--color-warm-grey);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-md);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+
+    .category-card {
+      background-color: var(--color-bone);
+      padding: var(--space-xl) var(--space-lg);
+      text-align: center;
+      min-width: 0;
+    }
+
+    .category-title {
+      font-size: 1.125rem;
+      margin-bottom: var(--space-sm);
+    }
+
+    .category-examples {
+      font-size: 0.875rem;
+      color: var(--color-warm-grey);
+      line-height: 1.7;
+      max-width: none;
+    }
+
+    @media (max-width: 900px) {
+      .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .categories-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Partner CTA */
+    .partner-cta {
+      background-color: var(--color-ecru);
+      color: var(--color-charcoal);
+      padding: var(--space-2xl) 0;
+      text-align: center;
+    }
+
+    .partner-cta h2 {
+      color: var(--color-charcoal);
+      margin-bottom: var(--space-md);
+    }
+
+    .partner-cta p {
+      color: var(--color-warm-grey);
+      max-width: 600px;
+      margin: 0 auto var(--space-lg);
+      line-height: 1.7;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .campaign-hero-content {
+        padding: var(--space-xl);
+      }
+
+      .stats-band-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+
+      .stat-item:last-child {
+        border-bottom: none;
+      }
+
+      .tone-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .deliverables-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .creator-card-image {
+        aspect-ratio: 16/10;
+      }
+
+      .creator-card-info {
+        padding: var(--space-md);
+      }
+
+      .creator-card-info h3 {
+        font-size: 1.25rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .tone-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .categories-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="../index.html" class="logo"><img src="../assets/logo.svg" alt="Nubeaux"></a>
+      <nav class="nav">
+        <a href="../creators.html">Creators</a>
+        <div class="nav-dropdown">
+          <span>Services</span>
+          <div class="nav-dropdown-menu">
+            <a href="../campaigns.html">Campaigns</a>
+            <a href="../services/content-production.html">Content & Production</a>
+            <a href="../services/brand-digital.html">Brand & Digital</a>
+          </div>
+        </div>
+        <a href="../work.html">Work</a>
+        <a href="../contact.html">Contact</a>
+        <a href="../upcoming-campaigns.html" class="nav-cta">Upcoming Campaigns</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="../creators.html">Creators</a>
+    <span class="mobile-menu-label">Services</span>
+    <a href="../campaigns.html">Campaigns</a>
+    <a href="../services/content-production.html">Content & Production</a>
+    <a href="../services/brand-digital.html">Brand & Digital</a>
+    <a href="../work.html">Work</a>
+    <a href="../contact.html">Contact</a>
+    <a href="../upcoming-campaigns.html">Upcoming Campaigns</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="campaign-hero">
+    <div class="campaign-hero-bg">
+      <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1768743234/IMG_7361_xlzpnb.jpg" alt="Luxury Living" loading="eager" fetchpriority="high">
+    </div>
+    <div class="campaign-hero-overlay"></div>
+    <div class="campaign-hero-content">
+      <span class="campaign-label">Brand Ambassador Campaign</span>
+      <h1 class="campaign-title">Luxury Living</h1>
+      <p class="campaign-dates">London, Q1 2026</p>
+      <p class="campaign-intro">Editorial-grade content for design-led home brands. Creating a sanctuary that's bold, considered, and unapologetically luxurious.</p>
+    </div>
+  </section>
+
+  <!-- Stats Band -->
+  <div class="stats-band">
+    <div class="stats-band-inner">
+      <div class="stat-item">
+        <p class="stat-value">7.5M+</p>
+        <p class="stat-label">Home & Lifestyle Views</p>
+      </div>
+      <div class="stat-item">
+        <p class="stat-value">12.4%</p>
+        <p class="stat-label">Median Engagement</p>
+      </div>
+      <div class="stat-item">
+        <p class="stat-value">437K</p>
+        <p class="stat-label">Followers</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mood Board -->
+  <section class="mood-board">
+    <div class="mood-grid">
+      <div class="mood-item mood-large">
+        <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1768740950/IMG_3731_ucyxwb.jpg" alt="Luxury interior" loading="lazy">
+      </div>
+      <div class="mood-item">
+        <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1768740949/IMG_3726_ecytuj.jpg" alt="Design detail" loading="lazy">
+      </div>
+      <div class="mood-item">
+        <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1768740948/IMG_3725_zg1wnh.jpg" alt="Luxury living" loading="lazy">
+      </div>
+      <div class="mood-item">
+        <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1768740947/IMG_3724_qrh7bz.jpg" alt="Interior styling" loading="lazy">
+      </div>
+      <div class="mood-item">
+        <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1768740947/IMG_3727_b5wxqd.jpg" alt="Home aesthetic" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- The Opportunity -->
+  <section class="opportunity-section">
+    <div class="opportunity-content reveal">
+      <p class="opportunity-label">The Opportunity</p>
+      <h2 class="opportunity-headline">
+        A luxury home and lifestyle collaboration for brands that understand <em>sanctuary</em> means something.
+      </h2>
+
+      <div class="opportunity-body">
+        <p>Nia is moving into a new London apartment. Her home content consistently outperforms her other verticals, with 7.5M+ views and 12.4% median engagement. An audience that follows her space transformations, meal prep routines, and renovation journeys.</p>
+
+        <p>This campaign puts design-led home brands inside that story. Your products, positioned in a life her audience already follows.</p>
+      </div>
+
+      <p class="opportunity-callout">
+        Home as sanctuary. Bold choices. Unapologetic luxury.
+      </p>
+    </div>
+  </section>
+
+  <!-- Creative Positioning -->
+  <section class="positioning-section">
+    <div class="positioning-header reveal">
+      <h2>The Creative Positioning</h2>
+      <p class="positioning-theme">Your Sanctuary, Unapologetically</p>
+      <p>The content explores what it means to create a home that reflects who you are. Bold choices. Quality materials. Spaces designed for living well.</p>
+    </div>
+
+    <div class="tone-grid">
+      <div class="tone-item reveal">
+        <h3>Bold & Considered</h3>
+        <p>Confident choices, not safe ones</p>
+      </div>
+      <div class="tone-item reveal">
+        <h3>Quality Materials</h3>
+        <p>Texture, craftsmanship, longevity</p>
+      </div>
+      <div class="tone-item reveal">
+        <h3>Personal Sanctuary</h3>
+        <p>Home as retreat from the world</p>
+      </div>
+      <div class="tone-item reveal">
+        <h3>Living Well</h3>
+        <p>Rituals, routines, real life</p>
+      </div>
+    </div>
+
+    <div class="positioning-tagline reveal">
+      <p>Content that shows how luxury brands become part of a life, not just a feed.</p>
+    </div>
+  </section>
+
+  <!-- Creators -->
+  <section class="creators-section">
+    <div class="container">
+      <h2 class="reveal">The Creator</h2>
+
+      <div class="creators-grid">
+        <a href="../creators/nia-the-light.html" class="creator-card reveal">
+          <div class="creator-card-image">
+            <img src="../assets/media_kit_images/nia_creator.jpg" alt="Nia The Light" loading="lazy">
+          </div>
+          <div class="creator-card-info">
+            <h3>Nia The Light</h3>
+            <p class="creator-card-role">Home & Lifestyle Creator</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deliverables -->
+  <section class="deliverables-section">
+    <div class="deliverables-header reveal">
+      <h2>What You Get</h2>
+      <p>Packages are tailored to each brand and product category. All content is styled and produced to be repurposable across your own channels.</p>
+    </div>
+
+    <div class="deliverables-grid">
+      <div class="deliverable-card reveal">
+        <h3>Social Integration</h3>
+        <p>In-feed posts, stories, and organic mentions. Authentic placement within content her audience already engages with.</p>
+      </div>
+      <div class="deliverable-card reveal">
+        <h3>Editorial Photography</h3>
+        <p>Lifestyle imagery that positions your product in context. Campaign-quality, not content-mill.</p>
+      </div>
+      <div class="deliverable-card reveal">
+        <h3>Video Content</h3>
+        <p>Short-form and long-form options. Cinematic pacing, considered storytelling, products that breathe.</p>
+      </div>
+      <div class="deliverable-card reveal">
+        <h3>Usage Rights</h3>
+        <p>Full rights included for agreed assets. Repurpose across your own marketing, retail, and digital channels.</p>
+      </div>
+    </div>
+
+    <div class="deliverables-note reveal">
+      <p>Get in touch to discuss packages and pricing.</p>
+      <a href="../contact.html" class="btn" style="margin-top: var(--space-md);">Enquire</a>
+    </div>
+  </section>
+
+  <!-- Why This Works -->
+  <section class="why-section">
+    <div class="why-header reveal">
+      <h2>Why This Works for Brands</h2>
+      <p>This is brand building, not just reach.</p>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-item reveal">
+        <h3>Elevated Perception</h3>
+        <p>Lifts your brand beyond retail and e-commerce. Content that belongs in a campaign, not just a feed.</p>
+      </div>
+      <div class="why-item reveal">
+        <h3>Authentic Integration</h3>
+        <p>Your products become part of how Nia lives. Seen in use, in context, in a home her audience already follows.</p>
+      </div>
+      <div class="why-item reveal">
+        <h3>Timeless Content</h3>
+        <p>Creates evergreen assets rather than trend-led posts. Quality over virality. Longevity over likes.</p>
+      </div>
+      <div class="why-item reveal">
+        <h3>Engaged Audience</h3>
+        <p>7.5M+ views on home content with 12.4% median engagement. An audience that watches, saves, and acts.</p>
+      </div>
+    </div>
+
+    <div class="why-callout reveal">
+      <p>This is brand building, not just reach.</p>
+    </div>
+  </section>
+
+  <!-- Brand Categories -->
+  <section class="categories-section">
+    <div class="categories-header reveal">
+      <h2>Partner Categories</h2>
+      <p>We're seeking partnerships with design-led brands across these categories.</p>
+    </div>
+
+    <div class="categories-grid">
+      <div class="category-card reveal">
+        <h3 class="category-title">Furniture</h3>
+        <p class="category-examples">Sofas, beds, dining tables, accent chairs, shelving</p>
+      </div>
+      <div class="category-card reveal">
+        <h3 class="category-title">Kitchen & Dining</h3>
+        <p class="category-examples">Appliances, cookware, tableware, organisation</p>
+      </div>
+      <div class="category-card reveal">
+        <h3 class="category-title">Home Decor</h3>
+        <p class="category-examples">Art, mirrors, lighting, rugs, textiles</p>
+      </div>
+      <div class="category-card reveal">
+        <h3 class="category-title">Bedding & Bath</h3>
+        <p class="category-examples">Luxury linens, towels, accessories, candles</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partner CTA -->
+  <section class="partner-cta">
+    <div class="container">
+      <h2 class="reveal">Partner With Us</h2>
+      <p class="reveal">Limited partnership opportunities available. Brands are selected based on quality, design integrity, and alignment with the campaign's visual language.</p>
+      <a href="../contact.html" class="btn reveal">Enquire about partnership</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../assets/NC_logo.png" alt="NC" class="footer-emblem" loading="lazy">
+          <p>Elevated content and creator campaigns for luxury brands. Editorial-level quality. Creatives of colour. Commercial results.</p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Navigation</h4>
+          <div class="footer-links">
+            <a href="../upcoming-campaigns.html">Upcoming Campaigns</a>
+            <a href="../about.html">About</a>
+            <a href="../work.html">Work</a>
+            <a href="../contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Services</h4>
+          <div class="footer-links">
+            <a href="../services/content-production.html">Content & Production</a>
+            <a href="../campaigns.html">Influencer Campaigns</a>
+            <a href="../services/brand-digital.html">Brand & Digital</a>
+            <a href="../join.html">Join the Collective</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Connect</h4>
+          <div class="footer-links">
+            <a href="mailto:hello@nubeauxcollective.com">hello@nubeauxcollective.com</a>
+            <p style="margin-top: var(--space-md); font-size: 0.875rem; line-height: 1.6; color: rgba(255,255,255,0.6);">71-75 Shelton Street<br>Covent Garden<br>London WC2H 9JQ</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 NUBEAUX Collective. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#">Instagram</a>
+          <a href="https://www.linkedin.com/company/nubeaux-collective/">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

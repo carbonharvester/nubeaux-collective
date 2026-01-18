@@ -190,6 +190,87 @@
       font-style: italic;
     }
 
+    /* About Section */
+    .about-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-white);
+    }
+
+    .about-container {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: var(--space-2xl);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+      align-items: start;
+    }
+
+    .about-image {
+      position: sticky;
+      top: calc(var(--header-height) + var(--space-lg));
+    }
+
+    .about-image img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+    }
+
+    .about-content h2 {
+      margin-bottom: var(--space-lg);
+    }
+
+    .about-content p {
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      color: var(--color-warm-grey);
+      margin-bottom: var(--space-md);
+      max-width: none;
+    }
+
+    .about-values {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-lg);
+      margin-top: var(--space-xl);
+      padding-top: var(--space-xl);
+      border-top: 1px solid var(--color-ecru);
+    }
+
+    .value-item h4 {
+      font-family: var(--font-serif);
+      font-size: 1.125rem;
+      margin-bottom: var(--space-sm);
+      color: var(--color-charcoal);
+    }
+
+    .value-item p {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: var(--color-warm-grey);
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 900px) {
+      .about-container {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+      }
+
+      .about-image {
+        position: relative;
+        top: 0;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .about-values {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+      }
+    }
+
     /* Content Gallery */
     .gallery-section {
       padding: var(--space-xl) 0 var(--space-lg);
@@ -551,6 +632,14 @@ transition: filter var(--transition-medium);
       letter-spacing: 0.15em;
       text-transform: uppercase;
       padding: 0.5rem 1rem;
+    }
+
+    .campaign-badge.badge-completed {
+      background-color: var(--color-warm-grey);
+    }
+
+    .campaign-badge.badge-upcoming {
+      background-color: var(--color-terracotta);
     }
 
     .campaign-card-content {
@@ -1031,6 +1120,24 @@ transition: filter var(--transition-medium);
     </div>
   </section>
 
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="about-container">
+      <div class="about-image reveal">
+        <img src="../assets/media_kit_images/nia_creator.jpg" alt="Nia The Light" loading="lazy">
+      </div>
+      <div class="about-content reveal">
+        <h2>About Nia</h2>
+        <p>Nia The Light is a London-born content creator with Zimbabwean roots. She's an international model, published author, entrepreneur, and one of the most recognised voices globally in the natural hair movement.</p>
+
+        <p>At 16, she founded #HappyFroDay, a celebration of natural hair that started in Hyde Park and grew into an international movement. In 2020, she opened The Curl Bar London, a salon dedicated to curly, coily, and wavy hair. In 2021, Hay House published her debut book, <em>The Book of Light: Illuminate Your Life with Self-Love</em>.</p>
+
+        <p>Her content goes beyond beauty tutorials. Nia's platform is built on authenticity, self-acceptance, and showing up as yourself. That philosophy carries through to everything she creates, from luxury travel content to home and lifestyle. Her audience doesn't just watch. They trust her, and they act.</p>
+
+      </div>
+    </div>
+  </section>
+
   <!-- Content Gallery - Travel (Top 10 from 2023+) -->
   <section class="gallery-section">
     <div class="gallery-header reveal">
@@ -1337,44 +1444,31 @@ transition: filter var(--transition-medium);
     </div>
   </section>
 
-  <!-- Content Gallery - Lifestyle (Top 10 from 2023+) -->
+  <!-- Content Gallery - Home & Lifestyle (Top 10) -->
   <section class="gallery-section">
     <div class="gallery-header reveal">
-      <h2>Top Lifestyle Content</h2>
-      <p>Highest performing lifestyle content from 2023-2025.</p>
+      <h2>Top Home & Lifestyle Content</h2>
+      <p>Highest performing home, cooking, and meal prep content.</p>
       <div class="sector-metrics">
         <div class="metric">
-          <span class="metric-value">14.1%</span>
+          <span class="metric-value">12.4%</span>
           <span class="metric-label">Median Engagement</span>
         </div>
         <div class="metric">
-          <span class="metric-value">4.3M+</span>
+          <span class="metric-value">7.5M+</span>
           <span class="metric-label">Views</span>
         </div>
         <div class="metric">
-          <span class="metric-value">324K+</span>
+          <span class="metric-value">880K+</span>
           <span class="metric-label">Likes</span>
         </div>
       </div>
     </div>
 
     <div class="gallery-grid gallery-grid-5">
-      <!-- 1. 90s R&B Playlist - 262K views, 21.0% eng -->
-      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/rnb_playlist.mp4">
-        <img src="../assets/nia_content/lifestyle/2023_plus/rnb_playlist.jpg" alt="90s R&B Playlist" loading="lazy">
-        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        <div class="gallery-overlay">
-          <div class="gallery-stats">
-            <span>262K views</span>
-            <span>27K likes</span>
-            <span class="eng">21.0% eng</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 2. Hello Monday - 644K views, 18.8% eng -->
+      <!-- 1. Hello Monday (Moving into home) - 644K plays, 300K views, 18.8% eng -->
       <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/hello_monday.mp4">
-        <img src="../assets/nia_content/lifestyle/2023_plus/hello_monday.jpg" alt="Hello Monday" loading="lazy">
+        <img src="../assets/nia_content/lifestyle/2023_plus/hello_monday.jpg" alt="Hello Monday - Moving In" loading="lazy">
         <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         <div class="gallery-overlay">
           <div class="gallery-stats">
@@ -1385,59 +1479,7 @@ transition: filter var(--transition-medium);
         </div>
       </div>
 
-      <!-- 3. Thank You 2023 - 158K views, 17.0% eng -->
-      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/thank_you_2023.mp4">
-        <img src="../assets/nia_content/lifestyle/2023_plus/thank_you_2023.jpg" alt="Thank You 2023" loading="lazy">
-        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        <div class="gallery-overlay">
-          <div class="gallery-stats">
-            <span>158K views</span>
-            <span>10K likes</span>
-            <span class="eng">17.0% eng</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 4. #2 Style Moment - 113K views, 14.0% eng -->
-      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/hashtag_two.mp4">
-        <img src="../assets/nia_content/lifestyle/2023_plus/hashtag_two.jpg" alt="Style Moment" loading="lazy">
-        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        <div class="gallery-overlay">
-          <div class="gallery-stats">
-            <span>113K views</span>
-            <span>8.9K likes</span>
-            <span class="eng">14.0% eng</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 5. Hello May - 319K views, 13.1% eng -->
-      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/hello_may.mp4">
-        <img src="../assets/nia_content/lifestyle/2023_plus/hello_may.jpg" alt="Hello May" loading="lazy">
-        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        <div class="gallery-overlay">
-          <div class="gallery-stats">
-            <span>319K views</span>
-            <span>26K likes</span>
-            <span class="eng">13.1% eng</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 6. True Reflection - 389K views, 12.6% eng -->
-      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/true_reflection.mp4">
-        <img src="../assets/nia_content/lifestyle/2023_plus/true_reflection.jpg" alt="True Reflection" loading="lazy">
-        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        <div class="gallery-overlay">
-          <div class="gallery-stats">
-            <span>389K views</span>
-            <span>34K likes</span>
-            <span class="eng">12.6% eng</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 7. Jamaica Vibes Apartment - 537K views, 12.4% eng -->
+      <!-- 2. Jamaica Vibes Apartment - 537K plays, 336K views, 12.4% eng -->
       <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/jamaica_vibes.mp4">
         <img src="../assets/nia_content/lifestyle/2023_plus/jamaica_vibes.jpg" alt="Jamaica Vibes Apartment" loading="lazy">
         <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
@@ -1450,39 +1492,106 @@ transition: filter var(--transition-medium);
         </div>
       </div>
 
-      <!-- 8. Valentine's Day - 410K views, 12.2% eng -->
-      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/valentines_day.mp4">
-        <img src="../assets/nia_content/lifestyle/2023_plus/valentines_day.jpg" alt="Valentine's Day with Nia" loading="lazy">
+      <!-- 3. Living Room Tour - 193K plays, 87K views, 20.8% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/living_room_tour.mp4">
+        <img src="../assets/nia_content/lifestyle/2023_plus/living_room_tour.jpg" alt="Living Room Tour" loading="lazy">
         <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         <div class="gallery-overlay">
           <div class="gallery-stats">
-            <span>410K views</span>
-            <span>32K likes</span>
-            <span class="eng">12.2% eng</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 9. Happy Sunday - 708K views, 11.7% eng -->
-      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/happy_sunday.mp4">
-        <img src="../assets/nia_content/lifestyle/2023_plus/happy_sunday.jpg" alt="Happy Sunday" loading="lazy">
-        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        <div class="gallery-overlay">
-          <div class="gallery-stats">
-            <span>708K views</span>
-            <span>45K likes</span>
-            <span class="eng">11.7% eng</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 10. After Hibernation - 18K likes carousel -->
-      <div class="gallery-item reveal" data-carousel="../assets/nia_content/lifestyle/2023_plus/carousels/after_hibernation" data-count="5">
-        <img src="../assets/nia_content/lifestyle/2023_plus/carousels/after_hibernation/1.jpg" alt="After Hibernation" loading="lazy">
-        <svg class="carousel-icon" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-        <div class="gallery-overlay">
-          <div class="gallery-stats">
+            <span>193K views</span>
             <span>18K likes</span>
+            <span class="eng">20.8% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. I'm officially a homeowner! - 150K plays, 77K views, 24.8% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/homeowner.mp4">
+        <img src="../assets/nia_content/lifestyle/2023_plus/homeowner.jpg" alt="I'm officially a homeowner" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>150K views</span>
+            <span>18K likes</span>
+            <span class="eng">24.8% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Meal Prep Sunday - 63K plays, 26K views, 12.4% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/meal_prep_sunday.mp4">
+        <img src="../assets/nia_content/lifestyle/2023_plus/meal_prep_sunday.jpg" alt="Meal Prep Sunday" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>63K views</span>
+            <span>3.2K likes</span>
+            <span class="eng">12.4% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. My Home One Year Ago - 52K plays, 22K views, 16.6% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/home_one_year.mp4">
+        <img src="../assets/nia_content/lifestyle/2023_plus/home_one_year.jpg" alt="My Home One Year Ago" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>52K views</span>
+            <span>3.6K likes</span>
+            <span class="eng">16.6% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Jollof Rice Cooking - 107K plays, 47K views, 10.4% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/jollof_rice_cooking.mp4">
+        <img src="../assets/nia_content/lifestyle/2023_plus/jollof_rice_cooking.jpg" alt="Jollof Rice Cooking" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>107K views</span>
+            <span>4.9K likes</span>
+            <span class="eng">10.4% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Home Reno Tips - 85K plays, 39K views, 14.0% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/home_reno_tips.mp4">
+        <img src="../assets/nia_content/lifestyle/2023_plus/home_reno_tips.jpg" alt="Home Reno Tips" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>85K views</span>
+            <span>5.4K likes</span>
+            <span class="eng">14.0% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. Sunday Dinner Meal Prep - 85K plays, 37K views, 11.9% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/sunday_dinner.mp4">
+        <img src="../assets/nia_content/lifestyle/2023_plus/sunday_dinner.jpg" alt="Sunday Dinner Meal Prep" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>85K views</span>
+            <span>4.3K likes</span>
+            <span class="eng">11.9% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. Days Like This Home - 84K plays, 42K views, 14.0% eng -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/days_like_this_home.mp4">
+        <img src="../assets/nia_content/lifestyle/2023_plus/days_like_this_home.jpg" alt="Days Like This - My Home" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>84K views</span>
+            <span>5.8K likes</span>
+            <span class="eng">14.0% eng</span>
           </div>
         </div>
       </div>
@@ -1546,36 +1655,36 @@ transition: filter var(--transition-medium);
     </div>
   </section>
 
-  <!-- Upcoming Campaigns -->
+  <!-- Campaigns -->
   <section class="campaigns-section">
     <div class="container">
-      <h2 class="reveal" style="text-align: center; margin-bottom: var(--space-xl);">Upcoming Campaigns</h2>
+      <h2 class="reveal" style="text-align: center; margin-bottom: var(--space-xl);">Campaigns</h2>
     </div>
 
     <div class="campaigns-grid" style="padding: 0 var(--space-md);">
       <div class="campaign-card reveal">
         <div class="campaign-card-image">
           <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&q=80" alt="Southern Africa">
-          <span class="campaign-badge">Completed</span>
+          <span class="campaign-badge badge-completed">Completed</span>
         </div>
         <div class="campaign-card-content">
-          <p class="campaign-card-dates">Dec 31, 2025 - Jan 18, 2026</p>
+          <p class="campaign-card-dates">Jan 5 - Jan 14, 2026</p>
           <h3 class="campaign-card-title">Southern Africa</h3>
-          <p class="campaign-card-desc">19 days across Cape Town, Namibia, Johannesburg, Mozambique, and Botswana.</p>
+          <p class="campaign-card-desc">10 days across Namibia, Johannesburg, and Mozambique.</p>
           <a href="../campaigns/southern-africa-2026.html" class="campaign-card-link">View Campaign</a>
         </div>
       </div>
 
       <div class="campaign-card reveal">
         <div class="campaign-card-image">
-          <img src="https://www.luxresorts.com/media/eyllk2q0/lmz_beach-view.jpg" alt="Zanzibar">
-          <span class="campaign-badge">Now Booking</span>
+          <img src="../assets/nia_content/lifestyle/2023_plus/living_room_tour.jpg" alt="Luxury Home & Lifestyle">
+          <span class="campaign-badge badge-upcoming">Upcoming</span>
         </div>
         <div class="campaign-card-content">
-          <p class="campaign-card-dates">Feb 11 — Feb 16, 2026</p>
-          <h3 class="campaign-card-title">Zanzibar</h3>
-          <p class="campaign-card-desc">6 days capturing ocean luxury, Swahili heritage, and island tranquility across select properties.</p>
-          <a href="../campaigns/zanzibar-2026.html" class="campaign-card-link">View Campaign</a>
+          <p class="campaign-card-dates">London, Q1 2026</p>
+          <h3 class="campaign-card-title">Luxury Living</h3>
+          <p class="campaign-card-desc">Luxury home and lifestyle content as Nia moves into a new London apartment. Perfect for furniture, kitchen, and decor brands.</p>
+          <a href="../campaigns/london-home-2026.html" class="campaign-card-link">View Campaign</a>
         </div>
       </div>
     </div>

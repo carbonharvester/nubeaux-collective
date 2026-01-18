@@ -103,6 +103,8 @@ h3 {
 
 p {
   max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .text-sm {
