@@ -658,6 +658,155 @@
       }
     }
 
+    /* Gallery Section */
+    .gallery-section {
+      padding: var(--space-xl) 0 var(--space-lg);
+      background-color: var(--color-bone);
+    }
+
+    .gallery-header {
+      text-align: center;
+      margin-bottom: var(--space-xl);
+      padding: 0 var(--space-md);
+    }
+
+    .gallery-header h2 {
+      margin-bottom: var(--space-sm);
+    }
+
+    .gallery-header p {
+      color: var(--color-warm-grey);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .sector-metrics {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-xl);
+      margin-top: var(--space-lg);
+      flex-wrap: wrap;
+    }
+
+    .sector-metrics .metric {
+      text-align: center;
+    }
+
+    .sector-metrics .metric-value {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 400;
+      color: var(--color-charcoal);
+      line-height: 1;
+    }
+
+    .sector-metrics .metric-label {
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-warm-grey);
+      margin-top: var(--space-xs);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .gallery-grid-5 {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      background: var(--color-charcoal);
+      aspect-ratio: 1;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity var(--transition-medium);
+      display: flex;
+      align-items: flex-end;
+      padding: var(--space-md);
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-stats {
+      color: var(--color-white);
+      font-size: 0.75rem;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .gallery-stats span {
+      background: rgba(0,0,0,0.5);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      backdrop-filter: blur(4px);
+      white-space: nowrap;
+    }
+
+    .gallery-stats .eng {
+      background: rgba(194, 112, 62, 0.85);
+    }
+
+    .play-icon {
+      position: absolute;
+      top: var(--space-md);
+      right: var(--space-md);
+      width: 32px;
+      height: 32px;
+      color: var(--color-white);
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+      opacity: 0.9;
+    }
+
+    @media (max-width: 1024px) {
+      .gallery-grid-5 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .sector-metrics {
+        flex-direction: column;
+        gap: var(--space-md);
+      }
+      .sector-metrics .metric-value {
+        font-size: 1.5rem;
+      }
+      .gallery-grid,
+      .gallery-grid-5 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -772,6 +921,179 @@
     </div>
   </section>
 
+  <!-- Creators -->
+  <section class="creators-section">
+    <div class="container">
+      <h2 class="reveal">The Creator</h2>
+
+      <div class="creators-grid">
+        <a href="../creators/nia-the-light.html" class="creator-card reveal">
+          <div class="creator-card-image">
+            <img src="../assets/media_kit_images/nia_creator.jpg" alt="Nia The Light" loading="lazy">
+          </div>
+          <div class="creator-card-info">
+            <h3>Nia The Light</h3>
+            <p class="creator-card-role">Home & Lifestyle Creator</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top Home & Lifestyle Content -->
+  <section class="gallery-section">
+    <div class="gallery-header reveal">
+      <h2>Top Home & Lifestyle Content</h2>
+      <p>Highest performing home, cooking, and meal prep content.</p>
+      <div class="sector-metrics">
+        <div class="metric">
+          <span class="metric-value">12.4%</span>
+          <span class="metric-label">Median Engagement</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value">7.5M+</span>
+          <span class="metric-label">Views</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value">880K+</span>
+          <span class="metric-label">Likes</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-grid gallery-grid-5">
+      <!-- 1. Hello Monday (Moving into home) -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/hello_monday.mp4">
+        <img src="../assets/nia_content/lifestyle/2023_plus/hello_monday.jpg" alt="Hello Monday - Moving In" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>644K views</span>
+            <span>56K likes</span>
+            <span class="eng">18.8% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Jamaica Vibes Apartment -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/jamaica_vibes.mp4">
+        <img src="../assets/nia_content/lifestyle/2023_plus/jamaica_vibes.jpg" alt="Jamaica Vibes Apartment" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>537K views</span>
+            <span>41K likes</span>
+            <span class="eng">12.4% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Living Room Tour -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/living_room_tour.mp4">
+        <img src="../assets/nia_content/lifestyle/2023_plus/living_room_tour.jpg" alt="Living Room Tour" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>193K views</span>
+            <span>18K likes</span>
+            <span class="eng">20.8% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. I'm officially a homeowner! -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/homeowner.mp4">
+        <img src="../assets/nia_content/lifestyle/2023_plus/homeowner.jpg" alt="I'm officially a homeowner" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>150K views</span>
+            <span>18K likes</span>
+            <span class="eng">24.8% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Meal Prep Sunday -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/meal_prep_sunday.mp4">
+        <img src="../assets/nia_content/lifestyle/2023_plus/meal_prep_sunday.jpg" alt="Meal Prep Sunday" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>63K views</span>
+            <span>3.2K likes</span>
+            <span class="eng">12.4% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. My Home One Year Ago -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/home_one_year.mp4">
+        <img src="../assets/nia_content/lifestyle/2023_plus/home_one_year.jpg" alt="My Home One Year Ago" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>52K views</span>
+            <span>3.6K likes</span>
+            <span class="eng">16.6% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Jollof Rice Cooking -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/jollof_rice_cooking.mp4">
+        <img src="../assets/nia_content/lifestyle/2023_plus/jollof_rice_cooking.jpg" alt="Jollof Rice Cooking" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>107K views</span>
+            <span>4.9K likes</span>
+            <span class="eng">10.4% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Home Reno Tips -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/home_reno_tips.mp4">
+        <img src="../assets/nia_content/lifestyle/2023_plus/home_reno_tips.jpg" alt="Home Reno Tips" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>85K views</span>
+            <span>5.4K likes</span>
+            <span class="eng">14.0% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. Sunday Dinner Meal Prep -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/sunday_dinner.mp4">
+        <img src="../assets/nia_content/lifestyle/2023_plus/sunday_dinner.jpg" alt="Sunday Dinner Meal Prep" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>85K views</span>
+            <span>4.3K likes</span>
+            <span class="eng">11.9% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. Days Like This Home -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/days_like_this_home.mp4">
+        <img src="../assets/nia_content/lifestyle/2023_plus/days_like_this_home.jpg" alt="Days Like This - My Home" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>84K views</span>
+            <span>5.8K likes</span>
+            <span class="eng">14.0% eng</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Creative Positioning -->
   <section class="positioning-section">
     <div class="positioning-header reveal">
@@ -801,25 +1123,6 @@
 
     <div class="positioning-tagline reveal">
       <p>Content that shows how luxury brands become part of a life, not just a feed.</p>
-    </div>
-  </section>
-
-  <!-- Creators -->
-  <section class="creators-section">
-    <div class="container">
-      <h2 class="reveal">The Creator</h2>
-
-      <div class="creators-grid">
-        <a href="../creators/nia-the-light.html" class="creator-card reveal">
-          <div class="creator-card-image">
-            <img src="../assets/media_kit_images/nia_creator.jpg" alt="Nia The Light" loading="lazy">
-          </div>
-          <div class="creator-card-info">
-            <h3>Nia The Light</h3>
-            <p class="creator-card-role">Home & Lifestyle Creator</p>
-          </div>
-        </a>
-      </div>
     </div>
   </section>
 
@@ -966,6 +1269,49 @@
     </div>
   </footer>
 
+  <!-- Video Modal -->
+  <div id="videoModal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 10000; align-items: center; justify-content: center;">
+    <button id="closeModal" style="position: absolute; top: 20px; right: 20px; background: none; border: none; color: white; font-size: 2rem; cursor: pointer; z-index: 10001;">&times;</button>
+    <video id="modalVideo" controls playsinline style="max-width: 90vw; max-height: 90vh; outline: none;"></video>
+  </div>
+
   <script src="../js/main.js"></script>
+  <script>
+    // Video modal functionality
+    const videoModal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    const closeModal = document.getElementById('closeModal');
+
+    document.querySelectorAll('.gallery-item[data-video]').forEach(item => {
+      item.addEventListener('click', () => {
+        const videoSrc = item.getAttribute('data-video');
+        modalVideo.src = videoSrc;
+        videoModal.style.display = 'flex';
+        modalVideo.play();
+      });
+    });
+
+    closeModal.addEventListener('click', () => {
+      modalVideo.pause();
+      modalVideo.src = '';
+      videoModal.style.display = 'none';
+    });
+
+    videoModal.addEventListener('click', (e) => {
+      if (e.target === videoModal) {
+        modalVideo.pause();
+        modalVideo.src = '';
+        videoModal.style.display = 'none';
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && videoModal.style.display === 'flex') {
+        modalVideo.pause();
+        modalVideo.src = '';
+        videoModal.style.display = 'none';
+      }
+    });
+  </script>
 </body>
 </html>
