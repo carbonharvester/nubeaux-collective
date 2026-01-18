@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Brand Ambassador Campaigns — NUBEAUX Collective. Long-term brand partnerships with creators who authentically represent your products.">
+
+  <title>Brand Ambassador Campaigns — NUBEAUX Collective</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .service-hero {
+      min-height: calc(70vh - var(--header-height));
+      margin-top: var(--header-height);
+      display: flex;
+      align-items: flex-end;
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-charcoal);
+      color: var(--color-white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('assets/nia_content/lifestyle/2023_plus/living_room_tour.jpg') center/cover;
+      opacity: 0.3;
+    }
+
+    .service-hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .service-hero h1 {
+      color: var(--color-white);
+      max-width: 800px;
+    }
+
+    .service-hero-intro {
+      font-size: clamp(1rem, 1.5vw, 1.25rem);
+      color: rgba(255,255,255,0.7);
+      max-width: 600px;
+      margin-top: var(--space-md);
+    }
+
+    .intro-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-bone);
+    }
+
+    .intro-text {
+      font-size: clamp(1.125rem, 2vw, 1.375rem);
+      line-height: 1.8;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .intro-text em {
+      font-style: italic;
+      color: var(--color-terracotta);
+    }
+
+    .categories-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-white);
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-lg);
+      margin-top: var(--space-xl);
+    }
+
+    .category-card {
+      text-align: center;
+      padding: var(--space-xl) var(--space-md);
+      background-color: var(--color-bone);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .category-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    }
+
+    .category-icon {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto var(--space-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-terracotta);
+      border-radius: 50%;
+    }
+
+    .category-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--color-white);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .category-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: var(--space-sm);
+    }
+
+    .category-card p {
+      font-size: 0.875rem;
+      color: var(--color-warm-grey);
+      line-height: 1.6;
+    }
+
+    .difference-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-ecru);
+    }
+
+    .difference-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      margin-top: var(--space-xl);
+    }
+
+    .difference-card {
+      padding: var(--space-xl);
+      background-color: var(--color-bone);
+    }
+
+    .difference-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: var(--space-md);
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .difference-card h3::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background-color: var(--color-terracotta);
+      border-radius: 50%;
+    }
+
+    .difference-card p {
+      color: var(--color-warm-grey);
+      line-height: 1.7;
+      margin-bottom: var(--space-md);
+    }
+
+    .difference-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .difference-card li {
+      font-size: 0.9375rem;
+      padding: var(--space-sm) 0;
+      border-bottom: 1px solid var(--color-ecru);
+      color: var(--color-charcoal);
+    }
+
+    .difference-card li:last-child {
+      border-bottom: none;
+    }
+
+    /* Active Campaigns */
+    .campaigns-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-white);
+    }
+
+    .campaign-feature {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: center;
+      margin-top: var(--space-xl);
+    }
+
+    .campaign-feature-image {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+    }
+
+    .campaign-feature-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .campaign-feature-content {
+      padding: var(--space-lg);
+    }
+
+    .campaign-feature-badge {
+      display: inline-block;
+      background-color: var(--color-terracotta);
+      color: var(--color-white);
+      font-size: 0.625rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.5rem 1rem;
+      margin-bottom: var(--space-md);
+    }
+
+    .campaign-feature-title {
+      font-size: 2rem;
+      margin-bottom: var(--space-sm);
+    }
+
+    .campaign-feature-dates {
+      font-size: 0.875rem;
+      color: var(--color-warm-grey);
+      margin-bottom: var(--space-md);
+    }
+
+    .campaign-feature-desc {
+      color: var(--color-warm-grey);
+      line-height: 1.7;
+      margin-bottom: var(--space-lg);
+    }
+
+    .campaign-feature-stats {
+      display: flex;
+      gap: var(--space-xl);
+      margin-bottom: var(--space-lg);
+      padding: var(--space-md) 0;
+      border-top: 1px solid var(--color-ecru);
+      border-bottom: 1px solid var(--color-ecru);
+    }
+
+    .campaign-stat {
+      text-align: center;
+    }
+
+    .campaign-stat-value {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      color: var(--color-terracotta);
+    }
+
+    .campaign-stat-label {
+      font-size: 0.625rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-warm-grey);
+    }
+
+    .process-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-bone);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background-color: var(--color-warm-grey);
+      margin-top: var(--space-xl);
+    }
+
+    .process-step {
+      background-color: var(--color-white);
+      padding: var(--space-xl) var(--space-lg);
+    }
+
+    .process-number {
+      font-size: 3rem;
+      font-family: var(--font-serif);
+      color: var(--color-warm-grey);
+      line-height: 1;
+      margin-bottom: var(--space-md);
+      opacity: 0.4;
+    }
+
+    .process-title {
+      font-size: 1.25rem;
+      margin-bottom: var(--space-sm);
+    }
+
+    .process-desc {
+      font-size: 0.875rem;
+      color: var(--color-warm-grey);
+      line-height: 1.7;
+    }
+
+    .cta-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-charcoal);
+      color: var(--color-white);
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      color: var(--color-white);
+      margin-bottom: var(--space-md);
+    }
+
+    .cta-section p {
+      color: rgba(255,255,255,0.7);
+      max-width: 500px;
+      margin: 0 auto var(--space-lg);
+    }
+
+    @media (max-width: 968px) {
+      .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .difference-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .campaign-feature {
+        grid-template-columns: 1fr;
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .categories-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .campaign-feature-stats {
+        flex-wrap: wrap;
+        gap: var(--space-md);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><img src="assets/logo.svg" alt="Nubeaux"></a>
+
+      <nav class="nav">
+        <a href="creators.html">Creators</a>
+        <div class="nav-dropdown">
+          <span>Services</span>
+          <div class="nav-dropdown-menu">
+            <a href="campaigns.html">Influencer Campaigns</a>
+            <a href="ambassador-marketing.html">Brand Ambassador Campaigns</a>
+            <a href="services/content-production.html">Content & Production</a>
+            <a href="services/brand-digital.html">Brand & Digital</a>
+          </div>
+        </div>
+        <a href="work.html">Work</a>
+        <a href="index.html#insights">Insights</a>
+        <a href="about.html">About</a>
+        <a href="upcoming-campaigns.html" class="nav-cta">Upcoming Campaigns</a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="creators.html">Creators</a>
+    <span class="mobile-menu-label">Services</span>
+    <a href="campaigns.html">Influencer Campaigns</a>
+    <a href="ambassador-marketing.html">Brand Ambassador Campaigns</a>
+    <a href="services/content-production.html">Content & Production</a>
+    <a href="services/brand-digital.html">Brand & Digital</a>
+    <a href="work.html">Work</a>
+    <a href="index.html#insights">Insights</a>
+    <a href="contact.html">Contact</a>
+    <a href="upcoming-campaigns.html">Upcoming Campaigns</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="service-hero">
+    <div class="container">
+      <span class="page-hero-label">Brand Partnerships</span>
+      <h1>Brand Ambassador Campaigns</h1>
+      <p class="service-hero-intro">Long-term partnerships with creators who authentically integrate your brand into their lifestyle content. Not sponsored posts. Real use. Real results.</p>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="intro-section">
+    <div class="container">
+      <p class="intro-text reveal">
+        Ambassador marketing goes beyond one-off sponsored posts. We connect brands with creators who <em>genuinely use and love</em> your products, integrating them naturally into content their audience already engages with. The result is authentic endorsement that builds trust, not just impressions.
+      </p>
+    </div>
+  </section>
+
+  <!-- Brand Categories -->
+  <section class="categories-section">
+    <div class="container">
+      <h2 class="reveal" style="text-align: center;">Brand Categories</h2>
+      <p class="reveal" style="text-align: center; color: var(--color-warm-grey); max-width: 600px; margin: var(--space-md) auto 0;">We partner with brands across home, lifestyle, beauty, and wellness sectors.</p>
+
+      <div class="categories-grid">
+        <div class="category-card reveal">
+          <div class="category-icon">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <h3>Home & Furniture</h3>
+          <p>Sofas, beds, dining sets, and statement pieces that become part of home tour content.</p>
+        </div>
+
+        <div class="category-card reveal">
+          <div class="category-icon">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+              <line x1="6" y1="1" x2="6" y2="4"/>
+              <line x1="10" y1="1" x2="10" y2="4"/>
+              <line x1="14" y1="1" x2="14" y2="4"/>
+            </svg>
+          </div>
+          <h3>Kitchen & Dining</h3>
+          <p>Cookware, appliances, tableware, and kitchen essentials featured in meal prep content.</p>
+        </div>
+
+        <div class="category-card reveal">
+          <div class="category-icon">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <h3>Home Decor</h3>
+          <p>Art, textiles, lighting, and decorative pieces that add character to living spaces.</p>
+        </div>
+
+        <div class="category-card reveal">
+          <div class="category-icon">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </div>
+          <h3>Wellness & Self-Care</h3>
+          <p>Juicers, wellness products, skincare, and self-care essentials in lifestyle routines.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Difference -->
+  <section class="difference-section">
+    <div class="container">
+      <h2 class="reveal" style="text-align: center;">The Difference</h2>
+      <p class="reveal" style="text-align: center; color: var(--color-warm-grey); max-width: 600px; margin: var(--space-md) auto 0;">Why ambassador marketing outperforms traditional influencer campaigns.</p>
+
+      <div class="difference-grid">
+        <div class="difference-card reveal">
+          <h3>Sponsored Posts</h3>
+          <p>The standard influencer approach: one-off content that feels transactional.</p>
+          <ul>
+            <li>Single post or story</li>
+            <li>Often scripted messaging</li>
+            <li>Audience knows it's an ad</li>
+            <li>Limited long-term impact</li>
+            <li>No authentic connection</li>
+          </ul>
+        </div>
+
+        <div class="difference-card reveal">
+          <h3>Brand Ambassador Campaigns</h3>
+          <p>Long-term partnerships where products become part of the creator's life.</p>
+          <ul>
+            <li>Multiple touchpoints over time</li>
+            <li>Natural, organic integration</li>
+            <li>Audience sees genuine use</li>
+            <li>Builds lasting brand affinity</li>
+            <li>Authentic recommendation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Active Campaign -->
+  <section class="campaigns-section">
+    <div class="container">
+      <h2 class="reveal" style="text-align: center;">Now Booking</h2>
+      <p class="reveal" style="text-align: center; color: var(--color-warm-grey); max-width: 600px; margin: var(--space-md) auto 0;">Current ambassador opportunities with our creators.</p>
+
+      <div class="campaign-feature reveal">
+        <div class="campaign-feature-image">
+          <img src="assets/nia_content/lifestyle/2023_plus/living_room_tour.jpg" alt="Luxury Home & Lifestyle" loading="lazy">
+        </div>
+        <div class="campaign-feature-content">
+          <span class="campaign-feature-badge">Now Booking</span>
+          <h3 class="campaign-feature-title">Luxury Living</h3>
+          <p class="campaign-feature-dates">London, Q1 2026 — Nia The Light</p>
+          <p class="campaign-feature-desc">Nia is moving into a new London apartment, creating the perfect opportunity for home and lifestyle brands to be featured in authentic move-in, styling, and daily life content.</p>
+
+          <div class="campaign-feature-stats">
+            <div class="campaign-stat">
+              <span class="campaign-stat-value">7.5M+</span>
+              <span class="campaign-stat-label">Home Content Views</span>
+            </div>
+            <div class="campaign-stat">
+              <span class="campaign-stat-value">12.4%</span>
+              <span class="campaign-stat-label">Median Engagement</span>
+            </div>
+            <div class="campaign-stat">
+              <span class="campaign-stat-value">437K</span>
+              <span class="campaign-stat-label">Followers</span>
+            </div>
+          </div>
+
+          <a href="campaigns/london-home-2026.html" class="btn btn-dark">View Campaign Details</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="process-section">
+    <div class="container">
+      <h2 class="reveal" style="text-align: center;">How It Works</h2>
+
+      <div class="process-grid">
+        <div class="process-step reveal">
+          <span class="process-number">01</span>
+          <h3 class="process-title">Brand Fit</h3>
+          <p class="process-desc">We match your brand with creators whose lifestyle and audience naturally align with your products.</p>
+        </div>
+
+        <div class="process-step reveal">
+          <span class="process-number">02</span>
+          <h3 class="process-title">Integration</h3>
+          <p class="process-desc">Products are sent to creators and integrated into their genuine daily routines and content.</p>
+        </div>
+
+        <div class="process-step reveal">
+          <span class="process-number">03</span>
+          <h3 class="process-title">Content</h3>
+          <p class="process-desc">Organic mentions across multiple content pieces: home tours, meal prep, lifestyle moments.</p>
+        </div>
+
+        <div class="process-step reveal">
+          <span class="process-number">04</span>
+          <h3 class="process-title">Results</h3>
+          <p class="process-desc">Track engagement, reach, and brand sentiment across the partnership duration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="reveal">Partner With Us</h2>
+      <p class="reveal">Ready to build authentic brand advocacy? Let's discuss how our creators can represent your brand.</p>
+      <a href="contact.html" class="btn reveal">Get in touch</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/NC_logo.png" alt="NC" class="footer-emblem" loading="lazy">
+          <p>Elevated content and creator campaigns for luxury brands. Editorial-level quality. Creatives of colour. Commercial results.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Navigation</h4>
+          <div class="footer-links">
+            <a href="upcoming-campaigns.html">Upcoming Campaigns</a>
+            <a href="about.html">About</a>
+            <a href="work.html">Work</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Services</h4>
+          <div class="footer-links">
+            <a href="services/content-production.html">Content & Production</a>
+            <a href="campaigns.html">Influencer Campaigns</a>
+            <a href="ambassador-marketing.html">Brand Ambassador Campaigns</a>
+            <a href="services/brand-digital.html">Brand & Digital</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Connect</h4>
+          <div class="footer-links">
+            <a href="mailto:hello@nubeauxcollective.com">hello@nubeauxcollective.com</a>
+            <p style="margin-top: var(--space-md); font-size: 0.875rem; line-height: 1.6; color: rgba(255,255,255,0.6);">71-75 Shelton Street<br>Covent Garden<br>London WC2H 9JQ</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 NUBEAUX Collective. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#">Instagram</a>
+          <a href="https://www.linkedin.com/company/nubeaux-collective/">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
