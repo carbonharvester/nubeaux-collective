@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Register Interest — NUBEAUX Collective. Be the first to know when our upcoming campaigns open for partnership.">
+
+  <title>Register Interest — NUBEAUX Collective</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .register-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: calc(100vh - var(--header-height));
+      margin-top: var(--header-height);
+    }
+
+    .register-content {
+      padding: var(--space-2xl);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: var(--color-bone);
+    }
+
+    .register-content h1 {
+      margin-bottom: var(--space-md);
+    }
+
+    .register-intro {
+      font-size: 1.0625rem;
+      color: var(--color-warm-grey);
+      line-height: 1.7;
+      margin-bottom: var(--space-xl);
+      max-width: 500px;
+    }
+
+    .campaign-tag {
+      display: inline-block;
+      font-size: 0.625rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.5rem 1rem;
+      background-color: var(--color-terracotta);
+      color: var(--color-white);
+      margin-bottom: var(--space-lg);
+    }
+
+    .register-form {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+      max-width: 450px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-md);
+    }
+
+    .register-image {
+      background-size: cover;
+      background-position: center;
+      min-height: 400px;
+    }
+
+    .form-note {
+      font-size: 0.8125rem;
+      color: var(--color-warm-grey);
+      margin-top: var(--space-sm);
+    }
+
+    @media (max-width: 900px) {
+      .register-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .register-image {
+        order: -1;
+        min-height: 300px;
+      }
+
+      .register-content {
+        padding: var(--space-xl);
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><img src="assets/logo.svg" alt="Nubeaux"></a>
+
+      <nav class="nav">
+        <a href="creators.html">Creators</a>
+        <div class="nav-dropdown">
+          <span>Services</span>
+          <div class="nav-dropdown-menu">
+            <a href="campaigns.html">Campaigns</a>
+            <a href="services/content-production.html">Content & Production</a>
+            <a href="services/brand-digital.html">Brand & Digital</a>
+          </div>
+        </div>
+        <a href="work.html">Work</a>
+        <a href="index.html#insights">Insights</a>
+        <a href="about.html">About</a>
+        <a href="upcoming-campaigns.html" class="nav-cta">Campaigns</a>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <a href="creators.html">Creators</a>
+    <span class="mobile-menu-label">Services</span>
+    <a href="campaigns.html">Campaigns</a>
+    <a href="services/content-production.html">Content & Production</a>
+    <a href="services/brand-digital.html">Brand & Digital</a>
+    <a href="work.html">Work</a>
+    <a href="index.html#insights">Insights</a>
+    <a href="contact.html">Contact</a>
+    <a href="upcoming-campaigns.html">Campaigns</a>
+  </div>
+
+  <!-- Register Interest -->
+  <section class="register-hero">
+    <div class="register-content">
+      <span class="campaign-tag" id="campaign-tag">Upcoming Campaign</span>
+      <h1 id="campaign-title">Register Interest</h1>
+      <p class="register-intro" id="campaign-intro">
+        This campaign is not yet open for booking. Register your interest and we'll be in touch when partnership opportunities become available.
+      </p>
+
+      <form class="register-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="first-name">First Name *</label>
+            <input type="text" id="first-name" name="first-name" class="form-input" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="last-name">Last Name *</label>
+            <input type="text" id="last-name" name="last-name" class="form-input" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="email">Email *</label>
+          <input type="email" id="email" name="email" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="company">Company / Property *</label>
+          <input type="text" id="company" name="company" class="form-input" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="position">Position / Title</label>
+            <input type="text" id="position" name="position" class="form-input">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="country">Country</label>
+            <input type="text" id="country" name="country" class="form-input">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="property-type">Property Type</label>
+          <select id="property-type" name="property-type" class="form-input">
+            <option value="">Select...</option>
+            <option value="luxury-hotel">Luxury Hotel</option>
+            <option value="boutique-hotel">Boutique Hotel</option>
+            <option value="safari-lodge">Safari Lodge</option>
+            <option value="resort">Resort</option>
+            <option value="villa">Villa / Private Residence</option>
+            <option value="tourism-board">Tourism Board</option>
+            <option value="brand">Brand / Product</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="message">Tell us about your property or interest (optional)</label>
+          <textarea id="message" name="message" class="form-textarea" rows="3"></textarea>
+        </div>
+
+        <input type="hidden" id="campaign" name="campaign" value="">
+
+        <button type="submit" class="btn btn-dark">Register Interest</button>
+        <p class="form-note">We'll notify you when this campaign opens for partnership.</p>
+      </form>
+    </div>
+
+    <div class="register-image" id="register-image" style="background-image: url('https://images.unsplash.com/photo-1499598896209-c62806b9ae75?w=1200&q=80');"></div>
+  </section>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Parse URL parameters to customise the page
+    const params = new URLSearchParams(window.location.search);
+    const campaign = params.get('campaign');
+
+    const campaigns = {
+      'caribbean': {
+        tag: 'Q2 2026',
+        title: 'Caribbean',
+        intro: 'Dominica & Martinique — Exploring the unspoiled beauty of the Nature Island and the French-Caribbean elegance of Martinique. Register your interest to partner with us on this upcoming campaign.',
+        image: 'https://images.unsplash.com/photo-1499598896209-c62806b9ae75?w=1200&q=80'
+      },
+      'zimbabwe-zambia': {
+        tag: 'Q3 2026',
+        title: 'Zimbabwe & Zambia',
+        intro: 'Victoria Falls and beyond — Luxury safari lodges, the mighty Zambezi, and a homecoming journey to Zimbabwe. Register your interest to partner with us on this upcoming campaign.',
+        image: 'https://images.unsplash.com/photo-1643231939579-7df8aa7a7f9c?w=1200&q=80'
+      }
+    };
+
+    if (campaign && campaigns[campaign]) {
+      const c = campaigns[campaign];
+      document.getElementById('campaign-tag').textContent = c.tag;
+      document.getElementById('campaign-title').textContent = c.title;
+      document.getElementById('campaign-intro').textContent = c.intro;
+      document.getElementById('register-image').style.backgroundImage = `url('${c.image}')`;
+      document.getElementById('campaign').value = campaign;
+      document.title = `Register Interest: ${c.title} — NUBEAUX Collective`;
+    }
+  </script>
+</body>
+</html>

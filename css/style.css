@@ -831,6 +831,8 @@ p {
   color: rgba(255,255,255,0.6);
   max-width: 300px;
   margin-top: var(--space-md);
+  margin-left: 0;
+  margin-right: 0;
   line-height: 1.7;
 }
 
@@ -1934,35 +1936,6 @@ a.insight-card:hover .insight-title {
   }
 }
 
-/* ----- Vibrant Button Gradients ----- */
-.btn.btn-dark {
-  background: linear-gradient(135deg, var(--color-terracotta) 0%, #d4834f 100%);
-  border: none;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn.btn-dark::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-terracotta) 100%);
-  opacity: 0;
-  transition: opacity var(--transition-fast);
-}
-
-.btn.btn-dark:hover {
-  opacity: 1;
-}
-
-.btn.btn-dark:hover::before {
-  opacity: 1;
-}
-
-.btn.btn-dark span {
-  position: relative;
-  z-index: 1;
-}
 
 /* ----- Scroll Progress Indicator ----- */
 .scroll-progress {

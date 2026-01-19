@@ -22,19 +22,18 @@
     /* Hero */
     .upcoming-hero {
       padding: calc(var(--space-2xl) + 80px) 0 var(--space-xl);
-      background-color: var(--color-charcoal);
-      color: var(--color-white);
+      background-color: var(--color-bone);
       text-align: center;
     }
 
     .upcoming-hero h1 {
-      color: var(--color-white);
+      color: var(--color-charcoal);
       margin-bottom: var(--space-md);
     }
 
     .upcoming-hero-intro {
       font-size: 1.125rem;
-      color: rgba(255,255,255,0.7);
+      color: var(--color-warm-grey);
       max-width: 600px;
       margin: 0 auto;
       line-height: 1.7;
@@ -50,13 +49,15 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: var(--space-xl);
-      align-items: start;
+      align-items: stretch;
     }
 
     .campaign-card {
       background-color: var(--color-white);
       border: 1px solid var(--color-ecru);
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
     .campaign-card-image {
@@ -91,8 +92,15 @@
       background-color: var(--color-warm-grey);
     }
 
+    .campaign-card-badge.badge-booking {
+      background-color: var(--color-gold);
+    }
+
     .campaign-card-content {
       padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
     }
 
     .campaign-card-dates {
@@ -113,12 +121,29 @@
       color: var(--color-warm-grey);
       margin-bottom: var(--space-md);
       line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    .campaign-card-opportunities {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.375rem;
+      margin-top: var(--space-sm);
+    }
+
+    .opportunity-tag {
+      font-size: 0.625rem;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.5rem;
+      background-color: var(--color-ecru);
+      color: var(--color-warm-grey);
+      border-radius: 2px;
     }
 
     .campaign-card-creators {
       border-top: 1px solid var(--color-ecru);
       padding-top: var(--space-md);
-      margin-top: var(--space-md);
+      margin-top: auto;
     }
 
     .campaign-card-creators h4 {
@@ -182,6 +207,147 @@
     .campaign-card-cta a:hover {
       background-color: var(--color-charcoal);
       color: var(--color-white);
+    }
+
+    .campaign-card-cta.single-btn {
+      grid-template-columns: 1fr;
+    }
+
+    .campaign-card-cta button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-md);
+      font-size: 0.625rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-charcoal);
+      background-color: var(--color-bone);
+      border: none;
+      cursor: pointer;
+      transition: background-color var(--transition-fast), color var(--transition-fast);
+      text-align: center;
+      white-space: nowrap;
+      font-family: var(--font-sans);
+    }
+
+    .campaign-card-cta button:hover {
+      background-color: var(--color-charcoal);
+      color: var(--color-white);
+    }
+
+    /* Register Interest Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-md);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal {
+      background: var(--color-white);
+      max-width: 500px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      transform: translateY(20px);
+      transition: transform 0.3s ease;
+    }
+
+    .modal-overlay.active .modal {
+      transform: translateY(0);
+    }
+
+    .modal-header {
+      padding: var(--space-lg);
+      background: var(--color-bone);
+      border-bottom: 1px solid var(--color-ecru);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: var(--space-md);
+      right: var(--space-md);
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--color-warm-grey);
+      line-height: 1;
+      padding: 0.25rem;
+      transition: color var(--transition-fast);
+    }
+
+    .modal-close:hover {
+      color: var(--color-charcoal);
+    }
+
+    .modal-tag {
+      display: inline-block;
+      font-size: 0.625rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.375rem 0.75rem;
+      background-color: var(--color-terracotta);
+      color: var(--color-white);
+      margin-bottom: var(--space-sm);
+    }
+
+    .modal-tag-gold {
+      background-color: var(--color-gold);
+    }
+
+    .modal-header h2 {
+      font-size: 1.5rem;
+      margin-bottom: var(--space-xs);
+    }
+
+    .modal-header p {
+      font-size: 0.875rem;
+      color: var(--color-warm-grey);
+      line-height: 1.6;
+    }
+
+    .modal-body {
+      padding: var(--space-lg);
+    }
+
+    .modal-form {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .modal-form .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-md);
+    }
+
+    .modal-form .form-note {
+      font-size: 0.8125rem;
+      color: var(--color-warm-grey);
+      text-align: center;
+      margin-top: var(--space-xs);
+    }
+
+    @media (max-width: 600px) {
+      .modal-form .form-row {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* Partner CTA */
@@ -301,16 +467,24 @@
   <section class="campaigns-section">
     <div class="container">
       <div class="campaigns-grid">
-        <!-- Luxury Living 2026 - Upcoming -->
+        <!-- The House of Light 2026 - Now Booking -->
         <div class="campaign-card reveal">
           <div class="campaign-card-image">
-            <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1768743234/IMG_7361_xlzpnb.jpg" alt="Luxury Living" loading="lazy">
-            <span class="campaign-card-badge badge-upcoming">Upcoming</span>
+            <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1768743234/IMG_7361_xlzpnb.jpg" alt="The House of Light" loading="lazy">
+            <span class="campaign-card-badge badge-booking">Now Booking</span>
           </div>
           <div class="campaign-card-content">
             <p class="campaign-card-dates">Q2 2026</p>
-            <h3 class="campaign-card-title">Luxury Living</h3>
+            <h3 class="campaign-card-title">The House of Light</h3>
             <p class="campaign-card-subtitle">A luxury home and lifestyle content campaign as Nia moves into a new London apartment. Perfect for furniture, kitchen, decor, and bedding brands.</p>
+
+            <div class="campaign-card-opportunities">
+              <span class="opportunity-tag">Furniture</span>
+              <span class="opportunity-tag">Kitchen</span>
+              <span class="opportunity-tag">Bedding</span>
+              <span class="opportunity-tag">Home Decor</span>
+              <span class="opportunity-tag">Appliances</span>
+            </div>
 
             <div class="campaign-card-creators">
               <h4>Creators</h4>
@@ -324,21 +498,28 @@
 
             <div class="campaign-card-cta">
               <a href="campaigns/london-home-2026.html">View Campaign</a>
-              <a href="contact.html">Partner With Us</a>
+              <button type="button" class="partner-btn" data-campaign="house-of-light" data-title="The House of Light">Partner With Us</button>
             </div>
           </div>
         </div>
 
-        <!-- Southern Africa 2026 - Completed -->
+        <!-- Indian Ocean 2026 - Now Booking -->
         <div class="campaign-card reveal">
           <div class="campaign-card-image">
-            <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&q=80" alt="Southern Africa" loading="lazy">
-            <span class="campaign-card-badge badge-completed">Completed</span>
+            <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=800&q=80" alt="Mauritius, Seychelles & Madagascar" loading="lazy">
+            <span class="campaign-card-badge badge-booking">Now Booking</span>
           </div>
           <div class="campaign-card-content">
-            <p class="campaign-card-dates">Jan 5 — Jan 14, 2026</p>
-            <h3 class="campaign-card-title">Southern Africa</h3>
-            <p class="campaign-card-subtitle">A 10-day exploration across Namibia, Johannesburg, and Mozambique capturing luxury travel, cultural connection, and transformative experiences.</p>
+            <p class="campaign-card-dates">Q2 2026</p>
+            <h3 class="campaign-card-title">Indian Ocean</h3>
+            <p class="campaign-card-subtitle">Island-hopping across Mauritius, Seychelles, and Madagascar. Luxury resorts, pristine beaches, unique wildlife, and African island culture.</p>
+
+            <div class="campaign-card-opportunities">
+              <span class="opportunity-tag">Resorts</span>
+              <span class="opportunity-tag">Hotels</span>
+              <span class="opportunity-tag">Experiences</span>
+              <span class="opportunity-tag">Tourism Boards</span>
+            </div>
 
             <div class="campaign-card-creators">
               <h4>Creators</h4>
@@ -355,9 +536,116 @@
             </div>
 
             <div class="campaign-card-cta">
-              <a href="campaigns/southern-africa-2026.html">View Campaign</a>
-              <a href="contact.html">Partner With Us</a>
+              <a href="campaigns/indian-ocean-2026.html">View Campaign</a>
+              <button type="button" class="partner-btn" data-campaign="indian-ocean" data-title="Indian Ocean">Partner With Us</button>
             </div>
+          </div>
+        </div>
+
+        <!-- Caribbean 2026 - Upcoming -->
+        <div class="campaign-card reveal">
+          <div class="campaign-card-image">
+            <img src="https://images.unsplash.com/photo-1499598896209-c62806b9ae75?w=800&q=80" alt="Dominica - Turtle Beach" loading="lazy">
+            <span class="campaign-card-badge badge-upcoming">Upcoming</span>
+          </div>
+          <div class="campaign-card-content">
+            <p class="campaign-card-dates">Q2 2026</p>
+            <h3 class="campaign-card-title">Caribbean</h3>
+            <p class="campaign-card-subtitle">Exploring the unspoiled beauty of Dominica and the French-Caribbean elegance of Martinique. Luxury eco-resorts, volcanic landscapes, and cultural immersion.</p>
+
+            <div class="campaign-card-opportunities">
+              <span class="opportunity-tag">Eco-Resorts</span>
+              <span class="opportunity-tag">Boutique Hotels</span>
+              <span class="opportunity-tag">Experiences</span>
+              <span class="opportunity-tag">Dining</span>
+            </div>
+
+            <div class="campaign-card-creators">
+              <h4>Creators</h4>
+              <div class="creator-row">
+                <a href="creators/nia-the-light.html" class="creator-mini" style="text-decoration: none;">
+                  <img src="assets/media_kit_images/nia_creator.jpg" alt="Nia The Light" class="creator-mini-img" loading="lazy">
+                  <span class="creator-mini-name">Nia The Light</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="campaign-card-cta single-btn">
+              <button type="button" class="register-interest-btn" data-campaign="caribbean" data-title="Caribbean" data-date="Q2 2026">Register Interest</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Zimbabwe & Zambia 2026 - Upcoming -->
+        <div class="campaign-card reveal">
+          <div class="campaign-card-image">
+            <img src="https://images.unsplash.com/photo-1643231939579-7df8aa7a7f9c?w=800&q=80" alt="Victoria Falls" loading="lazy">
+            <span class="campaign-card-badge badge-upcoming">Upcoming</span>
+          </div>
+          <div class="campaign-card-content">
+            <p class="campaign-card-dates">Q3 2026</p>
+            <h3 class="campaign-card-title">Zimbabwe & Zambia</h3>
+            <p class="campaign-card-subtitle">Victoria Falls and beyond. Luxury safari lodges, the mighty Zambezi, and a homecoming journey to Nia's ancestral roots in Zimbabwe.</p>
+
+            <div class="campaign-card-opportunities">
+              <span class="opportunity-tag">Safari Lodges</span>
+              <span class="opportunity-tag">Hotels</span>
+              <span class="opportunity-tag">Experiences</span>
+              <span class="opportunity-tag">Tourism Boards</span>
+            </div>
+
+            <div class="campaign-card-creators">
+              <h4>Creators</h4>
+              <div class="creator-row">
+                <a href="creators/nia-the-light.html" class="creator-mini" style="text-decoration: none;">
+                  <img src="assets/media_kit_images/nia_creator.jpg" alt="Nia The Light" class="creator-mini-img" loading="lazy">
+                  <span class="creator-mini-name">Nia The Light</span>
+                </a>
+                <a href="creators/klein-nettoh.html" class="creator-mini" style="text-decoration: none;">
+                  <img src="assets/klein_images/klein-profile-pic.jpeg" alt="Klein Nettoh" class="creator-mini-img" loading="lazy">
+                  <span class="creator-mini-name">Klein Nettoh</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="campaign-card-cta single-btn">
+              <button type="button" class="register-interest-btn" data-campaign="zimbabwe-zambia" data-title="Zimbabwe & Zambia" data-date="Q3 2026">Register Interest</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Southern Africa 2026 - Completed -->
+        <div class="campaign-card reveal">
+          <div class="campaign-card-image">
+            <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&q=80" alt="Southern Africa" loading="lazy">
+            <span class="campaign-card-badge badge-completed">Completed</span>
+          </div>
+          <div class="campaign-card-content">
+            <p class="campaign-card-dates">Jan 5 — Jan 14, 2026</p>
+            <h3 class="campaign-card-title">Southern Africa</h3>
+            <p class="campaign-card-subtitle">A 10-day exploration across Namibia, Johannesburg, and Mozambique capturing luxury travel, cultural connection, and transformative experiences.</p>
+
+            <div class="campaign-card-opportunities">
+              <span class="opportunity-tag">Safari Lodges</span>
+              <span class="opportunity-tag">Hotels</span>
+              <span class="opportunity-tag">Resorts</span>
+              <span class="opportunity-tag">Experiences</span>
+            </div>
+
+            <div class="campaign-card-creators">
+              <h4>Creators</h4>
+              <div class="creator-row">
+                <a href="creators/nia-the-light.html" class="creator-mini" style="text-decoration: none;">
+                  <img src="assets/media_kit_images/nia_creator.jpg" alt="Nia The Light" class="creator-mini-img" loading="lazy">
+                  <span class="creator-mini-name">Nia The Light</span>
+                </a>
+                <a href="creators/klein-nettoh.html" class="creator-mini" style="text-decoration: none;">
+                  <img src="assets/klein_images/klein-profile-pic.jpeg" alt="Klein Nettoh" class="creator-mini-img" loading="lazy">
+                  <span class="creator-mini-name">Klein Nettoh</span>
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
@@ -423,6 +711,205 @@
     </div>
   </footer>
 
+  <!-- Partner Modal -->
+  <div class="modal-overlay" id="partnerModal">
+    <div class="modal">
+      <button class="modal-close" id="partnerModalClose">&times;</button>
+      <div class="modal-header">
+        <span class="modal-tag modal-tag-gold" id="partnerModalTag">Now Booking</span>
+        <h2 id="partnerModalTitle">Partner With Us</h2>
+        <p>Tell us about your property and how you'd like to be featured in this campaign.</p>
+      </div>
+      <div class="modal-body">
+        <form class="modal-form" id="partnerForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="partner-first-name">First Name *</label>
+              <input type="text" id="partner-first-name" name="first-name" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="partner-last-name">Last Name *</label>
+              <input type="text" id="partner-last-name" name="last-name" class="form-input" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="partner-email">Email *</label>
+            <input type="email" id="partner-email" name="email" class="form-input" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="partner-company">Company / Property *</label>
+            <input type="text" id="partner-company" name="company" class="form-input" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="partner-position">Position / Title</label>
+              <input type="text" id="partner-position" name="position" class="form-input">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="partner-country">Country</label>
+              <input type="text" id="partner-country" name="country" class="form-input">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="partner-property-type">Property Type</label>
+            <select id="partner-property-type" name="property-type" class="form-input">
+              <option value="">Select...</option>
+              <option value="luxury-hotel">Luxury Hotel</option>
+              <option value="boutique-hotel">Boutique Hotel</option>
+              <option value="safari-lodge">Safari Lodge</option>
+              <option value="resort">Resort</option>
+              <option value="villa">Villa / Private Residence</option>
+              <option value="tourism-board">Tourism Board</option>
+              <option value="brand">Brand / Product</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="partner-message">Tell us about your property and objectives</label>
+            <textarea id="partner-message" name="message" class="form-textarea" rows="3"></textarea>
+          </div>
+
+          <input type="hidden" id="partner-campaign" name="campaign" value="">
+
+          <button type="submit" class="btn btn-dark" style="width: 100%;">Send Enquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Register Interest Modal -->
+  <div class="modal-overlay" id="registerModal">
+    <div class="modal">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div class="modal-header">
+        <span class="modal-tag" id="modalDate">Upcoming</span>
+        <h2 id="modalTitle">Register Interest</h2>
+        <p>Be the first to know when partnership opportunities open for this campaign.</p>
+      </div>
+      <div class="modal-body">
+        <form class="modal-form" id="registerForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="modal-first-name">First Name *</label>
+              <input type="text" id="modal-first-name" name="first-name" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="modal-last-name">Last Name *</label>
+              <input type="text" id="modal-last-name" name="last-name" class="form-input" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="modal-email">Email *</label>
+            <input type="email" id="modal-email" name="email" class="form-input" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="modal-company">Company / Property *</label>
+            <input type="text" id="modal-company" name="company" class="form-input" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="modal-position">Position / Title</label>
+              <input type="text" id="modal-position" name="position" class="form-input">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="modal-country">Country</label>
+              <input type="text" id="modal-country" name="country" class="form-input">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="modal-property-type">Property Type</label>
+            <select id="modal-property-type" name="property-type" class="form-input">
+              <option value="">Select...</option>
+              <option value="luxury-hotel">Luxury Hotel</option>
+              <option value="boutique-hotel">Boutique Hotel</option>
+              <option value="safari-lodge">Safari Lodge</option>
+              <option value="resort">Resort</option>
+              <option value="villa">Villa / Private Residence</option>
+              <option value="tourism-board">Tourism Board</option>
+              <option value="brand">Brand / Product</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <input type="hidden" id="modal-campaign" name="campaign" value="">
+
+          <button type="submit" class="btn btn-dark" style="width: 100%;">Register Interest</button>
+          <p class="form-note">We'll notify you when this campaign opens for partnership.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <script src="js/main.js"></script>
+  <script>
+    // Modal functionality
+    const registerModal = document.getElementById('registerModal');
+    const partnerModal = document.getElementById('partnerModal');
+
+    // Register Interest Modal elements
+    const registerClose = document.getElementById('modalClose');
+    const registerTitle = document.getElementById('modalTitle');
+    const registerDate = document.getElementById('modalDate');
+    const registerCampaign = document.getElementById('modal-campaign');
+    const registerBtns = document.querySelectorAll('.register-interest-btn');
+
+    // Partner Modal elements
+    const partnerClose = document.getElementById('partnerModalClose');
+    const partnerTitle = document.getElementById('partnerModalTitle');
+    const partnerCampaign = document.getElementById('partner-campaign');
+    const partnerBtns = document.querySelectorAll('.partner-btn');
+
+    // Open Register Interest modal
+    registerBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        registerTitle.textContent = btn.dataset.title;
+        registerDate.textContent = btn.dataset.date;
+        registerCampaign.value = btn.dataset.campaign;
+        registerModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // Open Partner modal
+    partnerBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        partnerTitle.textContent = btn.dataset.title;
+        partnerCampaign.value = btn.dataset.campaign;
+        partnerModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // Close modals
+    function closeAllModals() {
+      registerModal.classList.remove('active');
+      partnerModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    registerClose.addEventListener('click', closeAllModals);
+    partnerClose.addEventListener('click', closeAllModals);
+
+    registerModal.addEventListener('click', (e) => {
+      if (e.target === registerModal) closeAllModals();
+    });
+
+    partnerModal.addEventListener('click', (e) => {
+      if (e.target === partnerModal) closeAllModals();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeAllModals();
+    });
+  </script>
 </body>
 </html>

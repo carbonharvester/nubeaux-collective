@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The House of Light — Editorial-grade content for design-led home brands. Creating a sanctuary that's bold, considered, and unapologetically luxurious.">
+  <meta name="description" content="Indian Ocean 2026 — A luxury travel campaign across Mauritius, Seychelles, and Madagascar. Island-hopping content for luxury resorts and hospitality brands.">
 
-  <title>The House of Light — NUBEAUX Collective</title>
+  <title>Indian Ocean 2026 — NUBEAUX Collective</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -253,76 +253,126 @@
       margin: var(--space-xl) 0;
     }
 
-    /* Creative Positioning */
-    .positioning-section {
+    /* Destinations Section */
+    .destinations-section {
       padding: var(--space-2xl) 0;
       background-color: var(--color-white);
     }
 
-    .positioning-header {
+    .destinations-header {
       text-align: center;
       max-width: 700px;
       margin: 0 auto var(--space-xl);
       padding: 0 var(--space-md);
     }
 
-    .positioning-header h2 {
+    .destinations-header h2 {
       margin-bottom: var(--space-sm);
     }
 
-    .positioning-theme {
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: 1.5rem;
-      color: var(--color-terracotta);
-      margin-bottom: var(--space-md);
-    }
-
-    .positioning-header p {
+    .destinations-header p {
       color: var(--color-warm-grey);
       line-height: 1.7;
     }
 
-    .tone-grid {
+    .destination-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto auto auto;
       gap: var(--space-md);
-      max-width: 1000px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 0 var(--space-md);
     }
 
-    .tone-item {
-      padding: var(--space-lg);
-      text-align: center;
-      border: 1px solid var(--color-bone);
+    .destination-card {
+      background-color: var(--color-bone);
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: subgrid;
+      grid-row: span 4;
     }
 
-    .tone-item h3 {
-      font-size: 1.125rem;
-      color: var(--color-charcoal);
-      margin-bottom: var(--space-xs);
+    .destination-card-image {
+      aspect-ratio: 4/3;
+      overflow: hidden;
     }
 
-    .tone-item p {
-      font-size: 0.875rem;
+    .destination-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+
+    .destination-card:hover .destination-card-image img {
+      transform: scale(1.03);
+    }
+
+    .destination-card-content {
+      display: contents;
+    }
+
+    .destination-card-content h3 {
+      font-size: 1.5rem;
+      padding: var(--space-lg) var(--space-lg) var(--space-sm);
+      margin: 0;
+      background-color: var(--color-bone);
+    }
+
+    .destination-card-content > p {
+      font-size: 0.9375rem;
       color: var(--color-warm-grey);
+      line-height: 1.7;
+      padding: 0 var(--space-lg);
+      margin: 0;
       max-width: none;
+      background-color: var(--color-bone);
     }
 
-    .positioning-tagline {
-      text-align: center;
-      padding: var(--space-xl) var(--space-md);
-      max-width: 700px;
-      margin: 0 auto;
+    .destination-themes {
+      border-top: 1px solid var(--color-ecru);
+      padding: var(--space-md) var(--space-lg) var(--space-lg);
+      background-color: var(--color-bone);
     }
 
-    .positioning-tagline p {
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: 1.25rem;
+    .destination-themes h4 {
+      font-family: var(--font-sans);
+      font-size: 0.625rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-warm-grey);
+      margin-bottom: var(--space-sm);
+    }
+
+    .destination-themes ul {
+      list-style: none;
+    }
+
+    .destination-themes li {
+      font-size: 0.875rem;
       color: var(--color-charcoal);
-      line-height: 1.6;
+      padding: var(--space-xs) 0;
+      padding-left: var(--space-md);
+      position: relative;
+    }
+
+    .destination-themes li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 4px;
+      background-color: var(--color-terracotta);
+    }
+
+    @media (max-width: 900px) {
+      .destination-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+      }
     }
 
     /* Creators Section */
@@ -338,9 +388,9 @@
 
     .creators-grid {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap: var(--space-lg);
-      max-width: 500px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 0 var(--space-md);
     }
@@ -391,282 +441,10 @@
       margin-bottom: var(--space-sm);
     }
 
-    /* Deliverables */
-    .deliverables-section {
-      padding: var(--space-2xl) 0;
-      background-color: var(--color-bone);
-    }
-
-    .deliverables-header {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto var(--space-xl);
-      padding: 0 var(--space-md);
-    }
-
-    .deliverables-header h2 {
-      margin-bottom: var(--space-sm);
-    }
-
-    .deliverables-header p {
-      color: var(--color-warm-grey);
-      line-height: 1.7;
-    }
-
-    .deliverables-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-md);
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 var(--space-md);
-      align-items: stretch;
-    }
-
-    .deliverable-card {
-      background-color: var(--color-white);
-      padding: var(--space-xl) var(--space-lg);
-      border: 1px solid rgba(0,0,0,0.08);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .deliverable-card h3 {
-      font-size: 1.125rem;
-      margin-bottom: var(--space-sm);
-    }
-
-    .deliverable-card p {
-      font-size: 0.9375rem;
-      color: var(--color-warm-grey);
-      line-height: 1.7;
-      max-width: none;
-      flex-grow: 1;
-    }
-
-    .deliverables-note {
-      text-align: center;
-      padding: var(--space-xl) var(--space-md) 0;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .deliverables-note p {
-      font-family: var(--font-serif);
-      font-style: italic;
-      color: var(--color-warm-grey);
-    }
-
-    /* Why This Works */
-    .why-section {
-      padding: var(--space-2xl) 0;
-      background-color: var(--color-charcoal);
-      color: var(--color-white);
-    }
-
-    .why-header {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto var(--space-xl);
-      padding: 0 var(--space-md);
-    }
-
-    .why-header h2 {
-      color: var(--color-white);
-      margin-bottom: var(--space-sm);
-    }
-
-    .why-header p {
-      color: rgba(255,255,255,0.6);
-      line-height: 1.7;
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-md);
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 var(--space-md);
-      align-items: stretch;
-    }
-
-    .why-item {
-      padding: var(--space-lg);
-      border: 1px solid rgba(255,255,255,0.1);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .why-item h3 {
-      font-size: 1.125rem;
-      color: var(--color-white);
-      margin-bottom: var(--space-sm);
-    }
-
-    .why-item p {
-      font-size: 0.9375rem;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.7;
-      max-width: none;
-      flex-grow: 1;
-    }
-
-    .why-callout {
-      text-align: center;
-      padding: var(--space-xl) var(--space-md) 0;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .why-callout p {
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: 1.375rem;
-      color: var(--color-white);
-    }
-
-    /* Brand Categories */
-    .categories-section {
-      padding: var(--space-2xl) 0;
-      background-color: var(--color-white);
-    }
-
-    .categories-header {
-      text-align: center;
-      margin-bottom: var(--space-xl);
-      padding: 0 var(--space-md);
-    }
-
-    .categories-header h2 {
-      margin-bottom: var(--space-sm);
-    }
-
-    .categories-header p {
-      color: var(--color-warm-grey);
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .categories-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: var(--space-md);
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 var(--space-md);
-      align-items: stretch;
-    }
-
-    .category-card {
-      background-color: var(--color-bone);
-      padding: var(--space-xl) var(--space-lg);
-      text-align: center;
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .category-title {
-      font-size: 1.125rem;
-      margin-bottom: var(--space-sm);
-    }
-
-    .category-examples {
-      font-size: 0.875rem;
-      color: var(--color-warm-grey);
-      line-height: 1.7;
-      max-width: none;
-      flex-grow: 1;
-    }
-
-    @media (max-width: 900px) {
-      .categories-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 500px) {
-      .categories-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* Partner CTA */
-    .partner-cta {
-      background-color: var(--color-ecru);
-      color: var(--color-charcoal);
-      padding: var(--space-2xl) 0;
-      text-align: center;
-    }
-
-    .partner-cta h2 {
-      color: var(--color-charcoal);
-      margin-bottom: var(--space-md);
-    }
-
-    .partner-cta p {
-      color: var(--color-warm-grey);
-      max-width: 600px;
-      margin: 0 auto var(--space-lg);
-      line-height: 1.7;
-    }
-
-    /* Responsive */
     @media (max-width: 768px) {
-      .campaign-hero-content {
-        padding: var(--space-xl);
-      }
-
-      .stats-band-inner {
+      .creators-grid {
         grid-template-columns: 1fr;
-      }
-
-      .stat-item {
-        border-right: none;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-      }
-
-      .stat-item:last-child {
-        border-bottom: none;
-      }
-
-      .tone-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .deliverables-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .why-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .categories-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .creator-card-image {
-        aspect-ratio: 16/10;
-      }
-
-      .creator-card-info {
-        padding: var(--space-md);
-      }
-
-      .creator-card-info h3 {
-        font-size: 1.25rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .tone-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .categories-grid {
-        grid-template-columns: 1fr;
+        max-width: 400px;
       }
     }
 
@@ -746,7 +524,11 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform var(--transition-slow);
+      transition: transform var(--transition-slow), filter var(--transition-medium);
+    }
+
+    .gallery-grid:hover .gallery-item:not(:hover) img {
+      filter: brightness(0.7) saturate(0.8);
     }
 
     .gallery-item:hover img {
@@ -819,6 +601,204 @@
       }
     }
 
+    /* Deliverables */
+    .deliverables-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-bone);
+    }
+
+    .deliverables-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto var(--space-xl);
+      padding: 0 var(--space-md);
+    }
+
+    .deliverables-header h2 {
+      margin-bottom: var(--space-sm);
+    }
+
+    .deliverables-header p {
+      color: var(--color-warm-grey);
+      line-height: 1.7;
+    }
+
+    .deliverables-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-md);
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+      align-items: stretch;
+    }
+
+    .deliverable-card {
+      background-color: var(--color-white);
+      padding: var(--space-xl) var(--space-lg);
+      border: 1px solid rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .deliverable-card h3 {
+      font-size: 1.125rem;
+      margin-bottom: var(--space-sm);
+    }
+
+    .deliverable-card p {
+      font-size: 0.9375rem;
+      color: var(--color-warm-grey);
+      line-height: 1.7;
+      max-width: none;
+      flex-grow: 1;
+    }
+
+    .deliverables-note {
+      text-align: center;
+      padding: var(--space-xl) var(--space-md) 0;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .deliverables-note p {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--color-warm-grey);
+    }
+
+    @media (max-width: 768px) {
+      .deliverables-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Why This Works */
+    .why-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-charcoal);
+      color: var(--color-white);
+    }
+
+    .why-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto var(--space-xl);
+      padding: 0 var(--space-md);
+    }
+
+    .why-header h2 {
+      color: var(--color-white);
+      margin-bottom: var(--space-sm);
+    }
+
+    .why-header p {
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-md);
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+      align-items: stretch;
+    }
+
+    .why-item {
+      padding: var(--space-lg);
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .why-item h3 {
+      font-size: 1.125rem;
+      color: var(--color-white);
+      margin-bottom: var(--space-sm);
+    }
+
+    .why-item p {
+      font-size: 0.9375rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+      max-width: none;
+      flex-grow: 1;
+    }
+
+    .why-callout {
+      text-align: center;
+      padding: var(--space-xl) var(--space-md) 0;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .why-callout p {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.375rem;
+      color: var(--color-white);
+    }
+
+    @media (max-width: 768px) {
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Partner CTA */
+    .partner-cta {
+      background-color: var(--color-ecru);
+      color: var(--color-charcoal);
+      padding: var(--space-2xl) 0;
+      text-align: center;
+    }
+
+    .partner-cta h2 {
+      color: var(--color-charcoal);
+      margin-bottom: var(--space-md);
+    }
+
+    .partner-cta p {
+      color: var(--color-warm-grey);
+      max-width: 600px;
+      margin: 0 auto var(--space-lg);
+      line-height: 1.7;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .campaign-hero-content {
+        padding: var(--space-xl);
+      }
+
+      .stats-band-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+
+      .stat-item:last-child {
+        border-bottom: none;
+      }
+
+      .creator-card-image {
+        aspect-ratio: 16/10;
+      }
+
+      .creator-card-info {
+        padding: var(--space-md);
+      }
+
+      .creator-card-info h3 {
+        font-size: 1.25rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -863,14 +843,14 @@
   <!-- Hero -->
   <section class="campaign-hero">
     <div class="campaign-hero-bg">
-      <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1768743234/IMG_7361_xlzpnb.jpg" alt="The House of Light" loading="eager" fetchpriority="high">
+      <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=1920&q=80" alt="Indian Ocean" loading="eager" fetchpriority="high">
     </div>
     <div class="campaign-hero-overlay"></div>
     <div class="campaign-hero-content">
-      <span class="campaign-label">Brand Ambassador Campaign</span>
-      <h1 class="campaign-title">The House of Light</h1>
+      <span class="campaign-label">Now Booking</span>
+      <h1 class="campaign-title">Indian Ocean</h1>
       <p class="campaign-dates">Q2 2026</p>
-      <p class="campaign-intro">Editorial-grade content for design-led home brands. Creating a sanctuary that's bold, considered, and unapologetically luxurious.</p>
+      <p class="campaign-intro">An island-hopping luxury travel campaign across three of the world's most spectacular destinations. Pristine beaches, unique wildlife, and African island culture at its finest.</p>
     </div>
   </section>
 
@@ -878,16 +858,16 @@
   <div class="stats-band">
     <div class="stats-band-inner">
       <div class="stat-item">
-        <p class="stat-value">7.5M+</p>
-        <p class="stat-label">Home & Lifestyle Views</p>
+        <p class="stat-value">3</p>
+        <p class="stat-label">Destinations</p>
       </div>
       <div class="stat-item">
-        <p class="stat-value">12.4%</p>
-        <p class="stat-label">Median Engagement</p>
+        <p class="stat-value">455K</p>
+        <p class="stat-label">Combined Reach</p>
       </div>
       <div class="stat-item">
-        <p class="stat-value">437K</p>
-        <p class="stat-label">Followers</p>
+        <p class="stat-value">2</p>
+        <p class="stat-label">Creators</p>
       </div>
     </div>
   </div>
@@ -896,19 +876,19 @@
   <section class="mood-board">
     <div class="mood-grid">
       <div class="mood-item mood-large">
-        <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1768740950/IMG_3731_ucyxwb.jpg" alt="Luxury interior" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1589979481223-deb893043163?w=800&q=80" alt="Seychelles beach" loading="lazy">
       </div>
       <div class="mood-item">
-        <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1768740949/IMG_3726_ecytuj.jpg" alt="Design detail" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1589197331516-4d84b72ebde3?w=800&q=80" alt="Mauritius lagoon" loading="lazy">
       </div>
       <div class="mood-item">
-        <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1768740948/IMG_3725_zg1wnh.jpg" alt="Luxury living" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=800&q=80" alt="Madagascar baobab" loading="lazy">
       </div>
       <div class="mood-item">
-        <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1768740947/IMG_3724_qrh7bz.jpg" alt="Interior styling" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80" alt="Luxury resort" loading="lazy">
       </div>
       <div class="mood-item">
-        <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1768740947/IMG_3727_b5wxqd.jpg" alt="Home aesthetic" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1540202404-a2f29016b523?w=800&q=80" alt="Ocean view" loading="lazy">
       </div>
     </div>
   </section>
@@ -918,17 +898,17 @@
     <div class="opportunity-content reveal">
       <p class="opportunity-label">The Opportunity</p>
       <h2 class="opportunity-headline">
-        A luxury home and lifestyle collaboration for brands that understand <em>sanctuary</em> means something.
+        A multi-destination luxury travel campaign for resorts and hospitality brands seeking <em>authentic, aspirational storytelling</em>.
       </h2>
 
       <div class="opportunity-body">
-        <p>Nia is moving into a new London apartment. Her home content consistently outperforms her other verticals, with 7.5M+ views and 12.4% median engagement. An audience that follows her space transformations, meal prep routines, and renovation journeys.</p>
+        <p>The Indian Ocean islands represent some of the world's most coveted travel destinations. This campaign weaves together three distinct island experiences into a single compelling narrative, from the refined elegance of Mauritius to the untouched paradise of Seychelles and the wild biodiversity of Madagascar.</p>
 
-        <p>This campaign puts design-led home brands inside that story. Your products, positioned in a life her audience already follows.</p>
+        <p>For partner properties, this collaboration offers exposure to an engaged audience actively seeking aspirational travel experiences. Your resort positioned within content that captures the essence of island luxury.</p>
       </div>
 
       <p class="opportunity-callout">
-        Home as sanctuary. Bold choices. Unapologetic luxury.
+        Paradise found. Three islands. One unforgettable journey.
       </p>
     </div>
   </section>
@@ -936,7 +916,7 @@
   <!-- Creators -->
   <section class="creators-section">
     <div class="container">
-      <h2 class="reveal">The Creator</h2>
+      <h2 class="reveal">The Creators</h2>
 
       <div class="creators-grid">
         <a href="../creators/nia-the-light.html" class="creator-card reveal">
@@ -945,196 +925,241 @@
           </div>
           <div class="creator-card-info">
             <h3>Nia The Light</h3>
-            <p class="creator-card-role">Home & Lifestyle Creator</p>
+            <p class="creator-card-role">Luxury Travel Creator</p>
+          </div>
+        </a>
+
+        <a href="../creators/klein-nettoh.html" class="creator-card reveal">
+          <div class="creator-card-image">
+            <img src="../assets/klein_images/klein_creator.jpg" alt="Klein Nettoh" loading="lazy">
+          </div>
+          <div class="creator-card-info">
+            <h3>Klein Nettoh</h3>
+            <p class="creator-card-role">Filmmaker & Photographer</p>
           </div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Top Home & Lifestyle Content -->
+  <!-- Top Travel Content -->
   <section class="gallery-section">
     <div class="gallery-header reveal">
-      <h2>Top Home & Lifestyle Content</h2>
-      <p>Highest performing home, cooking, and meal prep content.</p>
+      <h2>Top Travel Content</h2>
+      <p>Highest performing travel content from 2023-2025.</p>
       <div class="sector-metrics">
         <div class="metric">
-          <span class="metric-value">12.4%</span>
+          <span class="metric-value">15.6%</span>
           <span class="metric-label">Median Engagement</span>
         </div>
         <div class="metric">
-          <span class="metric-value">7.5M+</span>
+          <span class="metric-value">10.7M+</span>
           <span class="metric-label">Views</span>
         </div>
         <div class="metric">
-          <span class="metric-value">880K+</span>
+          <span class="metric-value">648K+</span>
           <span class="metric-label">Likes</span>
         </div>
       </div>
     </div>
 
     <div class="gallery-grid gallery-grid-5">
-      <!-- 1. Hello Monday (Moving into home) -->
-      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/hello_monday.mp4">
-        <img src="../assets/nia_content/lifestyle/2023_plus/hello_monday.jpg" alt="Hello Monday - Moving In" loading="lazy">
+      <!-- 1. Memories Senegal -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/travel/2023_plus/memories_senegal.mp4">
+        <img src="../assets/nia_content/travel/2023_plus/memories_senegal.jpg" alt="Memories from Senegal" loading="lazy">
         <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         <div class="gallery-overlay">
           <div class="gallery-stats">
-            <span>644K views</span>
-            <span>56K likes</span>
-            <span class="eng">18.8% eng</span>
+            <span>112K views</span>
+            <span>12K likes</span>
+            <span class="eng">27.9% eng</span>
           </div>
         </div>
       </div>
 
-      <!-- 2. Jamaica Vibes Apartment -->
-      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/jamaica_vibes.mp4">
-        <img src="../assets/nia_content/lifestyle/2023_plus/jamaica_vibes.jpg" alt="Jamaica Vibes Apartment" loading="lazy">
+      <!-- 2. Kenya Check-in -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/travel/2023_plus/kenya_checkin.mp4">
+        <img src="../assets/nia_content/travel/2023_plus/kenya_checkin.jpg" alt="Checked in to Kenya" loading="lazy">
         <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         <div class="gallery-overlay">
           <div class="gallery-stats">
-            <span>537K views</span>
-            <span>41K likes</span>
-            <span class="eng">12.4% eng</span>
+            <span>65K views</span>
+            <span>5.5K likes</span>
+            <span class="eng">22.8% eng</span>
           </div>
         </div>
       </div>
 
-      <!-- 3. Living Room Tour -->
-      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/living_room_tour.mp4">
-        <img src="../assets/nia_content/lifestyle/2023_plus/living_room_tour.jpg" alt="Living Room Tour" loading="lazy">
+      <!-- 3. Grandad Nigeria -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/travel/2023_plus/grandad_nigeria.mp4">
+        <img src="../assets/nia_content/travel/2023_plus/grandad_nigeria.jpg" alt="Nigeria - Grandad's Home" loading="lazy">
         <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         <div class="gallery-overlay">
           <div class="gallery-stats">
-            <span>193K views</span>
-            <span>18K likes</span>
-            <span class="eng">20.8% eng</span>
+            <span>167K views</span>
+            <span>7.3K likes</span>
+            <span class="eng">19.4% eng</span>
           </div>
         </div>
       </div>
 
-      <!-- 4. I'm officially a homeowner! -->
-      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/homeowner.mp4">
-        <img src="../assets/nia_content/lifestyle/2023_plus/homeowner.jpg" alt="I'm officially a homeowner" loading="lazy">
+      <!-- 4. Island Girl Life -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/travel/2023_plus/island_girl_life.mp4">
+        <img src="../assets/nia_content/travel/2023_plus/island_girl_life.jpg" alt="Island Girl Life" loading="lazy">
         <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         <div class="gallery-overlay">
           <div class="gallery-stats">
-            <span>150K views</span>
-            <span>18K likes</span>
-            <span class="eng">24.8% eng</span>
+            <span>201K views</span>
+            <span>19K likes</span>
+            <span class="eng">18.7% eng</span>
           </div>
         </div>
       </div>
 
-      <!-- 5. Meal Prep Sunday -->
-      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/meal_prep_sunday.mp4">
-        <img src="../assets/nia_content/lifestyle/2023_plus/meal_prep_sunday.jpg" alt="Meal Prep Sunday" loading="lazy">
+      <!-- 5. Zanzibar Pole Pole -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/travel/2023_plus/zanzibar_pole_pole.mp4">
+        <img src="../assets/nia_content/travel/2023_plus/zanzibar_pole_pole.jpg" alt="Zanzibar Pole Pole" loading="lazy">
         <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         <div class="gallery-overlay">
           <div class="gallery-stats">
-            <span>63K views</span>
-            <span>3.2K likes</span>
-            <span class="eng">12.4% eng</span>
+            <span>77K views</span>
+            <span>6.5K likes</span>
+            <span class="eng">17.2% eng</span>
           </div>
         </div>
       </div>
 
-      <!-- 6. My Home One Year Ago -->
-      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/home_one_year.mp4">
-        <img src="../assets/nia_content/lifestyle/2023_plus/home_one_year.jpg" alt="My Home One Year Ago" loading="lazy">
-        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        <div class="gallery-overlay">
-          <div class="gallery-stats">
-            <span>52K views</span>
-            <span>3.6K likes</span>
-            <span class="eng">16.6% eng</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 7. Jollof Rice Cooking -->
-      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/jollof_rice_cooking.mp4">
-        <img src="../assets/nia_content/lifestyle/2023_plus/jollof_rice_cooking.jpg" alt="Jollof Rice Cooking" loading="lazy">
-        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        <div class="gallery-overlay">
-          <div class="gallery-stats">
-            <span>107K views</span>
-            <span>4.9K likes</span>
-            <span class="eng">10.4% eng</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 8. Home Reno Tips -->
-      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/home_reno_tips.mp4">
-        <img src="../assets/nia_content/lifestyle/2023_plus/home_reno_tips.jpg" alt="Home Reno Tips" loading="lazy">
+      <!-- 6. Zanzibar Market -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/travel/2023_plus/zanzibar_market.mp4">
+        <img src="../assets/nia_content/travel/2023_plus/zanzibar_market.jpg" alt="Zanzibar Market" loading="lazy">
         <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         <div class="gallery-overlay">
           <div class="gallery-stats">
             <span>85K views</span>
-            <span>5.4K likes</span>
-            <span class="eng">14.0% eng</span>
+            <span>7.1K likes</span>
+            <span class="eng">15.2% eng</span>
           </div>
         </div>
       </div>
 
-      <!-- 9. Sunday Dinner Meal Prep -->
-      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/sunday_dinner.mp4">
-        <img src="../assets/nia_content/lifestyle/2023_plus/sunday_dinner.jpg" alt="Sunday Dinner Meal Prep" loading="lazy">
+      <!-- 7. Born in Africa -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/travel/2023_plus/born_in_africa.mp4">
+        <img src="../assets/nia_content/travel/2023_plus/born_in_africa.jpg" alt="Born in Africa" loading="lazy">
         <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         <div class="gallery-overlay">
           <div class="gallery-stats">
-            <span>85K views</span>
-            <span>4.3K likes</span>
-            <span class="eng">11.9% eng</span>
+            <span>918K views</span>
+            <span>46K likes</span>
+            <span class="eng">14.5% eng</span>
           </div>
         </div>
       </div>
 
-      <!-- 10. Days Like This Home -->
-      <div class="gallery-item reveal" data-video="../assets/nia_content/lifestyle/2023_plus/days_like_this_home.mp4">
-        <img src="../assets/nia_content/lifestyle/2023_plus/days_like_this_home.jpg" alt="Days Like This - My Home" loading="lazy">
+      <!-- 8. Ola Portugal -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/travel/2023_plus/ola_portugal.mp4">
+        <img src="../assets/nia_content/travel/2023_plus/ola_portugal.jpg" alt="Ola from Portugal" loading="lazy">
         <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
         <div class="gallery-overlay">
           <div class="gallery-stats">
-            <span>84K views</span>
-            <span>5.8K likes</span>
-            <span class="eng">14.0% eng</span>
+            <span>275K views</span>
+            <span>16K likes</span>
+            <span class="eng">11.3% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. Lamu Daydream -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/travel/2023_plus/lamu_daydream.mp4">
+        <img src="../assets/nia_content/travel/2023_plus/lamu_daydream.jpg" alt="Lamu Daydream" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>1.1M views</span>
+            <span>47K likes</span>
+            <span class="eng">9.1% eng</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. African Sun Zanzibar -->
+      <div class="gallery-item reveal" data-video="../assets/nia_content/travel/2023_plus/african_sun_zanzibar.mp4">
+        <img src="../assets/nia_content/travel/2023_plus/african_sun_zanzibar.jpg" alt="African Sun - Zanzibar" loading="lazy">
+        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <div class="gallery-overlay">
+          <div class="gallery-stats">
+            <span>134K views</span>
+            <span>7.7K likes</span>
+            <span class="eng">12.6% eng</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Creative Positioning -->
-  <section class="positioning-section">
-    <div class="positioning-header reveal">
-      <h2>The Creative Positioning</h2>
-      <p class="positioning-theme">Your Sanctuary, Unapologetically</p>
-      <p>The content explores what it means to create a home that reflects who you are. Bold choices. Quality materials. Spaces designed for living well.</p>
+  <!-- Destinations -->
+  <section class="destinations-section">
+    <div class="destinations-header reveal">
+      <h2>The Destinations</h2>
+      <p>Three island nations, each offering a unique perspective on Indian Ocean luxury.</p>
     </div>
 
-    <div class="tone-grid">
-      <div class="tone-item reveal">
-        <h3>Bold & Considered</h3>
-        <p>Confident choices, not safe ones</p>
+    <div class="destination-grid">
+      <!-- Mauritius -->
+      <div class="destination-card reveal">
+        <div class="destination-card-image">
+          <img src="https://images.unsplash.com/photo-1589197331516-4d84b72ebde3?w=800&q=80" alt="Mauritius" loading="lazy">
+        </div>
+        <div class="destination-card-content">
+          <h3>Mauritius</h3>
+          <p>Refined luxury and multicultural richness. World-class resorts set against pristine lagoons, offering a unique fusion of African, Indian, and European influences.</p>
+          <div class="destination-themes">
+            <h4>Story themes</h4>
+            <ul>
+              <li>Luxury resort experiences</li>
+              <li>Water sports and lagoon life</li>
+              <li>Cultural fusion and local cuisine</li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="tone-item reveal">
-        <h3>Quality Materials</h3>
-        <p>Texture, craftsmanship, longevity</p>
-      </div>
-      <div class="tone-item reveal">
-        <h3>Personal Sanctuary</h3>
-        <p>Home as retreat from the world</p>
-      </div>
-      <div class="tone-item reveal">
-        <h3>Living Well</h3>
-        <p>Rituals, routines, real life</p>
-      </div>
-    </div>
 
-    <div class="positioning-tagline reveal">
-      <p>Content that shows how luxury brands become part of a life, not just a feed.</p>
+      <!-- Seychelles -->
+      <div class="destination-card reveal">
+        <div class="destination-card-image">
+          <img src="https://images.unsplash.com/photo-1589979481223-deb893043163?w=800&q=80" alt="Seychelles" loading="lazy">
+        </div>
+        <div class="destination-card-content">
+          <h3>Seychelles</h3>
+          <p>The campaign's most visually striking chapter. Iconic granite boulders, powder-white beaches, and crystal-clear waters that define tropical paradise.</p>
+          <div class="destination-themes">
+            <h4>Story themes</h4>
+            <ul>
+              <li>Iconic beach landscapes</li>
+              <li>Private island experiences</li>
+              <li>Marine conservation and snorkelling</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Madagascar -->
+      <div class="destination-card reveal">
+        <div class="destination-card-image">
+          <img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=800&q=80" alt="Madagascar" loading="lazy">
+        </div>
+        <div class="destination-card-content">
+          <h3>Madagascar</h3>
+          <p>Adventure and biodiversity. Endemic wildlife found nowhere else on Earth, luxury eco-lodges, and extraordinary natural encounters from lemurs to baobabs.</p>
+          <div class="destination-themes">
+            <h4>Story themes</h4>
+            <ul>
+              <li>Unique wildlife encounters</li>
+              <li>Baobab landscapes</li>
+              <li>Eco-luxury and conservation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1142,30 +1167,30 @@
   <section class="deliverables-section">
     <div class="deliverables-header reveal">
       <h2>What You Get</h2>
-      <p>Packages are tailored to each brand and product category. All content is styled and produced to be repurposable across your own channels.</p>
+      <p>Packages are tailored to each property and destination. All content is produced to be repurposable across your own marketing channels.</p>
     </div>
 
     <div class="deliverables-grid">
       <div class="deliverable-card reveal">
-        <h3>Social Integration</h3>
-        <p>In-feed posts, stories, and organic mentions. Authentic placement within content her audience already engages with.</p>
+        <h3>Dedicated Reel</h3>
+        <p>One in-feed Instagram Reel featuring your property, professionally edited with music and captions optimised for engagement.</p>
+      </div>
+      <div class="deliverable-card reveal">
+        <h3>Story Coverage</h3>
+        <p>Authentic story coverage throughout the stay, capturing arrival, experiences, dining, and the atmosphere that makes your property unique.</p>
       </div>
       <div class="deliverable-card reveal">
         <h3>Editorial Photography</h3>
-        <p>Lifestyle imagery that positions your product in context. Campaign-quality, not content-mill.</p>
-      </div>
-      <div class="deliverable-card reveal">
-        <h3>Video Content</h3>
-        <p>Short-form and long-form options. Cinematic pacing, considered storytelling, products that breathe.</p>
+        <p>Campaign-quality imagery shot by Klein Nettoh, positioning your property in the context of aspirational travel storytelling.</p>
       </div>
       <div class="deliverable-card reveal">
         <h3>Usage Rights</h3>
-        <p>Full rights included for agreed assets. Repurpose across your own marketing, retail, and digital channels.</p>
+        <p>Full usage rights in perpetuity for agreed assets. Repurpose across your own marketing, website, and digital channels.</p>
       </div>
     </div>
 
     <div class="deliverables-note reveal">
-      <p>Get in touch to discuss packages and pricing.</p>
+      <p>Additional deliverables such as extended video content or photography packages can be arranged.</p>
       <a href="../contact.html" class="btn" style="margin-top: var(--space-md);">Enquire</a>
     </div>
   </section>
@@ -1173,58 +1198,31 @@
   <!-- Why This Works -->
   <section class="why-section">
     <div class="why-header reveal">
-      <h2>Why This Works for Brands</h2>
-      <p>This is brand building, not just reach.</p>
+      <h2>Why This Works for Properties</h2>
+      <p>Beyond reach. Beyond impressions. Brand positioning that converts.</p>
     </div>
 
     <div class="why-grid">
       <div class="why-item reveal">
-        <h3>Elevated Perception</h3>
-        <p>Lifts your brand beyond retail and e-commerce. Content that belongs in a campaign, not just a feed.</p>
+        <h3>Aspirational Positioning</h3>
+        <p>Your property positioned within a narrative of luxury island-hopping. Content that belongs in a travel magazine, not just a feed.</p>
       </div>
       <div class="why-item reveal">
-        <h3>Authentic Integration</h3>
-        <p>Your products become part of how Nia lives. Seen in use, in context, in a home her audience already follows.</p>
+        <h3>Integrated Storytelling</h3>
+        <p>Part of a cohesive multi-destination campaign rather than an isolated post. Your property becomes a chapter in a larger journey.</p>
       </div>
       <div class="why-item reveal">
-        <h3>Timeless Content</h3>
-        <p>Creates evergreen assets rather than trend-led posts. Quality over virality. Longevity over likes.</p>
+        <h3>Dual Creator Power</h3>
+        <p>Nia brings the audience and authentic travel storytelling. Klein brings cinematic production value and professional photography.</p>
       </div>
       <div class="why-item reveal">
         <h3>Engaged Audience</h3>
-        <p>7.5M+ views on home content with 12.4% median engagement. An audience that watches, saves, and acts.</p>
+        <p>455K combined reach with audiences actively seeking luxury travel experiences. Followers who save, share, and book.</p>
       </div>
     </div>
 
     <div class="why-callout reveal">
-      <p>This is brand building, not just reach.</p>
-    </div>
-  </section>
-
-  <!-- Brand Categories -->
-  <section class="categories-section">
-    <div class="categories-header reveal">
-      <h2>Partner Categories</h2>
-      <p>We're seeking partnerships with design-led brands across these categories.</p>
-    </div>
-
-    <div class="categories-grid">
-      <div class="category-card reveal">
-        <h3 class="category-title">Furniture</h3>
-        <p class="category-examples">Sofas, beds, dining tables, accent chairs, shelving</p>
-      </div>
-      <div class="category-card reveal">
-        <h3 class="category-title">Kitchen & Dining</h3>
-        <p class="category-examples">Appliances, cookware, tableware, organisation</p>
-      </div>
-      <div class="category-card reveal">
-        <h3 class="category-title">Home Decor</h3>
-        <p class="category-examples">Art, mirrors, lighting, rugs, textiles</p>
-      </div>
-      <div class="category-card reveal">
-        <h3 class="category-title">Bedding & Bath</h3>
-        <p class="category-examples">Luxury linens, towels, accessories, candles</p>
-      </div>
+      <p>Content that inspires bookings, not just likes.</p>
     </div>
   </section>
 
@@ -1232,7 +1230,7 @@
   <section class="partner-cta">
     <div class="container">
       <h2 class="reveal">Partner With Us</h2>
-      <p class="reveal">Limited partnership opportunities available. Brands are selected based on quality, design integrity, and alignment with the campaign's visual language.</p>
+      <p class="reveal">Partnership opportunities are now open across all three destinations. This campaign is actively booking for Q2 2026. Enquire now to secure your placement.</p>
       <a href="../contact.html" class="btn reveal">Enquire about partnership</a>
     </div>
   </section>
@@ -1243,7 +1241,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <img src="../assets/NC_logo.png" alt="NC" class="footer-emblem" loading="lazy">
-          <p>Elevated content and creator campaigns for luxury brands. Editorial-level quality. Creatives of colour. Commercial results.</p>
+          <p>Connecting Africa's luxury hospitality with creators and creatives of colour. Authentic representation. Commercial results.</p>
         </div>
         <div class="footer-col">
           <h4 class="footer-heading">Navigation</h4>
@@ -1281,49 +1279,6 @@
     </div>
   </footer>
 
-  <!-- Video Modal -->
-  <div id="videoModal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 10000; align-items: center; justify-content: center;">
-    <button id="closeModal" style="position: absolute; top: 20px; right: 20px; background: none; border: none; color: white; font-size: 2rem; cursor: pointer; z-index: 10001;">&times;</button>
-    <video id="modalVideo" controls playsinline style="max-width: 90vw; max-height: 90vh; outline: none;"></video>
-  </div>
-
   <script src="../js/main.js"></script>
-  <script>
-    // Video modal functionality
-    const videoModal = document.getElementById('videoModal');
-    const modalVideo = document.getElementById('modalVideo');
-    const closeModal = document.getElementById('closeModal');
-
-    document.querySelectorAll('.gallery-item[data-video]').forEach(item => {
-      item.addEventListener('click', () => {
-        const videoSrc = item.getAttribute('data-video');
-        modalVideo.src = videoSrc;
-        videoModal.style.display = 'flex';
-        modalVideo.play();
-      });
-    });
-
-    closeModal.addEventListener('click', () => {
-      modalVideo.pause();
-      modalVideo.src = '';
-      videoModal.style.display = 'none';
-    });
-
-    videoModal.addEventListener('click', (e) => {
-      if (e.target === videoModal) {
-        modalVideo.pause();
-        modalVideo.src = '';
-        videoModal.style.display = 'none';
-      }
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && videoModal.style.display === 'flex') {
-        modalVideo.pause();
-        modalVideo.src = '';
-        videoModal.style.display = 'none';
-      }
-    });
-  </script>
 </body>
 </html>
