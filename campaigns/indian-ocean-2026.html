@@ -298,15 +298,15 @@
       overflow: hidden;
     }
 
+    .destination-card-image {
+      pointer-events: none;
+    }
+
     .destination-card-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform var(--transition-slow);
-    }
-
-    .destination-card:hover .destination-card-image img {
-      transform: scale(1.03);
+      pointer-events: none;
     }
 
     .destination-card-content {
@@ -752,7 +752,9 @@
     /* Partner Categories */
     .categories-section {
       padding: var(--space-2xl) 0;
+      padding-bottom: var(--space-2xl);
       background-color: var(--color-bone);
+      border-bottom: 1px solid var(--color-ecru);
     }
 
     .categories-header {
@@ -1014,14 +1016,13 @@
     <a href="../services/content-production.html">Content & Production</a>
     <a href="../services/brand-digital.html">Brand & Digital</a>
     <a href="../work.html">Work</a>
-    <a href="../contact.html">Contact</a>
     <a href="../upcoming-campaigns.html" class="mobile-menu-cta">Campaigns</a>
   </div>
 
   <!-- Hero -->
   <section class="campaign-hero">
     <div class="campaign-hero-bg">
-      <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=1920&q=80" alt="Indian Ocean" loading="eager" fetchpriority="high">
+      <img src="https://images.unsplash.com/photo-1513415277900-a62401e19be4?w=1920&q=80" alt="Indian Ocean" loading="eager" fetchpriority="high">
     </div>
     <div class="campaign-hero-overlay"></div>
     <div class="campaign-hero-content">
@@ -1060,7 +1061,7 @@
         <img src="https://images.unsplash.com/photo-1589197331516-4d84b72ebde3?w=800&q=80" alt="Mauritius lagoon" loading="lazy">
       </div>
       <div class="mood-item">
-        <img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=800&q=80" alt="Madagascar baobab" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1570742544137-3a469196c32b?w=800&q=80" alt="Madagascar baobab" loading="lazy">
       </div>
       <div class="mood-item">
         <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80" alt="Luxury resort" loading="lazy">
@@ -1302,7 +1303,7 @@
       <!-- Seychelles -->
       <div class="destination-card reveal">
         <div class="destination-card-image">
-          <img src="https://images.unsplash.com/photo-1589979481223-deb893043163?w=800&q=80" alt="Seychelles" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&q=80" alt="Seychelles" loading="lazy">
         </div>
         <div class="destination-card-content">
           <h3>Seychelles</h3>
@@ -1321,7 +1322,7 @@
       <!-- Madagascar -->
       <div class="destination-card reveal">
         <div class="destination-card-image">
-          <img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=800&q=80" alt="Madagascar" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1570742544137-3a469196c32b?w=800&q=80" alt="Madagascar" loading="lazy">
         </div>
         <div class="destination-card-content">
           <h3>Madagascar</h3>

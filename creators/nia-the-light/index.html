@@ -465,6 +465,14 @@ transition: filter var(--transition-medium);
       padding: 0.5rem 1rem;
     }
 
+    .campaign-badge.badge-completed {
+      background-color: var(--color-warm-grey);
+    }
+
+    .campaign-badge.badge-upcoming {
+      background-color: var(--color-terracotta);
+    }
+
     .campaign-card-content {
       padding: var(--space-lg);
       display: flex;
@@ -489,7 +497,6 @@ transition: filter var(--transition-medium);
       font-size: 0.875rem;
       color: var(--color-warm-grey);
       line-height: 1.6;
-      flex-grow: 1;
     }
 
     .campaign-card-link {
@@ -498,10 +505,11 @@ transition: filter var(--transition-medium);
       text-transform: uppercase;
       color: var(--color-charcoal);
       text-decoration: none;
+      margin-top: auto;
+      padding-top: var(--space-md);
       border-bottom: 1px solid var(--color-charcoal);
       padding-bottom: 2px;
       transition: all var(--transition-fast);
-      margin-top: var(--space-md);
       align-self: flex-start;
     }
 
@@ -812,7 +820,6 @@ transition: filter var(--transition-medium);
     <a href="../../services/content-production.html">Content & Production</a>
     <a href="../../services/brand-digital.html">Brand & Digital</a>
     <a href="../../work.html">Work</a>
-    <a href="../../contact.html">Contact</a>
     <a href="../../upcoming-campaigns.html" class="mobile-menu-cta">Campaigns</a>
   </div>
 
@@ -1091,27 +1098,27 @@ transition: filter var(--transition-medium);
     <div class="campaigns-grid">
       <div class="campaign-card reveal">
         <div class="campaign-card-image">
-          <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&q=80" alt="Southern Africa">
-          <span class="campaign-badge">Now Booking</span>
-        </div>
-        <div class="campaign-card-content">
-          <p class="campaign-card-dates">Dec 31, 2025 — Jan 18, 2026</p>
-          <h3 class="campaign-card-title">Southern Africa</h3>
-          <p class="campaign-card-desc">19 days across Cape Town, Namibia, Johannesburg, Mozambique, and Botswana.</p>
-          <a href="../campaigns/southern-africa-2026.html" class="campaign-card-link">View Campaign</a>
-        </div>
-      </div>
-
-      <div class="campaign-card reveal">
-        <div class="campaign-card-image">
           <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1768743234/IMG_7361_xlzpnb.jpg" alt="The House of Light">
-          <span class="campaign-badge">Now Booking</span>
+          <span class="campaign-badge badge-upcoming">Upcoming</span>
         </div>
         <div class="campaign-card-content">
           <p class="campaign-card-dates">Q2 2026</p>
           <h3 class="campaign-card-title">The House of Light</h3>
           <p class="campaign-card-desc">Luxury home and lifestyle content as Nia moves into a new London apartment. Perfect for furniture, kitchen, and decor brands.</p>
           <a href="../../campaigns/london-home-2026.html" class="campaign-card-link">View Campaign</a>
+        </div>
+      </div>
+
+      <div class="campaign-card reveal">
+        <div class="campaign-card-image">
+          <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&q=80" alt="Southern Africa">
+          <span class="campaign-badge badge-completed">Completed</span>
+        </div>
+        <div class="campaign-card-content">
+          <p class="campaign-card-dates">Jan 5 - Jan 14, 2026</p>
+          <h3 class="campaign-card-title">Southern Africa</h3>
+          <p class="campaign-card-desc">10 days across Namibia, Johannesburg, and Mozambique.</p>
+          <a href="../../campaigns/southern-africa-2026.html" class="campaign-card-link">View Campaign</a>
         </div>
       </div>
     </div>
