@@ -402,8 +402,8 @@ p {
 }
 
 .btn:hover {
-  background-color: var(--color-white);
-  color: var(--color-charcoal);
+  background-color: var(--color-charcoal);
+  color: var(--color-bone);
 }
 
 .btn.btn-dark {
@@ -1495,6 +1495,19 @@ p {
 .mobile-menu.active a:nth-child(7) { transition-delay: 0.4s; }
 .mobile-menu.active a:nth-child(8) { transition-delay: 0.45s; }
 .mobile-menu.active a:nth-child(9) { transition-delay: 0.5s; }
+.mobile-menu.active a:nth-child(10) { transition-delay: 0.55s; }
+
+/* Mobile Menu CTA Button */
+.mobile-menu-cta {
+  font-family: var(--font-sans) !important;
+  font-size: 0.75rem !important;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  background-color: var(--color-terracotta);
+  color: var(--color-bone) !important;
+  margin-top: var(--space-lg) !important;
+}
 
 /* ----- Scroll Reveal Animation ----- */
 .reveal {

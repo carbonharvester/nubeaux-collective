@@ -570,7 +570,8 @@
       background: rgba(194, 112, 62, 0.85);
     }
 
-    .play-icon {
+    .play-icon,
+    .carousel-icon {
       position: absolute;
       top: var(--space-md);
       right: var(--space-md);
@@ -748,6 +749,72 @@
       }
     }
 
+    /* Partner Categories */
+    .categories-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-bone);
+    }
+
+    .categories-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto var(--space-xl);
+      padding: 0 var(--space-md);
+    }
+
+    .categories-header h2 {
+      margin-bottom: var(--space-sm);
+    }
+
+    .categories-header p {
+      color: var(--color-warm-grey);
+      line-height: 1.7;
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-md);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+      align-items: stretch;
+    }
+
+    .category-card {
+      background-color: var(--color-white);
+      padding: var(--space-xl) var(--space-lg);
+      text-align: center;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .category-title {
+      font-size: 1.125rem;
+      margin-bottom: var(--space-sm);
+    }
+
+    .category-examples {
+      font-size: 0.875rem;
+      color: var(--color-warm-grey);
+      line-height: 1.7;
+      max-width: none;
+      flex-grow: 1;
+    }
+
+    @media (max-width: 900px) {
+      .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .categories-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* Partner CTA */
     .partner-cta {
       background-color: var(--color-ecru);
@@ -799,6 +866,117 @@
         font-size: 1.25rem;
       }
     }
+
+    /* Video Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.95);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity var(--transition-medium), visibility var(--transition-medium);
+    }
+
+    .lightbox.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: var(--space-lg);
+      right: var(--space-lg);
+      width: 48px;
+      height: 48px;
+      background: none;
+      border: none;
+      color: var(--color-white);
+      cursor: pointer;
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-content {
+      max-width: 90vw;
+      max-height: 90vh;
+    }
+
+    .lightbox-content img {
+      max-width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+    }
+
+    .lightbox-content video {
+      max-width: 90vw;
+      max-height: 80vh;
+      border-radius: 12px;
+      background: #000;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      background: rgba(255,255,255,0.9);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--color-charcoal);
+      transition: background var(--transition-fast);
+    }
+
+    .lightbox-nav:hover {
+      background: var(--color-white);
+    }
+
+    .lightbox-nav.prev {
+      left: var(--space-lg);
+    }
+
+    .lightbox-nav.next {
+      right: var(--space-lg);
+    }
+
+    .lightbox-counter {
+      position: absolute;
+      bottom: var(--space-lg);
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--color-white);
+      font-size: 0.875rem;
+      background: rgba(0,0,0,0.5);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .lightbox-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+      }
+
+      .lightbox-nav.prev {
+        left: var(--space-sm);
+      }
+
+      .lightbox-nav.next {
+        right: var(--space-sm);
+      }
+    }
   </style>
 </head>
 <body>
@@ -837,7 +1015,7 @@
     <a href="../services/brand-digital.html">Brand & Digital</a>
     <a href="../work.html">Work</a>
     <a href="../contact.html">Contact</a>
-    <a href="../upcoming-campaigns.html">Campaigns</a>
+    <a href="../upcoming-campaigns.html" class="mobile-menu-cta">Campaigns</a>
   </div>
 
   <!-- Hero -->
@@ -1081,15 +1259,13 @@
         </div>
       </div>
 
-      <!-- 10. African Sun Zanzibar -->
-      <div class="gallery-item reveal" data-video="../assets/nia_content/travel/2023_plus/african_sun_zanzibar.mp4">
-        <img src="../assets/nia_content/travel/2023_plus/african_sun_zanzibar.jpg" alt="African Sun - Zanzibar" loading="lazy">
-        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      <!-- 10. Saint Louis Senegal - 12K likes carousel -->
+      <div class="gallery-item reveal" data-carousel="../assets/nia_content/travel/2023_plus/carousels/saint_louis" data-count="6">
+        <img src="../assets/nia_content/travel/2023_plus/carousels/saint_louis/1.jpg" alt="Saint Louis, Senegal" loading="lazy">
+        <svg class="carousel-icon" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
         <div class="gallery-overlay">
           <div class="gallery-stats">
-            <span>134K views</span>
-            <span>7.7K likes</span>
-            <span class="eng">12.6% eng</span>
+            <span>12K likes</span>
           </div>
         </div>
       </div>
@@ -1226,6 +1402,33 @@
     </div>
   </section>
 
+  <!-- Partner Categories -->
+  <section class="categories-section">
+    <div class="categories-header reveal">
+      <h2>Partner Categories</h2>
+      <p>We're seeking partnerships with luxury hospitality brands across these categories.</p>
+    </div>
+
+    <div class="categories-grid">
+      <div class="category-card reveal">
+        <h3 class="category-title">Luxury Resorts</h3>
+        <p class="category-examples">Five-star beachfront resorts, private islands, overwater villas</p>
+      </div>
+      <div class="category-card reveal">
+        <h3 class="category-title">Boutique Hotels</h3>
+        <p class="category-examples">Design-led properties, heritage hotels, luxury eco-lodges</p>
+      </div>
+      <div class="category-card reveal">
+        <h3 class="category-title">Private Villas</h3>
+        <p class="category-examples">Exclusive rental properties, staffed estates, luxury hideaways</p>
+      </div>
+      <div class="category-card reveal">
+        <h3 class="category-title">Tourism Boards</h3>
+        <p class="category-examples">National destination marketing, luxury travel promotion</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Partner CTA -->
   <section class="partner-cta">
     <div class="container">
@@ -1279,6 +1482,119 @@
     </div>
   </footer>
 
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <button class="lightbox-nav prev" id="lightbox-prev" onclick="navigateCarousel(-1)">&#8249;</button>
+    <button class="lightbox-nav next" id="lightbox-next" onclick="navigateCarousel(1)">&#8250;</button>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="Featured content" style="display: none;">
+      <video id="lightbox-video" controls playsinline style="display: none;">
+        <source id="lightbox-video-src" src="" type="video/mp4">
+      </video>
+    </div>
+    <div class="lightbox-counter" id="lightbox-counter" style="display: none;"></div>
+  </div>
+
   <script src="../js/main.js"></script>
+  <script>
+    // Lightbox functionality for gallery items
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxVideo = document.getElementById('lightbox-video');
+    const lightboxVideoSrc = document.getElementById('lightbox-video-src');
+    const lightboxPrev = document.getElementById('lightbox-prev');
+    const lightboxNext = document.getElementById('lightbox-next');
+    const lightboxCounter = document.getElementById('lightbox-counter');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    // Carousel state
+    let currentCarousel = null;
+    let currentIndex = 0;
+    let carouselCount = 0;
+
+    galleryItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const videoUrl = item.dataset.video;
+        const carouselPath = item.dataset.carousel;
+        const count = parseInt(item.dataset.count) || 0;
+        const img = item.querySelector('img');
+
+        // Hide navigation by default
+        lightboxPrev.style.display = 'none';
+        lightboxNext.style.display = 'none';
+        lightboxCounter.style.display = 'none';
+        currentCarousel = null;
+
+        if (carouselPath) {
+          // Show carousel
+          currentCarousel = carouselPath;
+          carouselCount = count;
+          currentIndex = 1;
+          showCarouselImage();
+          lightboxPrev.style.display = 'flex';
+          lightboxNext.style.display = 'flex';
+          lightboxCounter.style.display = 'block';
+        } else if (videoUrl) {
+          // Show video player
+          lightboxVideoSrc.src = videoUrl;
+          lightboxVideo.load();
+          lightboxVideo.style.display = 'block';
+          lightboxImg.style.display = 'none';
+          lightboxVideo.play();
+        } else if (img) {
+          // Show image
+          lightboxImg.src = img.src;
+          lightboxImg.style.display = 'block';
+          lightboxVideo.style.display = 'none';
+        }
+
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function showCarouselImage() {
+      if (!currentCarousel) return;
+      lightboxImg.src = `${currentCarousel}/${currentIndex}.jpg`;
+      lightboxImg.style.display = 'block';
+      lightboxVideo.style.display = 'none';
+      lightboxCounter.textContent = `${currentIndex} / ${carouselCount}`;
+    }
+
+    function navigateCarousel(direction) {
+      if (!currentCarousel) return;
+      currentIndex += direction;
+      if (currentIndex < 1) currentIndex = carouselCount;
+      if (currentIndex > carouselCount) currentIndex = 1;
+      showCarouselImage();
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+      lightboxVideo.pause();
+      lightboxVideo.currentTime = 0;
+      currentCarousel = null;
+    }
+
+    // Close on background click
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeLightbox();
+      } else if (e.key === 'ArrowLeft' && currentCarousel) {
+        navigateCarousel(-1);
+      } else if (e.key === 'ArrowRight' && currentCarousel) {
+        navigateCarousel(1);
+      }
+    });
+  </script>
 </body>
 </html>
