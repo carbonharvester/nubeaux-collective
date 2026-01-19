@@ -911,6 +911,8 @@ p {
   font-size: clamp(1rem, 1.5vw, 1.25rem);
   color: var(--color-warm-grey);
   max-width: 600px;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 /* Philosophy Section */
