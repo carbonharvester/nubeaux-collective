@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Southern Africa 2026 — A 10-day luxury content partnership across Namibia, Johannesburg, and Mozambique.">
+  <meta name="description" content="Southern Africa 2026 — A completed 10-day luxury content campaign across Namibia, Johannesburg, and Mozambique with Park Hyatt, Four Seasons, Onguma, and Anantara.">
 
-  <title>Southern Africa 2026 — NUBEAUX Collective</title>
+  <title>Southern Africa 2026 Case Study — NUBEAUX Collective</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -126,7 +126,7 @@
     .stat-value {
       font-family: var(--font-serif);
       font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--color-gold);
+      color: var(--color-white);
       line-height: 1.1;
     }
 
@@ -482,6 +482,107 @@ transform: scale(1.03);
       color: var(--color-warm-grey);
       line-height: 1.7;
     }
+
+    /* Partner Brands Section */
+    .partners-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-bone);
+    }
+
+    .partners-section h2 {
+      text-align: center;
+      margin-bottom: var(--space-sm);
+    }
+
+    .partners-intro {
+      text-align: center;
+      color: var(--color-warm-grey);
+      max-width: 600px;
+      margin: 0 auto var(--space-xl);
+    }
+
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background-color: var(--color-ecru);
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .partner-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-xl) var(--space-lg);
+      background-color: var(--color-white);
+      min-height: 140px;
+      text-decoration: none;
+      transition: background-color var(--transition-fast);
+    }
+
+    .partner-logo:hover {
+      background-color: var(--color-bone);
+    }
+
+    .partner-logo img {
+      max-width: 160px;
+      max-height: 50px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      opacity: 0.7;
+      transition: opacity var(--transition-fast);
+    }
+
+    .partner-logo:hover img {
+      opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .partner-logo {
+        min-height: 120px;
+        padding: var(--space-lg);
+      }
+
+      .partner-logo img {
+        max-width: 120px;
+        max-height: 40px;
+      }
+    }
+
+    /* Results Coming Soon */
+    .results-section {
+      padding: var(--space-2xl) 0;
+      background-color: var(--color-ecru);
+      text-align: center;
+    }
+
+    .results-section h2 {
+      margin-bottom: var(--space-md);
+    }
+
+    .results-section p {
+      color: var(--color-warm-grey);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .results-badge {
+      display: inline-block;
+      font-size: 0.625rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.5rem 1rem;
+      background-color: var(--color-warm-grey);
+      color: var(--color-white);
+      margin-bottom: var(--space-md);
+    }
   </style>
 </head>
 <body>
@@ -529,10 +630,10 @@ transform: scale(1.03);
     </div>
     <div class="campaign-hero-overlay"></div>
     <div class="campaign-hero-content">
-      <span class="campaign-label">Upcoming Campaign</span>
+      <span class="campaign-label">Completed Campaign</span>
       <h1 class="campaign-title">Southern Africa</h1>
       <p class="campaign-dates">January 5 — January 14, 2026</p>
-      <p class="campaign-intro">An immersive 10-day exploration through three Southern African destinations, capturing the essence of luxury travel, cultural connection, and transformative experiences across Namibia, Johannesburg, and Mozambique.</p>
+      <p class="campaign-intro">A 10-day luxury content campaign across three Southern African destinations in partnership with Park Hyatt, Four Seasons, Onguma Safari Camps, and Anantara.</p>
     </div>
   </section>
 
@@ -548,8 +649,8 @@ transform: scale(1.03);
         <p class="stat-label">Days</p>
       </div>
       <div class="stat-item">
-        <p class="stat-value">455K</p>
-        <p class="stat-label">Combined Reach</p>
+        <p class="stat-value">4</p>
+        <p class="stat-label">Partner Brands</p>
       </div>
       <div class="stat-item">
         <p class="stat-value">2</p>
@@ -562,8 +663,31 @@ transform: scale(1.03);
   <section class="intro-section">
     <div class="intro-content reveal">
       <p class="intro-text">
-        This campaign has been designed as a <em>single, coherent narrative</em> rather than a collection of isolated stays, with each destination building on the last. Participating properties are positioned within an integrated story that highlights atmosphere, service, design and sense of place. For partner hotels and lodges, this collaboration typically includes a dedicated in-feed Reel, story coverage throughout the stay, and thoughtfully crafted captions, alongside <em>full usage rights in perpetuity</em> for agreed assets.
+        This campaign was designed as a <em>single, coherent narrative</em> rather than a collection of isolated stays, with each destination building on the last. Partner properties were positioned within an integrated story that highlighted atmosphere, service, design and sense of place. Each partner received dedicated in-feed Reels, story coverage throughout the stay, and <em>full usage rights in perpetuity</em> for all agreed assets.
       </p>
+    </div>
+  </section>
+
+  <!-- Partner Brands -->
+  <section class="partners-section">
+    <div class="container">
+      <h2 class="reveal">Partner Brands</h2>
+      <p class="partners-intro reveal">We partnered with four leading hospitality brands across Southern Africa.</p>
+
+      <div class="partners-grid">
+        <div class="partner-logo reveal">
+          <img src="https://newsroom.hyatt.com/image/PH-L001b-R-color-CMYK+%281%29.jpg" alt="Park Hyatt" loading="lazy">
+        </div>
+        <div class="partner-logo reveal">
+          <img src="https://www.fourseasons.com/alt/fshr/design3/images/FS_Brand_Logo2.svg" alt="Four Seasons" loading="lazy">
+        </div>
+        <div class="partner-logo reveal">
+          <img src="https://www.onguma.com/wp-content/uploads/2019/01/Onguma-logo-Sept-2018-1.png" alt="Onguma Safari Camps" loading="lazy">
+        </div>
+        <div class="partner-logo reveal">
+          <img src="https://media.minorhotels.com/m/4f0fbfc6a78f1f8d/webimage-Anantara-Hotels-Resorts.png" alt="Anantara" loading="lazy">
+        </div>
+      </div>
     </div>
   </section>
 
@@ -602,7 +726,7 @@ transform: scale(1.03);
   <section class="itinerary-section">
     <div class="container">
       <div class="itinerary-header reveal">
-        <h2>Campaign Itinerary</h2>
+        <h2>The Journey</h2>
         <p>Three destinations across Southern Africa, each building on the narrative of the last.</p>
       </div>
     </div>
@@ -616,7 +740,7 @@ transform: scale(1.03);
         <span class="destination-number">Destination 01</span>
         <h3 class="destination-name">Namibia</h3>
         <p class="destination-dates">January 5 — January 8 · 3 nights</p>
-        <p class="destination-desc">Namibia opens the campaign with cinematic landscape storytelling. Here Nia is joined by filmmaker Klein Nettoh, whose expertise in wildlife and desert cinematography allows for premium, slow-paced visuals.</p>
+        <p class="destination-desc">Namibia opened the campaign with cinematic landscape storytelling. Here Nia was joined by filmmaker Klein Nettoh, whose expertise in wildlife and desert cinematography allowed for premium, slow-paced visuals.</p>
         <div class="destination-themes">
           <h4>Story themes</h4>
           <ul>
@@ -637,7 +761,7 @@ transform: scale(1.03);
         <span class="destination-number">Destination 02</span>
         <h3 class="destination-name">Johannesburg</h3>
         <p class="destination-dates">January 8 — January 11 · 3 nights</p>
-        <p class="destination-desc">Johannesburg introduces a contemporary African chapter focused on culture, art and modern city luxury. Klein Nettoh continues alongside Nia, bringing cinematic production value to urban luxury storytelling.</p>
+        <p class="destination-desc">Johannesburg introduced a contemporary African chapter focused on culture, art and modern city luxury. Klein Nettoh continued alongside Nia, bringing cinematic production value to urban luxury storytelling.</p>
         <div class="destination-themes">
           <h4>Story themes</h4>
           <ul>
@@ -658,7 +782,7 @@ transform: scale(1.03);
         <span class="destination-number">Destination 03</span>
         <h3 class="destination-name">Mozambique</h3>
         <p class="destination-dates">January 11 — January 14 · 3 nights</p>
-        <p class="destination-desc">Mozambique closes the campaign with warmth, softness and ocean-led storytelling. Klein Nettoh continues alongside Nia for this final chapter, capturing coastal landscapes, island rhythm and sun-driven visuals.</p>
+        <p class="destination-desc">Mozambique closed the campaign with warmth, softness and ocean-led storytelling. Klein Nettoh continued alongside Nia for this final chapter, capturing coastal landscapes, island rhythm and sun-driven visuals.</p>
         <div class="destination-themes">
           <h4>Story themes</h4>
           <ul>
@@ -675,37 +799,44 @@ transform: scale(1.03);
   <!-- Deliverables Section -->
   <section class="deliverables-section" style="padding: var(--space-2xl) 0; background-color: var(--color-white);">
     <div class="container">
-      <h2 class="reveal" style="text-align: center; margin-bottom: var(--space-sm);">Partner Deliverables</h2>
-      <p class="reveal" style="text-align: center; color: var(--color-warm-grey); max-width: 700px; margin: 0 auto var(--space-xl);">For participating properties, each partnership typically includes the following. Bespoke deliverables can be agreed based on your specific requirements.</p>
+      <h2 class="reveal" style="text-align: center; margin-bottom: var(--space-sm);">What We Delivered</h2>
+      <p class="reveal" style="text-align: center; color: var(--color-warm-grey); max-width: 700px; margin: 0 auto var(--space-xl);">Each partner property received a comprehensive content package including the following deliverables.</p>
 
       <div class="deliverables-grid">
         <div class="deliverable-card reveal">
           <p class="deliverable-label">Content</p>
-          <h3 class="deliverable-title">Dedicated Reel</h3>
-          <p class="deliverable-desc">One in-feed Instagram Reel featuring your property, professionally edited with music and captions.</p>
+          <h3 class="deliverable-title">Dedicated Reels</h3>
+          <p class="deliverable-desc">In-feed Instagram Reels featuring each property, professionally edited with music and captions.</p>
         </div>
         <div class="deliverable-card reveal">
           <p class="deliverable-label">Coverage</p>
           <h3 class="deliverable-title">Story Series</h3>
-          <p class="deliverable-desc">Authentic story coverage throughout the stay, capturing arrival, experiences, dining, and atmosphere.</p>
+          <p class="deliverable-desc">Authentic story coverage throughout each stay, capturing arrival, experiences, dining, and atmosphere.</p>
         </div>
         <div class="deliverable-card reveal">
           <p class="deliverable-label">Rights</p>
           <h3 class="deliverable-title">Usage in Perpetuity</h3>
-          <p class="deliverable-desc">Full usage rights for agreed assets, allowing you to repurpose content across your own marketing channels.</p>
+          <p class="deliverable-desc">Full usage rights for all agreed assets, allowing partners to repurpose content across their marketing channels.</p>
         </div>
       </div>
-
-      <p class="reveal" style="text-align: center; font-family: var(--font-serif); font-style: italic; color: var(--color-warm-grey); margin-top: var(--space-xl); max-width: 600px; margin-left: auto; margin-right: auto;">Additional deliverables such as static posts, extended video content, or photography packages can be arranged.</p>
     </div>
   </section>
 
-  <!-- Partner CTA -->
+  <!-- Results Coming Soon -->
+  <section class="results-section">
+    <div class="container">
+      <span class="results-badge reveal">Coming Soon</span>
+      <h2 class="reveal">Campaign Results</h2>
+      <p class="reveal">Full performance metrics and case study results will be published once all content has been released and data has been collected.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
   <section class="partner-cta">
     <div class="container">
-      <h2 class="reveal">Partner With Us</h2>
-      <p class="reveal">Partnership opportunities are available across all three destinations. Due to the fixed schedule, placements are limited. Enquire now to discuss how your property can be featured in this campaign.</p>
-      <a href="../contact.html" class="btn reveal">Enquire about partnership</a>
+      <h2 class="reveal">Interested in a Similar Campaign?</h2>
+      <p class="reveal">We're planning future campaigns across Africa and beyond. Get in touch to discuss how we can create authentic content for your property.</p>
+      <a href="../upcoming-campaigns.html" class="btn reveal">View Upcoming Campaigns</a>
     </div>
   </section>
 

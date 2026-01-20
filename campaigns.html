@@ -273,17 +273,8 @@ transform: scale(1.03);
         font-size: 0.75rem;
       }
 
-      .upcoming-card-cta {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: var(--space-xs) !important;
-        background-color: var(--color-white) !important;
-      }
-
       .upcoming-card-cta a {
-        padding: var(--space-md) !important;
-        width: 100% !important;
-        white-space: normal !important;
+        padding: var(--space-md) var(--space-lg) !important;
       }
     }
 
@@ -298,13 +289,15 @@ transform: scale(1.03);
       grid-template-columns: 1fr 1fr;
       gap: var(--space-xl);
       margin-top: var(--space-xl);
-      align-items: start;
+      align-items: stretch;
     }
 
     .upcoming-card {
       background-color: var(--color-white);
       border: 1px solid var(--color-ecru);
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
     .upcoming-card-image {
@@ -333,6 +326,9 @@ transform: scale(1.03);
 
     .upcoming-card-content {
       padding: var(--space-lg);
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
     }
 
     .upcoming-card-dates {
@@ -358,7 +354,7 @@ transform: scale(1.03);
     .upcoming-card-creators {
       border-top: 1px solid var(--color-ecru);
       padding-top: var(--space-md);
-      margin-top: var(--space-md);
+      margin-top: auto;
     }
 
     .upcoming-card-creators h4 {
@@ -373,6 +369,7 @@ transform: scale(1.03);
     .creator-row {
       display: flex;
       gap: var(--space-lg);
+      min-height: 40px;
     }
 
     .creator-mini {
@@ -427,13 +424,6 @@ transform: scale(1.03);
         font-size: 0.8125rem;
       }
 
-      .upcoming-card-cta {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: var(--space-xs) !important;
-        background-color: var(--color-white) !important;
-      }
-
       .upcoming-card-cta a {
         padding: var(--space-sm) var(--space-md);
         font-size: 0.6875rem;
@@ -464,18 +454,13 @@ transform: scale(1.03);
     }
 
     .upcoming-card-cta {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-xs);
-      margin-top: var(--space-md);
-      background-color: var(--color-white);
+      padding-top: var(--space-md);
+      text-align: center;
     }
 
     .upcoming-card-cta a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: var(--space-md);
+      display: inline-block;
+      padding: var(--space-md) var(--space-xl);
       font-size: 0.625rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -483,8 +468,6 @@ transform: scale(1.03);
       text-decoration: none;
       background-color: var(--color-bone);
       transition: background-color var(--transition-fast), color var(--transition-fast);
-      text-align: center;
-      white-space: nowrap;
     }
 
     .upcoming-card-cta a:hover {
@@ -664,7 +647,7 @@ transform: scale(1.03);
         <div class="upcoming-card reveal">
           <div class="upcoming-card-image">
             <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1768743234/IMG_7361_xlzpnb.jpg" alt="The House of Light" loading="lazy">
-            <span class="upcoming-card-badge">Upcoming</span>
+            <span class="upcoming-card-badge" style="background-color: var(--color-gold);">Now Booking</span>
           </div>
           <div class="upcoming-card-content">
             <p class="upcoming-card-dates">Q2 2026</p>
@@ -687,16 +670,16 @@ transform: scale(1.03);
           </div>
         </div>
 
-        <!-- Southern Africa -->
+        <!-- Indian Ocean 2026 -->
         <div class="upcoming-card reveal">
           <div class="upcoming-card-image">
-            <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&q=80" alt="Southern Africa" loading="lazy">
-            <span class="upcoming-card-badge" style="background-color: var(--color-warm-grey);">Completed</span>
+            <img src="https://images.unsplash.com/photo-1513415277900-a62401e19be4?w=800&q=80" alt="Indian Ocean" loading="lazy">
+            <span class="upcoming-card-badge" style="background-color: var(--color-gold);">Now Booking</span>
           </div>
           <div class="upcoming-card-content">
-            <p class="upcoming-card-dates">Jan 5 - Jan 14, 2026</p>
-            <h3 class="upcoming-card-title">Southern Africa</h3>
-            <p class="upcoming-card-subtitle">10 days across Namibia, Johannesburg, and Mozambique capturing luxury travel and cultural connection.</p>
+            <p class="upcoming-card-dates">Q3 2026</p>
+            <h3 class="upcoming-card-title">Indian Ocean</h3>
+            <p class="upcoming-card-subtitle">Island-hopping through Zanzibar, Mauritius, Seychelles, and Madagascar capturing luxury resorts and cultural experiences.</p>
 
             <div class="upcoming-card-creators">
               <h4>Creators</h4>
@@ -713,7 +696,7 @@ transform: scale(1.03);
             </div>
 
             <div class="upcoming-card-cta">
-              <a href="campaigns/southern-africa-2026.html">View Campaign</a>
+              <a href="campaigns/indian-ocean-2026.html">View Campaign</a>
             </div>
           </div>
         </div>

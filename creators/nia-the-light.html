@@ -586,27 +586,48 @@ transition: filter var(--transition-medium);
     }
 
     /* Campaigns */
-    .campaigns-section {
-      padding: var(--space-2xl) 0;
-      background-color: var(--color-bone);
+    .campaigns-scroll-wrapper {
+      position: relative;
+      margin: 0 calc(-1 * var(--space-md));
+      padding: 0 var(--space-md);
+    }
+
+    @media (min-width: 1200px) {
+      .campaigns-scroll-wrapper {
+        margin: 0 calc(-1 * ((100vw - 1140px) / 2 + var(--space-md)));
+        padding: 0 calc((100vw - 1140px) / 2 + var(--space-md));
+      }
     }
 
     .campaigns-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      display: flex;
       gap: var(--space-lg);
-      max-width: 1200px;
-      margin: var(--space-xl) auto 0;
-      padding: 0 var(--space-md);
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding-bottom: var(--space-md);
+    }
+
+    .campaigns-grid::-webkit-scrollbar {
+      display: none;
     }
 
     .campaign-card {
       background-color: var(--color-white);
+      border: 1px solid var(--color-ecru);
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      flex: 0 0 calc(50% - var(--space-md));
+      min-width: 380px;
+      max-width: 500px;
+      scroll-snap-align: start;
     }
 
     .campaign-card-image {
-      aspect-ratio: 16/10;
+      aspect-ratio: 16/9;
       overflow: hidden;
       position: relative;
     }
@@ -615,14 +636,9 @@ transition: filter var(--transition-medium);
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform var(--transition-slow);
     }
 
-    .campaign-card:hover .campaign-card-image img {
-      transform: scale(1.03);
-    }
-
-    .campaign-badge {
+    .campaign-card-badge {
       position: absolute;
       top: var(--space-md);
       left: var(--space-md);
@@ -634,19 +650,23 @@ transition: filter var(--transition-medium);
       padding: 0.5rem 1rem;
     }
 
-    .campaign-badge.badge-completed {
-      background-color: var(--color-warm-grey);
+    .campaign-card-badge.badge-booking {
+      background-color: var(--color-gold);
     }
 
-    .campaign-badge.badge-upcoming {
+    .campaign-card-badge.badge-upcoming {
       background-color: var(--color-terracotta);
+    }
+
+    .campaign-card-badge.badge-completed {
+      background-color: var(--color-warm-grey);
     }
 
     .campaign-card-content {
       padding: var(--space-lg);
       display: flex;
       flex-direction: column;
-      min-height: 200px;
+      flex-grow: 1;
     }
 
     .campaign-card-dates {
@@ -655,37 +675,140 @@ transition: filter var(--transition-medium);
       text-transform: uppercase;
       color: var(--color-warm-grey);
       margin-bottom: var(--space-sm);
-      white-space: nowrap;
+      text-align: left;
     }
 
     .campaign-card-title {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
       margin-bottom: var(--space-sm);
     }
 
-    .campaign-card-desc {
+    .campaign-card-subtitle {
       font-size: 0.875rem;
       color: var(--color-warm-grey);
+      margin-bottom: var(--space-md);
       line-height: 1.6;
     }
 
-    .campaign-card-link {
-      font-size: 0.75rem;
+    .campaign-card-creators {
+      border-top: 1px solid var(--color-ecru);
+      padding-top: var(--space-md);
+      margin-top: auto;
+    }
+
+    .campaign-card-creators h4 {
+      font-family: var(--font-sans);
+      font-size: 0.625rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-warm-grey);
+      margin-bottom: var(--space-sm);
+    }
+
+    .creator-row {
+      display: flex;
+      gap: var(--space-lg);
+    }
+
+    .creator-mini {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    .creator-mini-img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .creator-mini-name {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-charcoal);
+      white-space: nowrap;
+    }
+
+    .campaign-card-cta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xs);
+      margin-top: var(--space-md);
+    }
+
+    .campaign-card-cta.single-btn {
+      grid-template-columns: 1fr;
+    }
+
+    .campaign-card-cta a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-md);
+      font-size: 0.625rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--color-charcoal);
       text-decoration: none;
-      margin-top: auto;
-      padding-top: var(--space-md);
-      border-bottom: 1px solid var(--color-charcoal);
-      padding-bottom: 2px;
-      transition: all var(--transition-fast);
-      align-self: flex-start;
+      background-color: var(--color-bone);
+      transition: background-color var(--transition-fast), color var(--transition-fast);
+      text-align: center;
     }
 
-    .campaign-card-link:hover {
-      color: var(--color-warm-grey);
-      border-color: var(--color-warm-grey);
+    .campaign-card-cta a:hover {
+      background-color: var(--color-charcoal);
+      color: var(--color-white);
+    }
+
+    .scroll-indicator {
+      margin-top: var(--space-lg);
+      height: 2px;
+      background-color: var(--color-ecru);
+      position: relative;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .scroll-indicator-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background-color: var(--color-charcoal);
+      width: 20%;
+      transition: left 0.1s ease-out;
+    }
+
+    @media (max-width: 768px) {
+      .campaigns-scroll-wrapper {
+        margin: 0;
+        padding: 0 var(--space-md);
+      }
+
+      .campaigns-grid {
+        flex-direction: column;
+        overflow-x: visible;
+        scroll-snap-type: none;
+        gap: var(--space-lg);
+      }
+
+      .campaign-card {
+        flex: none;
+        min-width: unset;
+        max-width: none;
+        width: 100%;
+      }
+
+      .scroll-indicator {
+        display: none;
+      }
+
+      .creator-row {
+        flex-direction: column;
+        gap: var(--space-sm);
+      }
     }
 
     /* CTA */
@@ -1660,32 +1783,72 @@ transition: filter var(--transition-medium);
       <h2 class="reveal" style="text-align: center; margin-bottom: var(--space-xl);">Campaigns</h2>
     </div>
 
-    <div class="campaigns-grid" style="padding: 0 var(--space-md);">
-      <div class="campaign-card reveal">
-        <div class="campaign-card-image">
-          <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1768743234/IMG_7361_xlzpnb.jpg" alt="The House of Light">
-          <span class="campaign-badge badge-upcoming">Upcoming</span>
+    <div class="campaigns-scroll-wrapper">
+      <div class="campaigns-grid" id="campaignsGrid">
+        <!-- The House of Light - Now Booking -->
+        <div class="campaign-card reveal">
+          <div class="campaign-card-image">
+            <img src="https://res.cloudinary.com/dng12bd0a/image/upload/v1768743234/IMG_7361_xlzpnb.jpg" alt="The House of Light" loading="lazy">
+            <span class="campaign-card-badge badge-booking">Now Booking</span>
+          </div>
+          <div class="campaign-card-content">
+            <p class="campaign-card-dates">Q2 2026</p>
+            <h3 class="campaign-card-title">The House of Light</h3>
+            <p class="campaign-card-subtitle">Luxury home and lifestyle content as Nia moves into a new London apartment. Perfect for furniture, kitchen, and decor brands.</p>
+            <div class="campaign-card-creators">
+              <h4>Creator</h4>
+              <div class="creator-row">
+                <span class="creator-mini">
+                  <img src="../assets/media_kit_images/nia_creator.jpg" alt="Nia The Light" class="creator-mini-img" loading="lazy">
+                  <span class="creator-mini-name">Nia The Light</span>
+                </span>
+              </div>
+            </div>
+            <div class="campaign-card-cta single-btn">
+              <a href="../campaigns/london-home-2026.html">View Campaign</a>
+            </div>
+          </div>
         </div>
-        <div class="campaign-card-content">
-          <p class="campaign-card-dates">Q2 2026</p>
-          <h3 class="campaign-card-title">The House of Light</h3>
-          <p class="campaign-card-desc">Luxury home and lifestyle content as Nia moves into a new London apartment. Perfect for furniture, kitchen, and decor brands.</p>
-          <a href="../campaigns/london-home-2026.html" class="campaign-card-link">View Campaign</a>
+
+        <!-- Indian Ocean - Now Booking -->
+        <div class="campaign-card reveal">
+          <div class="campaign-card-image">
+            <img src="https://images.unsplash.com/photo-1513415277900-a62401e19be4?w=800&q=80" alt="Indian Ocean" loading="lazy">
+            <span class="campaign-card-badge badge-booking">Now Booking</span>
+          </div>
+          <div class="campaign-card-content">
+            <p class="campaign-card-dates">Q2 2026</p>
+            <h3 class="campaign-card-title">Indian Ocean</h3>
+            <p class="campaign-card-subtitle">Island-hopping across Mauritius, Seychelles, and Madagascar. Luxury resorts, pristine beaches, and African island culture.</p>
+            <div class="campaign-card-creators">
+              <h4>Creators</h4>
+              <div class="creator-row">
+                <span class="creator-mini">
+                  <img src="../assets/media_kit_images/nia_creator.jpg" alt="Nia The Light" class="creator-mini-img" loading="lazy">
+                  <span class="creator-mini-name">Nia The Light</span>
+                </span>
+                <span class="creator-mini">
+                  <img src="../assets/klein_images/klein-profile-pic.jpeg" alt="Klein Nettoh" class="creator-mini-img" loading="lazy">
+                  <span class="creator-mini-name">Klein Nettoh</span>
+                </span>
+              </div>
+            </div>
+            <div class="campaign-card-cta single-btn">
+              <a href="../campaigns/indian-ocean-2026.html">View Campaign</a>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="campaign-card reveal">
-        <div class="campaign-card-image">
-          <img src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&q=80" alt="Southern Africa">
-          <span class="campaign-badge badge-completed">Completed</span>
-        </div>
-        <div class="campaign-card-content">
-          <p class="campaign-card-dates">Jan 5 - Jan 14, 2026</p>
-          <h3 class="campaign-card-title">Southern Africa</h3>
-          <p class="campaign-card-desc">10 days across Namibia, Johannesburg, and Mozambique.</p>
-          <a href="../campaigns/southern-africa-2026.html" class="campaign-card-link">View Campaign</a>
-        </div>
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator">
+        <div class="scroll-indicator-bar" id="scrollIndicatorBar"></div>
       </div>
+    </div>
+
+    <!-- View All Button -->
+    <div style="text-align: center; margin-top: var(--space-xl);">
+      <a href="../upcoming-campaigns.html" class="btn">View All Campaigns</a>
     </div>
   </section>
 
@@ -1923,6 +2086,25 @@ transition: filter var(--transition-medium);
     }
 
     initPortfolioScroll();
+
+    // Campaign scroll indicator
+    function initCampaignScroll() {
+      const grid = document.getElementById('campaignsGrid');
+      const bar = document.getElementById('scrollIndicatorBar');
+
+      if (!grid || !bar) return;
+
+      grid.addEventListener('scroll', () => {
+        const scrollLeft = grid.scrollLeft;
+        const scrollWidth = grid.scrollWidth - grid.clientWidth;
+        const scrollPercent = scrollWidth > 0 ? scrollLeft / scrollWidth : 0;
+        const barWidth = 20;
+        const maxLeft = 100 - barWidth;
+        bar.style.left = (scrollPercent * maxLeft) + '%';
+      });
+    }
+
+    initCampaignScroll();
   </script>
 </body>
 </html>

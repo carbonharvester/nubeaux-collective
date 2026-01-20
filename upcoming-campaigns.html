@@ -45,11 +45,46 @@
       padding: var(--space-2xl) 0;
     }
 
+    .campaigns-scroll-wrapper {
+      position: relative;
+      margin: 0 calc(-1 * var(--space-md));
+      padding: 0 var(--space-md);
+    }
+
     .campaigns-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-xl);
-      align-items: stretch;
+      display: flex;
+      gap: var(--space-lg);
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding-bottom: var(--space-md);
+    }
+
+    .campaigns-grid::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Custom scroll indicator */
+    .scroll-indicator {
+      margin-top: var(--space-lg);
+      height: 2px;
+      background-color: var(--color-ecru);
+      position: relative;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .scroll-indicator-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background-color: var(--color-charcoal);
+      width: 20%;
+      transition: left 0.1s ease-out;
     }
 
     .campaign-card {
@@ -58,6 +93,17 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
+      flex: 0 0 calc(50% - var(--space-md));
+      min-width: 400px;
+      max-width: 500px;
+      scroll-snap-align: start;
+    }
+
+    @media (min-width: 1200px) {
+      .campaigns-scroll-wrapper {
+        margin: 0 calc(-1 * ((100vw - 1140px) / 2 + var(--space-md)));
+        padding: 0 calc((100vw - 1140px) / 2 + var(--space-md));
+      }
     }
 
     .campaign-card-image {
@@ -371,9 +417,27 @@
 
     /* Responsive */
     @media (max-width: 768px) {
+      .campaigns-scroll-wrapper {
+        margin: 0;
+        padding: 0;
+      }
+
       .campaigns-grid {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        overflow-x: visible;
+        scroll-snap-type: none;
         gap: var(--space-lg);
+      }
+
+      .campaign-card {
+        flex: none;
+        min-width: unset;
+        max-width: none;
+        width: 100%;
+      }
+
+      .scroll-indicator {
+        display: none;
       }
 
       .campaign-card-title {
@@ -466,7 +530,8 @@
   <!-- Campaigns -->
   <section class="campaigns-section">
     <div class="container">
-      <div class="campaigns-grid">
+      <div class="campaigns-scroll-wrapper">
+        <div class="campaigns-grid">
         <!-- The House of Light 2026 - Now Booking -->
         <div class="campaign-card reveal">
           <div class="campaign-card-image">
@@ -646,7 +711,14 @@
               </div>
             </div>
 
+            <div class="campaign-card-cta single-btn">
+              <a href="campaigns/southern-africa-2026.html">View Campaign</a>
+            </div>
           </div>
+        </div>
+      </div>
+        <div class="scroll-indicator">
+          <div class="scroll-indicator-bar"></div>
         </div>
       </div>
     </div>
@@ -851,6 +923,21 @@
 
   <script src="js/main.js"></script>
   <script>
+    // Scroll indicator functionality
+    const campaignsGrid = document.querySelector('.campaigns-grid');
+    const scrollIndicatorBar = document.querySelector('.scroll-indicator-bar');
+
+    if (campaignsGrid && scrollIndicatorBar) {
+      campaignsGrid.addEventListener('scroll', function() {
+        const scrollLeft = campaignsGrid.scrollLeft;
+        const scrollWidth = campaignsGrid.scrollWidth - campaignsGrid.clientWidth;
+        const scrollPercent = scrollWidth > 0 ? (scrollLeft / scrollWidth) * 100 : 0;
+        const barWidth = 20; // percentage
+        const maxLeft = 100 - barWidth;
+        scrollIndicatorBar.style.left = (scrollPercent * maxLeft / 100) + '%';
+      });
+    }
+
     // Modal functionality
     const registerModal = document.getElementById('registerModal');
     const partnerModal = document.getElementById('partnerModal');
