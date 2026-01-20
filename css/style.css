@@ -2386,28 +2386,30 @@ body::before {
 }
 
 /* ============================================
-   WORK SECTION - Mobile Scroll
+   WORK SECTION - Mobile Scroll (Homepage Selected Work)
    ============================================ */
 @media (max-width: 768px) {
-  .work-grid {
-    display: flex;
+  .work-section .work-grid {
+    display: flex !important;
+    grid-template-columns: unset !important;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
     gap: var(--space-md);
-    padding-bottom: var(--space-md);
+    padding: 0 var(--space-md) var(--space-md);
+    margin: 0 calc(-1 * var(--space-md));
   }
 
-  .work-grid::-webkit-scrollbar {
+  .work-section .work-grid::-webkit-scrollbar {
     display: none;
   }
 
-  .work-grid .work-item,
-  .work-grid > * {
-    flex: 0 0 85%;
+  .work-section .work-grid .work-card {
+    flex: 0 0 80%;
     min-width: 280px;
+    max-width: 320px;
     scroll-snap-align: start;
   }
 }
