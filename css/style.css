@@ -5,17 +5,20 @@
 
 /* ----- CSS Custom Properties ----- */
 :root {
-  /* Colors */
-  --color-black: #0a0a0a;
-  --color-charcoal: #1a1a1a;
+  /* Colors - Aman-inspired with Espresso replacing Black */
+  --color-black: #2C2420;
+  --color-charcoal: #3D3530;
+  --color-espresso: #2C2420;
   --color-warm-grey: #8a8278;
   --color-stone: #a69f95;
   --color-ecru: #f5f1eb;
   --color-bone: #faf8f5;
+  --color-cream: #FAF8F5;
   --color-white: #ffffff;
 
   /* African Luxury Accent Colors */
   --color-terracotta: #c2703e;
+  --color-terracotta-soft: #FAF8F5;
   --color-gold: #b8953f;
 
   /* Typography */
@@ -206,7 +209,7 @@ p {
   left: 0;
   width: 0;
   height: 1px;
-  background-color: var(--color-charcoal);
+  background-color: var(--color-terracotta-soft);
   transition: width var(--transition-fast);
 }
 
@@ -316,19 +319,21 @@ p {
   display: block;
   width: 24px;
   height: 1px;
-  background-color: var(--color-charcoal);
+  background-color: var(--color-terracotta-soft);
   transition: transform var(--transition-fast), opacity var(--transition-fast);
 }
 
 /* ----- Hero Section ----- */
 .hero {
   position: relative;
-  min-height: calc(100vh - var(--header-height));
+  min-height: 100vh;
   margin-top: var(--header-height);
+  padding-top: var(--header-height);
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-charcoal);
+  background-color: var(--color-terracotta-soft);
   overflow: hidden;
 }
 
@@ -402,7 +407,7 @@ p {
 }
 
 .btn:hover {
-  background-color: var(--color-charcoal);
+  background-color: var(--color-terracotta-soft);
   color: var(--color-bone);
 }
 
@@ -556,8 +561,8 @@ p {
 
 /* ----- Featured Work Grid ----- */
 .work-section {
-  background-color: var(--color-charcoal);
-  color: var(--color-white);
+  background-color: #3D4A3A;
+  color: #F5F1EB;
   padding: var(--space-2xl) 0;
 }
 
@@ -569,7 +574,7 @@ p {
 }
 
 .section-header h2 {
-  color: var(--color-white);
+  color: #F5F1EB;
 }
 
 .section-header a {
@@ -613,7 +618,7 @@ p {
 .work-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+  background: rgba(0,0,0,0.5);
   opacity: 0;
   transition: opacity var(--transition-medium);
 }
@@ -713,7 +718,7 @@ p {
   left: 0;
   right: 0;
   padding: var(--space-sm);
-  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+  background: rgba(0,0,0,0.6);
   color: white;
 }
 
@@ -807,8 +812,8 @@ p {
 
 /* ----- Footer ----- */
 .footer {
-  background-color: var(--color-charcoal);
-  color: var(--color-white);
+  background-color: var(--color-espresso);
+  color: #F5F1EB;
   padding: var(--space-xl) 0 var(--space-lg);
 }
 
@@ -822,13 +827,13 @@ p {
 .footer-emblem {
   width: 60px;
   height: auto;
-  filter: invert(1);
+  filter: brightness(0) invert(1);
   opacity: 0.9;
 }
 
 .footer-brand p {
   font-size: 0.875rem;
-  color: rgba(255,255,255,0.6);
+  color: rgba(245,241,235,0.7);
   max-width: 300px;
   margin-top: var(--space-md);
   margin-left: 0;
@@ -842,7 +847,7 @@ p {
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
+  color: rgba(245,241,235,0.6);
   margin-bottom: var(--space-md);
 }
 
@@ -850,13 +855,13 @@ p {
 .footer-links span {
   display: block;
   font-size: 0.875rem;
-  color: rgba(255,255,255,0.6);
+  color: rgba(245,241,235,0.7);
   margin-bottom: var(--space-sm);
   transition: color var(--transition-fast);
 }
 
 .footer-links a:hover {
-  color: var(--color-white);
+  color: #F5F1EB;
 }
 
 .footer-bottom {
@@ -864,9 +869,9 @@ p {
   justify-content: space-between;
   align-items: center;
   padding-top: var(--space-lg);
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(245,241,235,0.2);
   font-size: 0.75rem;
-  color: rgba(255,255,255,0.4);
+  color: rgba(245,241,235,0.6);
 }
 
 .footer-social {
@@ -875,12 +880,12 @@ p {
 }
 
 .footer-social a {
-  color: rgba(255,255,255,0.4);
+  color: rgba(245,241,235,0.6);
   transition: color var(--transition-fast);
 }
 
 .footer-social a:hover {
-  color: var(--color-white);
+  color: #F5F1EB;
 }
 
 /* ----- About Page ----- */
@@ -948,8 +953,8 @@ p {
 
 /* Values Grid */
 .values-section {
-  background-color: var(--color-charcoal);
-  color: var(--color-white);
+  background-color: #3D4A3A;
+  color: #F5F1EB;
   padding: var(--space-2xl) 0;
 }
 
@@ -957,19 +962,19 @@ p {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1px;
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255,255,255,0.15);
   margin-top: var(--space-xl);
 }
 
 .value-card {
-  background-color: var(--color-charcoal);
+  background-color: #3D4A3A;
   padding: var(--space-xl) var(--space-lg);
 }
 
 .value-number {
   font-size: 0.625rem;
   letter-spacing: 0.2em;
-  color: var(--color-gold);
+  color: rgba(245,241,235,0.5);
   margin-bottom: var(--space-md);
 }
 
@@ -980,7 +985,7 @@ p {
 
 .value-desc {
   font-size: 0.875rem;
-  color: rgba(255,255,255,0.6);
+  color: rgba(245,241,235,0.85);
   line-height: 1.7;
 }
 
@@ -1076,7 +1081,7 @@ p {
   left: 0;
   width: 100%;
   height: 1px;
-  background-color: var(--color-charcoal);
+  background-color: var(--color-terracotta-soft);
 }
 
 .work-main-grid {
@@ -1104,7 +1109,7 @@ p {
   position: absolute;
   top: var(--space-md);
   right: var(--space-md);
-  background-color: var(--color-charcoal);
+  background-color: var(--color-terracotta);
   color: var(--color-white);
   font-size: 0.625rem;
   letter-spacing: 0.15em;
@@ -1532,7 +1537,7 @@ p {
     position: fixed;
     width: 8px;
     height: 8px;
-    background-color: var(--color-charcoal);
+    background-color: var(--color-terracotta-soft);
     border-radius: 50%;
     pointer-events: none;
     z-index: 9999;
@@ -1549,7 +1554,7 @@ p {
 .page-transition {
   position: fixed;
   inset: 0;
-  background-color: var(--color-charcoal);
+  background-color: var(--color-terracotta-soft);
   z-index: 10000;
   transform: translateY(100%);
   transition: transform var(--transition-slow);
@@ -1817,12 +1822,9 @@ a.insight-card:hover .insight-title {
    VIBRANT VISUAL ENHANCEMENTS
    ============================================ */
 
-/* ----- Gradient Accent Colors ----- */
+/* ----- Accent Colors ----- */
 .gradient-text {
-  background: linear-gradient(135deg, var(--color-terracotta) 0%, var(--color-gold) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-terracotta);
 }
 
 /* ----- Animated Hero Text ----- */
@@ -1879,7 +1881,7 @@ a.insight-card:hover .insight-title {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(194, 112, 62, 0.2) 0%, rgba(184, 149, 63, 0.2) 100%);
+  background: rgba(194, 112, 62, 0.2);
   opacity: 0;
   transition: opacity var(--transition-medium);
 }
@@ -1938,14 +1940,14 @@ a.insight-card:hover .insight-title {
   .custom-cursor {
     width: 12px;
     height: 12px;
-    background: linear-gradient(135deg, var(--color-terracotta) 0%, var(--color-gold) 100%);
+    background: var(--color-terracotta);
     mix-blend-mode: normal;
     box-shadow: 0 0 20px rgba(194, 112, 62, 0.5);
   }
 
   .custom-cursor.hover {
     transform: scale(3);
-    background: var(--color-gold);
+    background: var(--color-terracotta);
   }
 }
 
@@ -1957,19 +1959,16 @@ a.insight-card:hover .insight-title {
   left: 0;
   width: 0%;
   height: 3px;
-  background: linear-gradient(90deg, var(--color-terracotta) 0%, var(--color-gold) 100%);
+  background: var(--color-terracotta);
   z-index: 10001;
   transition: width 0.1s ease-out;
 }
 
 
-/* ----- Vibrant Stats & Numbers ----- */
+/* ----- Stats & Numbers ----- */
 .service-number,
 .value-number {
-  background: linear-gradient(135deg, var(--color-terracotta) 0%, var(--color-gold) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-terracotta);
   font-weight: 500;
 }
 
@@ -1986,7 +1985,7 @@ a.insight-card:hover .insight-title {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--color-terracotta) 0%, var(--color-gold) 100%);
+  background: var(--color-terracotta);
   transform: scaleX(0);
   transition: transform var(--transition-medium);
 }
@@ -1999,17 +1998,17 @@ a.insight-card:hover .insight-title {
 .insight-category {
   display: inline-block;
   padding: 0.25rem 0.75rem;
-  background: linear-gradient(135deg, rgba(194, 112, 62, 0.15) 0%, rgba(184, 149, 63, 0.15) 100%);
+  background: rgba(194, 112, 62, 0.15);
   border-radius: 20px;
   margin-bottom: var(--space-sm);
 }
 
 /* ----- Animated Underlines ----- */
 .nav a:not(.nav-cta)::after {
-  background: linear-gradient(90deg, var(--color-terracotta) 0%, var(--color-gold) 100%);
+  background: var(--color-terracotta);
 }
 
-/* ----- Page Hero Gradient Overlay ----- */
+/* ----- Page Hero Overlay ----- */
 .page-hero {
   position: relative;
 }
@@ -2021,11 +2020,11 @@ a.insight-card:hover .insight-title {
   right: 0;
   width: 50%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(194, 112, 62, 0.05) 0%, rgba(184, 149, 63, 0.1) 100%);
+  background: rgba(194, 112, 62, 0.05);
   pointer-events: none;
 }
 
-/* ----- Footer Gradient Accent ----- */
+/* ----- Footer Accent ----- */
 .footer::before {
   content: '';
   position: absolute;
@@ -2033,7 +2032,7 @@ a.insight-card:hover .insight-title {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--color-terracotta) 0%, var(--color-gold) 50%, var(--color-terracotta) 100%);
+  background: var(--color-terracotta);
 }
 
 .footer {
@@ -2151,7 +2150,7 @@ body::before {
   position: absolute;
   top: var(--space-md);
   left: var(--space-md);
-  background-color: var(--color-charcoal);
+  background-color: var(--color-terracotta);
   color: var(--color-white);
   font-size: 0.625rem;
   letter-spacing: 0.15em;
@@ -2301,7 +2300,7 @@ body::before {
 
 .campaign-card-cta a:hover,
 .campaign-card-cta button:hover {
-  background-color: var(--color-charcoal);
+  background-color: var(--color-terracotta);
   color: var(--color-white);
 }
 
@@ -2341,7 +2340,7 @@ body::before {
   top: 0;
   left: 0;
   height: 100%;
-  background-color: var(--color-charcoal);
+  background-color: var(--color-terracotta);
   width: 20%;
   transition: left 0.1s ease-out;
 }

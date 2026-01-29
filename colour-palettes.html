@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Colour Palettes | NUBEAUX Collective</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #FAF8F5;
+      padding: 4rem 2rem;
+      color: #1a1a1a;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+    .intro {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 4rem;
+      color: #666;
+      line-height: 1.7;
+    }
+    .palettes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 3rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .palette {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .palette-header {
+      padding: 2rem;
+      color: white;
+    }
+    .palette-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+    .palette-header p {
+      font-size: 0.875rem;
+      opacity: 0.85;
+    }
+    .swatches {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+    }
+    .swatch {
+      aspect-ratio: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0.75rem;
+      font-size: 0.625rem;
+      letter-spacing: 0.05em;
+    }
+    .swatch-name {
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+    .swatch-hex {
+      opacity: 0.7;
+      text-transform: uppercase;
+    }
+    .palette-demo {
+      padding: 2rem;
+      border-top: 1px solid #eee;
+    }
+    .demo-section {
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      border-radius: 4px;
+    }
+    .demo-section:last-child {
+      margin-bottom: 0;
+    }
+    .demo-section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      font-weight: 400;
+    }
+    .demo-section p {
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+    .btn-demo {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Luxury Colour Palettes</h1>
+  <p class="intro">A selection of refined colour combinations for NUBEAUX Collective. Each palette includes primary, secondary, accent, and neutral tones.</p>
+
+  <div class="palettes">
+
+    <!-- Palette 1: Current Sage & Terracotta -->
+    <div class="palette">
+      <div class="palette-header" style="background: #3D4A3A;">
+        <h2>Forest & Earth</h2>
+        <p>Current palette. Deep sage green with terracotta accents.</p>
+      </div>
+      <div class="swatches">
+        <div class="swatch" style="background: #3D4A3A; color: white;">
+          <span class="swatch-name">Deep Sage</span>
+          <span class="swatch-hex">#3D4A3A</span>
+        </div>
+        <div class="swatch" style="background: #8B9D77; color: white;">
+          <span class="swatch-name">Light Sage</span>
+          <span class="swatch-hex">#8B9D77</span>
+        </div>
+        <div class="swatch" style="background: #c2703e; color: white;">
+          <span class="swatch-name">Terracotta</span>
+          <span class="swatch-hex">#c2703e</span>
+        </div>
+        <div class="swatch" style="background: #F5F1EB; color: #333;">
+          <span class="swatch-name">Cream</span>
+          <span class="swatch-hex">#F5F1EB</span>
+        </div>
+        <div class="swatch" style="background: #1a1a1a; color: white;">
+          <span class="swatch-name">Charcoal</span>
+          <span class="swatch-hex">#1a1a1a</span>
+        </div>
+      </div>
+      <div class="palette-demo">
+        <div class="demo-section" style="background: #3D4A3A; color: #F5F1EB;">
+          <h3>Featured Work</h3>
+          <p>Deep sage backgrounds with cream text for sections.</p>
+          <button class="btn-demo" style="background: #c2703e; color: white;">View Work</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Palette 2: Navy & Gold -->
+    <div class="palette">
+      <div class="palette-header" style="background: #1C2541;">
+        <h2>Midnight & Gold</h2>
+        <p>Classic luxury. Deep navy with warm gold accents.</p>
+      </div>
+      <div class="swatches">
+        <div class="swatch" style="background: #1C2541; color: white;">
+          <span class="swatch-name">Midnight</span>
+          <span class="swatch-hex">#1C2541</span>
+        </div>
+        <div class="swatch" style="background: #3A506B; color: white;">
+          <span class="swatch-name">Slate Blue</span>
+          <span class="swatch-hex">#3A506B</span>
+        </div>
+        <div class="swatch" style="background: #C9A227; color: white;">
+          <span class="swatch-name">Antique Gold</span>
+          <span class="swatch-hex">#C9A227</span>
+        </div>
+        <div class="swatch" style="background: #F7F5F0; color: #333;">
+          <span class="swatch-name">Ivory</span>
+          <span class="swatch-hex">#F7F5F0</span>
+        </div>
+        <div class="swatch" style="background: #0D1321; color: white;">
+          <span class="swatch-name">Black Navy</span>
+          <span class="swatch-hex">#0D1321</span>
+        </div>
+      </div>
+      <div class="palette-demo">
+        <div class="demo-section" style="background: #1C2541; color: #F7F5F0;">
+          <h3>Featured Work</h3>
+          <p>Deep navy backgrounds with ivory text. Timeless elegance.</p>
+          <button class="btn-demo" style="background: #C9A227; color: #1C2541;">View Work</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Palette 3: Warm Burgundy -->
+    <div class="palette">
+      <div class="palette-header" style="background: #4A2C2A;">
+        <h2>Bordeaux & Blush</h2>
+        <p>Rich warmth. Deep burgundy with dusty rose accents.</p>
+      </div>
+      <div class="swatches">
+        <div class="swatch" style="background: #4A2C2A; color: white;">
+          <span class="swatch-name">Bordeaux</span>
+          <span class="swatch-hex">#4A2C2A</span>
+        </div>
+        <div class="swatch" style="background: #8B5A5A; color: white;">
+          <span class="swatch-name">Dusty Rose</span>
+          <span class="swatch-hex">#8B5A5A</span>
+        </div>
+        <div class="swatch" style="background: #D4A574; color: #333;">
+          <span class="swatch-name">Camel</span>
+          <span class="swatch-hex">#D4A574</span>
+        </div>
+        <div class="swatch" style="background: #FAF6F2; color: #333;">
+          <span class="swatch-name">Parchment</span>
+          <span class="swatch-hex">#FAF6F2</span>
+        </div>
+        <div class="swatch" style="background: #2D1F1E; color: white;">
+          <span class="swatch-name">Espresso</span>
+          <span class="swatch-hex">#2D1F1E</span>
+        </div>
+      </div>
+      <div class="palette-demo">
+        <div class="demo-section" style="background: #4A2C2A; color: #FAF6F2;">
+          <h3>Featured Work</h3>
+          <p>Warm burgundy with parchment text. Sophisticated and inviting.</p>
+          <button class="btn-demo" style="background: #D4A574; color: #4A2C2A;">View Work</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Palette 4: Ocean & Sand -->
+    <div class="palette">
+      <div class="palette-header" style="background: #2C4A52;">
+        <h2>Ocean & Sand</h2>
+        <p>Coastal luxury. Deep teal with warm sand tones.</p>
+      </div>
+      <div class="swatches">
+        <div class="swatch" style="background: #2C4A52; color: white;">
+          <span class="swatch-name">Deep Teal</span>
+          <span class="swatch-hex">#2C4A52</span>
+        </div>
+        <div class="swatch" style="background: #5E8B8B; color: white;">
+          <span class="swatch-name">Sea Glass</span>
+          <span class="swatch-hex">#5E8B8B</span>
+        </div>
+        <div class="swatch" style="background: #D4B896; color: #333;">
+          <span class="swatch-name">Warm Sand</span>
+          <span class="swatch-hex">#D4B896</span>
+        </div>
+        <div class="swatch" style="background: #FBF9F6; color: #333;">
+          <span class="swatch-name">Shell White</span>
+          <span class="swatch-hex">#FBF9F6</span>
+        </div>
+        <div class="swatch" style="background: #1A2F35; color: white;">
+          <span class="swatch-name">Deep Ocean</span>
+          <span class="swatch-hex">#1A2F35</span>
+        </div>
+      </div>
+      <div class="palette-demo">
+        <div class="demo-section" style="background: #2C4A52; color: #FBF9F6;">
+          <h3>Featured Work</h3>
+          <p>Teal depths with shell white text. Perfect for coastal properties.</p>
+          <button class="btn-demo" style="background: #D4B896; color: #2C4A52;">View Work</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Palette 5: Modern Charcoal -->
+    <div class="palette">
+      <div class="palette-header" style="background: #2D2D2D;">
+        <h2>Graphite & Copper</h2>
+        <p>Contemporary luxury. Soft charcoal with copper accents.</p>
+      </div>
+      <div class="swatches">
+        <div class="swatch" style="background: #2D2D2D; color: white;">
+          <span class="swatch-name">Graphite</span>
+          <span class="swatch-hex">#2D2D2D</span>
+        </div>
+        <div class="swatch" style="background: #5C5C5C; color: white;">
+          <span class="swatch-name">Pewter</span>
+          <span class="swatch-hex">#5C5C5C</span>
+        </div>
+        <div class="swatch" style="background: #B87333; color: white;">
+          <span class="swatch-name">Copper</span>
+          <span class="swatch-hex">#B87333</span>
+        </div>
+        <div class="swatch" style="background: #F8F8F6; color: #333;">
+          <span class="swatch-name">Cool White</span>
+          <span class="swatch-hex">#F8F8F6</span>
+        </div>
+        <div class="swatch" style="background: #1A1A1A; color: white;">
+          <span class="swatch-name">Onyx</span>
+          <span class="swatch-hex">#1A1A1A</span>
+        </div>
+      </div>
+      <div class="palette-demo">
+        <div class="demo-section" style="background: #2D2D2D; color: #F8F8F6;">
+          <h3>Featured Work</h3>
+          <p>Soft graphite with cool white. Modern and sophisticated.</p>
+          <button class="btn-demo" style="background: #B87333; color: white;">View Work</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Palette 6: Olive & Rust -->
+    <div class="palette">
+      <div class="palette-header" style="background: #4A4E3D;">
+        <h2>Olive & Rust</h2>
+        <p>Safari-inspired. Earthy olive with burnt rust accents.</p>
+      </div>
+      <div class="swatches">
+        <div class="swatch" style="background: #4A4E3D; color: white;">
+          <span class="swatch-name">Deep Olive</span>
+          <span class="swatch-hex">#4A4E3D</span>
+        </div>
+        <div class="swatch" style="background: #7D8570; color: white;">
+          <span class="swatch-name">Sage Olive</span>
+          <span class="swatch-hex">#7D8570</span>
+        </div>
+        <div class="swatch" style="background: #A45A3D; color: white;">
+          <span class="swatch-name">Burnt Rust</span>
+          <span class="swatch-hex">#A45A3D</span>
+        </div>
+        <div class="swatch" style="background: #F5F2EC; color: #333;">
+          <span class="swatch-name">Linen</span>
+          <span class="swatch-hex">#F5F2EC</span>
+        </div>
+        <div class="swatch" style="background: #2A2C25; color: white;">
+          <span class="swatch-name">Dark Moss</span>
+          <span class="swatch-hex">#2A2C25</span>
+        </div>
+      </div>
+      <div class="palette-demo">
+        <div class="demo-section" style="background: #4A4E3D; color: #F5F2EC;">
+          <h3>Featured Work</h3>
+          <p>Deep olive with linen text. Safari elegance.</p>
+          <button class="btn-demo" style="background: #A45A3D; color: white;">View Work</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Palette 7: Plum & Champagne -->
+    <div class="palette">
+      <div class="palette-header" style="background: #3D3249;">
+        <h2>Plum & Champagne</h2>
+        <p>Evening elegance. Deep plum with champagne highlights.</p>
+      </div>
+      <div class="swatches">
+        <div class="swatch" style="background: #3D3249; color: white;">
+          <span class="swatch-name">Deep Plum</span>
+          <span class="swatch-hex">#3D3249</span>
+        </div>
+        <div class="swatch" style="background: #6B5B7A; color: white;">
+          <span class="swatch-name">Wisteria</span>
+          <span class="swatch-hex">#6B5B7A</span>
+        </div>
+        <div class="swatch" style="background: #D4C4A8; color: #333;">
+          <span class="swatch-name">Champagne</span>
+          <span class="swatch-hex">#D4C4A8</span>
+        </div>
+        <div class="swatch" style="background: #FAF8F5; color: #333;">
+          <span class="swatch-name">Pearl</span>
+          <span class="swatch-hex">#FAF8F5</span>
+        </div>
+        <div class="swatch" style="background: #1E1A24; color: white;">
+          <span class="swatch-name">Night</span>
+          <span class="swatch-hex">#1E1A24</span>
+        </div>
+      </div>
+      <div class="palette-demo">
+        <div class="demo-section" style="background: #3D3249; color: #FAF8F5;">
+          <h3>Featured Work</h3>
+          <p>Deep plum with pearl text. Evening sophistication.</p>
+          <button class="btn-demo" style="background: #D4C4A8; color: #3D3249;">View Work</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Palette 8: Mocha & Cream -->
+    <div class="palette">
+      <div class="palette-header" style="background: #3E3228;">
+        <h2>Mocha & Cream</h2>
+        <p>Warm neutrals. Rich mocha with creamy highlights.</p>
+      </div>
+      <div class="swatches">
+        <div class="swatch" style="background: #3E3228; color: white;">
+          <span class="swatch-name">Mocha</span>
+          <span class="swatch-hex">#3E3228</span>
+        </div>
+        <div class="swatch" style="background: #6B5B4F; color: white;">
+          <span class="swatch-name">Taupe</span>
+          <span class="swatch-hex">#6B5B4F</span>
+        </div>
+        <div class="swatch" style="background: #C4A77D; color: #333;">
+          <span class="swatch-name">Caramel</span>
+          <span class="swatch-hex">#C4A77D</span>
+        </div>
+        <div class="swatch" style="background: #FBF8F3; color: #333;">
+          <span class="swatch-name">Cream</span>
+          <span class="swatch-hex">#FBF8F3</span>
+        </div>
+        <div class="swatch" style="background: #1F1A16; color: white;">
+          <span class="swatch-name">Dark Cocoa</span>
+          <span class="swatch-hex">#1F1A16</span>
+        </div>
+      </div>
+      <div class="palette-demo">
+        <div class="demo-section" style="background: #3E3228; color: #FBF8F3;">
+          <h3>Featured Work</h3>
+          <p>Warm mocha with cream text. Inviting and luxurious.</p>
+          <button class="btn-demo" style="background: #C4A77D; color: #3E3228;">View Work</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Palette 9: Aman Inspired -->
+    <div class="palette">
+      <div class="palette-header" style="background: #1C1A17;">
+        <h2>Aman</h2>
+        <p>Minimalist peace. Sand, soil, clay — understated drama and intimacy.</p>
+      </div>
+      <div class="swatches">
+        <div class="swatch" style="background: #1C1A17; color: white;">
+          <span class="swatch-name">Black Earth</span>
+          <span class="swatch-hex">#1C1A17</span>
+        </div>
+        <div class="swatch" style="background: #8B7355; color: white;">
+          <span class="swatch-name">Clay</span>
+          <span class="swatch-hex">#8B7355</span>
+        </div>
+        <div class="swatch" style="background: #C4B49A; color: #333;">
+          <span class="swatch-name">Sand</span>
+          <span class="swatch-hex">#C4B49A</span>
+        </div>
+        <div class="swatch" style="background: #D9CFC1; color: #333;">
+          <span class="swatch-name">Stone</span>
+          <span class="swatch-hex">#D9CFC1</span>
+        </div>
+        <div class="swatch" style="background: #F5F2ED; color: #333;">
+          <span class="swatch-name">Paper</span>
+          <span class="swatch-hex">#F5F2ED</span>
+        </div>
+      </div>
+      <div class="palette-demo">
+        <div class="demo-section" style="background: #1C1A17; color: #F5F2ED;">
+          <h3>Featured Work</h3>
+          <p>Pure minimalism. Quiet luxury that speaks through restraint.</p>
+          <button class="btn-demo" style="background: #8B7355; color: white;">View Work</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Palette 10: Kente Gold -->
+    <div class="palette">
+      <div class="palette-header" style="background: #2B2118;">
+        <h2>Kente & Gold</h2>
+        <p>Vibrant African luxury. Rich earth with bold gold and kente-inspired accents.</p>
+      </div>
+      <div class="swatches">
+        <div class="swatch" style="background: #2B2118; color: white;">
+          <span class="swatch-name">Dark Earth</span>
+          <span class="swatch-hex">#2B2118</span>
+        </div>
+        <div class="swatch" style="background: #D4AF37; color: #2B2118;">
+          <span class="swatch-name">African Gold</span>
+          <span class="swatch-hex">#D4AF37</span>
+        </div>
+        <div class="swatch" style="background: #C65D07; color: white;">
+          <span class="swatch-name">Sunset Orange</span>
+          <span class="swatch-hex">#C65D07</span>
+        </div>
+        <div class="swatch" style="background: #8B4513; color: white;">
+          <span class="swatch-name">Saddle Brown</span>
+          <span class="swatch-hex">#8B4513</span>
+        </div>
+        <div class="swatch" style="background: #FDF5E6; color: #333;">
+          <span class="swatch-name">Old Lace</span>
+          <span class="swatch-hex">#FDF5E6</span>
+        </div>
+      </div>
+      <div class="palette-demo">
+        <div class="demo-section" style="background: #2B2118; color: #FDF5E6;">
+          <h3>Featured Work</h3>
+          <p>Bold gold accents on rich earth. Celebrates African heritage.</p>
+          <button class="btn-demo" style="background: #D4AF37; color: #2B2118;">View Work</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Palette 10: Savannah Sunset -->
+    <div class="palette">
+      <div class="palette-header" style="background: #1A1A2E;">
+        <h2>Savannah Sunset</h2>
+        <p>Golden hour over the plains. Deep indigo with warm sunset tones.</p>
+      </div>
+      <div class="swatches">
+        <div class="swatch" style="background: #1A1A2E; color: white;">
+          <span class="swatch-name">Twilight</span>
+          <span class="swatch-hex">#1A1A2E</span>
+        </div>
+        <div class="swatch" style="background: #E85D04; color: white;">
+          <span class="swatch-name">Sunset</span>
+          <span class="swatch-hex">#E85D04</span>
+        </div>
+        <div class="swatch" style="background: #FAA307; color: #1A1A2E;">
+          <span class="swatch-name">Golden Hour</span>
+          <span class="swatch-hex">#FAA307</span>
+        </div>
+        <div class="swatch" style="background: #DC2F02; color: white;">
+          <span class="swatch-name">Fire</span>
+          <span class="swatch-hex">#DC2F02</span>
+        </div>
+        <div class="swatch" style="background: #FFEDD8; color: #333;">
+          <span class="swatch-name">Warm Cream</span>
+          <span class="swatch-hex">#FFEDD8</span>
+        </div>
+      </div>
+      <div class="palette-demo">
+        <div class="demo-section" style="background: #1A1A2E; color: #FFEDD8;">
+          <h3>Featured Work</h3>
+          <p>Dramatic sunset palette. Bold and unforgettable.</p>
+          <button class="btn-demo" style="background: #E85D04; color: white;">View Work</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Palette 11: Maasai Inspired -->
+    <div class="palette">
+      <div class="palette-header" style="background: #8B0000;">
+        <h2>Maasai Red</h2>
+        <p>Bold and iconic. Traditional Maasai red with earth and sky.</p>
+      </div>
+      <div class="swatches">
+        <div class="swatch" style="background: #8B0000; color: white;">
+          <span class="swatch-name">Maasai Red</span>
+          <span class="swatch-hex">#8B0000</span>
+        </div>
+        <div class="swatch" style="background: #2D4739; color: white;">
+          <span class="swatch-name">Acacia Green</span>
+          <span class="swatch-hex">#2D4739</span>
+        </div>
+        <div class="swatch" style="background: #87CEEB; color: #333;">
+          <span class="swatch-name">Kenya Sky</span>
+          <span class="swatch-hex">#87CEEB</span>
+        </div>
+        <div class="swatch" style="background: #D2691E; color: white;">
+          <span class="swatch-name">Ochre</span>
+          <span class="swatch-hex">#D2691E</span>
+        </div>
+        <div class="swatch" style="background: #FFF8DC; color: #333;">
+          <span class="swatch-name">Cornsilk</span>
+          <span class="swatch-hex">#FFF8DC</span>
+        </div>
+      </div>
+      <div class="palette-demo">
+        <div class="demo-section" style="background: #8B0000; color: #FFF8DC;">
+          <h3>Featured Work</h3>
+          <p>Iconic red with natural earth tones. Vibrant heritage.</p>
+          <button class="btn-demo" style="background: #D2691E; color: white;">View Work</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Palette 12: Zanzibar Spice -->
+    <div class="palette">
+      <div class="palette-header" style="background: #1E3A5F;">
+        <h2>Zanzibar Spice</h2>
+        <p>Island luxury. Deep ocean blue with warm spice market tones.</p>
+      </div>
+      <div class="swatches">
+        <div class="swatch" style="background: #1E3A5F; color: white;">
+          <span class="swatch-name">Ocean Deep</span>
+          <span class="swatch-hex">#1E3A5F</span>
+        </div>
+        <div class="swatch" style="background: #FF6B35; color: white;">
+          <span class="swatch-name">Turmeric</span>
+          <span class="swatch-hex">#FF6B35</span>
+        </div>
+        <div class="swatch" style="background: #F7C548; color: #333;">
+          <span class="swatch-name">Saffron</span>
+          <span class="swatch-hex">#F7C548</span>
+        </div>
+        <div class="swatch" style="background: #00A878; color: white;">
+          <span class="swatch-name">Clove</span>
+          <span class="swatch-hex">#00A878</span>
+        </div>
+        <div class="swatch" style="background: #FEF9EF; color: #333;">
+          <span class="swatch-name">Dhow Sail</span>
+          <span class="swatch-hex">#FEF9EF</span>
+        </div>
+      </div>
+      <div class="palette-demo">
+        <div class="demo-section" style="background: #1E3A5F; color: #FEF9EF;">
+          <h3>Featured Work</h3>
+          <p>Ocean depths with spice market warmth. Exotic luxury.</p>
+          <button class="btn-demo" style="background: #FF6B35; color: white;">View Work</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Palette 13: Cape Winelands -->
+    <div class="palette">
+      <div class="palette-header" style="background: #4A1942;">
+        <h2>Cape Winelands</h2>
+        <p>South African elegance. Deep wine with vineyard greens and sunset pinks.</p>
+      </div>
+      <div class="swatches">
+        <div class="swatch" style="background: #4A1942; color: white;">
+          <span class="swatch-name">Pinotage</span>
+          <span class="swatch-hex">#4A1942</span>
+        </div>
+        <div class="swatch" style="background: #6B8E4E; color: white;">
+          <span class="swatch-name">Vineyard</span>
+          <span class="swatch-hex">#6B8E4E</span>
+        </div>
+        <div class="swatch" style="background: #E8B4BC; color: #333;">
+          <span class="swatch-name">Rosé</span>
+          <span class="swatch-hex">#E8B4BC</span>
+        </div>
+        <div class="swatch" style="background: #C9A86C; color: #333;">
+          <span class="swatch-name">Wheat</span>
+          <span class="swatch-hex">#C9A86C</span>
+        </div>
+        <div class="swatch" style="background: #FAF7F2; color: #333;">
+          <span class="swatch-name">Cape Dutch</span>
+          <span class="swatch-hex">#FAF7F2</span>
+        </div>
+      </div>
+      <div class="palette-demo">
+        <div class="demo-section" style="background: #4A1942; color: #FAF7F2;">
+          <h3>Featured Work</h3>
+          <p>Wine-rich tones with vineyard accents. Refined elegance.</p>
+          <button class="btn-demo" style="background: #6B8E4E; color: white;">View Work</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
