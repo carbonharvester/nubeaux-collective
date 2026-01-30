@@ -1680,6 +1680,26 @@
       background: var(--color-bone);
     }
 
+    /* Horizontal scroll timeline for mobile */
+    .timeline-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: var(--space-xl) calc(-1 * var(--space-md));
+      padding: 0 var(--space-md);
+      scrollbar-width: none;
+    }
+    .timeline-scroll::-webkit-scrollbar { display: none; }
+    .timeline-scroll .timeline-grid {
+      display: flex;
+      gap: var(--space-md);
+      margin: 0;
+      padding-bottom: var(--space-sm);
+    }
+    .timeline-scroll .timeline-item {
+      flex: 0 0 280px;
+      min-width: 280px;
+    }
+
     .timeline-date {
       font-size: 0.75rem;
       font-weight: 600;
@@ -2175,21 +2195,23 @@
       <p class="executive-summary">
         The most valuable creator relationships are not one-offs. They are partnerships that evolve. Nia is at a life stage where solo travel content is authentic and resonant. But as her life evolves, so does the storytelling opportunity.
       </p>
-      <div class="timeline-grid" style="margin-top: var(--space-xl); grid-template-columns: repeat(3, 1fr); gap: var(--space-md);">
-        <div class="timeline-item" style="background: var(--color-white); padding: var(--space-md); border: 1px solid rgba(0,0,0,0.08);">
-          <p class="timeline-date">2026</p>
-          <p class="timeline-title">Solo Travel</p>
-          <p class="timeline-desc">A woman on her own terms. Independence, self-discovery, and the luxury of solitude.</p>
-        </div>
-        <div class="timeline-item" style="background: var(--color-white); padding: var(--space-md); border: 1px solid rgba(0,0,0,0.08);">
-          <p class="timeline-date">Future</p>
-          <p class="timeline-title">Couples Content</p>
-          <p class="timeline-desc">Subtle, sophisticated couples travel. Romance without cliché. Two people sharing extraordinary experiences.</p>
-        </div>
-        <div class="timeline-item" style="background: var(--color-white); padding: var(--space-md); border: 1px solid rgba(0,0,0,0.08);">
-          <p class="timeline-date">Future</p>
-          <p class="timeline-title">Family Travel</p>
-          <p class="timeline-desc">Multi-generational storytelling. The next chapter of luxury travel, seen through a family's eyes.</p>
+      <div class="timeline-scroll">
+        <div class="timeline-grid">
+          <div class="timeline-item" style="background: var(--color-white); padding: var(--space-md); border: 1px solid rgba(0,0,0,0.08);">
+            <p class="timeline-date">2026</p>
+            <p class="timeline-title">Solo Travel</p>
+            <p class="timeline-desc">A woman on her own terms. Independence, self-discovery, and the luxury of solitude.</p>
+          </div>
+          <div class="timeline-item" style="background: var(--color-white); padding: var(--space-md); border: 1px solid rgba(0,0,0,0.08);">
+            <p class="timeline-date">Future</p>
+            <p class="timeline-title">Couples Content</p>
+            <p class="timeline-desc">Subtle, sophisticated couples travel. Romance without cliché. Two people sharing extraordinary experiences.</p>
+          </div>
+          <div class="timeline-item" style="background: var(--color-white); padding: var(--space-md); border: 1px solid rgba(0,0,0,0.08);">
+            <p class="timeline-date">Future</p>
+            <p class="timeline-title">Family Travel</p>
+            <p class="timeline-desc">Multi-generational storytelling. The next chapter of luxury travel, seen through a family's eyes.</p>
+          </div>
         </div>
       </div>
       <p class="executive-summary" style="margin-top: var(--space-lg);">
