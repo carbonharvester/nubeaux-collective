@@ -1776,7 +1776,21 @@
 
     /* Responsive */
     @media (max-width: 768px) {
-      .proposal-hero-content { padding: var(--space-xl); }
+      .proposal-hero {
+        min-height: 100vh;
+        margin-top: 0;
+      }
+
+      .proposal-hero-content { padding: var(--space-lg); }
+
+      .menu-toggle {
+        display: flex !important;
+        z-index: 1001;
+      }
+
+      .menu-toggle span {
+        background-color: var(--color-charcoal) !important;
+      }
 
       .stats-band-inner,
       .data-grid,
