@@ -1975,10 +1975,11 @@
     // Password: anantara2026 (change as needed)
     const PROPOSAL_PASSWORD = 'anantara2026';
 
-    // Check if already authenticated (persists across sessions)
-    if (localStorage.getItem('proposalAccess') === 'granted') {
-      document.getElementById('passwordGate').classList.add('hidden');
-    }
+    // Pre-fill saved details (but still require login each time for tracking)
+    const savedName = localStorage.getItem('proposalVisitorName');
+    const savedEmail = localStorage.getItem('proposalVisitorEmail');
+    if (savedName) document.getElementById('visitorName').value = savedName;
+    if (savedEmail) document.getElementById('visitorEmail').value = savedEmail;
 
     function checkAccess() {
       const name = document.getElementById('visitorName').value.trim();
@@ -1992,10 +1993,12 @@
       }
 
       if (password === PROPOSAL_PASSWORD) {
+        // Save details for next visit
+        localStorage.setItem('proposalVisitorName', name);
+        localStorage.setItem('proposalVisitorEmail', email);
         // Log access
         logAccess(name, email);
         // Grant access
-        localStorage.setItem('proposalAccess', 'granted');
         document.getElementById('passwordGate').classList.add('hidden');
       } else {
         document.getElementById('errorMsg').textContent = 'Incorrect password. Please try again.';
