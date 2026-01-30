@@ -1606,17 +1606,18 @@
         display: flex;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
-        gap: var(--space-md);
+        gap: var(--space-sm);
         margin-left: calc(-1 * var(--space-md));
         margin-right: calc(-1 * var(--space-md));
         padding: 0 var(--space-md) var(--space-md);
         scrollbar-width: none;
+        border-bottom: 2px solid var(--color-ecru);
       }
       .packages-grid::-webkit-scrollbar { display: none; }
 
       .package-card {
-        flex: 0 0 340px;
-        min-width: 340px;
+        flex: 0 0 85vw;
+        min-width: 85vw;
       }
 
       .package-badge {
@@ -1697,19 +1698,21 @@
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       margin: var(--space-xl) calc(-1 * var(--space-md));
-      padding: 0 var(--space-md);
+      padding: 0 var(--space-md) var(--space-md);
       scrollbar-width: none;
+      border-bottom: 2px solid var(--color-ecru);
     }
     .timeline-scroll::-webkit-scrollbar { display: none; }
     .timeline-scroll .timeline-grid {
       display: flex;
-      gap: var(--space-md);
+      gap: var(--space-sm);
       margin: 0;
       padding-bottom: var(--space-sm);
     }
     .timeline-scroll .timeline-item {
-      flex: 0 0 280px;
-      min-width: 280px;
+      flex: 0 0 85vw;
+      min-width: 85vw;
+      padding: var(--space-sm) var(--space-md);
     }
 
     /* Scroll indicator wrapper */
@@ -1969,15 +1972,16 @@
         gap: var(--space-sm);
         margin-left: calc(-1 * var(--space-md));
         margin-right: calc(-1 * var(--space-md));
-        padding: 0 var(--space-md);
+        padding: 0 var(--space-md) var(--space-md);
         scrollbar-width: none;
         background: transparent;
+        border-bottom: 2px solid var(--color-ecru);
       }
       .chapters-grid::-webkit-scrollbar { display: none; }
       .chapter-card {
-        flex: 0 0 280px;
-        min-width: 280px;
-        padding: var(--space-md);
+        flex: 0 0 85vw;
+        min-width: 85vw;
+        padding: var(--space-sm) var(--space-md);
       }
 
       /* Center Nia stats on mobile */
@@ -1998,35 +2002,29 @@
         display: flex !important;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
-        gap: var(--space-md) !important;
+        gap: var(--space-sm) !important;
         scrollbar-width: none;
+        padding-bottom: var(--space-md);
+        border-bottom: 2px solid var(--color-ecru);
       }
       .section-bone[style*="padding-left"] > div > div[style*="grid-template-columns"]::-webkit-scrollbar { display: none; }
       .section-bone[style*="padding-left"] > div > div[style*="grid-template-columns"] > div {
-        flex: 0 0 300px !important;
-        min-width: 300px !important;
-        padding: var(--space-md) !important;
+        flex: 0 0 85vw !important;
+        min-width: 85vw !important;
+        padding: var(--space-sm) var(--space-md) !important;
       }
       .section-bone[style*="padding-left"] {
         padding-left: var(--space-md) !important;
         padding-right: var(--space-md) !important;
       }
 
-      /* Mobile scroll hint for horizontal scrollers */
-      .timeline-scroll::after,
-      .data-grid::after,
-      .chapters-grid::after,
-      .packages-grid::after,
-      .section-bone[style*="padding-left"] > div > div[style*="grid-template-columns"]::after {
-        content: 'Swipe →';
-        display: block;
-        text-align: center;
-        font-size: 0.6875rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--color-warm-grey);
-        padding-top: var(--space-sm);
-        flex-shrink: 0;
+      /* Minimal scroll indicator line */
+      .scroll-indicator-line {
+        width: 60px;
+        height: 3px;
+        background: var(--color-ecru);
+        margin: var(--space-md) auto 0;
+        border-radius: 2px;
       }
 
       /* Data cards - horizontal scroll on mobile */
@@ -2037,17 +2035,18 @@
         gap: var(--space-sm);
         margin-left: calc(-1 * var(--space-md));
         margin-right: calc(-1 * var(--space-md));
-        padding: var(--space-sm) var(--space-md);
+        padding: var(--space-sm) var(--space-md) var(--space-md);
         scrollbar-width: none;
         background: var(--color-white);
+        border-bottom: 2px solid var(--color-ecru);
       }
       .section-charcoal .data-grid {
         background: var(--color-bone);
       }
       .data-grid::-webkit-scrollbar { display: none; }
       .data-card {
-        flex: 0 0 300px;
-        min-width: 300px;
+        flex: 0 0 85vw;
+        min-width: 85vw;
         padding: var(--space-sm) var(--space-md);
       }
       .data-card-value {
