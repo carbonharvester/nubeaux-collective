@@ -1910,11 +1910,34 @@
       }
 
       .stats-band-inner,
-      .chapters-grid,
       .tier-grid,
       .measurement-grid,
       .timeline-grid {
         grid-template-columns: 1fr;
+      }
+
+      /* Chapters grid - horizontal scroll on mobile */
+      .chapters-grid {
+        display: flex !important;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        gap: var(--space-sm);
+        margin-left: calc(-1 * var(--space-md));
+        margin-right: calc(-1 * var(--space-md));
+        padding: 0 var(--space-md);
+        scrollbar-width: none;
+        background: transparent;
+      }
+      .chapters-grid::-webkit-scrollbar { display: none; }
+      .chapter-card {
+        flex: 0 0 280px;
+        min-width: 280px;
+        padding: var(--space-md);
+      }
+
+      /* Center Nia stats on mobile */
+      .creator-stats {
+        justify-content: center;
       }
 
       /* Data cards - horizontal scroll on mobile */
