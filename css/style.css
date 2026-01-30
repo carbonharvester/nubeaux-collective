@@ -340,8 +340,8 @@ p {
 .menu-toggle span {
   display: block;
   width: 24px;
-  height: 1px;
-  background-color: var(--color-terracotta-soft);
+  height: 2px;
+  background-color: var(--color-charcoal);
   transition: transform var(--transition-fast), opacity var(--transition-fast);
 }
 
@@ -470,7 +470,8 @@ p {
 
 @media (max-width: 768px) {
   .hero.hero-image-only .hero-media img {
-    height: 70vh;
+    height: 100vh;
+    height: 100dvh;
   }
 
   .hero-text-section {
