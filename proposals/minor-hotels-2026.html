@@ -1993,11 +1993,31 @@
         padding-right: var(--space-md) !important;
       }
 
+      /* What's Included grid - horizontal scroll on mobile */
+      .section-bone[style*="padding-left"] > div > div[style*="grid-template-columns"] {
+        display: flex !important;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        gap: var(--space-md) !important;
+        scrollbar-width: none;
+      }
+      .section-bone[style*="padding-left"] > div > div[style*="grid-template-columns"]::-webkit-scrollbar { display: none; }
+      .section-bone[style*="padding-left"] > div > div[style*="grid-template-columns"] > div {
+        flex: 0 0 300px !important;
+        min-width: 300px !important;
+        padding: var(--space-md) !important;
+      }
+      .section-bone[style*="padding-left"] {
+        padding-left: var(--space-md) !important;
+        padding-right: var(--space-md) !important;
+      }
+
       /* Mobile scroll hint for horizontal scrollers */
       .timeline-scroll::after,
       .data-grid::after,
       .chapters-grid::after,
-      .packages-grid::after {
+      .packages-grid::after,
+      .section-bone[style*="padding-left"] > div > div[style*="grid-template-columns"]::after {
         content: 'Swipe →';
         display: block;
         text-align: center;
