@@ -1603,8 +1603,20 @@
 
     @media (max-width: 900px) {
       .packages-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
         gap: var(--space-md);
+        margin-left: calc(-1 * var(--space-md));
+        margin-right: calc(-1 * var(--space-md));
+        padding: 0 var(--space-md) var(--space-md);
+        scrollbar-width: none;
+      }
+      .packages-grid::-webkit-scrollbar { display: none; }
+
+      .package-card {
+        flex: 0 0 300px;
+        min-width: 300px;
       }
 
       .package-badge {
@@ -1938,6 +1950,12 @@
       /* Center Nia stats on mobile */
       .creator-stats {
         justify-content: center;
+      }
+
+      /* Fix packages section padding on mobile */
+      .section-white[style*="padding-left"] {
+        padding-left: var(--space-md) !important;
+        padding-right: var(--space-md) !important;
       }
 
       /* Data cards - horizontal scroll on mobile */
