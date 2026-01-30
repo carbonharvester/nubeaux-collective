@@ -1712,6 +1712,39 @@
       min-width: 280px;
     }
 
+    /* Scroll indicator wrapper */
+    .scroll-indicator-wrap {
+      position: relative;
+    }
+    .scroll-indicator-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 40px;
+      background: linear-gradient(to right, transparent, var(--color-bone));
+      pointer-events: none;
+      z-index: 1;
+    }
+    .scroll-indicator-wrap.bg-white::after {
+      background: linear-gradient(to right, transparent, var(--color-white));
+    }
+    .scroll-indicator-wrap.bg-charcoal::after {
+      background: linear-gradient(to right, transparent, #3E3228);
+    }
+
+    /* Scroll hint text */
+    .scroll-hint {
+      display: block;
+      text-align: center;
+      font-size: 0.6875rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-warm-grey);
+      margin-top: var(--space-sm);
+    }
+
     .timeline-date {
       font-size: 0.75rem;
       font-weight: 600;
@@ -1956,6 +1989,22 @@
       .section-white[style*="padding-left"] {
         padding-left: var(--space-md) !important;
         padding-right: var(--space-md) !important;
+      }
+
+      /* Mobile scroll hint for horizontal scrollers */
+      .timeline-scroll::after,
+      .data-grid::after,
+      .chapters-grid::after,
+      .packages-grid::after {
+        content: 'Swipe →';
+        display: block;
+        text-align: center;
+        font-size: 0.6875rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--color-warm-grey);
+        padding-top: var(--space-sm);
+        flex-shrink: 0;
       }
 
       /* Data cards - horizontal scroll on mobile */
