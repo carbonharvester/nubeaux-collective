@@ -2015,15 +2015,18 @@
         gap: var(--space-sm);
         margin-left: calc(-1 * var(--space-md));
         margin-right: calc(-1 * var(--space-md));
-        padding: 0 var(--space-md);
+        padding: var(--space-sm) var(--space-md);
         scrollbar-width: none;
-        background: transparent;
+        background: var(--color-white);
+      }
+      .section-charcoal .data-grid {
+        background: var(--color-bone);
       }
       .data-grid::-webkit-scrollbar { display: none; }
       .data-card {
-        flex: 0 0 260px;
-        min-width: 260px;
-        padding: var(--space-md);
+        flex: 0 0 300px;
+        min-width: 300px;
+        padding: var(--space-sm) var(--space-md);
       }
       .data-card-value {
         font-size: 2rem;
