@@ -5,10 +5,10 @@
 
 /* ----- CSS Custom Properties ----- */
 :root {
-  /* Colors - Aman-inspired with Espresso replacing Black */
-  --color-black: #2C2420;
+  /* Colors - Aman-inspired with Charcoal as primary dark */
+  --color-black: #3D3530;
   --color-charcoal: #3D3530;
-  --color-espresso: #2C2420;
+  --color-espresso: #3D3530;
   --color-dark-cocoa: #1F1A16;
   --color-warm-grey: #8a8278;
   --color-stone: #a69f95;
@@ -49,6 +49,27 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+/* ----- Image Protection ----- */
+img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  pointer-events: auto;
+}
+
+/* Disable print */
+@media print {
+  body {
+    display: none !important;
+  }
 }
 
 html {
@@ -391,6 +412,72 @@ p {
   }
 }
 
+/* Hero Image Only variant - full bleed image, no text overlay */
+.hero.hero-image-only {
+  padding-top: 0;
+  min-height: calc(100vh - var(--header-height));
+}
+
+.hero.hero-image-only .hero-media {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.hero.hero-image-only .hero-media img {
+  width: 100%;
+  height: calc(100vh - var(--header-height));
+  object-fit: cover;
+}
+
+/* Hero Text Section - below the image */
+.hero-text-section {
+  background-color: var(--color-bone);
+  padding: var(--space-2xl) 0 var(--space-lg);
+  text-align: center;
+}
+
+.hero-text-section + .intro.section-large {
+  padding-top: var(--space-lg);
+}
+
+.hero-text-section .hero-headline {
+  color: var(--color-charcoal);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  margin-bottom: var(--space-md);
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+
+.hero-text-section .hero-subline {
+  color: var(--color-warm-grey);
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-lg);
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+
+.hero-text-section .hero-cta {
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+
+@media (max-width: 768px) {
+  .hero.hero-image-only .hero-media img {
+    height: 70vh;
+  }
+
+  .hero-text-section {
+    padding: var(--space-xl) 0;
+  }
+}
+
 /* ----- Buttons ----- */
 .btn {
   display: inline-block;
@@ -619,13 +706,13 @@ p {
 .work-card-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.5);
-  opacity: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%);
+  opacity: 1;
   transition: opacity var(--transition-medium);
 }
 
 .work-card:hover .work-card-overlay {
-  opacity: 1;
+  background: rgba(0,0,0,0.5);
 }
 
 .work-card-content {
@@ -634,8 +721,8 @@ p {
   left: 0;
   right: 0;
   padding: var(--space-md);
-  transform: translateY(20px);
-  opacity: 0;
+  transform: translateY(0);
+  opacity: 1;
   transition: transform var(--transition-medium), opacity var(--transition-medium);
   text-align: left;
 }
@@ -643,6 +730,11 @@ p {
 .work-card:hover .work-card-content {
   transform: translateY(0);
   opacity: 1;
+}
+
+/* Work card content always visible - brand names prominent */
+.work-card .work-card-content {
+  z-index: 2;
 }
 
 .work-card-category {
@@ -718,7 +810,7 @@ p {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: var(--space-sm);
+  padding: var(--space-xs) var(--space-sm);
   background: rgba(0,0,0,0.6);
   color: white;
 }
@@ -746,7 +838,7 @@ p {
   }
 
   .creator-card-overlay {
-    padding: var(--space-md);
+    padding: var(--space-sm) var(--space-md);
   }
 }
 
@@ -1518,13 +1610,22 @@ p {
 /* ----- Scroll Reveal Animation ----- */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
 }
 
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 /* ----- Cursor (optional luxury touch) ----- */
@@ -2262,6 +2363,7 @@ body::before {
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center top;
 }
 
 .creator-mini-name {

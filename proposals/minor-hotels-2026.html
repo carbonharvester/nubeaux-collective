@@ -17,376 +17,121 @@
 
   <style>
     /* ============================================
-       MOCHA & CREAM PALETTE - Light dominant design
-       Mocha #3E3228 - text, buttons, footer
-       Taupe #6B5B4F - labels, secondary text
-       Caramel #C4A77D - accents, highlights
-       Cream #FBF8F3 - primary backgrounds
-       Dark Cocoa #1F1A16 - darkest accents
+       Uses main site color scheme from style.css
+       Espresso #2C2420 - text, buttons, footer
+       Terracotta #c2703e - accents, highlights
+       Bone #faf8f5 - primary backgrounds
+       Dark Cocoa #1F1A16 - footer
        ============================================ */
 
-    :root {
-      /* Override all color variables */
-      --color-charcoal: #3E3228;
-      --color-brown: #C4A77D;
-      --color-sage: #6B5B4F;
-      --color-sage-dark: #3E3228;
-      --color-gold: #C4A77D;
-      --color-white: #FFFFFF;
-      --color-bone: #FBF8F3;
-      --color-ecru: #F5F0E8;
-      --color-warm-grey: #6B5B4F;
+    /* ===== STATS BAND - Espresso ===== */
+    .stats-band {
+      background-color: var(--color-espresso) !important;
+      color: var(--color-bone) !important;
     }
 
-    /* ===== HEADER - Cream background, Mocha text ===== */
-    .proposal-page .header {
-      background-color: #FBF8F3 !important;
+    .stat-value {
+      color: var(--color-bone) !important;
     }
 
-    .proposal-page .header.scrolled {
-      background-color: #FBF8F3 !important;
-      box-shadow: 0 2px 10px rgba(62,50,40,0.08) !important;
+    .stat-label {
+      color: var(--color-bone) !important;
     }
 
-    .proposal-page .nav a {
-      color: #3E3228 !important;
+    .stat-item {
+      border-right-color: rgba(250, 248, 245, 0.2) !important;
     }
 
-    .proposal-page .nav a:hover {
-      color: #6B5B4F !important;
+    /* ===== PARTNER CTA - Espresso ===== */
+    .partner-cta {
+      background-color: var(--color-espresso) !important;
+      color: var(--color-white) !important;
     }
 
-    .proposal-page .nav-cta {
-      background-color: #3E3228 !important;
-      color: #FBF8F3 !important;
-      border-color: #3E3228 !important;
+    .partner-cta h2 {
+      color: var(--color-white) !important;
     }
 
-    .proposal-page .nav-cta:hover {
-      background-color: #6B5B4F !important;
+    .partner-cta p {
+      color: rgba(255,255,255,0.85) !important;
     }
 
-    .proposal-page .nav-dropdown-menu {
-      background-color: #FBF8F3 !important;
-      border: 1px solid rgba(62,50,40,0.1) !important;
+    .partner-cta .btn {
+      background-color: var(--color-terracotta) !important;
+      color: var(--color-white) !important;
+      border-color: var(--color-terracotta) !important;
     }
 
-    .proposal-page .nav-dropdown-menu a {
-      color: #3E3228 !important;
-    }
-
-    .proposal-page .nav-dropdown-menu a:hover {
-      background-color: #F5F0E8 !important;
-    }
-
-    .proposal-page .menu-toggle span {
-      background-color: #3E3228 !important;
-    }
-
-    /* ===== FOOTER - Mocha background (only dark section) ===== */
-    .proposal-page .footer {
-      background-color: #3E3228 !important;
-      color: #FBF8F3 !important;
-    }
-
-    .proposal-page .footer p,
-    .proposal-page .footer a {
-      color: #FBF8F3 !important;
-    }
-
-    .proposal-page .footer a:hover {
-      color: #C4A77D !important;
-    }
-
-    .proposal-page .footer-heading {
-      color: #C4A77D !important;
-    }
-
-    .proposal-page .footer-brand p {
-      color: rgba(251,248,243,0.7) !important;
-    }
-
-    .proposal-page .footer-bottom {
-      border-top-color: rgba(251,248,243,0.1) !important;
-    }
-
-    .proposal-page .footer-bottom p {
-      color: rgba(251,248,243,0.5) !important;
-    }
-
-    /* ===== MOBILE MENU - Cream background ===== */
-    .proposal-page .mobile-menu {
-      background-color: #FBF8F3 !important;
-    }
-
-    .proposal-page .mobile-menu a {
-      color: #3E3228 !important;
-      border-bottom-color: rgba(62,50,40,0.1) !important;
-    }
-
-    .proposal-page .mobile-menu-cta {
-      background-color: #3E3228 !important;
-      color: #FBF8F3 !important;
-    }
-
-    .proposal-page .mobile-menu-label {
-      color: #6B5B4F !important;
-    }
-
-    /* ===== STATS BAND - Caramel accent (warm, not dark) ===== */
-    .proposal-page .stats-band {
-      background-color: #C4A77D !important;
-      color: #1F1A16 !important;
-    }
-
-    .proposal-page .stat-value {
-      color: #1F1A16 !important;
-    }
-
-    .proposal-page .stat-label {
-      color: rgba(31,26,22,0.7) !important;
-    }
-
-    .proposal-page .stat-item {
-      border-right-color: rgba(31,26,22,0.15) !important;
-    }
-
-    /* ===== SECTION CHARCOAL - Convert to CREAM with Mocha text ===== */
-    .proposal-page .section-charcoal {
-      background-color: #FBF8F3 !important;
-      color: #3E3228 !important;
-    }
-
-    .proposal-page .section-charcoal h2,
-    .proposal-page .section-charcoal h3,
-    .proposal-page .section-charcoal h4 {
-      color: #3E3228 !important;
-    }
-
-    .proposal-page .section-charcoal p {
-      color: #3E3228 !important;
-    }
-
-    .proposal-page .section-charcoal strong {
-      color: #3E3228 !important;
-    }
-
-    .proposal-page .section-charcoal .section-header h2 {
-      color: #3E3228 !important;
-    }
-
-    .proposal-page .section-charcoal .section-header p {
-      color: #6B5B4F !important;
-    }
-
-    /* Data cards in section-charcoal - now on cream bg */
-    .proposal-page .section-charcoal .data-grid {
-      background-color: rgba(62,50,40,0.05) !important;
-    }
-
-    .proposal-page .section-charcoal .data-card {
-      background-color: #FFFFFF !important;
-    }
-
-    .proposal-page .section-charcoal .data-card-value {
-      color: #3E3228 !important;
-    }
-
-    .proposal-page .section-charcoal .data-card-label {
-      color: #3E3228 !important;
-    }
-
-    .proposal-page .section-charcoal .data-card-source {
-      color: #6B5B4F !important;
-    }
-
-    /* Story box in section-charcoal */
-    .proposal-page .section-charcoal .reveal[style*="background"] {
-      background-color: #F5F0E8 !important;
-    }
-
-    /* ===== PARTNER CTA - Mocha (accent dark section) ===== */
-    .proposal-page .partner-cta {
-      background-color: #3E3228 !important;
-      color: #FBF8F3 !important;
-    }
-
-    .proposal-page .partner-cta h2 {
-      color: #FBF8F3 !important;
-    }
-
-    .proposal-page .partner-cta p {
-      color: rgba(251,248,243,0.85) !important;
-    }
-
-    .proposal-page .partner-cta .btn {
-      background-color: #C4A77D !important;
-      color: #1F1A16 !important;
-      border-color: #C4A77D !important;
-    }
-
-    .proposal-page .partner-cta .btn:hover {
-      background-color: #FBF8F3 !important;
-      color: #3E3228 !important;
-    }
-
-    /* ===== SCROLL PROGRESS - Caramel ===== */
-    .proposal-page .scroll-progress {
-      background: #C4A77D !important;
+    .partner-cta .btn:hover {
+      background-color: var(--color-white) !important;
+      color: var(--color-espresso) !important;
     }
 
     /* ===== DELIVERABLES TABLE ===== */
-    .proposal-page .deliverables-table th {
-      background-color: #3E3228 !important;
-      color: #FBF8F3 !important;
+    .deliverables-table th {
+      background-color: var(--color-espresso) !important;
+      color: var(--color-white) !important;
     }
 
-    .proposal-page .deliverables-table .check {
-      color: #C4A77D !important;
+    .deliverables-table .check {
+      color: var(--color-terracotta) !important;
     }
 
-    .proposal-page .deliverables-table .category-row {
-      background: #F5F0E8 !important;
-      color: #6B5B4F !important;
-    }
-
-    .proposal-page .deliverables-table .optional {
-      color: #6B5B4F !important;
+    .deliverables-table .category-row {
+      background: var(--color-ecru) !important;
+      color: var(--color-warm-grey) !important;
     }
 
     /* ===== TIER CARDS ===== */
-    .proposal-page .tier-card.featured {
-      background-color: #3E3228 !important;
-      color: #FBF8F3 !important;
+    .tier-card.featured {
+      background-color: var(--color-espresso) !important;
+      color: var(--color-white) !important;
     }
 
-    .proposal-page .tier-card.featured h3,
-    .proposal-page .tier-card.featured .tier-price {
-      color: #FBF8F3 !important;
+    .tier-card.featured h3,
+    .tier-card.featured .tier-price {
+      color: var(--color-white) !important;
     }
 
-    .proposal-page .tier-card.featured .tier-label {
-      color: #C4A77D !important;
+    .tier-card.featured .tier-label {
+      color: var(--color-terracotta) !important;
     }
 
-    .proposal-page .tier-card.featured .tier-desc {
-      color: rgba(251,248,243,0.85) !important;
+    .tier-label {
+      color: var(--color-terracotta) !important;
     }
 
-    /* Non-featured tier cards */
-    .proposal-page .tier-label {
-      color: #C4A77D !important;
+    /* ===== LABELS - Terracotta accents ===== */
+    .proof-card-label,
+    .chapter-number,
+    .timeline-date,
+    .module-label,
+    .property-number,
+    .concept-hero-label {
+      color: var(--color-terracotta) !important;
     }
 
-    .proposal-page .tier-price {
-      color: #3E3228 !important;
+    /* ===== MEASUREMENT CARDS ===== */
+    .measurement-card {
+      background: var(--color-ecru) !important;
     }
 
-    /* ===== DATA CARDS (on light backgrounds) ===== */
-    .proposal-page .data-card-value {
-      color: #3E3228 !important;
-    }
-
-    .proposal-page .data-card-label {
-      color: #3E3228 !important;
-    }
-
-    .proposal-page .data-card-source {
-      color: #6B5B4F !important;
-    }
-
-    /* ===== LABELS - Taupe on light backgrounds ===== */
-    .proposal-page .proof-card-label,
-    .proposal-page .chapter-number,
-    .proposal-page .timeline-date,
-    .proposal-page .module-label,
-    .proposal-page .property-number,
-    .proposal-page .concept-hero-label {
-      color: #C4A77D !important;
-    }
-
-    /* ===== SECTION HEADERS - Mocha text ===== */
-    .proposal-page .section-header h2 {
-      color: #3E3228 !important;
-    }
-
-    .proposal-page .section-header p {
-      color: #6B5B4F !important;
-    }
-
-    /* ===== EXECUTIVE SUMMARY ===== */
-    .proposal-page .executive-summary {
-      color: #3E3228 !important;
-    }
-
-    /* ===== TWO-COL, THREE-COL CONTENT ===== */
-    .proposal-page .two-col h3,
-    .proposal-page .three-col h3,
-    .proposal-page .single-col-box h3 {
-      color: #3E3228 !important;
-    }
-
-    .proposal-page .two-col p,
-    .proposal-page .three-col p,
-    .proposal-page .single-col-box p {
-      color: #3E3228 !important;
-    }
-
-    /* ===== PRICING TABLE ===== */
-    .proposal-page .pricing-table th {
-      color: #6B5B4F !important;
-      border-bottom-color: #3E3228 !important;
-    }
-
-    .proposal-page .pricing-table td {
-      border-bottom-color: #F5F0E8 !important;
-    }
-
-    /* ===== MEASUREMENT CARDS (now on cream bg) ===== */
-    .proposal-page .measurement-card {
-      background: #F5F0E8 !important;
-    }
-
-    .proposal-page .measurement-label {
-      color: #C4A77D !important;
-    }
-
-    .proposal-page .measurement-card h4 {
-      color: #3E3228 !important;
-    }
-
-    .proposal-page .measurement-card p {
-      color: #3E3228 !important;
-    }
-
-    .proposal-page .measurement-target {
-      color: #3E3228 !important;
-    }
-
-    .proposal-page .measurement-target strong {
-      color: #3E3228 !important;
-    }
-
-    .proposal-page .measurement-note {
-      color: #6B5B4F !important;
+    .measurement-label {
+      color: var(--color-terracotta) !important;
     }
 
     /* ===== RISK CARDS ===== */
-    .proposal-page .risk-card h4::before {
-      color: #C4A77D !important;
+    .risk-card h4::before {
+      color: var(--color-terracotta) !important;
     }
 
     /* ===== CREATOR SECTIONS ===== */
-    .proposal-page .creator-fit {
-      background: #F5F0E8 !important;
+    .creator-fit {
+      background: var(--color-ecru) !important;
     }
 
-    .proposal-page .creator-fit h4 {
-      color: #C4A77D !important;
-    }
-
-    .proposal-page .creator-fit p {
-      color: #3E3228 !important;
+    .creator-fit h4 {
+      color: var(--color-terracotta) !important;
     }
 
     /* ===== GSAP animation performance ===== */
@@ -414,6 +159,17 @@
     html, body {
       overflow-x: hidden;
       max-width: 100vw;
+    }
+
+    /* Offset anchor links for fixed header */
+    #summary,
+    #why-now,
+    #properties,
+    #creators,
+    #packages,
+    #timeline,
+    #terms {
+      scroll-margin-top: 110px;
     }
 
     * { box-sizing: border-box; }
@@ -448,9 +204,9 @@
       z-index: 2;
     }
 
-    /* Override scroll progress gradient */
+    /* Override scroll progress */
     .scroll-progress {
-      background: var(--color-charcoal) !important;
+      background: var(--color-terracotta) !important;
     }
 
     .proposal-hero-content {
@@ -487,16 +243,48 @@
       font-size: 1rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: rgba(251,248,243,0.7);
+      color: var(--color-bone) !important;
       margin-bottom: var(--space-xl);
     }
 
     .proposal-intro {
       font-size: 1.0625rem;
-      color: rgba(251,248,243,0.85);
+      color: var(--color-bone) !important;
       max-width: 600px;
       margin: 0 auto;
       line-height: 1.8;
+    }
+
+    /* Scroll to Top Button */
+    .scroll-to-top {
+      position: fixed;
+      bottom: var(--space-xl);
+      right: var(--space-xl);
+      width: 48px;
+      height: 48px;
+      background: var(--color-terracotta);
+      color: var(--color-white);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 99;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .scroll-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .scroll-to-top:hover {
+      background: var(--color-charcoal);
+      transform: translateY(-2px);
     }
 
     /* Stats Band */
@@ -551,91 +339,119 @@
       background-color: var(--color-white);
     }
 
+    /* Section-charcoal - use cream background for consistency */
     .section-charcoal {
       padding: var(--space-2xl) 0;
-      background-color: var(--color-charcoal);
-      color: var(--color-white);
+      background-color: var(--color-bone) !important;
+      color: var(--color-charcoal);
     }
 
-    /* Section-charcoal text - now on CREAM background, use MOCHA text */
     .section-charcoal h2,
     .section-charcoal h3,
     .section-charcoal h4 {
-      color: #3E3228 !important;
+      color: var(--color-charcoal) !important;
     }
 
     .section-charcoal p {
-      color: #3E3228 !important;
+      color: var(--color-charcoal) !important;
     }
 
     .section-charcoal strong {
-      color: #3E3228 !important;
+      color: var(--color-charcoal) !important;
     }
 
-    .proposal-page .section-header {
+    /* Section Header - stacked layout (heading on top, subtext below) */
+    .section-header {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
       text-align: center;
       margin-bottom: var(--space-xl);
       max-width: 800px;
       margin-left: auto;
       margin-right: auto;
       padding: 0 var(--space-md);
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      justify-content: center !important;
     }
 
-    .proposal-page .section-header h2 {
+    .section-header h2 {
       display: block;
       width: 100%;
       margin-bottom: var(--space-sm);
-      color: #3E3228 !important;
+      color: var(--color-charcoal) !important;
       text-align: center;
     }
 
-    .proposal-page .section-header p {
+    .section-header p {
       display: block;
       width: 100%;
-      color: #6B5B4F;
+      color: var(--color-warm-grey) !important;
       line-height: 1.7;
       margin: 0;
       text-align: center;
     }
 
-    /* Pricing table overrides */
-    .proposal-page .pricing-table th {
-      color: #6B5B4F !important;
-      border-bottom-color: #3E3228 !important;
+    /* Ensure all text is visible - fix tone-on-tone issues */
+    h2, h3, h4 {
+      color: var(--color-charcoal) !important;
     }
 
-    .proposal-page .pricing-table td {
-      border-bottom-color: #F5F0E8 !important;
+    p {
+      color: var(--color-charcoal) !important;
+    }
+
+    /* Footer text colors - override above rules */
+    .footer,
+    .footer p,
+    .footer h4,
+    .footer a,
+    .footer span {
+      color: #F5F1EB !important;
+    }
+
+    .footer-brand p,
+    .footer-links a,
+    .footer-links span {
+      color: rgba(245,241,235,0.7) !important;
+    }
+
+    .footer-links a:hover {
+      color: #F5F1EB !important;
+    }
+
+    /* Labels and secondary text */
+    .proof-card p,
+    .data-card-source,
+    .timeline-desc,
+    .tier-desc {
+      color: var(--color-warm-grey) !important;
     }
 
     /* Executive summary */
-    .proposal-page .executive-summary {
-      color: #3E3228 !important;
+    .executive-summary {
+      color: var(--color-charcoal) !important;
     }
 
-    /* Two-col and three-col headers */
-    .proposal-page .two-col h3,
-    .proposal-page .three-col h3,
-    .proposal-page .single-col-box h3 {
-      color: #3E3228 !important;
+    /* Two-col and three-col content */
+    .two-col h3,
+    .three-col h3,
+    .single-col-box h3 {
+      color: var(--color-charcoal) !important;
     }
 
-    .proposal-page .two-col p,
-    .proposal-page .three-col p,
-    .proposal-page .single-col-box p {
-      color: #3E3228 !important;
+    .two-col p,
+    .three-col p,
+    .single-col-box p {
+      color: var(--color-charcoal) !important;
     }
 
-    .proposal-page .section-charcoal .section-header h2 {
-      color: #3E3228 !important;
+    /* Data card values - terracotta accent */
+    .data-card-value {
+      color: var(--color-terracotta) !important;
     }
 
-    .proposal-page .section-charcoal .section-header p {
-      color: #6B5B4F;
+    .data-card-label {
+      color: var(--color-charcoal) !important;
     }
 
     /* Content Container */
@@ -855,10 +671,10 @@
       margin-bottom: 0;
     }
 
-    /* Anniversary Callout - Caramel background for warmth */
+    /* Anniversary Callout - Terracotta background */
     .anniversary-callout {
-      background: #C4A77D;
-      color: #1F1A16;
+      background: var(--color-terracotta);
+      color: var(--color-white);
       padding: var(--space-lg) var(--space-xl);
       margin: var(--space-xl) 0;
       text-align: center;
@@ -871,7 +687,7 @@
       font-size: 0.625rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: rgba(31,26,22,0.6);
+      color: var(--color-white);
       margin-bottom: var(--space-xs);
     }
 
@@ -880,13 +696,13 @@
       font-size: 1.5rem;
       font-weight: 400;
       margin-bottom: var(--space-md);
-      color: #1F1A16;
+      color: var(--color-white) !important;
     }
 
     .anniversary-callout p {
       font-size: 0.9375rem;
       line-height: 1.8;
-      color: #1F1A16;
+      color: var(--color-white) !important;
       margin-bottom: var(--space-sm);
     }
 
@@ -918,8 +734,8 @@
 
     .concept-hero {
       text-align: center;
-      padding: 0;
-      background: transparent;
+      padding: var(--space-xl);
+      background: var(--color-espresso) !important;
       margin: 0 0 var(--space-lg);
     }
 
@@ -927,7 +743,7 @@
       font-size: 0.625rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--color-brown);
+      color: var(--color-terracotta) !important;
       margin-bottom: var(--space-sm);
     }
 
@@ -938,11 +754,12 @@
       font-family: 'Playfair Display', serif;
       font-weight: 400;
       font-style: italic;
+      color: var(--color-white) !important;
     }
 
     .concept-hero-subtitle {
       font-size: 1.0625rem;
-      color: var(--color-warm-grey);
+      color: var(--color-white) !important;
       max-width: 550px;
       margin: 0 auto;
       line-height: 1.7;
@@ -1496,6 +1313,236 @@
       line-height: 1.6;
     }
 
+    /* ===== PACKAGE CARDS ===== */
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-xl);
+      margin: var(--space-xl) 0;
+      width: 100%;
+    }
+
+    .package-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-ecru);
+      padding: var(--space-lg) var(--space-md);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .package-card.recommended {
+      border-color: var(--color-terracotta);
+      box-shadow: 0 4px 24px rgba(194, 112, 62, 0.15);
+    }
+
+    .package-badge {
+      position: absolute;
+      top: 0;
+      right: var(--space-lg);
+      background: var(--color-terracotta);
+      color: var(--color-white);
+      font-size: 0.625rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: var(--space-xs) var(--space-sm);
+    }
+
+    .package-label {
+      font-size: 0.625rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-terracotta);
+      margin-bottom: var(--space-xs);
+      text-align: center;
+    }
+
+    .package-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      font-weight: 400;
+      color: var(--color-charcoal);
+      margin-bottom: var(--space-xs);
+      text-align: center;
+    }
+
+    .package-tagline {
+      font-size: 0.875rem;
+      color: var(--color-warm-grey);
+      font-style: italic;
+      margin-bottom: var(--space-md);
+      padding-bottom: var(--space-md);
+      border-bottom: 1px solid var(--color-ecru);
+      text-align: center;
+    }
+
+    .package-properties {
+      font-size: 0.8125rem;
+      color: var(--color-charcoal);
+      margin-bottom: var(--space-md);
+    }
+
+    .package-properties strong {
+      display: block;
+      font-size: 0.625rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-warm-grey);
+      font-weight: 500;
+      margin-bottom: var(--space-xs);
+    }
+
+    .package-creators {
+      font-size: 0.8125rem;
+      color: var(--color-charcoal);
+      margin-bottom: var(--space-lg);
+      padding-bottom: var(--space-lg);
+      border-bottom: 1px solid var(--color-ecru);
+    }
+
+    .package-creators strong {
+      display: block;
+      font-size: 0.625rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-warm-grey);
+      font-weight: 500;
+      margin-bottom: var(--space-xs);
+    }
+
+    .package-deliverables {
+      flex-grow: 1;
+      margin-bottom: var(--space-md);
+    }
+
+    .package-deliverables h4 {
+      font-size: 0.625rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-warm-grey);
+      font-weight: 500;
+      margin-bottom: var(--space-xs);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .package-deliverables h4:not(:first-of-type) {
+      margin-top: var(--space-md);
+      padding-top: var(--space-sm);
+      border-top: 1px solid var(--color-ecru);
+    }
+
+    .per-property-note {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-terracotta);
+      margin-bottom: var(--space-md);
+      padding-bottom: var(--space-sm);
+      border-bottom: 2px solid var(--color-terracotta);
+    }
+
+    .package-deliverables ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .package-deliverables li {
+      font-size: 0.8125rem;
+      color: var(--color-charcoal);
+      padding: var(--space-xs) 0;
+      padding-left: 1.25rem;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .package-deliverables li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--color-terracotta);
+      font-weight: 600;
+    }
+
+    .package-price {
+      text-align: center;
+      padding-top: var(--space-md);
+      border-top: 1px solid var(--color-ecru);
+    }
+
+    .package-price-amount {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--color-charcoal);
+      margin-bottom: var(--space-xs);
+    }
+
+    .package-price-note {
+      font-size: 0.75rem;
+      color: var(--color-warm-grey);
+    }
+
+    .package-addon {
+      margin-top: var(--space-md);
+      padding-top: var(--space-md);
+      border-top: 1px dashed var(--color-ecru);
+      text-align: left;
+    }
+
+    .package-addon h4 {
+      font-size: 0.6875rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-terracotta);
+      margin-bottom: var(--space-xs);
+    }
+
+    .package-addon ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .package-addon li {
+      font-size: 0.8125rem;
+      margin-bottom: var(--space-xs);
+      line-height: 1.5;
+    }
+
+    .package-addon li:last-child {
+      margin-bottom: 0;
+    }
+
+    .packages-footer {
+      margin-top: var(--space-xl);
+      padding: var(--space-lg);
+      background: var(--color-ecru);
+      text-align: center;
+    }
+
+    .packages-footer p {
+      font-size: 0.875rem;
+      color: var(--color-charcoal);
+      margin: 0;
+    }
+
+    .packages-footer strong {
+      color: var(--color-terracotta);
+    }
+
+    @media (max-width: 900px) {
+      .packages-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+      }
+
+      .package-badge {
+        right: var(--space-md);
+      }
+    }
+
     /* Measurement Grid */
     .measurement-grid {
       display: grid;
@@ -1798,24 +1845,19 @@
     }
   </style>
 </head>
-<body class="proposal-page">
+<body>
   <!-- Header -->
   <header class="header">
     <div class="header-inner">
       <a href="../index.html" class="logo"><img src="../assets/logo.svg" alt="Nubeaux"></a>
       <nav class="nav">
-        <a href="../creators.html">Featured Creators</a>
-        <div class="nav-dropdown">
-          <span>Services</span>
-          <div class="nav-dropdown-menu">
-            <a href="../campaigns.html">Influencer Campaigns</a>
-            <a href="../services/content-production.html">Content & Production</a>
-            <a href="../services/brand-digital.html">Brand & Digital</a>
-          </div>
-        </div>
-        <a href="../work.html">Work</a>
-        <a href="../about.html">About</a>
-        <a href="../upcoming-campaigns.html" class="nav-cta">Campaigns</a>
+        <a href="#summary">Summary</a>
+        <a href="#why-now">Why Now</a>
+        <a href="#properties">Properties</a>
+        <a href="#creators">Creators</a>
+        <a href="#packages">Packages</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#terms">Terms</a>
       </nav>
       <button class="menu-toggle" aria-label="Toggle menu">
         <span></span>
@@ -1827,14 +1869,13 @@
 
   <!-- Mobile Menu -->
   <div class="mobile-menu">
-    <a href="../creators.html">Featured Creators</a>
-    <span class="mobile-menu-label">Services</span>
-    <a href="../campaigns.html">Influencer Campaigns</a>
-    <a href="../services/content-production.html">Content & Production</a>
-    <a href="../services/brand-digital.html">Brand & Digital</a>
-    <a href="../work.html">Work</a>
-    <a href="../about.html">About</a>
-    <a href="../upcoming-campaigns.html" class="mobile-menu-cta">Campaigns</a>
+    <a href="#summary">Summary</a>
+    <a href="#why-now">Why Now</a>
+    <a href="#properties">Properties</a>
+    <a href="#creators">Creators</a>
+    <a href="#packages">Packages</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#terms">Terms</a>
   </div>
 
   <!-- Hero -->
@@ -1876,7 +1917,7 @@
   <!-- Executive Summary -->
   <section class="section-bone">
     <div class="content-narrow">
-      <h2 style="margin-bottom: var(--space-lg); color: var(--color-charcoal);">Executive Summary</h2>
+      <h2 id="summary" style="margin-bottom: var(--space-lg); color: var(--color-charcoal);">Executive Summary</h2>
       <p class="executive-summary">
         Women control luxury travel. They make the decisions, they research the options, and they book the trips. Yet most luxury hospitality content still centres the couple or family experience. Solo travel content is not just for solo travellers. It shows a woman as the protagonist of the story, and that inspires every type of trip she might book: solo, couples, girls' weekends, family holidays, group travel.
       </p>
@@ -1893,7 +1934,7 @@
   <section class="section-white">
     <div class="content-wide">
       <div class="section-header">
-        <h2>Why This Campaign Now</h2>
+        <h2 id="why-now">Why This Campaign Now</h2>
         <p>The market has shifted. The question is whether Anantara's content reflects the traveller who is actually booking.</p>
       </div>
 
@@ -1940,6 +1981,11 @@
         <p>The African diaspora seeking connection with ancestry, culture, and identity represents one of the fastest-growing segments in luxury travel. Heritage travellers have grown significantly since 2020 and show no signs of slowing.</p>
         <p>Nia is half Zimbabwean and speaks Shona. Her heritage content connects authentically with this audience. She is not performing African identity — she is expressing it. That distinction matters to travellers seeking genuine cultural connection.</p>
       </div>
+
+      <div class="single-col-box reveal">
+        <h3>A Creator Who Grows With the Brand</h3>
+        <p>We see this as the beginning of a longer relationship. As Nia's life evolves, so does the content: from solo travel now, to subtle couples content, to eventually family travel. A creator who grows with the brand creates continuity, authenticity, and compounding audience familiarity.</p>
+      </div>
     </div>
   </section>
 
@@ -1971,7 +2017,7 @@
 
       <div class="content-narrow" style="margin-top: var(--space-xl);">
         <div class="reveal" style="background: #F5F0E8; padding: var(--space-lg);">
-          <h4 style="color: #3E3228; margin-bottom: var(--space-sm);">The Story in the Data</h4>
+          <h4 style="color: #3E3228; margin-bottom: var(--space-sm); font-weight: bold; text-align: center;">The Story in the Data</h4>
           <p style="color: #3E3228; font-size: 0.9375rem; line-height: 1.8; margin-bottom: var(--space-md);">Four posts — just 0.2% of your combined content — delivered more engagement than 1,638 organic posts combined. But look closer: one was a viral video in Spanish targeting a mass audience. Three were from a travel blogger discussing 4°C mornings, border crossings, and fuel stops. It was reach without brand positioning.</p>
           <p style="color: #3E3228; font-size: 0.9375rem; line-height: 1.8; margin-bottom: var(--space-md);">The algorithm rewarded the creator's audience, not the content quality. Those posts spoke to overlanders and road-trippers — not the luxury traveller Anantara is trying to reach.</p>
           <p style="color: #3E3228; font-size: 0.9375rem; line-height: 1.8; margin-bottom: var(--space-md);"><strong style="color: #C4A77D;">You need both.</strong> Reach that finds your audience, and editorial quality that speaks to them in your brand voice. That's what we deliver.</p>
@@ -2078,7 +2124,7 @@
   <section class="section-white">
     <div class="container">
       <div class="section-header">
-        <h2>The Properties</h2>
+<h2 id="properties">The Properties</h2>
         <p>Three Anantara experiences, each with distinct storytelling potential. Nia leads at Royal Livingstone and Stanley & Livingstone. Klein and Nia together capture Kafue.</p>
       </div>
     </div>
@@ -2129,7 +2175,7 @@
   <section class="section-ecru">
     <div class="container">
       <div class="section-header">
-        <h2>The Creators</h2>
+<h2 id="creators">The Creators</h2>
         <p>Two creators, distinct perspectives. Nia leads at Royal Livingstone and Stanley & Livingstone. Klein and Nia together capture Kafue.</p>
       </div>
     </div>
@@ -2238,6 +2284,45 @@
             </div>
           </div>
         </div>
+
+        <div class="creator-content-preview reveal" style="margin-top: var(--space-lg);">
+          <h4>Wash Day Series</h4>
+          <p>Nia's signature content format. Intimate, high-engagement bathroom and self-care content that translates perfectly to luxury hotel spa and bathroom settings.</p>
+          <div class="content-preview-grid">
+            <div class="preview-item" data-video="../assets/nia_content/beauty/wash_routine_double_cleanse.mp4">
+              <img src="../assets/nia_content/beauty/wash_routine_double_cleanse.jpg" alt="Wash Routine" loading="lazy">
+              <div class="preview-stats">
+                <span>5.98M plays</span>
+                <span>4.5K likes</span>
+              </div>
+              <p class="preview-title">Double cleanse wash day #AD</p>
+            </div>
+            <div class="preview-item" data-video="../assets/nia_content/beauty/2023_plus/loreal_wash_ad.mp4">
+              <img src="../assets/nia_content/beauty/2023_plus/loreal_wash_ad.jpg" alt="L'Oreal Wash Day" loading="lazy">
+              <div class="preview-stats">
+                <span>1.79M plays</span>
+                <span>5.9K likes</span>
+              </div>
+              <p class="preview-title">L'Oreal wash day #AD</p>
+            </div>
+            <div class="preview-item" data-video="../assets/nia_content/beauty/2023_plus/current_curl_routine.mp4">
+              <img src="../assets/nia_content/beauty/2023_plus/current_curl_routine.jpg" alt="Curl Routine" loading="lazy">
+              <div class="preview-stats">
+                <span>709K plays</span>
+                <span>39K likes</span>
+              </div>
+              <p class="preview-title">My current curl routine</p>
+            </div>
+            <div class="preview-item" data-video="../assets/nia_content/beauty/2023_plus/rahua_autumn_ad.mp4">
+              <img src="../assets/nia_content/beauty/2023_plus/rahua_autumn_ad.jpg" alt="Rahua Hair Care" loading="lazy">
+              <div class="preview-stats">
+                <span>367K plays</span>
+                <span>21.9K likes</span>
+              </div>
+              <p class="preview-title">Rahua hair care #AD</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -2331,231 +2416,137 @@
     </div>
   </section>
 
-  <!-- Deliverables -->
-  <section class="section-white">
-    <div class="content-wide">
+  <!-- Choose Your Package -->
+  <section class="section-white" style="padding-left: var(--space-2xl); padding-right: var(--space-2xl);">
+    <div style="max-width: 1600px; margin: 0 auto;">
       <div class="section-header">
-        <h2>Deliverables</h2>
-        <p>Content deliverables per property, designed to build a comprehensive asset library across the portfolio.</p>
+<h2 id="packages">Choose Your Package</h2>
+        <p>Select a tier for each property. One-off production & logistics fee applies once per campaign.</p>
       </div>
 
-      <table class="deliverables-table">
-        <thead>
-          <tr>
-            <th>Deliverable</th>
-            <th>Stanley & Livingstone<br><span style="font-weight: 400; font-size: 0.7em;">Zimbabwe · Nia</span></th>
-            <th>Royal Livingstone<br><span style="font-weight: 400; font-size: 0.7em;">Zambia · Nia</span></th>
-            <th>Kafue River Camp<br><span style="font-weight: 400; font-size: 0.7em;">Zambia · Klein & Nia</span></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="category-row">
-            <td colspan="4">Social Content</td>
-          </tr>
-          <tr>
-            <td>Instagram Reels</td>
-            <td>2-3</td>
-            <td>3-4</td>
-            <td>3-4</td>
-          </tr>
-          <tr>
-            <td>Instagram Posts (carousel or static)</td>
-            <td>2-3</td>
-            <td>2-3</td>
-            <td>2-3</td>
-          </tr>
-          <tr>
-            <td>Instagram Stories</td>
-            <td>8-12</td>
-            <td>10-15</td>
-            <td>10-15</td>
-          </tr>
-          <tr>
-            <td>Shona Language & Culture Content</td>
-            <td class="check">✓</td>
-            <td>-</td>
-            <td>-</td>
-          </tr>
-          <tr>
-            <td>Wash Day Feature</td>
-            <td>-</td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-          </tr>
-          <tr class="category-row">
-            <td colspan="4">Brand Asset Library</td>
-          </tr>
-          <tr>
-            <td>Short-form video clips (3-6 sec)</td>
-            <td>8-12</td>
-            <td>10-15</td>
-            <td>15-20</td>
-          </tr>
-          <tr>
-            <td>Edited photography</td>
-            <td>15-25</td>
-            <td>20-30</td>
-            <td>30-40</td>
-          </tr>
-          <tr>
-            <td>Raw footage delivery</td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-          </tr>
-          <tr class="category-row">
-            <td colspan="4">Premium Content</td>
-          </tr>
-          <tr>
-            <td>Cinematic property film (2-3 min)</td>
-            <td>-</td>
-            <td class="optional">Optional</td>
-            <td class="check">✓</td>
-          </tr>
-          <tr>
-            <td>Wildlife photography portfolio</td>
-            <td class="check">✓</td>
-            <td>-</td>
-            <td class="check">✓</td>
-          </tr>
-          <tr>
-            <td>15-second cutdowns for paid media</td>
-            <td>2</td>
-            <td>2</td>
-            <td>3</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+      <div class="packages-grid">
+        <!-- Essential -->
+        <div class="package-card reveal">
+          <p class="package-label">Tier 1</p>
+          <h3 class="package-name">Essential</h3>
+          <p class="package-tagline">Core social content only</p>
 
-  <!-- Investment -->
-  <section class="section-ecru">
-    <div class="content-wide">
-      <div class="section-header">
-        <h2>Investment</h2>
-        <p>Modular pricing. Choose the deliverables that fit your objectives and budget.</p>
-      </div>
+          <div class="package-deliverables">
+            <p class="per-property-note">Per Property Includes:</p>
+            <h4>Content Deliverables</h4>
+            <ul>
+              <li>1 Instagram post (Reel or carousel)</li>
+              <li>4 Instagram Stories</li>
+            </ul>
+            <h4>Post-Production</h4>
+            <ul>
+              <li>Professional video editing</li>
+              <li>Colour grading & sound design</li>
+            </ul>
+            <h4>Agency Services</h4>
+            <ul>
+              <li>Creative strategy & shot lists</li>
+              <li>On-shoot coordination</li>
+              <li>Content approval management</li>
+              <li>12-month usage rights (organic)</li>
+            </ul>
+            <h4>Optional</h4>
+            <ul>
+              <li>Cinematic film (2-3 min) +$5,000</li>
+            </ul>
+          </div>
 
-      <div class="packages-wrapper" style="max-width: 1000px; margin: 0 auto;">
-        <!-- Package comparison table -->
-        <table class="pricing-table" style="margin-bottom: var(--space-xl);">
-          <thead>
-            <tr>
-              <th style="width: 40%;">Per Property</th>
-              <th style="text-align: center;">Essential</th>
-              <th style="text-align: center;">Standard</th>
-              <th style="text-align: center;">Premium</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Instagram Reels</td>
-              <td style="text-align: center;">3</td>
-              <td style="text-align: center;">4</td>
-              <td style="text-align: center;">5</td>
-            </tr>
-            <tr>
-              <td>Instagram Posts</td>
-              <td style="text-align: center;">2</td>
-              <td style="text-align: center;">3</td>
-              <td style="text-align: center;">4</td>
-            </tr>
-            <tr>
-              <td>Stories coverage<br><span class="pricing-note">9 stories (3-night stay)</span></td>
-              <td style="text-align: center;">✓</td>
-              <td style="text-align: center;">✓</td>
-              <td style="text-align: center;">✓</td>
-            </tr>
-            <tr>
-              <td>Signature content<br><span class="pricing-note">Wash Day Feature or Shona Culture</span></td>
-              <td style="text-align: center;">—</td>
-              <td style="text-align: center;">✓</td>
-              <td style="text-align: center;">✓</td>
-            </tr>
-            <tr>
-              <td>Photography package<br><span class="pricing-note">20 edited images</span></td>
-              <td style="text-align: center;">✓</td>
-              <td style="text-align: center;">✓</td>
-              <td style="text-align: center;">✓</td>
-            </tr>
-            <tr>
-              <td>Short-form clips<br><span class="pricing-note">10 clips for brand use</span></td>
-              <td style="text-align: center;">—</td>
-              <td style="text-align: center;">✓</td>
-              <td style="text-align: center;">✓</td>
-            </tr>
-            <tr>
-              <td>Wildlife photography<br><span class="pricing-note">Professional wildlife images (Klein)</span></td>
-              <td style="text-align: center;">—</td>
-              <td style="text-align: center;">—</td>
-              <td style="text-align: center;">✓</td>
-            </tr>
-            <tr>
-              <td>Paid media cutdowns<br><span class="pricing-note">15-second ad versions</span></td>
-              <td style="text-align: center;">—</td>
-              <td style="text-align: center;">—</td>
-              <td style="text-align: center;">✓</td>
-            </tr>
-            <tr>
-              <td>Raw footage delivery</td>
-              <td style="text-align: center;">✓</td>
-              <td style="text-align: center;">✓</td>
-              <td style="text-align: center;">✓</td>
-            </tr>
-            <tr style="border-top: 2px solid var(--color-charcoal);">
-              <td><strong>Content subtotal</strong></td>
-              <td style="text-align: center;"><strong>$8,600</strong></td>
-              <td style="text-align: center;"><strong>$15,400</strong></td>
-              <td style="text-align: center;"><strong>$22,200</strong></td>
-            </tr>
-            <tr style="background: var(--color-bone);">
-              <td colspan="4" style="font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-warm-grey); padding: var(--space-sm) var(--space-md);">Production Costs</td>
-            </tr>
-            <tr>
-              <td>Travel & logistics<br><span class="pricing-note">One-time cost for campaign</span></td>
-              <td style="text-align: center;" colspan="3">$8,000</td>
-            </tr>
-            <tr>
-              <td>Per-property production<br><span class="pricing-note">Crew, equipment, logistics</span></td>
-              <td style="text-align: center;">$5,000</td>
-              <td style="text-align: center;">$5,000</td>
-              <td style="text-align: center;">$5,000</td>
-            </tr>
-            <tr style="border-top: 2px solid var(--color-charcoal); background: var(--color-ecru);">
-              <td><strong>Total per property</strong></td>
-              <td style="text-align: center;"><strong>$13,600</strong></td>
-              <td style="text-align: center;"><strong>$20,400</strong></td>
-              <td style="text-align: center;"><strong>$27,200</strong></td>
-            </tr>
-          </tbody>
-        </table>
+          <div class="package-price">
+            <p class="package-price-amount">$9,000</p>
+            <p class="package-price-note">per property<br>+ $8,000 travel & logistics (one-off)</p>
+          </div>
+        </div>
 
-        <!-- Optional add-on -->
-        <div style="border: 1px solid var(--color-charcoal); padding: var(--space-lg);">
-          <h4 style="margin-bottom: var(--space-sm); font-size: 1rem;">Optional Add-on</h4>
-          <p style="font-size: 0.9375rem;"><strong>Cinematic property film</strong> (2-3 minute hero film): <strong>$5,000</strong> per property</p>
+        <!-- Standard -->
+        <div class="package-card recommended reveal">
+          <span class="package-badge">Recommended</span>
+          <p class="package-label">Tier 2</p>
+          <h3 class="package-name">Standard</h3>
+          <p class="package-tagline">Social content + signature series</p>
+
+          <div class="package-deliverables">
+            <p class="per-property-note">Per Property Includes:</p>
+            <h4>Content Deliverables</h4>
+            <ul>
+              <li>3 Instagram posts (Reels or carousels)</li>
+              <li>6 Instagram Stories</li>
+              <li>Signature Wash Day content</li>
+            </ul>
+            <h4>Post-Production</h4>
+            <ul>
+              <li>Professional video editing (all posts)</li>
+              <li>Colour grading & sound design</li>
+            </ul>
+            <h4>Agency Services</h4>
+            <ul>
+              <li>Creative strategy & shot lists</li>
+              <li>Pre-production planning</li>
+              <li>On-shoot coordination</li>
+              <li>Content approval management</li>
+              <li>Perpetual usage rights (organic + paid)</li>
+            </ul>
+            <h4>Optional</h4>
+            <ul>
+              <li>Brand Asset Pack +$5,000<br><span style="font-size: 0.75rem; color: var(--color-warm-grey);">20 edited photos, 10 short-form clips, raw footage</span></li>
+              <li>Cinematic film (2-3 min) +$5,000</li>
+            </ul>
+          </div>
+
+          <div class="package-price">
+            <p class="package-price-amount">$18,000</p>
+            <p class="package-price-note">per property<br>+ $8,000 travel & logistics (one-off)</p>
+          </div>
+        </div>
+
+        <!-- Premium -->
+        <div class="package-card reveal">
+          <p class="package-label">Tier 3</p>
+          <h3 class="package-name">Premium</h3>
+          <p class="package-tagline">Full social content coverage</p>
+
+          <div class="package-deliverables">
+            <p class="per-property-note">Per Property Includes:</p>
+            <h4>Content Deliverables</h4>
+            <ul>
+              <li>6 Instagram posts (Reels or carousels)</li>
+              <li>9 Instagram Stories</li>
+              <li>Signature Wash Day content</li>
+            </ul>
+            <h4>Post-Production</h4>
+            <ul>
+              <li>Professional video editing (all posts)</li>
+              <li>Colour grading & sound design</li>
+            </ul>
+            <h4>Agency Services</h4>
+            <ul>
+              <li>Creative strategy & shot lists</li>
+              <li>Pre-production planning</li>
+              <li>On-shoot coordination</li>
+              <li>Content approval management</li>
+              <li>Performance reporting</li>
+              <li>Perpetual usage rights (organic + paid + whitelisting)</li>
+            </ul>
+            <h4>Optional</h4>
+            <ul>
+              <li>Brand Asset Pack +$8,000<br><span style="font-size: 0.75rem; color: var(--color-warm-grey);">40 edited photos, 20 short-form clips, 3 paid media cutdowns, raw footage</span></li>
+              <li>Cinematic film (2-3 min) +$5,000</li>
+            </ul>
+          </div>
+
+          <div class="package-price">
+            <p class="package-price-amount">$36,000</p>
+            <p class="package-price-note">per property<br>+ $8,000 travel & logistics (one-off)</p>
+          </div>
         </div>
       </div>
 
-      <div class="content-narrow" style="margin-top: var(--space-xl);">
-        <h3 style="font-size: 1.125rem; margin-bottom: var(--space-md);">All Campaigns Include</h3>
-        <ul style="list-style: none; font-size: 0.9375rem; color: var(--color-charcoal);">
-          <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: var(--color-brown);">✓</span> Perpetual usage rights for all brand assets (web, social, print, advertising)</li>
-          <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: var(--color-brown);">✓</span> Full content approval process before publication</li>
-          <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: var(--color-brown);">✓</span> Campaign management and coordination</li>
-          <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: var(--color-brown);">✓</span> Pre-production planning and creative briefing</li>
-          <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: var(--color-brown);">✓</span> Professional post-production and editing</li>
-        </ul>
-
-        <h3 style="font-size: 1.125rem; margin-bottom: var(--space-md); margin-top: var(--space-xl);">From Anantara</h3>
-        <ul style="list-style: none; font-size: 0.9375rem; color: var(--color-charcoal);">
-          <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: var(--color-brown);">→</span> Complimentary accommodation (2 rooms for creator + production team)</li>
-          <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: var(--color-brown);">→</span> All activities and experiences featured in content</li>
-          <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: var(--color-brown);">→</span> Inter-property transfers</li>
-          <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: var(--color-brown);">→</span> Airport transfers (Livingstone)</li>
-          <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: var(--color-brown);">→</span> Coordination with property teams</li>
-        </ul>
+      <div class="packages-footer">
+        <p><strong>Stay requirement:</strong> 5 nights per property (1 day setup, 3 days production, 1 day contingency). Also meals and soft drinks. The full experience.</p>
       </div>
     </div>
   </section>
@@ -2634,8 +2625,8 @@
   <section class="section-bone">
     <div class="content-wide">
       <div class="section-header">
-        <h2>Timeline</h2>
-        <p>A 10-night campaign with phased content release through Q4 2026.</p>
+<h2 id="timeline">Timeline</h2>
+        <p>A 15-night campaign across 3 properties, with phased content release through Q4 2026.</p>
       </div>
 
       <div class="timeline-grid">
@@ -2652,7 +2643,7 @@
         <div class="timeline-item reveal">
           <p class="timeline-date">Early August</p>
           <h4 class="timeline-title">Production</h4>
-          <p class="timeline-desc">10-night shoot across both properties. Royal Livingstone (5 nights) then Stanley & Livingstone (5 nights).</p>
+          <p class="timeline-desc">5 nights per property (1 day setup, 3 days production, 1 day contingency). 15 nights total across 3 properties.</p>
         </div>
         <div class="timeline-item reveal">
           <p class="timeline-date">Sep - Nov</p>
@@ -2667,7 +2658,7 @@
   <section class="section-white">
     <div class="content-wide">
       <div class="section-header">
-        <h2>Commercial Terms</h2>
+<h2 id="terms">Commercial Terms</h2>
         <p>Clear structure for investment, rights, and exclusivity.</p>
       </div>
 
@@ -2683,7 +2674,7 @@
           <p><strong>Category exclusivity:</strong> 90-day exclusivity window during which Nia will not create content for competing luxury safari lodges in the Victoria Falls region.</p>
           <p><strong>Extended exclusivity:</strong> Available as negotiated add-on for longer protection periods.</p>
           <h3 style="margin-top: var(--space-lg);">Payment Terms</h3>
-          <p>50% deposit upon contract signature. 50% balance upon delivery of final assets. Standard 30-day payment terms on invoices.</p>
+          <p>50% deposit upon contract signature. 50% balance upon delivery of final assets.</p>
         </div>
       </div>
     </div>
@@ -3127,6 +3118,26 @@
       }
 
     });
+
+    // Scroll to top button
+    const scrollBtn = document.getElementById('scrollToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        scrollBtn.classList.add('visible');
+      } else {
+        scrollBtn.classList.remove('visible');
+      }
+    });
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   </script>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
 </body>
 </html>

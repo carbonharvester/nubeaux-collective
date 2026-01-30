@@ -189,7 +189,7 @@
 
     /* The Opportunity Section */
     .opportunity-section {
-      padding: var(--space-2xl) 0;
+      padding: var(--space-xl) 0 var(--space-lg) 0;
       background-color: var(--color-bone);
       width: 100%;
     }
@@ -247,10 +247,10 @@
       font-size: 1.25rem;
       color: var(--color-charcoal);
       text-align: center;
-      padding: var(--space-xl) 0;
+      padding: var(--space-lg) 0;
       border-top: 1px solid rgba(0,0,0,0.1);
-      border-bottom: 1px solid rgba(0,0,0,0.1);
-      margin: var(--space-xl) 0;
+      border-bottom: none;
+      margin: var(--space-lg) 0 0 0;
     }
 
     /* Creative Positioning */
@@ -328,7 +328,7 @@
     /* Creators Section */
     .creators-section {
       background-color: var(--color-ecru);
-      padding: var(--space-2xl) 0;
+      padding: var(--space-xl) 0 var(--space-2xl) 0;
     }
 
     .creators-section h2 {
@@ -359,37 +359,6 @@
       box-shadow: 0 12px 40px rgba(0,0,0,0.1);
     }
 
-    .creator-card-image {
-      aspect-ratio: 16/10;
-      overflow: hidden;
-    }
-
-    .creator-card-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: filter var(--transition-medium), transform var(--transition-slow);
-    }
-
-    .creator-card:hover .creator-card-image img {
-      transform: scale(1.03);
-    }
-
-    .creator-card-info {
-      padding: var(--space-lg);
-    }
-
-    .creator-card-info h3 {
-      font-size: 1.5rem;
-      color: var(--color-charcoal);
-      margin-bottom: var(--space-xs);
-    }
-
-    .creator-card-role {
-      font-size: 0.875rem;
-      color: var(--color-warm-grey);
-      margin-bottom: var(--space-sm);
-    }
 
     /* Deliverables */
     .deliverables-section {
@@ -647,17 +616,6 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .creator-card-image {
-        aspect-ratio: 16/10;
-      }
-
-      .creator-card-info {
-        padding: var(--space-md);
-      }
-
-      .creator-card-info h3 {
-        font-size: 1.25rem;
-      }
     }
 
     @media (max-width: 480px) {
@@ -937,14 +895,12 @@
     <div class="container">
       <h2 class="reveal">The Creator</h2>
 
-      <div class="creators-grid">
-        <a href="../creators/nia-the-light.html" class="creator-card reveal">
-          <div class="creator-card-image">
-            <img src="../assets/media_kit_images/nia_creator.jpg" alt="Nia The Light" loading="lazy">
-          </div>
-          <div class="creator-card-info">
-            <h3>Nia The Light</h3>
-            <p class="creator-card-role">Home & Lifestyle Creator</p>
+      <div class="creators-grid" style="max-width: 400px; margin: 0 auto;">
+        <a href="../creators/nia-the-light.html" class="creator-card creator-card-featured reveal">
+          <img src="../assets/media_kit_images/nia_creator.jpg" alt="Nia The Light" loading="lazy">
+          <div class="creator-card-overlay">
+            <h4>Nia The Light</h4>
+            <p>Home & Lifestyle Creator</p>
           </div>
         </a>
       </div>

@@ -12,7 +12,47 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollProgress();
   initAnimatedHeroText();
   initCustomCursor();
+  initImageProtection();
 });
+
+/* ----- Image Protection ----- */
+function initImageProtection() {
+  // Disable right-click on images only
+  document.addEventListener('contextmenu', (e) => {
+    if (e.target.tagName === 'IMG') {
+      e.preventDefault();
+      return false;
+    }
+  });
+
+  // Disable drag on all images (without wrapping them)
+  document.querySelectorAll('img').forEach(img => {
+    img.setAttribute('draggable', 'false');
+    img.addEventListener('dragstart', (e) => e.preventDefault());
+  });
+
+  // Disable text selection on images
+  document.addEventListener('selectstart', (e) => {
+    if (e.target.tagName === 'IMG') {
+      e.preventDefault();
+      return false;
+    }
+  });
+
+  // Disable long-press on mobile
+  let touchTimer;
+  document.addEventListener('touchstart', (e) => {
+    if (e.target.tagName === 'IMG') {
+      touchTimer = setTimeout(() => {
+        e.preventDefault();
+      }, 500);
+    }
+  }, { passive: false });
+
+  document.addEventListener('touchend', () => {
+    clearTimeout(touchTimer);
+  });
+}
 
 /* ----- Header Scroll Effect ----- */
 function initHeader() {
