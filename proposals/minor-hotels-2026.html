@@ -7,6 +7,75 @@
   <meta name="description" content="A Luxury Content Partnership for Anantara featuring Nia The Light and Klein Nettoh.">
   <title>On Her Terms: An Anantara Content Partnership - NUBEAUX Collective</title>
 
+  <style>
+    /* Password Gate Styles */
+    .password-gate {
+      position: fixed;
+      inset: 0;
+      background: #faf8f5;
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter', -apple-system, sans-serif;
+    }
+    .password-gate.hidden { display: none; }
+    .password-form {
+      max-width: 400px;
+      padding: 3rem;
+      text-align: center;
+    }
+    .password-form img {
+      width: 120px;
+      margin-bottom: 2rem;
+    }
+    .password-form h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      font-weight: 400;
+      color: #2C2420;
+      margin-bottom: 0.5rem;
+    }
+    .password-form p {
+      color: #6b5b4f;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+    .password-form input {
+      width: 100%;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      box-sizing: border-box;
+    }
+    .password-form input:focus {
+      outline: none;
+      border-color: #c2703e;
+    }
+    .password-form button {
+      width: 100%;
+      padding: 1rem;
+      background: #2C2420;
+      color: #fff;
+      border: none;
+      font-size: 0.875rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .password-form button:hover {
+      background: #c2703e;
+    }
+    .password-form .error {
+      color: #c2703e;
+      font-size: 0.875rem;
+      margin-top: 1rem;
+      display: none;
+    }
+  </style>
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1888,6 +1957,73 @@
   </style>
 </head>
 <body>
+  <!-- Password Gate -->
+  <div class="password-gate" id="passwordGate">
+    <div class="password-form">
+      <img src="../assets/NC_logo.png" alt="NUBEAUX Collective">
+      <h2>Proposal Access</h2>
+      <p>This proposal is confidential. Please enter your details to continue.</p>
+      <input type="text" id="visitorName" placeholder="Your name" required>
+      <input type="email" id="visitorEmail" placeholder="Your email" required>
+      <input type="password" id="proposalPassword" placeholder="Password">
+      <button type="button" onclick="checkAccess()">View Proposal</button>
+      <p class="error" id="errorMsg">Incorrect password. Please try again.</p>
+    </div>
+  </div>
+
+  <script>
+    // Password: anantara2026 (change as needed)
+    const PROPOSAL_PASSWORD = 'anantara2026';
+
+    // Check if already authenticated this session
+    if (sessionStorage.getItem('proposalAccess') === 'granted') {
+      document.getElementById('passwordGate').classList.add('hidden');
+    }
+
+    function checkAccess() {
+      const name = document.getElementById('visitorName').value.trim();
+      const email = document.getElementById('visitorEmail').value.trim();
+      const password = document.getElementById('proposalPassword').value;
+
+      if (!name || !email) {
+        document.getElementById('errorMsg').textContent = 'Please enter your name and email.';
+        document.getElementById('errorMsg').style.display = 'block';
+        return;
+      }
+
+      if (password === PROPOSAL_PASSWORD) {
+        // Log access
+        logAccess(name, email);
+        // Grant access
+        sessionStorage.setItem('proposalAccess', 'granted');
+        document.getElementById('passwordGate').classList.add('hidden');
+      } else {
+        document.getElementById('errorMsg').textContent = 'Incorrect password. Please try again.';
+        document.getElementById('errorMsg').style.display = 'block';
+      }
+    }
+
+    function logAccess(name, email) {
+      // Send access log to Netlify function
+      fetch('/.netlify/functions/log-proposal-access', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          proposal: 'minor-hotels-2026',
+          name: name,
+          email: email,
+          timestamp: new Date().toISOString(),
+          userAgent: navigator.userAgent
+        })
+      }).catch(() => {}); // Silent fail - don't block access
+    }
+
+    // Allow Enter key to submit
+    document.getElementById('proposalPassword').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') checkAccess();
+    });
+  </script>
+
   <!-- Header -->
   <header class="header">
     <div class="header-inner">
