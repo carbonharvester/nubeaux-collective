@@ -1975,8 +1975,8 @@
     // Password: anantara2026 (change as needed)
     const PROPOSAL_PASSWORD = 'anantara2026';
 
-    // Check if already authenticated this session
-    if (sessionStorage.getItem('proposalAccess') === 'granted') {
+    // Check if already authenticated (persists across sessions)
+    if (localStorage.getItem('proposalAccess') === 'granted') {
       document.getElementById('passwordGate').classList.add('hidden');
     }
 
@@ -1995,7 +1995,7 @@
         // Log access
         logAccess(name, email);
         // Grant access
-        sessionStorage.setItem('proposalAccess', 'granted');
+        localStorage.setItem('proposalAccess', 'granted');
         document.getElementById('passwordGate').classList.add('hidden');
       } else {
         document.getElementById('errorMsg').textContent = 'Incorrect password. Please try again.';
