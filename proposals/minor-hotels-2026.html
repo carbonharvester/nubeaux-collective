@@ -1910,12 +1910,33 @@
       }
 
       .stats-band-inner,
-      .data-grid,
       .chapters-grid,
       .tier-grid,
       .measurement-grid,
       .timeline-grid {
         grid-template-columns: 1fr;
+      }
+
+      /* Data cards - horizontal scroll on mobile */
+      .data-grid {
+        display: flex;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        gap: var(--space-sm);
+        margin-left: calc(-1 * var(--space-md));
+        margin-right: calc(-1 * var(--space-md));
+        padding: 0 var(--space-md);
+        scrollbar-width: none;
+        background: transparent;
+      }
+      .data-grid::-webkit-scrollbar { display: none; }
+      .data-card {
+        flex: 0 0 260px;
+        min-width: 260px;
+        padding: var(--space-md);
+      }
+      .data-card-value {
+        font-size: 2rem;
       }
 
       .stat-item {
